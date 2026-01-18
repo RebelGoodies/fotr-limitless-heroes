@@ -13,7 +13,6 @@ function CISHoldoutsEvent:new(gc)
     self.HumanPlayer = Find_Player("local")
 
     self.Killed_Heroes = 0
-	self.Dookus = 0
 
     crossplot:subscribe("CIS_HOLDOUTS_TIMER", self.activate, self)
 
@@ -23,6 +22,7 @@ function CISHoldoutsEvent:new(gc)
 	self.production_finished_event = gc.Events.GalacticProductionFinished
 	self.production_finished_event:attach_listener(self.on_production_finished, self)
 	
+	self.HumanPlayer.Unlock_Tech(Find_Object_Type("OPTION_COMPLETE_HOLDOUTS"))
 end
 
 function CISHoldoutsEvent:on_production_finished(planet, object_type_name)
@@ -34,19 +34,16 @@ end
 
 function CISHoldoutsEvent:activate()
     self.is_valid = true
-    if (self.Dookus >= 2) and (self.Killed_Heroes >= 1) then
+    if self.Killed_Heroes >= 2 then
         self:fulfil()
     end
 end
 
 function CISHoldoutsEvent:on_galactic_hero_killed(hero_name, owner)
-    if (hero_name == "TRENCH_INVULNERABLE") or (hero_name == "DUA_NINGO_UNREPENTANT") then
+    if (hero_name == "DOOKU_TEAM") or (hero_name == "TRENCH_INVINCIBLE") or (hero_name == "DUA_NINGO_UNREPENTANT") then
         self.Killed_Heroes = self.Killed_Heroes + 1
     end
-	if (hero_name == "DOOKU_TEAM") then
-        self.Dookus = self.Dookus + 1
-    end
-    if (self.Dookus >= 2) and (self.Killed_Heroes >= 1) and (self.is_valid == true) then
+    if (self.Killed_Heroes >= 2) and (self.is_valid == true) then
         self:fulfil()
     end
 end

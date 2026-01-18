@@ -1,9 +1,4 @@
 <?xml version="1.0" ?>
-
-<!--********************************-->
-<!--* Limitless Heroes Default *-->
-<!--********************************-->
-
 <Republic_Heroes>
 	<!-- Squadron heroes -->
 
@@ -63,6 +58,8 @@
 		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_ARHUL_NARRA
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_GUARDIAN_SQUADRON_ARC170
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -321,6 +318,8 @@
 		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_ERK_HARMAN
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_T19_SQUADRON
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -500,6 +499,8 @@
 		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_GARVEN_DREIS
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_RAREFIED_AIR_CAVALRY
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -707,9 +708,11 @@
 
 		<Lua_Script>DelayedSelfDelete</Lua_Script>
 
-		<Tech_Level>3</Tech_Level>
+		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_NIAL_DECLANN
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_REPUBLIC_TIE_SQUADRON
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -930,6 +933,8 @@
 		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_RHYS_DALLOWS
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_BRAVO_SQUADRON
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -1176,10 +1181,132 @@
 			</Unit_Ability>
 		</Unit_Abilities_Data>
 	</Squadron>
+	
+	<!-- Ima Gun Di / Delta / Jedi -->
+	
+	<DummyStructure Name="Ima_Gun_Di_Selector_Header">
+		<Variant_Of_Existing_Type>Event_Dummy_Template</Variant_Of_Existing_Type>
 
-	<!-- Non-assignable squadron heroes -->
+		<Text_ID>TEXT_TOOLTIP_DAO_SPECIAL</Text_ID>
+		<Encyclopedia_Text> </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_ima_gun_di.tga</Icon_Name>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+	</DummyStructure>
+	
+	<DummyStructure Name="Ima_Gun_Di_Location_Set">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 0 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>TEXT_HERO_IMAGUNDI</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_button_ima_gun_di.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_IMAGUNDI
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_DELTA7_FIGHTER
+		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
+		TEXT_TOOLTIP_ASSIGN_LOCATIONS
+		TEXT_HERO_DAO
+		TEXT_HERO_NILS_TENANT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	
+	<DummyStructure Name="Fighter_Selector_Dao">
+		<Variant_Of_Existing_Type>Event_Dummy_Template</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_DAO</Text_ID>
+		<Encyclopedia_Text>TEXT_EVENT_TOOLTIP_FIGHTER_SELECTOR </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_dao.tga</Icon_Name>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+	</DummyStructure>
+	
+	<DummyStructure Name="Fighter_Selector_Tenant">
+		<Variant_Of_Existing_Type>Event_Dummy_Template</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_NILS_TENANT</Text_ID>
+		<Encyclopedia_Text>TEXT_EVENT_TOOLTIP_FIGHTER_SELECTOR </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_tenant.tga</Icon_Name>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+	</DummyStructure>
+
+	<!-- Clone assignable squadron heroes -->
 
 	<!-- Broadside / Shadow Squadron / BTL-B Y-wing (Locked to Yularen_Resolute; available after Y-Wing research and in era 3-5 starts  -->
+	
+	<DummyStructure Name="Broadside_Selector_Header">
+		<Variant_Of_Existing_Type>Event_Dummy_Template</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_BROADSIDE</Text_ID>
+		<Encyclopedia_Text> </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_shadow_squadron.tga</Icon_Name>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+	</DummyStructure>
+	
+	<DummyStructure Name="Broadside_Location_Set">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 0 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>TEXT_HERO_BROADSIDE</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_button_shadow_squadron.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_BROADSIDE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_SHADOW_SQUADRON
+		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
+		TEXT_TOOLTIP_ASSIGN_LOCATIONS
+		TEXT_HERO_YULAREN
+		TEXT_HERO_KILIAN
+		TEXT_HERO_WIELER
+		TEXT_HERO_COBURN
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
 
 	<UniqueUnit Name="Broadside">
 		<Variant_Of_Existing_Type>Generic_BTLB_Y-Wing</Variant_Of_Existing_Type>
@@ -1352,6 +1479,56 @@
 	</Squadron>
 
 	<!-- Axe / Blue Squadron / V-19 Torrent (Locked to Yularen_Resolute; historicals only: HFM, Rimward, Tennuutta -->
+	
+	<DummyStructure Name="Axe_Selector_Header">
+		<Variant_Of_Existing_Type>Event_Dummy_Template</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_AXE</Text_ID>
+		<Encyclopedia_Text> </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_blue_squadron_axe.tga</Icon_Name>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+	</DummyStructure>
+	
+	<DummyStructure Name="Axe_Location_Set">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 0 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>TEXT_HERO_AXE</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_button_blue_squadron_axe.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_AXE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_BLUE_SQUADRON
+		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
+		TEXT_TOOLTIP_ASSIGN_LOCATIONS
+		TEXT_HERO_YULAREN
+		TEXT_HERO_KILIAN
+		TEXT_HERO_WIELER
+		TEXT_HERO_COBURN
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
 
 	<UniqueUnit Name="Axe">
 		<Variant_Of_Existing_Type>Torrent</Variant_Of_Existing_Type>
@@ -1554,6 +1731,8 @@
 		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_ODD_BALL
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_SQUAD_SEVEN_TORRENT
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -1906,6 +2085,8 @@
 		<Tech_Level>0</Tech_Level>
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_HERO_SQUAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_ODD_BALL
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_SQUAD_SEVEN_ARC170
 		TEXT_TOOLTIP_SEPARATOR_NONE_BLOCK
@@ -2354,7 +2535,7 @@
 				<Is_Pulsing>Yes</Is_Pulsing>
 				<Pulse_Frequency_Secs>0.5</Pulse_Frequency_Secs>
 				<Max_Number_Of_Pulses>120</Max_Number_Of_Pulses>
-				<Particle_Effect>Cautiousness_Ability_Particle</Particle_Effect>
+				<Particle_Effect>Respect_for_Jedi_Ability_Particle</Particle_Effect>
 
 				<Supports_Autofire>False</Supports_Autofire>
 			</Unit_Ability>
@@ -4933,7 +5114,6 @@
 		TEXT_TOOLTIP_VENATOR_SHIELD
 		TEXT_TOOLTIP_VENATOR_MOVE
 		TEXT_TOOLTIP_VENATOR_SQUADRON
-		TEXT_TOOLTIP_DAO_SPECIAL
 		TEXT_TOOLTIP_VENATOR_WEAP1
 		TEXT_TOOLTIP_VENATOR_WEAP2 
 		TEXT_TOOLTIP_VENATOR_WEAP3
@@ -4992,7 +5172,6 @@
 		TEXT_TOOLTIP_DAO 
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_DAO
-		TEXT_TOOLTIP_DAO_SPECIAL
 		</Encyclopedia_Text>
 	</DummyStructure>
 
@@ -6327,7 +6506,7 @@
 		<Lua_Script>GenericGameObject</Lua_Script>
 		<Tech_Level>99</Tech_Level>
 		<Affiliation>Empire</Affiliation>
-		<No_Colorization_Color> 206, 57, 67, 255 </No_Colorization_Color>
+
 
 		<Score_Cost_Credits> 60000 </Score_Cost_Credits>
 		<CategoryMask> SpaceHero | AntiFrigate </CategoryMask>
@@ -8153,7 +8332,39 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+	
+	<DummyStructure Name="McQuarrie_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MCQUARRIE</Text_ID>
+		<Icon_Name>I_BUTTON_MCQUARRIE.tga</Icon_Name>
 
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_MCQUARRIE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_MCQUARRIE
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+	</DummyStructure>
+
+	<DummyStructure Name="McQuarrie_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MCQUARRIE</Text_ID>
+		<Icon_Name>I_BUTTON_MCQUARRIE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>McQuarrie_Concept</Required_Orbiting_Units>
+	</DummyStructure>
+	
 
 	<!-- ISD Moff - ODL-only -->
 
@@ -8240,6 +8451,53 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+	
+	<DummyStructure Name="Coy_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_COY</Text_ID>
+		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_COY
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_COY
+		</Encyclopedia_Text>
+
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
+		<Affiliation>Empire</Affiliation>
+
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Tarkin </SFXEvent_Build_Complete>	
+
+	</DummyStructure>
+
+	<DummyStructure Name="Coy_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_COY</Text_ID>
+		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_MOFF
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Unassigned_Admiral_Tarkin </SFXEvent_Build_Complete>
+
+		<Required_Orbiting_Units>Coy_Imperator</Required_Orbiting_Units>
+	</DummyStructure>
+	
 
 	<!-- Tector Admiral - Tenuutta-only -->
 
@@ -8333,50 +8591,39 @@
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
 	
-	<DummyStructure Name="Coy_Assign">
+	<DummyStructure Name="Kreuge_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
 		
-		<Text_ID>TEXT_HERO_COY</Text_ID>
-		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+		<Text_ID>TEXT_HERO_KREUGE</Text_ID>
+		<Icon_Name>I_BUTTON_KREUGE.tga</Icon_Name>
 
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
 		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
 		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_TRAIT_INDECISIVE 
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
-		TEXT_TOOLTIP_COY
+		TEXT_TOOLTIP_KREUGE
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
-		TEXT_TOOLTIP_COMMAND_COY
+		TEXT_TOOLTIP_COMMAND_KREUGE
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
-
-		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
-		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Tarkin </SFXEvent_Build_Complete>	
-
 	</DummyStructure>
 
-	<DummyStructure Name="Coy_Retire">
+	<DummyStructure Name="Kreuge_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
 		
-		<Text_ID>TEXT_HERO_COY</Text_ID>
-		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
-
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_RETIRE_REPUBLIC_MOFF
-		</Encyclopedia_Text>
+		<Text_ID>TEXT_HERO_KREUGE</Text_ID>
+		<Icon_Name>I_BUTTON_KREUGE.tga</Icon_Name>
 
 		<Tech_Level>0</Tech_Level>
 
 		<Affiliation>Empire</Affiliation>
 
-		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
-		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> Unit_Unassigned_Admiral_Tarkin </SFXEvent_Build_Complete>
-
-		<Required_Orbiting_Units>Coy_Imperator</Required_Orbiting_Units>
+		<Required_Orbiting_Units>Kreuge_Gibbon</Required_Orbiting_Units>
 	</DummyStructure>
+	
 
 	<!-- General Staff -->
 
@@ -8443,8 +8690,6 @@
 		<Icon_Name>I_BUTTON_UNKNOWN.tga</Icon_Name>
 
 		<CategoryMask>Upgrade</CategoryMask>
-		
-		<Affiliation>Empire</Affiliation>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL
@@ -10170,7 +10415,7 @@
 		<Build_Time_Seconds>15</Build_Time_Seconds>
 		<Tech_Level>99</Tech_Level>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Grudo</Company_Transport_Unit>
 		<Company_Units>Grudo</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Stealth_Company>No</Is_Stealth_Company>
@@ -10205,6 +10450,46 @@
 		<CategoryMask>LandHero</CategoryMask>
 		<Ranking_In_Category> 3 </Ranking_In_Category>	
 	</HeroCompany>
+
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Grudo">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Grudo_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Grudo_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<DummyStructure Name="Grudo_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_GRUDO</Text_ID>
+		<Icon_Name>i_button_grudo.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_GRUDO
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Grudo_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_GRUDO</Text_ID>
+		<Icon_Name>i_button_grudo.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Grudo</Required_Orbiting_Units>
+	</DummyStructure>
+	
 	
 	<UniqueUnit Name="Khamar_A5RX">
 		<Variant_Of_Existing_Type>A5RX</Variant_Of_Existing_Type>
@@ -10361,6 +10646,39 @@
 		</Abilities>
 
 	</HeroCompany>
+	
+	<DummyStructure Name="Khamar_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_KHAMAR</Text_ID>
+		<Icon_Name>I_BUTTON_KHAMAR.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND4_LAND
+		TEXT_TOOLTIP_TRAIT_AGGRESSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_KHAMAR
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
+		TEXT_UNIT_A5RX
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Khamar_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_KHAMAR</Text_ID>
+		<Icon_Name>I_BUTTON_KHAMAR.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Gozanti_Heavy_Landing_Craft_Khamar</Required_Orbiting_Units>
+	</DummyStructure>
 
 	
 	<UniqueUnit Name="Gideon_Tarkin_AT_OT">
@@ -10502,6 +10820,114 @@
 		</Unit_Abilities_Data>
 	</HeroCompany>
 	
+	<DummyStructure Name="Gideon_Tarkin_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDEON_TARKIN</Text_ID>
+		<Icon_Name>I_BUTTON_GIDEON_TARKIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND3_LAND
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_GIDEON_TARKIN
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
+		TEXT_UNIT_AT_OT_WALKER
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Gideon_Tarkin_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDEON_TARKIN</Text_ID>
+		<Icon_Name>I_BUTTON_GIDEON_TARKIN.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Gozanti_Heavy_Landing_Craft_Gideon_Tarkin</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<!-- Senator Staff -->
+	
+	<DummyStructure Name="Extra_Senator_Slot">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>50</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<Text_ID>TEXT_HERO_OPEN_NR_ADMIRAL</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_multiplay_republic.tga</Icon_Name>
+		
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_OPEN_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	
+	<DummyStructure Name="View_Senators">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>View Senators</Text_ID>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_multiplay_republic.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+
+	<DummyStructure Name="Random_Senator_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<GUI_Row> 0 </GUI_Row>
+		
+		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
+		<Icon_Name>I_BUTTON_UNKNOWN.tga</Icon_Name>
+		
+		<CategoryMask>Upgrade</CategoryMask>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL
+		TEXT_DOCUMENTATION_SEPARATOR_SMALL
+		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL2
+		</Encyclopedia_Text>
+		
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
 	
 	<HeroUnit Name="Sate_Pestage">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -10611,6 +11037,14 @@
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
 	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Pestage">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Pestage_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Pestage_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
 	<DummyStructure Name="Pestage_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
 		
@@ -10618,11 +11052,13 @@
 		<Icon_Name>i_button_pestage_cw.tga</Icon_Name>
 
 		<Encyclopedia_Text>
-		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
 		TEXT_TOOLTIP_TRAIT_INDECISIVE 
 		TEXT_TOOLTIP_TRAIT_ADMIN2
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_PESTAGE_CW
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_ELITE_GUARD_VWING_OVERRIDE
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
@@ -10656,7 +11092,11 @@
 		TEXT_TOOLTIP_TRAIT_ADMIN2
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_MON_MOTHMA_01
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_ELITE_GUARD_VWING_OVERRIDE
 		</Encyclopedia_Text>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
 		
 		<Tech_Level>0</Tech_Level>
 		<Affiliation>Empire</Affiliation>
@@ -10749,6 +11189,14 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Orn_Free_Taa">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Orn_Free_Taa_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Orn_Free_Taa_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
 	
 	<DummyStructure Name="Orn_Free_Taa_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
@@ -10863,6 +11311,14 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ask_Aak">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Ask_Aak_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ask_Aak_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
 	
 	<DummyStructure Name="Ask_Aak_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
@@ -11014,6 +11470,14 @@
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
 	
+	<TransportUnit Name="Alliance_Shuttle_Landing_Craft_Nala_Se">
+		<Variant_Of_Existing_Type>Alliance_Shuttle_Landing_Craft_Hero</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Alliance_Shuttle_Landing_Craft_Nala_Se_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Alliance_Shuttle_Landing_Craft_Nala_Se_Landing">
+		<Variant_Of_Existing_Type>Alliance_Shuttle_Landing_Craft_Hero_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
 	<DummyStructure Name="Nala_Se_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
 		
@@ -11092,18 +11556,18 @@
 
 		<HardPoints>HP_Hero_E5_Carbine</HardPoints>
 
-		<SFXEvent_Select></SFXEvent_Select>
-		<SFXEvent_Move></SFXEvent_Move>
-		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
-		<SFXEvent_Attack></SFXEvent_Attack>
-		<SFXEvent_Guard></SFXEvent_Guard>
+		<SFXEvent_Select>Unit_Select_Shaak_Ti</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Shaak_Ti</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Shaak_Ti</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Shaak_Ti</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Shaak_Ti</SFXEvent_Guard>
 		<SFXEvent_Deploy></SFXEvent_Deploy>
 		<SFXEvent_Fire>Unit_Han_Blaster_Fire</SFXEvent_Fire>
-		<SFXEvent_Group_Move></SFXEvent_Group_Move>
-		<SFXEvent_Group_Attack></SFXEvent_Group_Attack>
-		<SFXEvent_Health_Low_Warning>  </SFXEvent_Health_Low_Warning>
-		<SFXEvent_Health_Critical_Warning>  </SFXEvent_Health_Critical_Warning>
-		<Death_SFXEvent_Start_Die> </Death_SFXEvent_Start_Die>
+		<SFXEvent_Group_Move>Unit_Move_Shaak_Ti</SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack>Unit_Attack_Shaak_Ti</SFXEvent_Group_Attack>
+		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Shaak_Ti </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning>Unit_Health_Critical_Shaak_Ti</SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Die_Shaak_Ti </Death_SFXEvent_Start_Die>
 
 		<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
 
@@ -11160,7 +11624,7 @@
 		<Required_Special_Structures></Required_Special_Structures>
 		<Required_Planets></Required_Planets>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>T6_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>T6_Shuttle_Landing_Craft_Padme</Company_Transport_Unit>
 		<Company_Units>Padme_Amidala</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Encyclopedia_Text> 
@@ -11190,6 +11654,14 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<TransportUnit Name="T6_Shuttle_Landing_Craft_Padme">
+		<Variant_Of_Existing_Type>T6_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>T6_Shuttle_Landing_Craft_Padme_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="T6_Shuttle_Landing_Craft_Padme_Landing">
+		<Variant_Of_Existing_Type>T6_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
 	
 	<DummyStructure Name="Padme_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
@@ -11274,7 +11746,7 @@
 
 		<SFXEvent_Select>Unit_Select_Gungan</SFXEvent_Select>
 		<SFXEvent_Move>Unit_Move_Gungan</SFXEvent_Move>
-		<SFXEvent_Fleet_Move>Unit_Move_Gungan</SFXEvent_Fleet_Move>
+		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
 		<SFXEvent_Attack>Unit_Attack_Gungan</SFXEvent_Attack>
 		<SFXEvent_Guard>Unit_Move_Gungan</SFXEvent_Guard>
 		<SFXEvent_Deploy>Unit_Select_Gungan</SFXEvent_Deploy>
@@ -11381,6 +11853,14 @@
 		<CategoryMask>LandHero</CategoryMask>
 		<Ranking_In_Category> 3 </Ranking_In_Category>
 	</HeroCompany>
+	
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jar_Jar">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Jar_Jar_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jar_Jar_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
 	
 	<DummyStructure Name="Jar_Jar_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
@@ -11555,7 +12035,7 @@
 		<Required_Special_Structures></Required_Special_Structures>
 		<Required_Planets></Required_Planets>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft</Company_Transport_Unit> <!-- Funny TFU reference -->
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Paige_Tarkin</Company_Transport_Unit> <!-- Funny TFU reference -->
 		<Company_Units>Paige_Tarkin</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 
@@ -11569,6 +12049,45 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Paige_Tarkin">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Paige_Tarkin_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Paige_Tarkin_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<DummyStructure Name="Paige_Tarkin_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PAIGE_TARKIN</Text_ID>
+		<Icon_Name>i_button_paige_tarkin.tga</Icon_Name>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_ADMIN4
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_PAIGE_TARKIN
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+
+	</DummyStructure>
+
+	<DummyStructure Name="Paige_Tarkin_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PAIGE_TARKIN</Text_ID>
+		<Icon_Name>i_button_paige_tarkin.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Paige_Tarkin</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Mechno_Chair">
@@ -11899,6 +12418,54 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+	
+	<DummyStructure Name="Zozridor_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ZOZRIDOR_SLAYKE</Text_ID>
+		<Icon_Name>I_BUTTON_ZOZRIDOR_SLAYKE.tga</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND3_SPACE
+		TEXT_TOOLTIP_TRAIT_RECKLESS
+		TEXT_TOOLTIP_TRAIT_WARYOFTRAPS
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_ZOZRIDOR_SLAYKE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_ZOZRIDOR_SLAYKE_CR90
+		TEXT_TOOLTIP_COMMAND_ZOZRIDOR_SLAYKE_CARRACK
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+
+	</DummyStructure>
+
+	<DummyStructure Name="Zozridor_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ZOZRIDOR_SLAYKE</Text_ID>
+		<Icon_Name>I_BUTTON_ZOZRIDOR_SLAYKE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Zozridor_Slayke_CR90</Required_Orbiting_Units>
+	</DummyStructure>
+
+	<DummyStructure Name="Zozridor_Retire2">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ZOZRIDOR_SLAYKE</Text_ID>
+		<Icon_Name>I_BUTTON_ZOZRIDOR_SLAYKE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Zozridor_Slayke_Carrack</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Giddean_Danu">
@@ -11966,7 +12533,7 @@
 		<Required_Special_Structures></Required_Special_Structures>
 		<Required_Planets></Required_Planets>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Giddean</Company_Transport_Unit>
 		<Company_Units>Giddean_Danu</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Encyclopedia_Text>
@@ -11986,6 +12553,45 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Giddean">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Giddean_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Giddean_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<DummyStructure Name="Giddean_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDDEAN_DANU</Text_ID>
+		<Icon_Name>i_button_giddean_danu.tga</Icon_Name>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_ADMIN4
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_GIDDEAN_DANU
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+
+	</DummyStructure>
+
+	<DummyStructure Name="Giddean_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDDEAN_DANU</Text_ID>
+		<Icon_Name>i_button_giddean_danu.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Giddean</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Ottegru_Grey">
@@ -12161,7 +12767,7 @@
 		<Required_Special_Structures></Required_Special_Structures>
 		<Required_Planets></Required_Planets>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Ottegru_Grey</Company_Transport_Unit>
 		<Company_Units>Ottegru_Grey</Company_Units>
 		<Is_Homogeneous>No</Is_Homogeneous>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -12188,6 +12794,44 @@
 		
 		<Play_SFXEvent_On_Sighting>True</Play_SFXEvent_On_Sighting>
 	</HeroCompany>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ottegru_Grey">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Ottegru_Grey_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ottegru_Grey_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<DummyStructure Name="Ottegru_Grey_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_OTTEGRU_GREY</Text_ID>
+		<Icon_Name>I_BUTTON_OTTEGRU_GREY.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_STEALTH
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_OTTEGRU_GREY
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Ottegru_Grey_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_OTTEGRU_GREY</Text_ID>
+		<Icon_Name>I_BUTTON_OTTEGRU_GREY.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Ottegru_Grey</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Onara_Kuat">
@@ -12309,6 +12953,39 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<DummyStructure Name="Onara_Kuat_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ONARA_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_ONARA_KUAT.tga</Icon_Name>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_KUAT_OF_KUAT
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_ONARA_KUAT
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_ONARA_KUAT_POTC
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+
+	</DummyStructure>
+
+	<DummyStructure Name="Onara_Kuat_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ONARA_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_ONARA_KUAT.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Onara</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<UniqueUnit Name="Onara_Kuat_Mandator">
@@ -12420,7 +13097,7 @@
 
 		<Text_ID>TEXT_TOOLTIP_COMMAND_ONARA_KUAT</Text_ID>
 		<Affiliation>Empire</Affiliation>
-		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
 		<Icon_Name>I_BUTTON_ONARA_KUAT_SSD.tga</Icon_Name>
 
 		<Encyclopedia_Text> 
@@ -12509,6 +13186,40 @@
 		</Abilities>
 
 	</UniqueUnit>
+	
+	<DummyStructure Name="Kuat_of_Kuat_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KUAT_OF_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_KUAT_OF_KUAT.tga</Icon_Name>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_KUAT_OF_KUAT
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_KUAT_OF_KUAT
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_KUAT_OF_KUAT
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+
+	</DummyStructure>
+
+	<DummyStructure Name="Kuat_of_Kuat_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KUAT_OF_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_KUAT_OF_KUAT.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Kuat_of_Kuat_Procurator</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<!-- Order 65 -->
 
@@ -12567,7 +13278,7 @@
 	</HeroUnit>
 
 	<HeroCompany Name="Mon_Mothma_Team">
-		<Text_ID>TEXT_HERO_MON_MOTHMA</Text_ID>
+		<Text_ID>TEXT_HERO_MON_MOTHMA_TEAM</Text_ID>
 		<Icon_Name>i_button_mon_mothma_cw.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Affiliation>Empire</Affiliation>
@@ -12600,7 +13311,15 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
-	
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Mon_Mothma">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Mon_Mothma_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Mon_Mothma_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
 	<DummyStructure Name="Mon_Mothma_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
 		
@@ -12612,6 +13331,8 @@
 		TEXT_TOOLTIP_TRAIT_ADMIN2
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_MON_MOTHMA_01
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_ELITE_GUARD_VWING_OVERRIDE
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
@@ -12641,12 +13362,16 @@
 		<GUI_Row> 1 </GUI_Row>
 		
 		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
 		TEXT_TOOLTIP_TRAIT_INDECISIVE 
 		TEXT_TOOLTIP_TRAIT_ADMIN2
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_PESTAGE_CW
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_ELITE_GUARD_VWING_OVERRIDE
 		</Encyclopedia_Text>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
 		
 		<Tech_Level>0</Tech_Level>
 		<Affiliation>Empire</Affiliation>
@@ -12842,6 +13567,14 @@
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
+	
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Bail">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Bail_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Bail_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
 	
 	<DummyStructure Name="Bail_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
@@ -13083,5 +13816,1190 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+
+	<!-- Extra Clones -->
+	
+	<!-- Generic clone subhero carbine stats for Cutup -->
+	<HeroUnit Name="Cutup_Rookie">
+		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Land_Model_Name>clone_phase1.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>TrainedInfantry.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>i_button_clonep1.tga</Icon_Name>
+
+		<Text_ID>Cutup</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		A member of Domino Squad，Cutup was trained on the
+		planet Kamino before being stationed on a listening
+		post on the Rishi Moon. When Rishi Station was attacked
+		by Separatist commando droids，the troopers were forced
+		to evacuate. During the escape，Cutup was attacked and
+		eaten by a giant Rishi eel.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 115 (Hero)
+		TEXT_TOOLTIP_FIVES_P1_MOVE
+		TEXT_TOOLTIP_FIVES_WEAP1
+		TEXT_TOOLTIP_FIVES_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ROOKIE </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 255, 255, 255, 255 </No_Colorization_Color>
+
+		<Tactical_Health>115</Tactical_Health>
+		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<OverrideAcceleration> 1.0 </OverrideAcceleration>
+		<OverrideDeceleration> 1.0 </OverrideDeceleration>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Scale_Factor>1.1</Scale_Factor>
+		<Affiliation>Empire</Affiliation>
+
+		<Land_FOW_Reveal_Range>400.00</Land_FOW_Reveal_Range>
+
+		<HardPoints>HP_Hero_Clone_Carbine</HardPoints>
+
+		<!-- Grenade throw -->
+		<Projectile_Types>HeroProj_Thrown_Ion_Grenade</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>15.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 8 </Projectile_Appearance_Delay_Frames>
+
+		<SFXEvent_Select>Unit_Select_Clone_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Clone_Trooper</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Clone_Trooper</SFXEvent_Attack>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Clone_Trooper </SFXEvent_Assist_Move>
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Assist_Attack>
+		<SFXEvent_Guard>Unit_Guard_Clone_Trooper</SFXEvent_Guard>
+
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_ARC_Trooper </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<Death_SFXEvent_Start_Die>Unit_Death_Clone_Trooper</Death_SFXEvent_Start_Die>
+		<Death_Clone>Damage_Normal</Death_Clone>
+       	<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<AI_Combat_Power>34</AI_Combat_Power>
+
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+				<Expiration_Seconds> 8.0 </Expiration_Seconds>
+				<Recharge_Seconds> 45.0 </Recharge_Seconds>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 2.0f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.75f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated></SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</HeroUnit>
+
+	<!-- Generic clone subhero rifle stats for Droidbait -->
+	<HeroUnit Name="Droidbait_Rookie">
+		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Land_Model_Name>clone_phase1.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>TrainedInfantry.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>i_button_clone_p1.tga</Icon_Name>
+
+		<Text_ID>Droidbait</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		A member of Domino Squad，Droidbait was stationed at an
+		outpost on the Rishi moon. After the station's deck
+		officer turned up missing，Sergeant O'Niner sent
+		Droidbait and Nub to investigate. Opening the blast
+		door， commando droids attacked and killed them both and
+		O'Niner，forcing the rest of the clones to escape
+		through the ventilation systems.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 105 (Hero)
+		TEXT_TOOLTIP_ECHO_P1_MOVE
+		TEXT_TOOLTIP_ECHO_WEAP1
+		TEXT_TOOLTIP_ECHO_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ROOKIE </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 255, 255, 255, 255 </No_Colorization_Color>
+
+		<Tactical_Health>105</Tactical_Health>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<OverrideAcceleration> 1.0 </OverrideAcceleration>
+		<OverrideDeceleration> 1.0 </OverrideDeceleration>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Scale_Factor>1.1</Scale_Factor>
+		<Affiliation>Empire</Affiliation>
+
+		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>300.0</Targeting_Max_Attack_Distance>
+
+		<HardPoints>HP_Hero_Clone_Rifle</HardPoints>
+
+		<!-- Grenade throw -->
+		<Projectile_Types>HeroProj_Thrown_Thermal_Grenade</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>15.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 8 </Projectile_Appearance_Delay_Frames>
+		<SFXEvent_Fire>Unit_Grenade_Throw</SFXEvent_Fire>
+
+		<SFXEvent_Select>Unit_Select_Clone_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Clone_Trooper</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Clone_Trooper</SFXEvent_Attack>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Clone_Trooper </SFXEvent_Assist_Move>
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Assist_Attack>
+		<SFXEvent_Guard>Unit_Guard_Clone_Trooper</SFXEvent_Guard>
+
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_ARC_Trooper </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<Death_SFXEvent_Start_Die>Unit_Death_Clone_Trooper</Death_SFXEvent_Start_Die>
+		<Death_Clone>Damage_Normal</Death_Clone>
+       	<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<AI_Combat_Power>35</AI_Combat_Power>
+
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+				<Expiration_Seconds> 8.0 </Expiration_Seconds>
+				<Recharge_Seconds> 45.0 </Recharge_Seconds>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 2.0f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.75f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated></SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</HeroUnit>
+	
+	<HeroCompany Name="Domino_Squad_Team">
+		<Text_ID>Domino Squad</Text_ID>
+		<Icon_Name>i_button_fives.tga</Icon_Name>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Domino Squad was a military unit of clone trooper
+		cadets stationed on the planet Kamino. After an early
+		graduation，they were tasked at guarding Rishi Station
+		on the Rishi Moon，a strategic point on a route to
+		Kamino. Although most of the squad perished defending
+		the base，the survivors "Echo" and "Fives" were later
+		absorbed into the 501st Legion.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_FIVES_P1_HEALTH
+		TEXT_TOOLTIP_FIVES_P1_MOVE
+		TEXT_TOOLTIP_FIVES_WEAP1
+		TEXT_TOOLTIP_FIVES_WEAP2
+		TEXT_TOOLTIP_ECHO_WEAP1
+		TEXT_TOOLTIP_ECHO_WEAP2
+		TEXT_TOOLTIP_HEVY_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_INFANTRY </Encyclopedia_Unit_Class>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>80</Damage>
+		<Is_Homogeneous>No</Is_Homogeneous>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Affiliation>Empire</Affiliation>
+
+		<Build_Cost_Credits>1500</Build_Cost_Credits>
+		<Required_Planets>Kamino, Rishi</Required_Planets>
+		<Tech_Level>0</Tech_Level>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Special_Structures>Story_Category_Dummy</Required_Special_Structures>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Domino</Company_Transport_Unit>
+		<Company_Units>Fives_Rookie, Echo_Rookie, Hevy_Rookie, Cutup_Rookie, Droidbait_Rookie</Company_Units>
+		<Max_Squad_Size> 1 </Max_Squad_Size>
+		<Formation_Priority>2</Formation_Priority>
+
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<Available_In_Skirmish>No</Available_In_Skirmish>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+
+		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>		
+		<SFXEvent_Build_Complete>Unit_Select_Clone_Trooper</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Select_Clone_Trooper</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<CategoryMask> LandHero </CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Population_Value>2</Population_Value>
+
+		<Unit_Abilities_Data SubObjectList="Yes"> </Unit_Abilities_Data>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>165</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Domino">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Domino_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Domino_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+
+	<HeroUnit Name="Keeli">
+		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Land_Model_Name>Clone_captain_Deviss_phase1.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>TrainedHero.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>i_button_voca.tga</Icon_Name>
+
+		<Text_ID>Captain Keeli</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Keeli was a clone trooper captain who was assigned to
+		the Outer Rim garrison，under the command of Jedi
+		General Ima-Gun Di. During the Battle of Ryloth，he led
+		the Galactic Republic's Outer Rim garrison against the
+		Confederacy of Independent Systems. In a final last
+		stand，Keeli and his men fought valiantly，but the clones
+		were quickly overwhelmed. After surviving a thermal
+		detonator blast，Keeli managed to shoot down a number
+		of droids before two blaster bolts hit him in the chest.
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 125 (Hero)
+		TEXT_TOOLTIP_REX_P1_MOVE
+		TEXT_TOOLTIP_REX_WEAP1
+		TEXT_TOOLTIP_REX_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 120, 70, 46, 255 </No_Colorization_Color>
+
+		<Tactical_Health>125</Tactical_Health>
+		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<OverrideAcceleration> 1.0 </OverrideAcceleration>
+		<OverrideDeceleration> 1.0 </OverrideDeceleration>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Scale_Factor>1.1</Scale_Factor>
+		<Affiliation>Empire</Affiliation>
+
+		<Land_FOW_Reveal_Range>400.00</Land_FOW_Reveal_Range>
+
+		<HardPoints>HP_Hero_Clone_Carbine</HardPoints>
+
+		<!-- Grenade throw -->
+		<Projectile_Types>HeroProj_Thrown_Ion_Grenade</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>15.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 8 </Projectile_Appearance_Delay_Frames>
+
+		<SFXEvent_Select>Unit_Select_Clone_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Clone_Trooper</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Clone_Trooper</SFXEvent_Attack>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Clone_Trooper </SFXEvent_Assist_Move>
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Assist_Attack>
+		<SFXEvent_Guard>Unit_Guard_Clone_Trooper</SFXEvent_Guard>
+
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_ARC_Trooper </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<Death_SFXEvent_Start_Die>Unit_Death_Clone_Trooper</Death_SFXEvent_Start_Die>
+		<Death_Clone>Damage_Normal</Death_Clone>
+       	<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<AI_Combat_Power>34</AI_Combat_Power>
+
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+		
+		<Starting_Spawned_Units_Tech_0>Clonetrooper_Phase_One_Team_Deployed, 4</Starting_Spawned_Units_Tech_0>
+
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPREAD_OUT</Type>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 0.5f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.80f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated> Unit_Take_Cover_Alpha_17 </SFXEvent_GUI_Unit_Ability_Activated>				
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Abilities SubObjectList="Yes">
+			<Combat_Bonus_Ability Name="Keeli_Ground_Combat_Bonus">
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.0</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.0</Damage_Bonus_Percentage>    
+				<Shield_Bonus_Percentage>0.0</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.05</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.0</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+		</Abilities>
+	</HeroUnit>
+
+	<HeroCompany Name="Keeli_Team">
+		<Text_ID>Captain Keeli</Text_ID>
+		<Icon_Name>i_button_voca.tga</Icon_Name>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>850</Build_Cost_Credits>
+		<Build_Time_Seconds>0</Build_Time_Seconds>
+		<Tech_Level>99</Tech_Level>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures></Required_Special_Structures>
+		<Required_Planets></Required_Planets>
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Keeli</Company_Transport_Unit>
+		<Company_Units>Keeli</Company_Units>
+		<Is_Homogeneous>No</Is_Homogeneous>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<CategoryMask>LandHero</CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Score_Cost_Credits> 18000 </Score_Cost_Credits>
+		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>		
+		<SFXEvent_Build_Complete>Unit_Respawn_Veers</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Respawn_Veers</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>EHD_Reinforcements_En_Route</SFXEvent_Fleet_Move>
+		
+		
+		<Population_Value>1</Population_Value>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>860</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>9</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>   
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Keeli was a clone trooper captain who was assigned to
+		the Outer Rim garrison，under the command of Jedi
+		General Ima-Gun Di. During the Battle of Ryloth，he led
+		the Galactic Republic's Outer Rim garrison against the
+		Confederacy of Independent Systems. In a final last
+		stand，Keeli and his men fought valiantly，but the clones
+		were quickly overwhelmed. After surviving a thermal
+		detonator blast，Keeli managed to shoot down a number
+		of droids before two blaster bolts hit him in the chest
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 105 (Hero)
+		TEXT_TOOLTIP_REX_P1_MOVE
+		TEXT_TOOLTIP_REX_WEAP1
+		TEXT_TOOLTIP_REX_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
+		
+		<Play_SFXEvent_On_Sighting>True</Play_SFXEvent_On_Sighting>
+	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Keeli">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Keeli_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Keeli_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Keeli_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>Captain Keeli</Text_ID>
+		<Icon_Name>i_button_voca.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_ASSIGN_REPUBLIC_CLONE
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Keeli was a clone trooper captain who was assigned to
+		the Outer Rim garrison，under the command of Jedi
+		General Ima-Gun Di. During the Battle of Ryloth，he led
+		the Galactic Republic's Outer Rim garrison against the
+		Confederacy of Independent Systems. In a final last
+		stand，Keeli and his men fought valiantly，but the clones
+		were quickly overwhelmed. After surviving a thermal
+		detonator blast，Keeli managed to shoot down a number
+		of droids before two blaster bolts hit him in the chest
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Keeli_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>Captain Keeli</Text_ID>
+		<Icon_Name>i_button_voca_retire.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_CLONE
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Keeli</Required_Orbiting_Units>
+	</DummyStructure>
+
+	<!-- Extra Jedi -->
+
+	<HeroUnit Name="Ima_Gun_Di">
+		<LOD_Bias>5</LOD_Bias>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
+		<Text_ID>TEXT_HERO_IMAGUNDI</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND5_LAND
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_IMAGUNDI
+		In his last moments，Di and Captain Keeli held out
+		alone trying to make their last moments memorable ones.
+		Hearing that the supplies had arrived，Di was pleased
+		to know that his sacrifice to save the Twi'leks had not
+		been in vain.
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_DELTA7_FIGHTER
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 130 (Hero)
+		TEXT_TOOLTIP_LORKA_GEDYC_MOVE   <!--1.1-->
+		TEXT_TOOLTIP_KNOL_VENNARI_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_JEDI_MASTER </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_ima_gun_di.tga</Icon_Name>
+		
+		<Land_Model_Name>Rep_PloKoon.ALO</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>RobedJedi.alo</Land_Model_Anim_Override_Name>
+
+		<GalacticBehavior> SELECTABLE </GalacticBehavior>
+		<LandBehavior>SELECTABLE, SURFACE_FX, WALK_LOCOMOTOR, IDLE, REVEAL, HIDE_WHEN_FOGGED, TARGETING, WEAPON, DAMAGE_TRACKING, UNIT_AI, ABILITY_COUNTDOWN, HOLSTER_WEAPON, GARRISON_UNIT </LandBehavior>
+
+		<Garrison_Category> Infantry </Garrison_Category>
+		<SurfaceFX_Name>Generic_Footprint, Infantry_Terrain_Modifier</SurfaceFX_Name>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Is_Visible_On_Enemy_Radar>Yes</Is_Visible_On_Enemy_Radar>
+		<Loop_Idle_Anim_00>No</Loop_Idle_Anim_00>
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<CanCellStack>yes</CanCellStack>
+		<Mass>1.0</Mass>
+		<Occlusion_Silhouette_Enabled>1</Occlusion_Silhouette_Enabled>
+		<Unique_Space_Unit>Ima_Gun_Di_Delta_2</Unique_Space_Unit>
+		
+		<Movement_Animation_Speed> 1.0 </Movement_Animation_Speed>
+		<Max_Speed>1.1</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<Custom_Soft_Footprint_Radius> 6.5 </Custom_Soft_Footprint_Radius>
+		<Custom_Hard_XExtent> 2.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 2.0 </Custom_Hard_YExtent>
+		<Space_Layer> Land </Space_Layer>
+		<UnitCollisionClass> Infantry </UnitCollisionClass>
+		<FormationSpacing> .5 </FormationSpacing>
+		<MinimumPushReturnDistance> 10 </MinimumPushReturnDistance>
+		<Min_Speed> .1 </Min_Speed>
+		<OverrideAcceleration> 1.1 </OverrideAcceleration>
+		<OverrideDeceleration> 1.1 </OverrideDeceleration>
+
+		<SFXEvent_Engine_Idle_Loop> Unit_Obiwan_Lightsaber_Idle_Loop </SFXEvent_Engine_Idle_Loop>
+		<SFXEvent_Engine_Moving_Loop> Unit_Obiwan_Lightsaber_Moving_Loop </SFXEvent_Engine_Moving_Loop>
+		<SFXEvent_Engine_Cinematic_Focus_Loop> Unit_Obiwan_Lightsaber_Cinematic_Loop </SFXEvent_Engine_Cinematic_Focus_Loop>
+		
+		<SFXEvent_Hardpoint_Destroyed>HARD_POINT_WEAPON_LASER, null</SFXEvent_Hardpoint_Destroyed>
+
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+		<Scale_Factor>1.1</Scale_Factor>
+		<Type>Walk</Type>
+		<Deploys>No</Deploys>
+		<Affiliation>Empire</Affiliation>
+		<Size_Value>10</Size_Value>
+		<Sensor_Range>20</Sensor_Range>
+		<Shield_Points>0</Shield_Points>
+		<Tactical_Health>130</Tactical_Health>
+		<Autoresolve_Health>120</Autoresolve_Health>
+		<Damage>100</Damage>
+		<Stealth_Capable>No</Stealth_Capable>
+		<Victory_Relevant>yes</Victory_Relevant>
+
+		<Armor_Type> ArmourG_Hero </Armor_Type>
+		
+		<Is_Stationary_When_Attacking>Yes</Is_Stationary_When_Attacking>
+		<Projectile_Types> Proj_Lightsaber </Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>0.2</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Appearance_Delay_Frames> 20 </Projectile_Appearance_Delay_Frames>
+
+		<Targeting_Fire_Inaccuracy> Infantry, 0.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Vehicle, 0.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Air, 0.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Structure, 0.0 </Targeting_Fire_Inaccuracy>
+
+		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
+		<Dense_FOW_Reveal_Range_Multiplier>1.0</Dense_FOW_Reveal_Range_Multiplier>
+		<Targeting_Max_Attack_Distance>25.0</Targeting_Max_Attack_Distance>
+		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
+
+		<SFXEvent_Select></SFXEvent_Select>
+		<SFXEvent_Move></SFXEvent_Move>
+		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
+		<SFXEvent_Attack></SFXEvent_Attack>
+		<SFXEvent_Guard></SFXEvent_Guard>
+		<SFXEvent_Group_Move></SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack></SFXEvent_Group_Attack>
+		<SFXEvent_Health_Low_Warning></SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Plo_Koon </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Die_Plo_Koon </Death_SFXEvent_Start_Die>
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Kit_Fisto </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled </SFXEvent_Tactical_Build_Cancelled>
+
+		<Play_SFXEvent_On_Sighting>True</Play_SFXEvent_On_Sighting>
+
+		<CategoryMask> LandHero </CategoryMask>
+		<Ranking_In_Category> 2 </Ranking_In_Category>
+		<MovementClass>Infantry</MovementClass>
+		<OccupationStyle>1x1</OccupationStyle>
+		<Blob_Shadow_Below_Detail_Level>3</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>5.0, 5.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+		<Blob_Shadow_Bone_Name>B_Chest</Blob_Shadow_Bone_Name>
+		<Ground_Infantry_Turret_Target> Yes </Ground_Infantry_Turret_Target>
+		<Attach_To_Flagship_During_Space_Battle>No</Attach_To_Flagship_During_Space_Battle>
+		<Stay_In_Transport_During_Ground_Battle>No</Stay_In_Transport_During_Ground_Battle>
+
+		<Select_Box_Scale>27</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+		
+		<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<Has_Land_Evaluator>True</Has_Land_Evaluator>
+		<AI_Combat_Power>217</AI_Combat_Power>
+		<Idle_Chase_Range>100.0</Idle_Chase_Range>
+		<Guard_Chase_Range>200.0</Guard_Chase_Range>
+		<Attack_Move_Response_Range>300.0</Attack_Move_Response_Range>
+		<Targeting_Stickiness_Time_Threshold>5.0</Targeting_Stickiness_Time_Threshold>
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+		<Autonomous_Move_Extension_Vs_Attacker>200.0</Autonomous_Move_Extension_Vs_Attacker>
+
+		<Neutralization_Cost>3000.0</Neutralization_Cost>
+
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Death_Persistence_Duration>5.0</Death_Persistence_Duration>
+		<Death_Fade_Time>0.25</Death_Fade_Time>
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<Target_Stealth_Units>Yes</Target_Stealth_Units>
+		
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+				<Expiration_Seconds> 8.0 </Expiration_Seconds>
+				<Recharge_Seconds> 45.0 </Recharge_Seconds>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 2.0f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.75f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated></SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Abilities SubObjectList="Yes">
+		
+			<Combat_Bonus_Ability Name="Ima_Gun_Di_Ground_Combat_Bonus">
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.05</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.05</Damage_Bonus_Percentage>    
+				<Shield_Bonus_Percentage>0.00</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.00</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.1</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+		
+			<Earthquake_Attack_Ability Name="Ima_Gun_Di_Attack_Structures">
+				<Activation_Style>Special_Attack</Activation_Style>
+				<Terminate_Effect_On_Move_Command>Yes</Terminate_Effect_On_Move_Command>
+				<Activation_Min_Range>0.0</Activation_Min_Range>
+				<Activation_Max_Range>120.0</Activation_Max_Range>
+				<Activation_Chance>1.0</Activation_Chance>
+				<Damage_Amount>0.0</Damage_Amount>
+				<Damage_Percentage>0.02</Damage_Percentage>
+				<Damage_Interval_In_Secs>0.5</Damage_Interval_In_Secs>
+				<!-- Note: As well as matching the below Unit_Category/Unit_Type filters, the -->
+				<!-- target object must also have the EARTHQUAKE_TARGET behavior attached. -->
+				<Applicable_Unit_Categories>Structure</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<SFXEvent_Activate />
+				<Target_Particle_Effect>Earthquake_Dust_Particles</Target_Particle_Effect>
+				<Target_Particle_Bone_Name />
+			</Earthquake_Attack_Ability>
+
+			<Redirect_Blaster_Ability Name="Ima_Gun_Di_Redirect_Blaster">
+				<Activation_Style>Take_Damage</Activation_Style>
+				<!-- Redirection chance is rolled first. If failed, we roll block chance. If failed, we take the damage. -->
+				<Redirect_Chance>0.5</Redirect_Chance>
+				<Block_Chance>0.8</Block_Chance>
+				<Reaction_Arc_In_Degrees>180.0</Reaction_Arc_In_Degrees>
+				<Max_Projectile_Redirection_Angle_In_Degrees> 135.0 </Max_Projectile_Redirection_Angle_In_Degrees>
+				<Turn_To_Face_Unblockable_Shots>No</Turn_To_Face_Unblockable_Shots>
+				<!-- We can block/redirect shots from the following units types: -->
+				<Applicable_Unit_Categories> Infantry | LandHero</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<SFXEvent_Activate>Unit_Lightsaber_Projectile_Block</SFXEvent_Activate>
+			</Redirect_Blaster_Ability>
+			
+			<Absorb_Blaster_Ability Name="Ima_Gun_Di_Absorb_Blaster">
+				<Activation_Style>Take_Damage</Activation_Style>
+				<Absorb_Chance>0.2</Absorb_Chance>
+				<!-- Absorb Percentage and Amount work together in the following way: -->
+				<!-- Actual Amount healed = (Projectile Damage * Absorb Percentage) + Absorb Amount -->
+				<!-- Either value can be zero, but at least one should be non-zero. -->
+				<Damage_Absorb_Percentage>0.2</Damage_Absorb_Percentage>
+				<Damage_Absorb_Amount>1</Damage_Absorb_Amount>
+				<!-- We can absorb shots from the following units types (but no missiles or grenades): -->
+				<Applicable_Unit_Categories>Infantry | LandHero</Applicable_Unit_Categories>
+				<Applicable_Unit_Types></Applicable_Unit_Types>
+				<SFXEvent_Activate>Unit_Force_Absorb</SFXEvent_Activate>
+				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
+				<Owner_Light_Effect_Color>2.0, 0.4, 0.4</Owner_Light_Effect_Color>
+				<Owner_Light_Effect_Color2></Owner_Light_Effect_Color2>
+				<Owner_Light_Effect_Duration>0.5</Owner_Light_Effect_Duration>
+				<Owner_Light_Effect_Pulse_Count></Owner_Light_Effect_Pulse_Count>
+			</Absorb_Blaster_Ability>
+			
+			<Force_Healing_Ability Name="Ima_Gun_Di_Self_Heal">
+
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<Heal_Range>5.0</Heal_Range>
+				<Heal_Amount> 0.0 </Heal_Amount>
+				<Heal_Percent> 0.02 </Heal_Percent>
+				<Heal_Interval_In_Secs>5.0</Heal_Interval_In_Secs>
+				<Single_Target_Heal>Yes</Single_Target_Heal>
+
+				<Applicable_Unit_Categories />
+				<Applicable_Unit_Types>Ima_Gun_Di</Applicable_Unit_Types>
+				<Excluded_Unit_Types />
+				
+				<SFXEvent_Target_Affected>Unit_Force_Healing_Pulse</SFXEvent_Target_Affected>
+				<Target_Particle_Bone_Name>B_HEAD</Target_Particle_Bone_Name>
+				<Target_Light_Effect_Type>Color_Flash</Target_Light_Effect_Type>
+				<Target_Light_Effect_Color>1.2, 2.0, 1.2</Target_Light_Effect_Color>
+				<Target_Light_Effect_Color2 />
+				<Target_Light_Effect_Duration>0.6</Target_Light_Effect_Duration>
+				<Target_Light_Effect_Pulse_Count>1</Target_Light_Effect_Pulse_Count>
+				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
+				<Owner_Light_Effect_Color>1.2, 2.0, 1.2</Owner_Light_Effect_Color>
+				<Owner_Light_Effect_Color2 />
+				<Owner_Light_Effect_Duration>0.6</Owner_Light_Effect_Duration>
+				<Owner_Light_Effect_Pulse_Count>1</Owner_Light_Effect_Pulse_Count>
+			</Force_Healing_Ability>
+
+			<Berserker_Ability Name="Ima_Gun_Di_Force_Attack">
+				<Activation_Style> Special_Attack </Activation_Style>
+				<Activation_Min_Range>0.0</Activation_Min_Range>
+				<Activation_Max_Range>120.0</Activation_Max_Range>
+				<Berserker_Speed>2.0</Berserker_Speed>
+				<Berserker_Damage>20.0</Berserker_Damage>
+				<Berserker_Damage_Range>12.0</Berserker_Damage_Range>
+				<Berserker_Duration_In_Secs>4.0</Berserker_Duration_In_Secs>
+				<Applicable_Unit_Categories>Infantry</Applicable_Unit_Categories>
+			</Berserker_Ability>
+			
+			<Battlefield_Modifier_Ability Name="Ima_Gun_Di_FOW_Increase">
+				<Initially_Enabled>Yes</Initially_Enabled>
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<FOW_Reveal_Range_Multiplier>1.3</FOW_Reveal_Range_Multiplier>
+				<Apply_To_All_Allies>Yes</Apply_To_All_Allies>
+				<Stacking_Category>0</Stacking_Category>
+			</Battlefield_Modifier_Ability>
+			
+			<Battlefield_Modifier_Ability Name="Ima_Gun_Di_FOW_Increase2">
+				<Initially_Enabled>Yes</Initially_Enabled>
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<FOW_Reveal_Range_Multiplier>1.3</FOW_Reveal_Range_Multiplier>
+				<Apply_To_All_Allies>Yes</Apply_To_All_Allies>
+				<Stacking_Category>0</Stacking_Category>
+			</Battlefield_Modifier_Ability>
+		</Abilities>
+
+	</HeroUnit>
+	
+	<UniqueUnit Name="Ima_Gun_Di_Delta_2">
+		<Variant_Of_Existing_Type>Ima_Gun_Di_Delta</Variant_Of_Existing_Type>
+		
+		<Hyperspace>Yes</Hyperspace>
+		<Hyperspace_Speed>1.5</Hyperspace_Speed>
+		
+		<SFXEvent_Select></SFXEvent_Select>
+		<SFXEvent_Move></SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Plo_Koon</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack></SFXEvent_Attack>
+		<SFXEvent_Guard></SFXEvent_Guard>
+		<SFXEvent_Group_Move></SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack></SFXEvent_Group_Attack>
+		<SFXEvent_Move_Into_Asteroid_Field></SFXEvent_Move_Into_Asteroid_Field>
+		<SFXEvent_Move_Into_Nebula></SFXEvent_Move_Into_Nebula>
+		<SFXEvent_Health_Low_Warning></SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Plo_Koon </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Die_Plo_Koon </Death_SFXEvent_Start_Die>
+
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> </SFXEvent_Attack_Hardpoint>
+
+		<Create_Team>No</Create_Team>
+		<Damage>1</Damage>
+		<AI_Combat_Power>80</AI_Combat_Power>
+		<Population_Value>0</Population_Value>
+		<Landing_Transport_Variant>Ima_Gun_Di_Delta_Landing</Landing_Transport_Variant>
+	</UniqueUnit>
+
+	<TransportUnit Name="Ima_Gun_Di_Delta_Landing">
+		<Variant_Of_Existing_Type>Ima_Gun_Di_Delta_2</Variant_Of_Existing_Type>
+		<Land_Model_Name>rep_delta7_lander.alo</Land_Model_Name> <!-- placeholder -->
+		<Behavior>TRANSPORT</Behavior>
+		<Scale_Factor>1.0</Scale_Factor>
+		<LandBehavior>HIDE_WHEN_FOGGED</LandBehavior>
+		<Is_Valid_Target>No</Is_Valid_Target>
+		<User_Bound_Min>-700, -700, 0</User_Bound_Min>
+		<User_Bound_Max>700, 700, 1500</User_Bound_Max>
+		<Has_Space_Evaluator>False</Has_Space_Evaluator>
+		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
+		<UnitCollisionClass>Landing Transport</UnitCollisionClass>
+	</TransportUnit>
+
+	<HeroCompany Name="Ima_Gun_Di_Team">
+		<LOD_Bias>5</LOD_Bias>
+		<Text_ID>TEXT_HERO_IMAGUNDI</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_IMAGUNDI
+		In his last moments，Di and Captain Keeli held out alone
+		trying to make their last moments memorable ones.
+		Hearing that the supplies had arrived，Di was pleased to
+		know that his sacrifice to save the Twi'leks had not
+		been in vain.
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_DELTA7_FIGHTER
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 130 (Hero)
+		TEXT_TOOLTIP_LORKA_GEDYC_MOVE   <!--1.1-->
+		TEXT_TOOLTIP_KNOL_VENNARI_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_JEDI_MASTER </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_ima_gun_di.tga</Icon_Name>
+
+		<Build_Time_Seconds>15</Build_Time_Seconds>
+		<Tech_Level>99</Tech_Level>
+		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+
+		<Required_Special_Structures></Required_Special_Structures>
+		<Required_Planets></Required_Planets>
+		<Build_Cost_Credits> 2000 </Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Ima_Gun_Di_Delta_2</Company_Transport_Unit>
+		<Company_Units>Ima_Gun_Di</Company_Units>
+		<Max_Squad_Size> 1 </Max_Squad_Size>
+		
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
+		<Available_In_Skirmish>yes</Available_In_Skirmish>
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+		<Is_Buildable>Yes</Is_Buildable>
+
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>50</Damage>
+		<Affiliation>Empire</Affiliation>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+
+		<SFXEvent_Build_Started>RHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>RHD_Request_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned></SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Plo_Koon</SFXEvent_Fleet_Move>
+
+		<CategoryMask>LandHero</CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Population_Value>1</Population_Value>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->
+		<Tactical_Build_Cost_Multiplayer>1215</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>13</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+	</HeroCompany>
+
+	<DummyStructure Name="Ima_Gun_Di_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_IMAGUNDI</Text_ID>
+		<Icon_Name>i_button_ima_gun_di.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_ASSIGN_REPUBLIC_COUNCIL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_IMAGUNDI
+		In his last moments，Di and Captain Keeli held out alone
+		trying to make their last moments memorable ones.
+		Hearing that the supplies had arrived，Di was pleased to
+		know that his sacrifice to save the Twi'leks had not
+		been in vain.
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_DELTA7_FIGHTER
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Ima_Gun_Di_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_IMAGUNDI</Text_ID>
+		<Icon_Name>i_button_ima_gun_di.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Ima_Gun_Di_Delta_2</Required_Orbiting_Units>
+	</DummyStructure>
+
+
+	<DummyStructure Name="Obi_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_OBI_WAN_KENOBI</Text_ID>
+		<Icon_Name>i_button_obiwan.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Complete_ObiWan </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_ASSIGN_REPUBLIC_COUNCIL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND3_LANDSPACE
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_OBI_WAN_KENOBI
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_LEGIONS_OBI_WAN
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Obi_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_OBI_WAN_KENOBI</Text_ID>
+		<Icon_Name>i_button_obiwan.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Obi_Wan_Delta</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<DummyStructure Name="Obi_Retire2">
+		<Variant_Of_Existing_Type>Obi_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_OBI_WAN_KENOBI</Text_ID>
+		<Icon_Name>i_button_obiwan.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Obi_Wan_Eta</Required_Orbiting_Units>
+	</DummyStructure>
+	
+
+	<DummyStructure Name="Anakin_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ANAKIN</Text_ID>
+		<Icon_Name>i_button_anakin.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Complete_Anakin_Skywalker </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_ASSIGN_REPUBLIC_COUNCIL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND4_LANDSPACE
+		TEXT_TOOLTIP_TRAIT_ACEPILOT
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_ANAKIN
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_LEGIONS_ANAKIN
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Anakin_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ANAKIN</Text_ID>
+		<Icon_Name>i_button_anakin.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Anakin_Delta</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<DummyStructure Name="Anakin_Retire2">
+		<Variant_Of_Existing_Type>Anakin_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ANAKIN</Text_ID>
+		<Icon_Name>i_button_anakin.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Anakin_Eta</Required_Orbiting_Units>
+	</DummyStructure>
+
+	<!-- Anakin Ahsoka Twilight -->
+
+	<DummyStructure Name="Join_Anakin_Ahsoka">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ANAKIN_AHSOKA</Text_ID>
+		<Icon_Name>i_button_anakin_ahsoka.tga</Icon_Name>
+		
+		<GUI_Row> 1 </GUI_Row>
+		
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		Join Anakin and Ahsoka to the Twilight
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND4_LANDSPACE
+		TEXT_TOOLTIP_TRAIT_ACEPILOT
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_TWILIGHT
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_TWILIGHT
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_LEGIONS_ANAKIN
+		</Encyclopedia_Text>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+		
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		
+		<SFXEvent_Build_Started></SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled></SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Complete_Anakin_Ahsoka</SFXEvent_Build_Complete>
+		
+		<Build_Cost_Credits>200</Build_Cost_Credits>
+		<Build_Time_Seconds>5</Build_Time_Seconds>
+
+		<Required_Orbiting_Units>Anakin_Delta, Ahsoka_Delta</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<DummyStructure Name="Join_Anakin_Ahsoka2">
+		<Variant_Of_Existing_Type>Join_Anakin_Ahsoka</Variant_Of_Existing_Type>
+		
+		<Required_Orbiting_Units>Anakin_Eta, Ahsoka_Eta</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<DummyStructure Name="Split_Anakin_Ahsoka">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>Split Anakin and Ahsoka</Text_ID>
+		<Icon_Name>i_button_anakin_ahsoka.tga</Icon_Name>
+		
+		<GUI_Row> 1 </GUI_Row>
+		
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		Separate Anakin and Ahsoka into separate ships
+		TEXT_NONE
+		TEXT_HERO_ANAKIN
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND4_LANDSPACE
+		TEXT_TOOLTIP_TRAIT_ACEPILOT
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_DELTA7_FIGHTER
+		TEXT_UNIT_ETA2_FIGHTER
+		TEXT_NONE
+		TEXT_HERO_AHSOKA
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_DELTA7_FIGHTER
+		TEXT_UNIT_ETA2_FIGHTER
+		</Encyclopedia_Text>
+		
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_JEDI_KNIGHT_AND_PADAWAN </Encyclopedia_Unit_Class>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+		
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		
+		<SFXEvent_Build_Started></SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled></SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Complete_Anakin_Ahsoka</SFXEvent_Build_Complete>
+		
+		<Build_Cost_Credits>800</Build_Cost_Credits>
+		<Build_Time_Seconds>5</Build_Time_Seconds>
+
+		<Required_Orbiting_Units>Twilight</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 </Republic_Heroes>

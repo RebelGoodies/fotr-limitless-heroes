@@ -1,6 +1,6 @@
 return {
 	BuildDummyName = "RANDOM_MERCENARY",
-	RecruiterOptions = {"REBEL"},
+	RecruiterOptions = {"REBEL", "HUTT_CARTELS"},
 	AvailableOptions = {
 		"ARGYUS",
 		"VAZUS",

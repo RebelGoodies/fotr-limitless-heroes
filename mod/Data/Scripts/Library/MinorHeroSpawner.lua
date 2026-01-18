@@ -131,9 +131,9 @@ end
 
 function select_option(option_array, owner)
 	while true do
-		option_index = GameRandom(1, table.getn(option_array))
+		local option_index = GameRandom(1, table.getn(option_array))
 		if type(option_array[option_index]) == "table" then
-			condition_array = option_array[option_index]
+			local condition_array = option_array[option_index]
 			local match_condition = false
 			if type(condition_array[2]) == "number" then
 				local techLevel = GlobalValue.Get("CURRENT_ERA")

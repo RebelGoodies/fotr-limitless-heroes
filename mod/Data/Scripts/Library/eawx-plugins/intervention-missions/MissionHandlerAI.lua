@@ -84,9 +84,9 @@ end
 
 --this allows override of default favour behaviour for specific mod+faction combos
 function MissionHandlerAI:Manipulate_Favour(group_name,amount)
-	if self.isFotR and self.player == Find_Player("Rebel") then
-		return
-	end
+	-- if self.isFotR and self.player == Find_Player("Rebel") then
+		-- return
+	-- end
 
 	crossplot:publish("INCREASE_FAVOUR", group_name, amount)
 end

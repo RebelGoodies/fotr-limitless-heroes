@@ -9,6 +9,8 @@ require("eawx-events/GenericResearch")
 require("eawx-events/GenericSwap")
 require("eawx-events/TechHelper")
 
+require("eawx-plugins/government-manager/CommandStaffDisplay")
+
 ---@class GovernmentRepublic
 GovernmentRepublic = class()
 
@@ -31,6 +33,14 @@ function GovernmentRepublic:new(gc,id,gc_name)
 		"Default clone armour set to 187th",
 		"Default clone armour set to 21st",
 		"Default clone armour set to 41st"		
+	}
+
+	GlobalValue.Set("SPACE_SYMBOL_DEFAULT", 1) -- Better Vens
+	self.SymbolSkins = {
+		"Default Republic space fleet reset",
+		"Default Republic space fleet set to Open Circle Armada",
+		"Default Republic space fleet set to Outland Regions Security Force",
+		"Default Republic space fleet set to Kuati Sector Forces"
 	}
 
 	self.War_Mobilization = false
@@ -70,6 +80,12 @@ function GovernmentRepublic:new(gc,id,gc_name)
 		self.standard_integrate = true
 	end
 
+	if self.gc_name == "DURGES_LANCE" then
+		UnitUtil.SetLockList("EMPIRE", {"Onara_Kuat_Mandator_Upgrade"}, false)
+	else
+		UnitUtil.SetLockList("EMPIRE", {"Onara_Kuat_Mandator_Upgrade"})
+	end
+
 	self.production_finished_event = gc.Events.GalacticProductionFinished
 	self.production_finished_event:attach_listener(self.on_construction_finished, self)
 
@@ -88,6 +104,9 @@ function GovernmentRepublic:on_construction_finished(planet, game_object_type_na
 
 	if game_object_type_name == "OPTION_CYCLE_CLONES" then
 		self:Option_Cycle_Clone_Colour()
+
+	elseif game_object_type_name == "OPTION_CYCLE_SYMBOL" then -- Better Vens
+		self:Option_Cycle_Space_Symbol()
 
 	elseif game_object_type_name == "REPUBLIC_FUTURE_SUPPORT_MOTHMA" then
 		if self.ChoiceMade == false then
@@ -394,7 +413,39 @@ function GovernmentRepublic:Option_Cycle_Clone_Colour()
 		clone_skin = 1
 	end
 	GlobalValue.Set("CLONE_DEFAULT", clone_skin)
-	StoryUtil.ShowScreenText(self.CloneSkins[clone_skin], 5)
+	StoryUtil.ShowScreenText(self.CloneSkins[clone_skin], 5, nil, {r = 244, g = 200, b = 0})
+end
+
+function GovernmentRepublic:Option_Cycle_Space_Symbol() -- Better Vens
+
+    UnitUtil.DespawnList({"OPTION_CYCLE_SYMBOL"})
+    local symbol_skin = GlobalValue.Get("SPACE_SYMBOL_DEFAULT")
+    symbol_skin = symbol_skin + 1
+    if symbol_skin > 4 then
+        symbol_skin = 1
+    end
+    GlobalValue.Set("SPACE_SYMBOL_DEFAULT", symbol_skin)
+    StoryUtil.ShowScreenText(self.SymbolSkins[symbol_skin], 5, nil, {r = 244, g = 200, b = 0})
+end
+
+function GovernmentRepublic:show_slots(admiral_text_list, government_display_event)
+	local open_count = 0
+	local vacant_count = 0
+	for index, obj in pairs(admiral_text_list) do
+		if obj == "OPEN" then
+			open_count = open_count + 1
+		elseif obj == "VACANT (requires purchase)" or obj == "VACANT" then
+			vacant_count = vacant_count + 1
+		else
+			government_display_event.Add_Dialog_Text(obj)
+		end
+	end
+	if open_count > 0 then
+		government_display_event.Add_Dialog_Text("OPEN: " .. open_count)
+	end
+	if vacant_count > 0 then
+		government_display_event.Add_Dialog_Text("VACANT (Dead): " .. vacant_count)
+	end
 end
 
 function GovernmentRepublic:UpdateDisplay(favour_table, market_name, market_list)
@@ -436,74 +487,9 @@ function GovernmentRepublic:UpdateDisplay(favour_table, market_name, market_list
 			end
 		end
 
-		government_display_event.Add_Dialog_Text("TEXT_NONE")
-
-		local admiral_list = GlobalValue.Get("REP_MOFF_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_MOFF_LIST")
-			
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_ADMIRAL_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_ADMIRAL_LIST")
-			
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_COUNCIL_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_COUNCIL_LIST")
-				
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end		
-		local admiral_list = GlobalValue.Get("REP_GENERAL_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_GENERAL_LIST")
-				
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_COMMANDO_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_COMMANDO_LIST")
-				
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_CLONE_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_CLONE_LIST")
-			
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
+		--Better slots display for the Limitless Heroes submod
+		local command_staff_types = {"MOFF_LIST", "ADMIRAL_LIST", "COUNCIL_LIST", "GENERAL_LIST", "COMMANDO_LIST", "CLONE_LIST", "SENATOR_LIST"}
+		DisplayCommandStaff(command_staff_types, government_display_event)
 
 		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
 		government_display_event.Add_Dialog_Text("TEXT_NONE")

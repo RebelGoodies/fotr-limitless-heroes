@@ -2,6 +2,8 @@ require("deepcore/std/class")
 StoryUtil = require("eawx-util/StoryUtil")
 UnitUtil = require("eawx-util/UnitUtil")
 
+require("eawx-plugins/government-manager/CommandStaffDisplay")
+
 ---@class GovernmentCIS
 GovernmentCIS = class()
 
@@ -96,6 +98,9 @@ function GovernmentCIS:UpdateDisplay(favour_tables)
                 end
 
         end
+
+        local command_staff_types = {"GROUND_LIST", "SPACE_LIST", "SITH_LIST"}
+		DisplayCommandStaff(command_staff_types, government_display_event)
         
         government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
         

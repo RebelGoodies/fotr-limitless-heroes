@@ -6,8 +6,8 @@
 		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
 		
 		<Text_ID>TEXT_HERO_RANDOM_MERCENARY</Text_ID>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_RANDOM_MERCENARY
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		Recruits random mercenary from list.
 		TEXT_NONE
 		TEXT_TOOLTIP_RANDOM_MERCENARY_ARGYUS
 		TEXT_TOOLTIP_RANDOM_MERCENARY_VAZUS
@@ -17,11 +17,11 @@
 		<Icon_Name>I_BUTTON_MERCENARY.TGA</Icon_Name>
 		<GUI_Row> 0 </GUI_Row>
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 		<Tech_Level>0</Tech_Level>
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 		<Build_Cost_Credits>2000</Build_Cost_Credits>
-		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Time_Seconds>20</Build_Time_Seconds>
 		
 		<Population_Value>1</Population_Value>
 		
@@ -73,7 +73,7 @@
 		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
 
 		<Scale_Factor>1.1</Scale_Factor>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
@@ -166,7 +166,7 @@
 		<Text_ID>TEXT_HERO_ARGYUS</Text_ID>
 		<Icon_Name>I_BUTTON_ARGYUS.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 		<!-- <Build_Cost_Credits>-1</Build_Cost_Credits> -->
 		<Build_Time_Seconds>0</Build_Time_Seconds>
 		<Tech_Level>99</Tech_Level>
@@ -260,7 +260,7 @@
 		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
 
 		<Scale_Factor>1.1</Scale_Factor>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
@@ -354,7 +354,7 @@
 		<Icon_Name>I_BUTTON_VAZUS_MANDRAKE.TGA</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>50</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 		<Build_Cost_Credits>1500</Build_Cost_Credits>
 		<Required_Planets></Required_Planets>
 		<Is_Buildable>Yes</Is_Buildable>
@@ -483,7 +483,7 @@
 		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
 
 		<Scale_Factor>1.1</Scale_Factor>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire, Hutt_Cartels</Affiliation>
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
@@ -660,7 +660,7 @@
 		<Icon_Name>I_BUTTON_LORZ_GEPTUN.TGA</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>50</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire, Hutt_Cartels</Affiliation>
 		<Build_Cost_Credits>1500</Build_Cost_Credits>
 		<Required_Planets></Required_Planets>
 		<Is_Buildable>No</Is_Buildable>
@@ -731,36 +731,14 @@
 			</Unit_Ability>
 		</Unit_Abilities_Data>
 	</HeroCompany>
-	
-	<DummyStructure Name="Lorz_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
-		
-		<Text_ID>TEXT_HERO_LORZ_GEPTUN</Text_ID>
-		<Icon_Name>i_button_lorz_geptun.tga</Icon_Name>
 
-		<Affiliation>Rebel</Affiliation>
-
-		<Encyclopedia_Text>
-		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
-		TEXT_TOOLTIP_TRAIT_COMMAND5_LAND
-		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
-		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
-		TEXT_TOOLTIP_LORZ_GEPTUN
-		</Encyclopedia_Text>
-	</DummyStructure>
-
-	<DummyStructure Name="Lorz_Retire">
-		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
-		
-		<Text_ID>TEXT_HERO_LORZ_GEPTUN</Text_ID>
-		<Icon_Name>i_button_lorz_geptun.tga</Icon_Name>
-
-		<Tech_Level>0</Tech_Level>
-
-		<Affiliation>Rebel</Affiliation>
-
-		<Required_Orbiting_Units>Kappa_Shuttle_Landing_Craft_Lorz</Required_Orbiting_Units>
-	</DummyStructure>
+	<TransportUnit Name="Kappa_Shuttle_Landing_Craft_Lorz">
+		<Variant_Of_Existing_Type>Kappa_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Kappa_Shuttle_Landing_Craft_Lorz_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Kappa_Shuttle_Landing_Craft_Lorz_Landing">
+		<Variant_Of_Existing_Type>Kappa_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
 
 
 	<!-- CIS + Hutt Cartel Bounty Hunters -->
@@ -769,8 +747,8 @@
 		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
 		
 		<Text_ID>TEXT_HERO_RANDOM_BOUNTY_HUNTER</Text_ID>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_RANDOM_BOUNTY_HUNTER
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		Recruits random bounty hunter from list.
 		TEXT_NONE
 		TEXT_TOOLTIP_RANDOM_BOUNTY_HUNTER_BOSSK
 		TEXT_TOOLTIP_RANDOM_BOUNTY_HUNTER_DENGAR
@@ -784,8 +762,8 @@
 		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 		<Tech_Level>0</Tech_Level>
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-		<Build_Cost_Credits>3000</Build_Cost_Credits>
-		<Build_Time_Seconds>30</Build_Time_Seconds>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
+		<Build_Time_Seconds>20</Build_Time_Seconds>
 		
 		<Population_Value>1</Population_Value>
 		
@@ -798,7 +776,7 @@
 		<SFXEvent_Build_Cancelled>EHD_Recruitment_Canceled</SFXEvent_Build_Cancelled>
 		
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+		<!-- <Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> -->
 	</DummyStructure>
 
 
@@ -835,7 +813,7 @@
 		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
 
 		<Scale_Factor>1.1</Scale_Factor>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Targeting_Max_Attack_Distance>350.0</Targeting_Max_Attack_Distance>
@@ -1555,7 +1533,7 @@
 
 		
 		<Scale_Factor>1.1</Scale_Factor>
-		<Affiliation>Rebel, Banking_Clan, Trade_Federation, Commerce_Guild, Techno_Union</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Banking_Clan, Trade_Federation, Commerce_Guild, Techno_Union</Affiliation>
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
@@ -1705,7 +1683,7 @@
 		<Icon_Name>i_button_Shahan_Alama.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Banking_Clan, Trade_Federation, Commerce_Guild, Techno_Union, Hutt_Cartels</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Banking_Clan, Trade_Federation, Commerce_Guild, Techno_Union, Hutt_Cartels</Affiliation>
 
 
 		<Build_Cost_Credits>3000</Build_Cost_Credits>
@@ -1928,7 +1906,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_Clone_Carbine, HP_Hero_Wrist_Flamer</HardPoints>
 		
@@ -2049,7 +2027,7 @@
 		<Icon_Name>i_button_spar.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		
@@ -2123,7 +2101,7 @@
 		<Icon_Name>i_button_spar.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -2232,7 +2210,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_EE3_Carbine, HP_Hero_Wrist_Blaster_Red, HP_Hero_Jetpack_Missile</HardPoints>
 		
@@ -2317,7 +2295,7 @@
 		<Icon_Name>i_button_fenn_shysa_cw.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		
@@ -2382,7 +2360,7 @@
 		<Icon_Name>i_button_fenn_shysa_cw.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -2490,7 +2468,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_EE3_Carbine, HP_Hero_Wrist_Rocket, HP_Hero_Jetpack_Missile</HardPoints>
 		
@@ -2582,7 +2560,7 @@
 		<Icon_Name>i_button_tobbi_dala.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		
@@ -2658,7 +2636,7 @@
 		<Icon_Name>i_button_tobbi_dala.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -2793,7 +2771,7 @@
 		<Scale_Factor>1.1</Scale_Factor>
 		<Type>Walk</Type>
 		<Deploys>No</Deploys>
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<Size_Value>10</Size_Value>
 		<Sensor_Range>20</Sensor_Range>
 		<Shield_Points>0</Shield_Points>
@@ -2966,7 +2944,7 @@
 		<Icon_Name>i_button_pre_vizsla.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		
@@ -3084,7 +3062,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_WESTAR_35_Pistol, HP_Hero_Wrist_Blaster_Red_Double, HP_Hero_Wrist_Rocket</HardPoints>
 		
@@ -3187,7 +3165,7 @@
 		<Icon_Name>i_button_bo_katan.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		
@@ -3261,7 +3239,7 @@
 		<Icon_Name>i_button_bo_katan.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -3357,7 +3335,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
 
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_DLT_20A_LMG</HardPoints>
 		
@@ -3443,7 +3421,7 @@
 		<Icon_Name>i_button_lorka_gedyc.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 
 
@@ -3519,7 +3497,7 @@
 		<Icon_Name>i_button_lorka_gedyc.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel, Empire</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
