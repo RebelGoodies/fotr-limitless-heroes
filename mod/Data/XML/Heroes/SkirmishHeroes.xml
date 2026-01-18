@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<SkirmishHero_Files>
+	
+	
+	<HeroCompany Name="Grievous_Team_Space_MP">
+		<Variant_Of_Existing_Type>Invisible_Hand</Variant_Of_Existing_Type>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DROID_GENERAL </Encyclopedia_Unit_Class>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Tech_Level>99</Tech_Level>  
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>6410</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+	</HeroCompany>
+	
+	<HeroCompany Name="SevRance_Team_Space_MP">
+		<Variant_Of_Existing_Type>SevRance_Team</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>1000.0</Space_FOW_Reveal_Range>
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4545</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>11</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</HeroCompany>
+	
+	<HeroCompany Name="Ventress_Team_Space_MP">
+		<Variant_Of_Existing_Type>Ventress_Team</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>1000.0</Space_FOW_Reveal_Range>
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>1795</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>11</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</HeroCompany>
+	
+	<UniqueUnit Name="Tonith_Corpulentus_MP">
+		<Variant_Of_Existing_Type>Tonith_Corpulentus</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>8920</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>22</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Four_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Merai_Free_Dac_MP">
+		<Variant_Of_Existing_Type>Merai_Free_Dac</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>6830</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>18</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Four_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Dua_Ningo_Unrepentant_MP">
+		<Variant_Of_Existing_Type>Dua_Ningo_Unrepentant</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, HIDE_WHEN_FOGGED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, SPAWN_SQUADRON, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4545</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+		<UniqueUnit Name="Calli_Trilm_Bulwark_MP">
+		<Variant_Of_Existing_Type>Calli_Trilm_Bulwark</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, HIDE_WHEN_FOGGED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, SPAWN_SQUADRON, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>6305</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	
+	<UniqueUnit Name="TF1726_Munificent_MP">
+		<Variant_Of_Existing_Type>TF1726_Munificent</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>2140</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>10</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+		<UniqueUnit Name="Trench_Invincible_MP">
+		<Variant_Of_Existing_Type>Trench_Invincible</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior>SPAWN_SQUADRON, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, HIDE_WHEN_FOGGED, REVEAL, TARGETING, UNIT_AI, ASTEROID_FIELD_DAMAGE, SPAWN_SQUADRON, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>8655</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>20</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Four_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Treetor_Captor_MP">
+		<Variant_Of_Existing_Type>Treetor_Captor</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>3600</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>11</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	
+	
+	
+	<HeroCompany Name="Obi_Wan_Team_Space_MP">
+		<Variant_Of_Existing_Type>Obi_Wan_Eta_Team</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>1000.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4375</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>10</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</HeroCompany>		
+	
+	<HeroCompany Name="Anakin_Team_Space_MP">
+		<Variant_Of_Existing_Type>Anakin_Eta_Team</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>1000.0</Space_FOW_Reveal_Range>
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>3735</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>10</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</HeroCompany>
+
+	
+	<UniqueUnit Name="Coy_Imperator_MP">
+		<Variant_Of_Existing_Type>Coy_Imperator</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		<Affiliation>Empire</Affiliation>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4835</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>19</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Four_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Dallin_Kebir_MP">
+		<Variant_Of_Existing_Type>Dallin_Kebir</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> LURE, ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>1180</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>10</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Pellaeon_Leveler_MP">
+		<Variant_Of_Existing_Type>Pellaeon_Leveler</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>3760</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>12</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Yularen_Integrity_MP">
+		<Variant_Of_Existing_Type>Yularen_Integrity</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> LURE, ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>6475</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>	
+	
+	<UniqueUnit Name="Screed_Arlionne_MP">
+		<Variant_Of_Existing_Type>Screed_Arlionne</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4170</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>14</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>	
+	
+	<UniqueUnit Name="Dodonna_Ardent_MP">
+		<Variant_Of_Existing_Type>Dodonna_Ardent</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4170</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>14</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>	
+	
+	<UniqueUnit Name="Tarkin_Venator_MP">
+		<Variant_Of_Existing_Type>Tarkin_Venator</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>5880</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>13</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Three_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>	
+	
+	<UniqueUnit Name="Seerdon_Invincible_MP">
+		<Variant_Of_Existing_Type>Seerdon_Invincible</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<Spawned_Squadron_Delay_Seconds>15</Spawned_Squadron_Delay_Seconds>
+		
+		<Space_FOW_Reveal_Range>2500.0</Space_FOW_Reveal_Range>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>4215</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>16</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Space_Level_Four_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</SkirmishHero_Files>

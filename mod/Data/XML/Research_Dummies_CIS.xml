@@ -1,0 +1,310 @@
+<?xml version="1.0" ?>
+<CIS_Research_Dummies>
+
+	<!-- Government Support Research -->
+	<DummyStructure Name="Stimulus_IGBC">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_IGBC</Text_ID>
+		<Encyclopedia_Text> TEXT_GOVERNMENT_STIMULUS_IGBC_DESCRIPTION </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_banking_clan.tga</Icon_Name>
+
+		<CategoryMask>Wall</CategoryMask>
+
+		<GUI_Row>1</GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>no</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Build_Cost_Credits>3000</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+	</DummyStructure>
+
+	<DummyStructure Name="Stimulus_Commerce">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_COMMERCE</Text_ID>
+		<Encyclopedia_Text> TEXT_GOVERNMENT_STIMULUS_COMMERCE_DESCRIPTION </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_commerce_guild.tga</Icon_Name>
+
+		<CategoryMask>Wall</CategoryMask>
+
+		<GUI_Row>1</GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>no</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Build_Cost_Credits>3000</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+	</DummyStructure>
+
+	<DummyStructure Name="Stimulus_TradeFed">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_TRADEFED</Text_ID>
+		<Encyclopedia_Text> TEXT_GOVERNMENT_STIMULUS_TRADEFED_DESCRIPTION </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_trade_federation.tga</Icon_Name>
+
+		<CategoryMask>Wall</CategoryMask>
+
+		<GUI_Row>1</GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>no</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Build_Cost_Credits>3000</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+	</DummyStructure>
+
+	<DummyStructure Name="Stimulus_Techno">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_TECHNO</Text_ID>
+		<Encyclopedia_Text> TEXT_GOVERNMENT_STIMULUS_TECHNO_DESCRIPTION </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_techno_union.tga</Icon_Name>
+
+		<CategoryMask>Wall</CategoryMask>
+
+		<GUI_Row>1</GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>no</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Build_Cost_Credits>3000</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+	</DummyStructure>
+
+	<!-- Mandalore Support Research -->
+	<DummyStructure Name="Support_Protectors">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_GOVERNMENT_MANDALORE_PROTECTORS</Text_ID>
+		<Encyclopedia_Text> TEXT_GOVERNMENT_MANDALORE_PROTECTORS_SUPPORT_EFFECT </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_mandalore_protectors.tga</Icon_Name>
+
+		<CategoryMask>Upgrade</CategoryMask>
+
+		<GUI_Row> 0 </GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, INFLUENCE_TEN | INFLUENCE_NINE | INFLUENCE_EIGHT</Required_Special_Structures>
+		<Required_Planets>Mandalore</Required_Planets>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Time_Seconds>30</Build_Time_Seconds>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+
+	<DummyStructure Name="Support_Death_Watch">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_GOVERNMENT_MANDALORE_DEATH_WATCH</Text_ID>
+		<Encyclopedia_Text> TEXT_GOVERNMENT_MANDALORE_DEATH_WATCH_SUPPORT_EFFECT </Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_mandalore_death_watch.tga</Icon_Name>
+
+		<CategoryMask>Upgrade</CategoryMask>
+
+		<GUI_Row> 0 </GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, INFLUENCE_TEN | INFLUENCE_NINE | INFLUENCE_EIGHT</Required_Special_Structures>
+		<Required_Planets>Mandalore</Required_Planets>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Time_Seconds>30</Build_Time_Seconds>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+
+	<!-- ODL research -->
+	<DummyStructure Name="Mad_Clone_Virus">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_RESEARCH_MAD_CLONE_VIRUS_NAME</Text_ID>
+		<Encyclopedia_Text> TEXT_RESEARCH_MAD_CLONE_VIRUS_DESCRIPTION</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>I_BUTTON_RESEARCH_VIRUS_GENERIC.TGA</Icon_Name>
+		
+		<CategoryMask>Upgrade</CategoryMask>
+
+		<GUI_Row> 0 </GUI_Row>
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Tech_Level>0</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Time_Seconds>30</Build_Time_Seconds>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>		
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+	</DummyStructure>
+
+	<!-- CIS tech research -->
+	<DummyStructure Name="Dummy_Research_Vultures">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_UNIT_VULTURE_RESEARCH</Text_ID>
+		<Encyclopedia_Text> TEXT_TOOLTIP_VULTURE_RESEARCH</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_RESEARCH </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>I_BUTTON_RESEARCH_CIS_FIGHTERS.TGA</Icon_Name>
+		<GUI_Row>0</GUI_Row>
+		
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Tech_Level>1</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Build_Cost_Credits>10000</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+
+		<Lua_Script>ResearchVultureLatch</Lua_Script>
+		
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+
+	<DummyStructure Name="Dummy_Research_Bulwark">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_UNIT_BULWARK_RESEARCH</Text_ID>
+		<Encyclopedia_Text> TEXT_TOOLTIP_BULWARK_RESEARCH</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_RESEARCH </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>I_BUTTON_RESEARCH_BULWARK.TGA</Icon_Name>
+		<GUI_Row>0</GUI_Row>
+		
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Tech_Level>2</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Required_Planets>Foerost, Sullust</Required_Planets>
+		<Build_Cost_Credits>13500</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+
+	<DummyStructure Name="Dummy_Research_Bulwark2">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_UNIT_BULWARK2_RESEARCH</Text_ID>
+		<Encyclopedia_Text> TEXT_TOOLTIP_BULWARK2_RESEARCH</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_RESEARCH </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>I_BUTTON_RESEARCH_BULWARK_II.TGA</Icon_Name>
+		<GUI_Row>0</GUI_Row>
+		
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Tech_Level>3</Tech_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Required_Planets>Foerost, Sullust</Required_Planets>
+		<Build_Cost_Credits>15000</Build_Cost_Credits>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+
+	<!-- Mission dummies -->
+	<DummyStructure Name="Dummy_Intervention_Shipyard">
+		<Ship_Class>frigate</Ship_Class>
+		<Formation_Priority>3</Formation_Priority>
+		<Is_Escort>yes</Is_Escort>
+		<Is_Bomber>no</Is_Bomber>
+		<Political_Control>0</Political_Control>
+		<Squadron_Capacity>12</Squadron_Capacity>
+		<Transport_Capacity>12</Transport_Capacity>
+		<Number_per_Squadron>1</Number_per_Squadron>
+		<Build_Cost_Credits>13500</Build_Cost_Credits>
+		<AI_Combat_Power>1350</AI_Combat_Power>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Size_Value>8</Size_Value>
+		<SFXEvent_Select>Null</SFXEvent_Select>
+		<Behavior>DUMMY_STARSHIP, SELECTABLE, POWERED, SHIELDED</Behavior>
+		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Population_Value>0</Population_Value>
+	</DummyStructure>
+
+	<DummyStructure Name="Dummy_Intervention_Conquer">
+		<Ship_Class>frigate</Ship_Class>
+		<Formation_Priority>3</Formation_Priority>
+		<Is_Escort>yes</Is_Escort>
+		<Is_Bomber>no</Is_Bomber>
+		<Political_Control>0</Political_Control>
+		<Squadron_Capacity>12</Squadron_Capacity>
+		<Transport_Capacity>12</Transport_Capacity>
+		<Number_per_Squadron>1</Number_per_Squadron>
+		<Build_Cost_Credits>13500</Build_Cost_Credits>
+		<AI_Combat_Power>1350</AI_Combat_Power>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Size_Value>8</Size_Value>
+		<SFXEvent_Select>Null</SFXEvent_Select>
+		<Behavior>DUMMY_STARSHIP, SELECTABLE, POWERED, SHIELDED</Behavior>
+		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Population_Value>0</Population_Value>
+	</DummyStructure>		
+
+	<DummyStructure Name="Dummy_Intervention_Hunt">
+		<Ship_Class>frigate</Ship_Class>
+		<Formation_Priority>3</Formation_Priority>
+		<Is_Escort>yes</Is_Escort>
+		<Is_Bomber>no</Is_Bomber>
+		<Political_Control>0</Political_Control>
+		<Squadron_Capacity>12</Squadron_Capacity>
+		<Transport_Capacity>12</Transport_Capacity>
+		<Number_per_Squadron>1</Number_per_Squadron>
+		<Build_Cost_Credits>13500</Build_Cost_Credits>
+		<AI_Combat_Power>1350</AI_Combat_Power>
+		<Build_Time_Seconds>100</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Size_Value>8</Size_Value>
+		<SFXEvent_Select>Null</SFXEvent_Select>
+		<Behavior>DUMMY_STARSHIP, SELECTABLE, POWERED, SHIELDED</Behavior>
+		<SpaceBehavior>ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, ASTEROID_FIELD_DAMAGE, DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Population_Value>0</Population_Value>
+	</DummyStructure>
+
+</CIS_Research_Dummies>
