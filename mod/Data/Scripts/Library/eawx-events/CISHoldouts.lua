@@ -13,6 +13,7 @@ function CISHoldoutsEvent:new(gc)
     self.HumanPlayer = Find_Player("local")
 
     self.Killed_Heroes = 0
+	self.Dookus = 0
 
     crossplot:subscribe("CIS_HOLDOUTS_TIMER", self.activate, self)
 
@@ -23,16 +24,19 @@ end
 
 function CISHoldoutsEvent:activate()
     self.is_valid = true
-    if self.Killed_Heroes >= 2 then
+    if (self.Dookus >= 2) and (self.Killed_Heroes >= 1) then
         self:fulfil()
     end
 end
 
 function CISHoldoutsEvent:on_galactic_hero_killed(hero_name, owner)
-    if (hero_name == "DOOKU_TEAM") or (hero_name == "TRENCH_INVINCIBLE") or (hero_name == "DUA_NINGO_UNREPENTANT") then
+    if (hero_name == "TRENCH_INVULNERABLE") or (hero_name == "DUA_NINGO_UNREPENTANT") then
         self.Killed_Heroes = self.Killed_Heroes + 1
     end
-    if (self.Killed_Heroes >= 2) and (self.is_valid == true) then
+	if (hero_name == "DOOKU_TEAM") then
+        self.Dookus = self.Dookus + 1
+    end
+    if (self.Dookus >= 2) and (self.Killed_Heroes >= 1) and (self.is_valid == true) then
         self:fulfil()
     end
 end

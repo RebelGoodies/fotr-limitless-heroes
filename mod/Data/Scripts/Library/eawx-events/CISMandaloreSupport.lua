@@ -18,7 +18,6 @@ function CISMandaloreSupportEvent:new(gc, present)
 
     self.production_finished_event = gc.Events.GalacticProductionFinished
     self.production_finished_event:attach_listener(self.on_production_finished, self)
-    
 end
 
 function CISMandaloreSupportEvent:activate()
