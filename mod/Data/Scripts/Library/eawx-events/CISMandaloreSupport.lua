@@ -22,17 +22,7 @@ function CISMandaloreSupportEvent:new(gc, present)
 	
 	self.count = 0
     self.production_finished_event = gc.Events.GalacticProductionFinished
-	self.PlanetOwnerChangedEvent = gc.Events.PlanetOwnerChanged
-	if present then
-		self.production_finished_event:attach_listener(self.on_production_finished, self)
-		self.PlanetOwnerChangedEvent:attach_listener(self.on_planet_owner_changed, self)
-	end
-end
-
-function CISMandaloreSupportEvent:on_planet_owner_changed(planet, new_owner_name, old_owner_name)
-	if planet:get_readable_name() == "MANDALORE" then
-		self:activate()
-	end
+    self.production_finished_event:attach_listener(self.on_production_finished, self)
 end
 
 function CISMandaloreSupportEvent:activate()

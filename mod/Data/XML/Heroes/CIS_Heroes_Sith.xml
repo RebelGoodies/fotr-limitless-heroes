@@ -1,138 +1,6 @@
 <?xml version="1.0"?>
 <CIS_Heroes>
 
-	<DummyStructure Name="View_Space">
-		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
-		<GUI_Row> 1 </GUI_Row>
-
-		<Population_Value>0</Population_Value>
-		<Build_Cost_Credits>1</Build_Cost_Credits>
-		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Time_Seconds>1</Build_Time_Seconds>
-		<Required_Star_Base_Level>1</Required_Star_Base_Level>
-		<AI_Combat_Power>10000</AI_Combat_Power>
-		
-		<CategoryMask>Wall</CategoryMask>
-		
-		<Text_ID>TEXT_HERO_VIEW_ADMIRALS</Text_ID>
-		<Build_Initially_Locked>Yes</Build_Initially_Locked>
-		<Affiliation>Rebel</Affiliation>
-		<Icon_Name>i_button_cis.tga</Icon_Name>
-		
-
-		<Tech_Level>0</Tech_Level>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
-		</Encyclopedia_Text>
-		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
-
-		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-	</DummyStructure>
-	
-	<DummyStructure Name="View_Ground">
-		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
-		<GUI_Row> 1 </GUI_Row>
-
-		<Population_Value>0</Population_Value>
-		<Build_Cost_Credits>1</Build_Cost_Credits>
-		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Time_Seconds>1</Build_Time_Seconds>
-		<Required_Star_Base_Level>1</Required_Star_Base_Level>
-		<AI_Combat_Power>10000</AI_Combat_Power>
-		
-		<CategoryMask>Wall</CategoryMask>
-		
-		<Text_ID>View Ground Leaders</Text_ID>
-		<Build_Initially_Locked>No</Build_Initially_Locked>
-		<Icon_Name>i_button_cis_capital.tga</Icon_Name>
-		
-		<Affiliation>Rebel</Affiliation>
-
-		<Tech_Level>0</Tech_Level>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
-		</Encyclopedia_Text>
-		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
-
-		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-	</DummyStructure>
-	
-	<!-- Sith heroes -->
-	
-	<DummyStructure Name="Extra_Sith_Slot">
-		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
-		<GUI_Row> 1 </GUI_Row>
-
-		<Population_Value>0</Population_Value>
-		<Build_Cost_Credits>5000</Build_Cost_Credits>
-		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Time_Seconds>50</Build_Time_Seconds>
-		<Required_Star_Base_Level>1</Required_Star_Base_Level>
-		<AI_Combat_Power>10000</AI_Combat_Power>
-		
-		<Text_ID>TEXT_HERO_OPEN_NR_ADMIRAL</Text_ID>
-		<Build_Initially_Locked>Yes</Build_Initially_Locked>
-		<Affiliation>Rebel</Affiliation>
-		<Icon_Name>i_button_sith.tga</Icon_Name>
-		
-		<Tech_Level>0</Tech_Level>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_OPEN_NR_ADMIRAL
-		</Encyclopedia_Text>
-		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
-
-		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-	</DummyStructure>
-	
-	<DummyStructure Name="View_Sith">
-		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
-		<GUI_Row> 1 </GUI_Row>
-
-		<Population_Value>0</Population_Value>
-		<Build_Cost_Credits>1</Build_Cost_Credits>
-		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Time_Seconds>1</Build_Time_Seconds>
-		<Required_Star_Base_Level>1</Required_Star_Base_Level>
-		<AI_Combat_Power>10000</AI_Combat_Power>
-		
-		<CategoryMask>Wall</CategoryMask>
-		
-		<Text_ID>View Sith</Text_ID>
-		<Build_Initially_Locked>No</Build_Initially_Locked>
-		<Icon_Name>i_button_sith.tga</Icon_Name>
-		
-		<Affiliation>Rebel</Affiliation>
-
-		<Tech_Level>0</Tech_Level>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
-		</Encyclopedia_Text>
-		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
-
-		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-	</DummyStructure>
-	
-	<DummyStructure Name="Random_Sith_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
-		<GUI_Row> 0 </GUI_Row>
-		
-		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
-		<Icon_Name>I_BUTTON_UNKNOWN.tga</Icon_Name>
-		
-		<CategoryMask>Upgrade</CategoryMask>
-		<Affiliation>Rebel</Affiliation>
-
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL
-		TEXT_DOCUMENTATION_SEPARATOR_SMALL
-		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL2
-		</Encyclopedia_Text>
-
-		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-	</DummyStructure>
-	
-	<!-- Sith heroes -->
-	
 	<HeroUnit Name="SevRance">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
@@ -144,6 +12,8 @@
 		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_SEVRANCE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_GINIVEX
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_SEVRANCE_HEALTH
 		TEXT_TOOLTIP_SEVRANCE_MOVE
@@ -154,7 +24,7 @@
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
 		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
 		</Encyclopedia_Text>
-		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE</Encyclopedia_Unit_Class>
+		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_GENERAL</Encyclopedia_Unit_Class>
 		<Unique_Space_Unit></Unique_Space_Unit>
 		
 		<Land_Model_Name> CIS_Sevrance.alo </Land_Model_Name>
@@ -192,8 +62,8 @@
 		<Space_Layer> Land </Space_Layer>
 		<UnitCollisionClass> Infantry </UnitCollisionClass>
 		<FormationSpacing> .3 </FormationSpacing> 
-		<OverrideAcceleration> .1 </OverrideAcceleration>
-		<OverrideDeceleration> .1 </OverrideDeceleration>
+		<OverrideAcceleration> 2.0 </OverrideAcceleration>
+		<OverrideDeceleration> 2.0 </OverrideDeceleration>
 		<FormationOrder> 1 </FormationOrder>
 		<FormationRaggedness> .8 </FormationRaggedness>
 		<MaxJiggleDistance> 2.0 </MaxJiggleDistance>
@@ -205,7 +75,6 @@
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control />
 		<Political_Faction />
-		<Required_Timeline>0</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures />
@@ -233,8 +102,12 @@
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Dense_FOW_Reveal_Range_Multiplier>1.0</Dense_FOW_Reveal_Range_Multiplier>
-		<Targeting_Max_Attack_Distance>20.0</Targeting_Max_Attack_Distance>
+		<Targeting_Max_Attack_Distance>25.0</Targeting_Max_Attack_Distance>
 		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_SevRance_Tann </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
 		
 		<SFXEvent_Select>Unit_Select_SevRance_Tann</SFXEvent_Select>
 		<SFXEvent_Move>Unit_Move_SevRance_Tann</SFXEvent_Move>
@@ -245,15 +118,7 @@
 		<SFXEvent_Group_Attack>Unit_Attack_SevRance_Tann</SFXEvent_Group_Attack>
 		<SFXEvent_Health_Low_Warning> Unit_Health_Low_SevRance_Tann </SFXEvent_Health_Low_Warning>
 		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_SevRance_Tann </SFXEvent_Health_Critical_Warning>
-		<Death_SFXEvent_Start_Die> Unit_Die_SevRance_Tann </Death_SFXEvent_Start_Die>   
-
-		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
-		<SFXEvent_Tactical_Build_Complete> Unit_Complete_SevRance_Tann </SFXEvent_Tactical_Build_Complete>		
-		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
-
-		<SFXEvent_Engine_Idle_Loop> Unit_SevRance_Tann_Idle_Loop </SFXEvent_Engine_Idle_Loop>
-		<SFXEvent_Engine_Moving_Loop> Unit_SevRance_Tann_Idle_Loop </SFXEvent_Engine_Moving_Loop>
-		<SFXEvent_Engine_Cinematic_Focus_Loop> Unit_SevRance_Tann_Idle_Loop </SFXEvent_Engine_Cinematic_Focus_Loop>
+		<Death_SFXEvent_Start_Die> Unit_Die_SevRance_Tann </Death_SFXEvent_Start_Die>
 
 		<Stealth_Capable>Yes</Stealth_Capable>
 		<Victory_Relevant>yes</Victory_Relevant>
@@ -308,7 +173,6 @@
 		</Unit_Abilities_Data>
 
 		<Abilities SubObjectList="Yes">
-
 			<!-- Redirect Blaster must appear in the special ability list before Absorb Blaster -->
 			<Redirect_Blaster_Ability Name="SevRance_Redirect_Blaster">
 				<Activation_Style>Take_Damage</Activation_Style>
@@ -436,12 +300,10 @@
 			
 			<Combat_Bonus_Ability Name="SevRance_Combat_Bonus">
 				<Activation_Style>Ground_Automatic</Activation_Style>
-				<Unit_Strength_Category>Vehicle | Infantry | Air</Unit_Strength_Category>
 				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
 				<Health_Bonus_Percentage>0.10</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.10</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.1</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.20</Movement_Speed_Bonus_Percentage>
@@ -451,13 +313,11 @@
 			
 			<Combat_Bonus_Ability Name="SevRance_Combat_Bonus_Space">
 				<Activation_Style>Space_Automatic</Activation_Style>
-				<Unit_Strength_Category>All</Unit_Strength_Category>
 				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
-				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Excluded_Unit_Types> Ground_Ion_Cannon, Ground_Hypervelocity_Gun </Excluded_Unit_Types>
 				<Health_Bonus_Percentage>0.10</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.10</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.10</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.20</Movement_Speed_Bonus_Percentage>
@@ -466,21 +326,39 @@
 			</Combat_Bonus_Ability>
 		</Abilities>
 	</HeroUnit>
-
 	<HeroCompany Name="SevRance_Team">
 		<Text_ID>TEXT_HERO_SEVRANCE</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND3_LANDSPACE
+		TEXT_TOOLTIP_TRAIT_CREATIVE
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_SEVRANCE
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_GINIVEX
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_SEVRANCE_HEALTH
+		TEXT_TOOLTIP_SEVRANCE_MOVE
+		TEXT_TOOLTIP_SEVRANCE_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_GENERAL </Encyclopedia_Unit_Class>
+
 		<Icon_Name>i_button_sevrance.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Affiliation>Rebel</Affiliation>
 		<Damage>100</Damage>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
-		<Combat_Power_Value>0</Combat_Power_Value>
 		<Tech_Level>99</Tech_Level>
 		<Build_Cost_Credits>5000</Build_Cost_Credits>
 		<Build_Time_Seconds>30</Build_Time_Seconds>
 		<Build_Tab_Heroes>Yes</Build_Tab_Heroes>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
-		<Required_Timeline>1</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures></Required_Special_Structures>
@@ -499,24 +377,6 @@
 		
 		<Land_Override_Population_Value>1</Land_Override_Population_Value>
 
-		<Encyclopedia_Text>
-		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
-		TEXT_TOOLTIP_TRAIT_COMMAND3_LANDSPACE
-		TEXT_TOOLTIP_TRAIT_CREATIVE
-		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
-		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
-		TEXT_TOOLTIP_SEVRANCE
-		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
-		TEXT_TOOLTIP_SEVRANCE_HEALTH
-		TEXT_TOOLTIP_SEVRANCE_MOVE
-		TEXT_TOOLTIP_SEVRANCE_WEAP1
-		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
-		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
-		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
-		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
-		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
-		</Encyclopedia_Text>
-		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE </Encyclopedia_Unit_Class>
 		<CategoryMask>LandHero</CategoryMask>
 		<Ranking_In_Category> 3 </Ranking_In_Category>
 		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
@@ -532,7 +392,6 @@
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 		
 	</HeroCompany>
-
 	<UniqueUnit Name="SevRance_Ginivex">
 		<Variant_Of_Existing_Type>Ginivex</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_SEVRANCE</Text_ID>
@@ -544,23 +403,24 @@
 		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_SEVRANCE 
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_GINIVEX
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_STATBLOCK_GINIVEX_SEVRANCE_BASE
 		TEXT_STATBLOCK_GINIVEX_MOVE
 		TEXT_STATBLOCK_GINIVEX_WEAP1
 		</Encyclopedia_Text>
-
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_GENERAL </Encyclopedia_Unit_Class>
 		<Icon_Name>i_button_sevrance.tga</Icon_Name>
 
 		<Behavior>SELECTABLE, TRANSPORT</Behavior>
 		
 		<Affiliation>Rebel</Affiliation>
 
-		<Armor_Type> Armor_Hero_Transport </Armor_Type>
-
-		<Shield_Points>56</Shield_Points>
-		<Shield_Refresh_Rate>3</Shield_Refresh_Rate>
-		<Tactical_Health>224</Tactical_Health>
+		<Tactical_Health>260</Tactical_Health>
+		<Shield_Points>60</Shield_Points>
+		<Shield_Refresh_Rate>5</Shield_Refresh_Rate>
+		
 		<Collision_Box_Modifier>1.0</Collision_Box_Modifier>
 		
 		<SpaceBehavior>HUNT, SHIELDED, FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, WEAPON, POWERED, HIDE_WHEN_FOGGED, AMBIENT_SFX, DAMAGE_TRACKING, NEBULA, REVEAL, ABILITY_COUNTDOWN </SpaceBehavior>
@@ -583,15 +443,9 @@
 		<SFXEvent_Group_Attack>Unit_Attack_SevRance_Tann</SFXEvent_Group_Attack>
 		<SFXEvent_Health_Low_Warning> Unit_Health_Low_SevRance_Tann </SFXEvent_Health_Low_Warning>
 		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_SevRance_Tann </SFXEvent_Health_Critical_Warning>
-		<Death_SFXEvent_Start_Die> Unit_Die_SevRance_Tann </Death_SFXEvent_Start_Die>   
+		<Death_SFXEvent_Start_Die> Unit_Die_SevRance_Tann </Death_SFXEvent_Start_Die>
 
-		<SFXEvent_Fire>Unit_X_Wing_Fire</SFXEvent_Fire>
-		<SFXEvent_Ambient_Moving> Unit_X_Wing_Fly_By </SFXEvent_Ambient_Moving>
-		<SFXEvent_Ambient_Moving_Min_Delay_Seconds> 5 </SFXEvent_Ambient_Moving_Min_Delay_Seconds>
-		<SFXEvent_Ambient_Moving_Max_Delay_Seconds> 10 </SFXEvent_Ambient_Moving_Max_Delay_Seconds>
-		<SFXEvent_Engine_Cinematic_Focus_Loop> Unit_X_Wing_Cinematic_Engine_Loop </SFXEvent_Engine_Cinematic_Focus_Loop>
-
-		<CategoryMask> SpaceHero | AntiFighter | AntiBomber </CategoryMask>
+		<CategoryMask> Fighter | AntiFighter </CategoryMask>
 		<Victory_Relevant>yes</Victory_Relevant>
 
 		<Landing_Transport_Variant>Ginivex_Landing</Landing_Transport_Variant>
@@ -603,13 +457,11 @@
 
 			<Combat_Bonus_Ability Name="SevRance_Combat_Bonus_Space">
 				<Activation_Style>Space_Automatic</Activation_Style>
-				<Unit_Strength_Category>All</Unit_Strength_Category>
 				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
-				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Excluded_Unit_Types> Ground_Ion_Cannon, Ground_Hypervelocity_Gun </Excluded_Unit_Types>
 				<Health_Bonus_Percentage>0.10</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.10</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.10</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.20</Movement_Speed_Bonus_Percentage>
@@ -634,7 +486,7 @@
 				<Damage_Absorb_Percentage>0.01</Damage_Absorb_Percentage>
 				<Damage_Absorb_Amount>0.01</Damage_Absorb_Amount>
 				<!-- We can absorb shots from the following units types (but no missiles or grenades): -->
-				<Applicable_Unit_Categories>Fighter | Bomber | Corvette | Frigate | Capital | Structure</Applicable_Unit_Categories>
+				<Applicable_Unit_Categories>Fighter | Bomber | Gunship | Corvette | Frigate | Capital | SpaceStructure</Applicable_Unit_Categories>
 				<Applicable_Unit_Types></Applicable_Unit_Types>
 				<SFXEvent_Activate>Unit_Force_Absorb</SFXEvent_Activate>
 				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
@@ -679,7 +531,6 @@
 		<Required_Orbiting_Units>SevRance_Ginivex</Required_Orbiting_Units>
 	</DummyStructure>
 
-
 	<HeroUnit Name="Ventress">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
@@ -691,6 +542,8 @@
 		TEXT_TOOLTIP_TRAIT_SPY
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
 		TEXT_TOOLTIP_VENTRESS 
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_BANSHEE
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_VENTRESS_HEALTH
 		TEXT_TOOLTIP_VENTRESS_MOVE
@@ -741,8 +594,8 @@
 		<Space_Layer> Land </Space_Layer>
 		<UnitCollisionClass> Infantry </UnitCollisionClass>
 		<FormationSpacing> .3 </FormationSpacing> 
-		<OverrideAcceleration> .1 </OverrideAcceleration>
-		<OverrideDeceleration> .1 </OverrideDeceleration>
+		<OverrideAcceleration> 2.0 </OverrideAcceleration>
+		<OverrideDeceleration> 2.0 </OverrideDeceleration>
 		<FormationOrder> 1 </FormationOrder>
 		<FormationRaggedness> .8 </FormationRaggedness>
 		<MaxJiggleDistance> 2.0 </MaxJiggleDistance>
@@ -754,7 +607,6 @@
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control />
 		<Political_Faction />
-		<Required_Timeline>0</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures />
@@ -782,8 +634,12 @@
 
 		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
 		<Dense_FOW_Reveal_Range_Multiplier>1.0</Dense_FOW_Reveal_Range_Multiplier>
-		<Targeting_Max_Attack_Distance>20.0</Targeting_Max_Attack_Distance>
+		<Targeting_Max_Attack_Distance>25.0</Targeting_Max_Attack_Distance>
 		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Asajj_Ventress </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
 		
 		<SFXEvent_Select>Unit_Select_Asajj_Ventress</SFXEvent_Select>
 		<SFXEvent_Move>Unit_Move_Asajj_Ventress</SFXEvent_Move>
@@ -794,11 +650,7 @@
 		<SFXEvent_Group_Attack>Unit_Attack_Asajj_Ventress</SFXEvent_Group_Attack>
 		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Asajj_Ventress </SFXEvent_Health_Low_Warning>
 		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Asajj_Ventress </SFXEvent_Health_Critical_Warning>
-		<Death_SFXEvent_Start_Die> Unit_Die_Asajj_Ventress </Death_SFXEvent_Start_Die>   
-
-		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
-		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Asajj_Ventress </SFXEvent_Tactical_Build_Complete>		
-		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+		<Death_SFXEvent_Start_Die> Unit_Die_Asajj_Ventress </Death_SFXEvent_Start_Die>
 
 		<Stealth_Capable>Yes</Stealth_Capable>
 		<Victory_Relevant>yes</Victory_Relevant>
@@ -1013,12 +865,10 @@
 			
 			<Combat_Bonus_Ability Name="Ventress_Combat_Bonus">
 				<Activation_Style>Ground_Automatic</Activation_Style>
-				<Unit_Strength_Category>Vehicle | Infantry | Air</Unit_Strength_Category>
 				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
 				<Health_Bonus_Percentage>0.05</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.05</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.05</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.05</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.05</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.1</Movement_Speed_Bonus_Percentage>
@@ -1031,7 +881,6 @@
 
 		</Abilities>
 	</HeroUnit>
-
 	<HeroCompany Name="Ventress_Team">
 		<Text_ID>TEXT_HERO_VENTRESS</Text_ID>
 		<Icon_Name>i_button_ventress.tga</Icon_Name>
@@ -1039,13 +888,11 @@
 		<Affiliation>Rebel</Affiliation>
 		<Damage>100</Damage>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
-		<Combat_Power_Value>0</Combat_Power_Value>
 		<Tech_Level>99</Tech_Level>
 		<Build_Cost_Credits>5000</Build_Cost_Credits>
 		<Build_Time_Seconds>30</Build_Time_Seconds>
 		<Build_Tab_Heroes>Yes</Build_Tab_Heroes>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
-		<Required_Timeline>1</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures></Required_Special_Structures>
@@ -1073,6 +920,8 @@
 		TEXT_TOOLTIP_TRAIT_SPY
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_VENTRESS 
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_BANSHEE
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_VENTRESS_HEALTH
 		TEXT_TOOLTIP_VENTRESS_MOVE
@@ -1099,7 +948,6 @@
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 		
 	</HeroCompany>
-
 	<UniqueUnit Name="Ventress_Ginivex">
 		<Variant_Of_Existing_Type>Ginivex</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_VENTRESS</Text_ID>
@@ -1111,23 +959,24 @@
 		TEXT_TOOLTIP_TRAIT_SPY
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_VENTRESS 
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_BANSHEE
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_STATBLOCK_GINIVEX_VENTRESS_BASE
 		TEXT_STATBLOCK_GINIVEX_MOVE
 		TEXT_STATBLOCK_GINIVEX_WEAP1
 		</Encyclopedia_Text>
-
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE </Encyclopedia_Unit_Class>
 		<Icon_Name>i_button_ventress.tga</Icon_Name>
 
 		<Behavior>SELECTABLE, TRANSPORT</Behavior>
 		
 		<Affiliation>Rebel</Affiliation>
-
-		<Armor_Type> Armor_Hero_Transport </Armor_Type>
-
-		<Shield_Points>64</Shield_Points>
-		<Shield_Refresh_Rate>3</Shield_Refresh_Rate>
-		<Tactical_Health>232</Tactical_Health>
+		
+		<Tactical_Health>300</Tactical_Health>
+		<Shield_Points>150</Shield_Points>
+		<Shield_Refresh_Rate>5</Shield_Refresh_Rate>
+		
 		<Collision_Box_Modifier>1.0</Collision_Box_Modifier>
 		
 		<SpaceBehavior>HUNT, SHIELDED, FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, WEAPON, POWERED, HIDE_WHEN_FOGGED, AMBIENT_SFX, DAMAGE_TRACKING, NEBULA, REVEAL, ABILITY_COUNTDOWN </SpaceBehavior>
@@ -1141,6 +990,10 @@
 		<Attack_Move_Response_Range>500.0</Attack_Move_Response_Range>
 		<Autonomous_Move_Extension_Vs_Attacker>1200.0</Autonomous_Move_Extension_Vs_Attacker>
 
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Asajj_Ventress </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
 		<SFXEvent_Select>Unit_Select_Asajj_Ventress</SFXEvent_Select>
 		<SFXEvent_Move>Unit_Move_Asajj_Ventress</SFXEvent_Move>
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Asajj_Ventress</SFXEvent_Fleet_Move>
@@ -1150,19 +1003,9 @@
 		<SFXEvent_Group_Attack>Unit_Attack_Asajj_Ventress</SFXEvent_Group_Attack>
 		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Asajj_Ventress </SFXEvent_Health_Low_Warning>
 		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Asajj_Ventress </SFXEvent_Health_Critical_Warning>
-		<Death_SFXEvent_Start_Die> Unit_Die_Asajj_Ventress </Death_SFXEvent_Start_Die>   
+		<Death_SFXEvent_Start_Die> Unit_Die_Asajj_Ventress </Death_SFXEvent_Start_Die>
 
-		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
-		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Asajj_Ventress </SFXEvent_Tactical_Build_Complete>		
-		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
-
-		<SFXEvent_Fire>Unit_X_Wing_Fire</SFXEvent_Fire>
-		<SFXEvent_Ambient_Moving> Unit_X_Wing_Fly_By </SFXEvent_Ambient_Moving>
-		<SFXEvent_Ambient_Moving_Min_Delay_Seconds> 5 </SFXEvent_Ambient_Moving_Min_Delay_Seconds>
-		<SFXEvent_Ambient_Moving_Max_Delay_Seconds> 10 </SFXEvent_Ambient_Moving_Max_Delay_Seconds>
-		<SFXEvent_Engine_Cinematic_Focus_Loop> Unit_X_Wing_Cinematic_Engine_Loop </SFXEvent_Engine_Cinematic_Focus_Loop>
-
-		<CategoryMask> SpaceHero | AntiFighter | AntiBomber </CategoryMask>
+		<CategoryMask> Fighter | AntiFighter </CategoryMask>
 		<Victory_Relevant>yes</Victory_Relevant>
 
 		<Landing_Transport_Variant>Ginivex_Landing</Landing_Transport_Variant>
@@ -1180,7 +1023,7 @@
 				<Damage_Absorb_Percentage>0.01</Damage_Absorb_Percentage>
 				<Damage_Absorb_Amount>0.01</Damage_Absorb_Amount>
 				<!-- We can absorb shots from the following units types (but no missiles or grenades): -->
-				<Applicable_Unit_Categories>Fighter | Bomber | Corvette | Frigate | Capital | Structure</Applicable_Unit_Categories>
+				<Applicable_Unit_Categories>Fighter | Bomber | Gunship | Corvette | Frigate | Capital | SpaceStructure</Applicable_Unit_Categories>
 				<Applicable_Unit_Types></Applicable_Unit_Types>
 				<SFXEvent_Activate>Unit_Force_Absorb</SFXEvent_Activate>
 				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
@@ -1192,13 +1035,11 @@
 			
 			<Combat_Bonus_Ability Name="Ventress_Combat_Bonus_Space">
 				<Activation_Style>Space_Automatic</Activation_Style>
-				<Unit_Strength_Category>All</Unit_Strength_Category>
 				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
-				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Excluded_Unit_Types> Ground_Ion_Cannon, Ground_Hypervelocity_Gun </Excluded_Unit_Types>
 				<Health_Bonus_Percentage>0.0</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.0</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.0</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.0</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.0</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.10</Movement_Speed_Bonus_Percentage>
@@ -1216,7 +1057,6 @@
 		</Abilities>
 
 	</UniqueUnit>
-
 	<TransportUnit Name="Ginivex_Landing">
 		<Variant_Of_Existing_Type>Ventress_Ginivex</Variant_Of_Existing_Type>
 		<Land_Model_Name>ginivex_land.alo</Land_Model_Name>
@@ -1230,7 +1070,6 @@
 		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
 		<UnitCollisionClass>Landing Transport</UnitCollisionClass>	
 	</TransportUnit>
-
 
 	<HeroUnit Name="Dooku">
 		<LOD_Bias>5</LOD_Bias>
@@ -1283,8 +1122,8 @@
 		<FormationSpacing> .5 </FormationSpacing>
 		<MinimumPushReturnDistance> 10 </MinimumPushReturnDistance>
 		<Min_Speed> .1 </Min_Speed>
-		<OverrideAcceleration> .1 </OverrideAcceleration>
-		<OverrideDeceleration> .1 </OverrideDeceleration>
+		<OverrideAcceleration> 1.25 </OverrideAcceleration>
+		<OverrideDeceleration> 1.25 </OverrideDeceleration>
 		
 		<Occlusion_Silhouette_Enabled>1</Occlusion_Silhouette_Enabled>
 		<Type>Walk</Type>
@@ -1307,7 +1146,7 @@
 		<Is_Stationary_When_Attacking>Yes</Is_Stationary_When_Attacking>
 		<Projectile_Types>Proj_Lightsaber</Projectile_Types>
 
-		<Targeting_Max_Attack_Distance>20.0</Targeting_Max_Attack_Distance>
+		<Targeting_Max_Attack_Distance>25.0</Targeting_Max_Attack_Distance>
 		<Projectile_Appearance_Delay_Frames> 10 </Projectile_Appearance_Delay_Frames>
 		<Projectile_Fire_Recharge_Seconds>0.2</Projectile_Fire_Recharge_Seconds>
 
@@ -1316,8 +1155,10 @@
 		<Targeting_Fire_Inaccuracy> Air, 0.0 </Targeting_Fire_Inaccuracy>
 		<Targeting_Fire_Inaccuracy> Structure, 0.0 </Targeting_Fire_Inaccuracy>
 		
-					<!-- Count Dooku VO -->
-				
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Dooku </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
 		<SFXEvent_Select>Unit_Select_Dooku</SFXEvent_Select>
 		<SFXEvent_Move>Unit_Move_Dooku</SFXEvent_Move>
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Dooku</SFXEvent_Fleet_Move>
@@ -1329,12 +1170,6 @@
 		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Dooku </SFXEvent_Health_Low_Warning>
 		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Dooku </SFXEvent_Health_Critical_Warning>
 		<Death_SFXEvent_Start_Die> Unit_Die_Dooku </Death_SFXEvent_Start_Die>
-		
-
-		
-		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
-		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Dooku </SFXEvent_Tactical_Build_Complete>		
-		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
 
 		<CategoryMask> LandHero </CategoryMask>
 		<Ranking_In_Category> 2 </Ranking_In_Category>
@@ -1383,6 +1218,7 @@
 		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
 		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_RESPAWN_DOOKU
 		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SITH_LORD </Encyclopedia_Unit_Class>
@@ -1554,12 +1390,10 @@
 			
 			<Combat_Bonus_Ability Name="Dooku_Combat_Bonus">
 				<Activation_Style>Ground_Automatic</Activation_Style>
-				<Unit_Strength_Category>Vehicle | Infantry | Air</Unit_Strength_Category>
 				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
 				<Health_Bonus_Percentage>0.10</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.10</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.10</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.15</Movement_Speed_Bonus_Percentage>
@@ -1569,7 +1403,6 @@
 		</Abilities>
 		<Population_Value>1</Population_Value>
 	</HeroUnit>
-
 	<HeroCompany Name="Dooku_Team">
 		<Text_ID>TEXT_HERO_DOOKU</Text_ID>
 		<Icon_Name>i_button_dooku.tga</Icon_Name>
@@ -1577,13 +1410,11 @@
 		<Affiliation>Rebel</Affiliation>
 		<Damage>100</Damage>
 		<Build_Time_Seconds>0</Build_Time_Seconds>
-		<Combat_Power_Value>0</Combat_Power_Value>
 		<Tech_Level>99</Tech_Level>
 		<Build_Cost_Credits>5000</Build_Cost_Credits>
 		<Build_Time_Seconds>30</Build_Time_Seconds>
 		<Build_Tab_Heroes>Yes</Build_Tab_Heroes>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
-		<Required_Timeline>1</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures></Required_Special_Structures>
@@ -1637,15 +1468,15 @@
 		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
 		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_RESPAWN_DOOKU
 		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SITH_LORD </Encyclopedia_Unit_Class>
-		<CategoryMask>LandHero | SpaceHero</CategoryMask>
+		<CategoryMask> LandHero | SpaceHero </CategoryMask>
 		<Ranking_In_Category> 3 </Ranking_In_Category>
 		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
 		<Population_Value>1</Population_Value>
 	</HeroCompany>
-
 
 	<HeroUnit Name="Sora_Bulq">
 		<LOD_Bias>5</LOD_Bias>
@@ -1707,8 +1538,8 @@
 		<FormationSpacing> .5 </FormationSpacing>
 		<MinimumPushReturnDistance> 10 </MinimumPushReturnDistance>
 		<Min_Speed> .1 </Min_Speed>
-		<OverrideAcceleration> .1 </OverrideAcceleration>
-		<OverrideDeceleration> .25 </OverrideDeceleration>
+		<OverrideAcceleration> 1.25 </OverrideAcceleration>
+		<OverrideDeceleration> 1.25 </OverrideDeceleration>
 
 		<SFXEvent_Engine_Idle_Loop> Unit_Obiwan_Lightsaber_Idle_Loop </SFXEvent_Engine_Idle_Loop>
 		<SFXEvent_Engine_Moving_Loop> Unit_Obiwan_Lightsaber_Moving_Loop </SFXEvent_Engine_Moving_Loop>
@@ -1744,21 +1575,19 @@
 		<Dense_FOW_Reveal_Range_Multiplier>1.0</Dense_FOW_Reveal_Range_Multiplier>
 		<Targeting_Max_Attack_Distance>25.0</Targeting_Max_Attack_Distance>
 		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
-
-		<SFXEvent_Select>Unit_Select_Sora_Bulq</SFXEvent_Select>
-		<SFXEvent_Move>Unit_Move_Sora_Bulq</SFXEvent_Move>
-		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Sora_Bulq</SFXEvent_Fleet_Move>
-		<SFXEvent_Attack>Unit_Attack_Sora_Bulq</SFXEvent_Attack>
-		<SFXEvent_Guard>Unit_Guard_Sora_Bulq</SFXEvent_Guard>
-		<SFXEvent_Group_Move>Unit_Group_Move_Sora_Bulq</SFXEvent_Group_Move>
-		<SFXEvent_Group_Attack>Unit_Group_Attack_Sora_Bulq</SFXEvent_Group_Attack>
-		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Sora_Bulq </SFXEvent_Health_Low_Warning>
-		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Sora_Bulq </SFXEvent_Health_Critical_Warning>
-		<Death_SFXEvent_Start_Die> Unit_Die_Sora_Bulq </Death_SFXEvent_Start_Die>   
-
+		
 		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
-		<SFXEvent_Tactical_Build_Complete> RHD_Reinforcements_Available </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Dark_Acolyte </SFXEvent_Tactical_Build_Complete>		
 		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<SFXEvent_Select>Unit_Select_Dark_Acolyte</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Dark_Acolyte</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Dark_Acolyte</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Dark_Acolyte</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Dark_Acolyte</SFXEvent_Guard>
+		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Dark_Acolyte </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Dark_Acolyte </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Death_Dark_Acolyte </Death_SFXEvent_Start_Die>
 
 		<Play_SFXEvent_On_Sighting>True</Play_SFXEvent_On_Sighting>
 
@@ -1802,10 +1631,11 @@
 
 				<Unit_Ability>
 				<Type>FORCE_CONFUSE</Type>
+				<Alternate_Icon_Name>I_SA_MIND_TRICK.tga</Alternate_Icon_Name>
 				<Recharge_Seconds>40.0</Recharge_Seconds>
 				<GUI_Activated_Ability_Name> Sora_Bulq_Confuse </GUI_Activated_Ability_Name> 
 				<Effective_Radius> 500.0 </Effective_Radius>
-				<SFXEvent_GUI_Unit_Ability_Activated> Unit_Confuse_Obi_Wan </SFXEvent_GUI_Unit_Ability_Activated>
+				<SFXEvent_GUI_Unit_Ability_Activated> Unit_Ability_Dark_Acolyte </SFXEvent_GUI_Unit_Ability_Activated>
 				<Supports_Autofire>True</Supports_Autofire>
 			</Unit_Ability>
 		</Unit_Abilities_Data>
@@ -1813,13 +1643,11 @@
 		<Abilities SubObjectList="Yes">		
 			<Combat_Bonus_Ability Name="Sora_Bulq_Combat_Bonus">
 				<Activation_Style>Ground_Automatic</Activation_Style>
-				<Unit_Strength_Category>Vehicle | Infantry | Air</Unit_Strength_Category>
 				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
 				<Excluded_Unit_Types> </Excluded_Unit_Types>
 				<Health_Bonus_Percentage>0.05</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.05</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.05</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.05</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.05</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.1</Movement_Speed_Bonus_Percentage>
@@ -1958,7 +1786,6 @@
 		</Abilities>
 
 	</HeroUnit>
-
 	<HeroCompany Name="Sora_Bulq_Team">
 		<LOD_Bias>5</LOD_Bias>
 		<Text_ID>TEXT_HERO_SORA_BULQ</Text_ID>
@@ -1981,14 +1808,13 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE </Encyclopedia_Unit_Class>
 		<Icon_Name>i_button_sora_bulq.tga</Icon_Name>
 		<Build_Time_Seconds>15</Build_Time_Seconds>
-		<Combat_Power_Value>10</Combat_Power_Value>
 		<Tech_Level>99</Tech_Level>
 		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
 
 		<Required_Special_Structures></Required_Special_Structures>
-		<Required_Planets>Dagobah</Required_Planets>
+		<Required_Planets></Required_Planets>
 		<Build_Cost_Credits> 2000 </Build_Cost_Credits>
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
@@ -2006,16 +1832,15 @@
 		<Damage>50</Damage>
 		<Affiliation>Rebel</Affiliation>
 				
-		<Required_Timeline>0</Required_Timeline>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
 				
 		<SFXEvent_Build_Started>RHD_Request_Assistance</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>RHD_Request_Canceled</SFXEvent_Build_Cancelled>		
-		<SFXEvent_Build_Complete>Unit_Complete_Sora_Bulq</SFXEvent_Build_Complete>
-		<SFXEvent_Hero_Respawned>Unit_Complete_Sora_Bulq</SFXEvent_Hero_Respawned>
-		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Sora_Bulq</SFXEvent_Fleet_Move>
+		<SFXEvent_Build_Complete>Unit_Complete_Dark_Acolyte</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Complete_Dark_Acolyte</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Dark_Acolyte</SFXEvent_Fleet_Move>
 
-		<CategoryMask>LandHero | SpaceHero</CategoryMask>
+		<CategoryMask> LandHero | SpaceHero </CategoryMask>
 		<Ranking_In_Category> 3 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 
@@ -2027,20 +1852,6 @@
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
-
-		<Unit_Abilities_Data SubObjectList="Yes">
-		
-			<Unit_Ability>
-				<Type>SPOILER_LOCK</Type>
-				<Mod_Multiplier>WEAPON_DELAY_MULTIPLIER,	3.0f</Mod_Multiplier>
-				<Mod_Multiplier>SHIELD_REGEN_MULTIPLIER,	1.0f</Mod_Multiplier>
-				<Mod_Multiplier>ENERGY_REGEN_MULTIPLIER,	1.0f</Mod_Multiplier>
-				<Mod_Multiplier>SPEED_MULTIPLIER,		2</Mod_Multiplier>
-				<SFXEvent_GUI_Unit_Ability_Activated>Unit_Ability_On_Luke</SFXEvent_GUI_Unit_Ability_Activated>
-				<SFXEvent_GUI_Unit_Ability_Deactivated>Unit_Ability_Off_Luke</SFXEvent_GUI_Unit_Ability_Deactivated>
-			</Unit_Ability>
-
-		</Unit_Abilities_Data>
 	</HeroCompany>
 	
 	<DummyStructure Name="Sora_Assign">
@@ -2073,8 +1884,6 @@
 		<Required_Orbiting_Units>Stock_Sheathipede_Landing_Craft_Sora</Required_Orbiting_Units>
 	</DummyStructure>
 
-
-	<!-- CIS Dark Jedi/Acolytes -->
 	<HeroUnit Name="Yansu_Grjak">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
@@ -2084,6 +1893,8 @@
 		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE 
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_YANSU_GRJAK
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_STAR_COURIER
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_YANSU_GRJAK_HEALTH
 		TEXT_TOOLTIP_YANSU_GRJAK_MOVE
@@ -2160,7 +1971,6 @@
 		<Affiliation>Rebel</Affiliation>
 		<Political_Control />
 		<Political_Faction />
-		<Required_Timeline>0</Required_Timeline>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures />
@@ -2230,7 +2040,7 @@
 				<Recharge_Seconds>50.0</Recharge_Seconds>
 				<GUI_Activated_Ability_Name> Yansu_Grjak_Drain_Life </GUI_Activated_Ability_Name> 
 				<Supports_Autofire>True</Supports_Autofire>
-						<SFXEvent_GUI_Unit_Ability_Activated> Unit_Attack_Night_Sister </SFXEvent_GUI_Unit_Ability_Activated> 
+				<SFXEvent_GUI_Unit_Ability_Activated> Unit_Drain_Night_Sister </SFXEvent_GUI_Unit_Ability_Activated> 
 			</Unit_Ability>
 
 			<Unit_Ability>
@@ -2241,8 +2051,7 @@
 				<Effective_Radius>400</Effective_Radius>
 				<Friendly_Ability> true </Friendly_Ability>
 				<Supports_Autofire>True</Supports_Autofire>
-				<SFXEvent_GUI_Unit_Ability_Activated> Unit_ability_Shaak_Ti </SFXEvent_GUI_Unit_Ability_Activated>
-				<SFXEvent_Target_Ability> Unit_ability_Shaak_Ti </SFXEvent_Target_Ability> 				
+				<SFXEvent_Target_Ability> Unit_Sense_Night_Sister </SFXEvent_Target_Ability> 				
 			</Unit_Ability>
 
 		</Unit_Abilities_Data>
@@ -2253,25 +2062,25 @@
 			<Redirect_Blaster_Ability Name="Yansu_Grjak_Redirect_Blaster">
 				<Activation_Style>Take_Damage</Activation_Style>
 				<!-- Redirection chance is rolled first. If failed, we roll block chance. If failed, we take the damage. -->
-				<Redirect_Chance>0.0</Redirect_Chance>
-				<Block_Chance>0.6</Block_Chance>
+				<Redirect_Chance>0.50</Redirect_Chance>
+				<Block_Chance>0.80</Block_Chance>
 				<Reaction_Arc_In_Degrees>180.0</Reaction_Arc_In_Degrees>
 				<Max_Projectile_Redirection_Angle_In_Degrees> 135.0 </Max_Projectile_Redirection_Angle_In_Degrees>
 				<Turn_To_Face_Unblockable_Shots>No</Turn_To_Face_Unblockable_Shots>
-				<!-- We can block/redirect shots from the following units types: -->
-				<Applicable_Unit_Categories>Infantry | Vehicle | LandHero</Applicable_Unit_Categories>
+				<!-- We can block/redirect shots from the following units types (but no missiles or grenades): -->
+				<Applicable_Unit_Categories>Infantry | LandHero</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
 				<SFXEvent_Activate>Unit_Lightsaber_Projectile_Block</SFXEvent_Activate>
 			</Redirect_Blaster_Ability>
 
 			<Absorb_Blaster_Ability Name="Yansu_Grjak_Absorb_Blaster">
 				<Activation_Style>Take_Damage</Activation_Style>
-				<Absorb_Chance>0.1</Absorb_Chance>
+				<Absorb_Chance>0.2</Absorb_Chance>
 				<!-- Absorb Percentage and Amount work together in the following way: -->
 				<!-- Actual Amount healed = (Projectile Damage * Absorb Percentage) + Absorb Amount -->
 				<!-- Either value can be zero, but at least one should be non-zero. -->
-				<Damage_Absorb_Percentage>0.25</Damage_Absorb_Percentage>
-				<Damage_Absorb_Amount>0.25</Damage_Absorb_Amount>
+				<Damage_Absorb_Percentage>0.2</Damage_Absorb_Percentage>
+				<Damage_Absorb_Amount>1</Damage_Absorb_Amount>
 				<!-- We can absorb shots from the following units types (but no missiles or grenades): -->
 				<Applicable_Unit_Categories>Infantry | LandHero</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
@@ -2363,13 +2172,11 @@
 			
 			<Combat_Bonus_Ability Name="Yansu_Grjak_Combat_Bonus">
 				<Activation_Style>Combat_Automatic</Activation_Style>
-				<Unit_Strength_Category>Vehicle | Infantry | Air</Unit_Strength_Category>
 				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
 				<Applicable_Unit_Types />
 				<Excluded_Unit_Types> </Excluded_Unit_Types>
 				<Health_Bonus_Percentage>0.0</Health_Bonus_Percentage>
-				<Damage_Bonus_Percentage>0.0</Damage_Bonus_Percentage>
-				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.0</Damage_Bonus_Percentage>    
 				<Shield_Bonus_Percentage>0.0</Shield_Bonus_Percentage>
 				<Defense_Bonus_Percentage>0.0</Defense_Bonus_Percentage>
 				<Movement_Speed_Bonus_Percentage>0.10</Movement_Speed_Bonus_Percentage>
@@ -2387,7 +2194,6 @@
 		</Abilities>
 
 	</HeroUnit>
-
 	<HeroCompany Name="Yansu_Grjak_Team">
 		<Text_ID>TEXT_HERO_YANSU_GRJAK</Text_ID>
 		<Encyclopedia_Text> 
@@ -2395,6 +2201,8 @@
 		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE 
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_YANSU_GRJAK
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_STAR_COURIER
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_YANSU_GRJAK_HEALTH
 		TEXT_TOOLTIP_YANSU_GRJAK_MOVE
@@ -2411,15 +2219,13 @@
 		<Damage>100</Damage>
 		<Affiliation>Rebel</Affiliation>
 
-		<Combat_Power_Value>0</Combat_Power_Value>
 		<Tech_Level>99</Tech_Level>
-		<Required_Timeline>0</Required_Timeline>
 		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Required_Special_Structures></Required_Special_Structures>
-		<Required_Planets>Coruscant</Required_Planets>
+		<Required_Planets></Required_Planets>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Yansu</Company_Transport_Unit>
+		<Company_Transport_Unit>Star_Courier</Company_Transport_Unit>
 		<Company_Units>Yansu_Grjak</Company_Units>
 		<Build_Time_Seconds>20</Build_Time_Seconds>
 		<Build_Cost_Credits>3050</Build_Cost_Credits>
@@ -2431,11 +2237,11 @@
 		<Score_Cost_Credits> 25000 </Score_Cost_Credits>
 		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete>Unit_Respawn_Emperor</SFXEvent_Build_Complete>
-		<SFXEvent_Hero_Respawned>Unit_Respawn_Emperor</SFXEvent_Hero_Respawned>
-		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Emperor</SFXEvent_Fleet_Move>
+		<SFXEvent_Build_Complete>Unit_Select_Night_Sister</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Select_Night_Sister</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Night_Sister</SFXEvent_Fleet_Move>
 
-		<CategoryMask>LandHero | SpaceHero </CategoryMask>
+		<CategoryMask> LandHero | SpaceHero </CategoryMask>
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 		<Population_Value>1</Population_Value>
 		<Land_Override_Population_Value>1</Land_Override_Population_Value>
@@ -2448,6 +2254,452 @@
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
 	</HeroCompany>
+
+	<HeroUnit Name="Shaala_Doneeta">
+		<LOD_Bias>5</LOD_Bias>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
+		<Text_ID>TEXT_HERO_SHAALA_DONEETA</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE 
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_SHAALA_DONEETA
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_GINIVEX
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_SHAALA_DONEETA_HEALTH
+		TEXT_TOOLTIP_SHAALA_DONEETA_MOVE
+		TEXT_TOOLTIP_SHAALA_DONEETA_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE </Encyclopedia_Unit_Class>
+		<Land_Model_Name>CIS_Shaala_Doneeta.ALO</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>Jedi.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>i_button_Shaala_Doneeta.tga</Icon_Name>
+
+		<GalacticBehavior> SELECTABLE </GalacticBehavior>
+		<LandBehavior>SELECTABLE, SURFACE_FX, WALK_LOCOMOTOR, IDLE, REVEAL, HIDE_WHEN_FOGGED, TARGETING, WEAPON, DAMAGE_TRACKING, UNIT_AI, ABILITY_COUNTDOWN, HOLSTER_WEAPON, GARRISON_UNIT </LandBehavior>
+
+		<!-- Lightsaber holstering data  -->
+		<SFXEvent_Draw_Weapon> Unit_Light_Saber_On </SFXEvent_Draw_Weapon>
+		<SFXEvent_Holster_Weapon> Unit_Light_Saber_Off </SFXEvent_Holster_Weapon>
+		<Holster_Weapon_Bone_Name> b_saber </Holster_Weapon_Bone_Name>
+		<Holster_Drawn_Bone_Translation> 0.0, 0.0, 0.0 </Holster_Drawn_Bone_Translation>
+		<Holster_Holstered_Bone_Translation> 0.0, -5.1705, 0.0 </Holster_Holstered_Bone_Translation>
+		<Holster_Transition_Time_In_Secs> 0.17 </Holster_Transition_Time_In_Secs>
+		<Holster_Minimum_Drawn_Time_In_Secs> 15.0 </Holster_Minimum_Drawn_Time_In_Secs>
+		<Holster_Disable_Engine_Loops> Yes </Holster_Disable_Engine_Loops>
+
+		<Garrison_Category> Infantry </Garrison_Category>
+		<SurfaceFX_Name>Generic_Footprint, Infantry_Terrain_Modifier</SurfaceFX_Name>
+		<Is_Visible_On_Radar>Yes</Is_Visible_On_Radar>
+		<Is_Visible_On_Enemy_Radar>Yes</Is_Visible_On_Enemy_Radar>
+		<Loop_Idle_Anim_00>No</Loop_Idle_Anim_00>
+		<Collidable_By_Projectile_Living>Yes</Collidable_By_Projectile_Living>
+		<CanCellStack>yes</CanCellStack>
+		<Mass>1.0</Mass>
+		
+		<Movement_Animation_Speed> 1.0 </Movement_Animation_Speed>
+		<Max_Speed>1.35</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<Custom_Soft_Footprint_Radius> 6.5 </Custom_Soft_Footprint_Radius>
+		<Custom_Hard_XExtent> 2.0 </Custom_Hard_XExtent>
+		<Custom_Hard_YExtent> 2.0 </Custom_Hard_YExtent>
+		<Space_Layer> Land </Space_Layer>
+		<UnitCollisionClass> Infantry </UnitCollisionClass>
+		<FormationSpacing> .5 </FormationSpacing>
+		<MinimumPushReturnDistance> 10 </MinimumPushReturnDistance>
+		<Min_Speed> .1 </Min_Speed>
+		<OverrideAcceleration> 1.35 </OverrideAcceleration>
+		<OverrideDeceleration> 1.35 </OverrideDeceleration>
+
+		<SFXEvent_Engine_Idle_Loop> Unit_Obiwan_Lightsaber_Idle_Loop </SFXEvent_Engine_Idle_Loop>
+		<SFXEvent_Engine_Moving_Loop> Unit_Obiwan_Lightsaber_Moving_Loop </SFXEvent_Engine_Moving_Loop>
+		<SFXEvent_Engine_Cinematic_Focus_Loop> Unit_Obiwan_Lightsaber_Cinematic_Loop </SFXEvent_Engine_Cinematic_Focus_Loop>
+
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>			
+		<Scale_Factor>1.1</Scale_Factor>
+		<Type>Walk</Type>
+		<Deploys>No</Deploys>
+		<Affiliation>Rebel</Affiliation>
+		<Size_Value>10</Size_Value>
+		<Sensor_Range>20</Sensor_Range>
+		<Shield_Points>0</Shield_Points>
+		<Tactical_Health>170</Tactical_Health>
+		<Autoresolve_Health>170</Autoresolve_Health>
+		<Damage>100</Damage>
+		<Stealth_Capable>No</Stealth_Capable>
+		<Victory_Relevant>yes</Victory_Relevant>
+
+		<Armor_Type> ArmourG_Hero </Armor_Type>
+		
+		<Is_Stationary_When_Attacking>Yes</Is_Stationary_When_Attacking>
+		<Projectile_Types> Proj_Lightsaber </Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>0.2</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Appearance_Delay_Frames> 20 </Projectile_Appearance_Delay_Frames>
+
+		<Targeting_Fire_Inaccuracy> Infantry, 0.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Vehicle, 0.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Air, 0.0 </Targeting_Fire_Inaccuracy>
+		<Targeting_Fire_Inaccuracy> Structure, 0.0 </Targeting_Fire_Inaccuracy>
+
+		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
+		<Dense_FOW_Reveal_Range_Multiplier>1.0</Dense_FOW_Reveal_Range_Multiplier>
+		<Targeting_Max_Attack_Distance>25.0</Targeting_Max_Attack_Distance>
+		<Ranged_Target_Z_Adjust>7.0</Ranged_Target_Z_Adjust>
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete>  </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<SFXEvent_Select>Unit_Select_Twilek</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Twilek</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Move_Twilek</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Twilek</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Twilek</SFXEvent_Guard>
+		<SFXEvent_Health_Low_Warning>  </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning>  </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die>  </Death_SFXEvent_Start_Die>
+
+		<Play_SFXEvent_On_Sighting>True</Play_SFXEvent_On_Sighting>
+
+		<CategoryMask> LandHero </CategoryMask>
+		<Ranking_In_Category> 2 </Ranking_In_Category>
+		<MovementClass>Infantry</MovementClass>
+		<OccupationStyle>1x1</OccupationStyle>
+		<Blob_Shadow_Below_Detail_Level>3</Blob_Shadow_Below_Detail_Level>
+		<Blob_Shadow_Scale>5.0, 5.0</Blob_Shadow_Scale>
+		<Blob_Shadow_Material_Name>Generic_Shadow</Blob_Shadow_Material_Name>
+		<Blob_Shadow_Bone_Name>B_Chest</Blob_Shadow_Bone_Name>
+		<Ground_Infantry_Turret_Target> Yes </Ground_Infantry_Turret_Target>
+		<Attach_To_Flagship_During_Space_Battle>No</Attach_To_Flagship_During_Space_Battle>
+		<Stay_In_Transport_During_Ground_Battle>No</Stay_In_Transport_During_Ground_Battle>		
+
+		<Select_Box_Scale>27</Select_Box_Scale>
+		<Select_Box_Z_Adjust>3.0f</Select_Box_Z_Adjust>
+		
+		<Highlight_Blob_Material_Name>Highlight_CIS_Hero</Highlight_Blob_Material_Name>
+
+		<Has_Land_Evaluator>True</Has_Land_Evaluator>
+		<AI_Combat_Power>222</AI_Combat_Power>
+		<Idle_Chase_Range>100.0</Idle_Chase_Range>
+		<Guard_Chase_Range>200.0</Guard_Chase_Range>
+		<Attack_Move_Response_Range>300.0</Attack_Move_Response_Range>
+		<Targeting_Stickiness_Time_Threshold>5.0</Targeting_Stickiness_Time_Threshold>
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+		<Autonomous_Move_Extension_Vs_Attacker>200.0</Autonomous_Move_Extension_Vs_Attacker>
+
+		<Neutralization_Cost>3500.0</Neutralization_Cost>
+
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Death_Persistence_Duration>5.0</Death_Persistence_Duration>
+		<Death_Fade_Time>0.25</Death_Fade_Time>
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<Target_Stealth_Units>Yes</Target_Stealth_Units>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes"> 
+			<Unit_Ability>
+				<Type>FORCE_LIGHTNING</Type>
+				<Recharge_Seconds>20.0</Recharge_Seconds>
+				<GUI_Activated_Ability_Name> Shaala_Doneeta_Force_Lightning </GUI_Activated_Ability_Name> 
+				<SFXEvent_Target_Ability>  </SFXEvent_Target_Ability> 
+				<SFXEvent_GUI_Unit_Ability_Activated>  </SFXEvent_GUI_Unit_Ability_Activated> 	
+				<Supports_Autofire>True</Supports_Autofire>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Abilities SubObjectList="Yes">
+			<Earthquake_Attack_Ability Name="Shaala_Doneeta_Attack_Structures">
+				<Activation_Style>Special_Attack</Activation_Style>
+				<Terminate_Effect_On_Move_Command>Yes</Terminate_Effect_On_Move_Command>
+				<Activation_Min_Range>0.0</Activation_Min_Range>
+				<Activation_Max_Range>120.0</Activation_Max_Range>
+				<Activation_Chance>1.0</Activation_Chance>
+				<Damage_Amount>0.0</Damage_Amount>
+				<Damage_Percentage>0.02</Damage_Percentage>
+				<Damage_Interval_In_Secs>0.5</Damage_Interval_In_Secs>
+				<!-- Note: As well as matching the below Unit_Category/Unit_Type filters, the -->
+				<!-- target object must also have the EARTHQUAKE_TARGET behavior attached. -->
+				<Applicable_Unit_Categories>Structure</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<SFXEvent_Activate />
+				<Target_Particle_Effect>Earthquake_Dust_Particles</Target_Particle_Effect>
+				<Target_Particle_Bone_Name />
+			</Earthquake_Attack_Ability>
+
+		   <Redirect_Blaster_Ability Name="Shaala_Doneeta_Redirect_Blaster">
+				<Activation_Style>Take_Damage</Activation_Style>
+				<!-- Redirection chance is rolled first. If failed, we roll block chance. If failed, we take the damage. -->
+				<Redirect_Chance>0.5</Redirect_Chance>
+				<Block_Chance>0.8</Block_Chance>
+				<Reaction_Arc_In_Degrees>180.0</Reaction_Arc_In_Degrees>
+				<Max_Projectile_Redirection_Angle_In_Degrees> 135.0 </Max_Projectile_Redirection_Angle_In_Degrees>
+				<Turn_To_Face_Unblockable_Shots>No</Turn_To_Face_Unblockable_Shots>
+				<!-- We can block/redirect shots from the following units types: -->
+				<Applicable_Unit_Categories> Infantry | LandHero</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<SFXEvent_Activate>Unit_Lightsaber_Projectile_Block</SFXEvent_Activate>
+			</Redirect_Blaster_Ability>
+			
+			<Absorb_Blaster_Ability Name="Shaala_Doneeta_Absorb_Blaster">
+				<Activation_Style>Take_Damage</Activation_Style>
+				<Absorb_Chance>0.2</Absorb_Chance>
+				<!-- Absorb Percentage and Amount work together in the following way: -->
+				<!-- Actual Amount healed = (Projectile Damage * Absorb Percentage) + Absorb Amount -->
+				<!-- Either value can be zero, but at least one should be non-zero. -->
+				<Damage_Absorb_Percentage>0.2</Damage_Absorb_Percentage>
+				<Damage_Absorb_Amount>1</Damage_Absorb_Amount>
+				<!-- We can absorb shots from the following units types (but no missiles or grenades): -->
+				<Applicable_Unit_Categories>Infantry | LandHero</Applicable_Unit_Categories>
+				<Applicable_Unit_Types></Applicable_Unit_Types>
+				<SFXEvent_Activate>Unit_Force_Absorb</SFXEvent_Activate>
+				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
+				<Owner_Light_Effect_Color>2.0, 0.4, 0.4</Owner_Light_Effect_Color>
+				<Owner_Light_Effect_Color2></Owner_Light_Effect_Color2>
+				<Owner_Light_Effect_Duration>0.5</Owner_Light_Effect_Duration>
+				<Owner_Light_Effect_Pulse_Count></Owner_Light_Effect_Pulse_Count>
+			</Absorb_Blaster_Ability>
+			
+			<Force_Lightning_Ability Name="Shaala_Doneeta_Force_Lightning">
+				<!-- <Activation_Style>Special_Attack</Activation_Style> -->
+				<Activation_Style> User_Input </Activation_Style>
+				<Activation_Min_Range>0.0</Activation_Min_Range>
+				<Activation_Max_Range>175.0</Activation_Max_Range>
+				<Applicable_Unit_Categories>Infantry</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Damage_Amount>9999.0</Damage_Amount>
+				<Damage_Application_Time_In_Secs>2.3893</Damage_Application_Time_In_Secs>
+				<Start_Lightning_Frame_Number> 8 </Start_Lightning_Frame_Number>
+				<Lightning_Effect_Name>Force_Lightning</Lightning_Effect_Name>	<!-- See LightningEffectTypes.xml -->
+				<Lightning_Source_Bone_Name>B_HAND_L</Lightning_Source_Bone_Name>
+				<Lightning_Target_Bone_Name>B_PELVIS</Lightning_Target_Bone_Name>
+				<Lightning_Max_Targets> 15 </Lightning_Max_Targets> 					<!-- How many victims will the lightning seek out, including original target -->
+				<Lightning_Targets_Radius> 100.0 </Lightning_Targets_Radius>		<!-- How far from the original target will the lightning seek for other victims -->
+				<SFXEvent_Activate>Unit_Force_Lightning</SFXEvent_Activate>
+				<SFXEvent_Target_Affected />
+				<Target_Particle_Effect>Force_Lightning_Smoke</Target_Particle_Effect>
+				<Target_Particle_Bone_Name>B_PELVIS</Target_Particle_Bone_Name> <!-- B_FOOT_R B_FOOT_L -->
+				<Target_Light_Effect_Type>Linear_Pulse</Target_Light_Effect_Type>
+				<Target_Light_Effect_Color>0.3, 0.3, 0.8</Target_Light_Effect_Color>
+				<Target_Light_Effect_Color2 />
+				<Target_Light_Effect_Duration>2.3893</Target_Light_Effect_Duration>
+				<Target_Light_Effect_Pulse_Count>25</Target_Light_Effect_Pulse_Count>
+			</Force_Lightning_Ability>
+			
+			<Force_Healing_Ability Name="Shaala_Doneeta_Self_Heal">
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<Heal_Range>5.0</Heal_Range>
+				<Heal_Amount> 0.0 </Heal_Amount>
+				<Heal_Percent> 0.02 </Heal_Percent>
+				<Heal_Interval_In_Secs>5.0</Heal_Interval_In_Secs>
+				<Single_Target_Heal>Yes</Single_Target_Heal>
+
+				<Applicable_Unit_Categories />
+				<Applicable_Unit_Types>Shaala_Doneeta</Applicable_Unit_Types>
+				<Excluded_Unit_Types />
+				
+				<SFXEvent_Target_Affected>Unit_Force_Healing_Pulse</SFXEvent_Target_Affected>
+				<Target_Particle_Bone_Name>B_HEAD</Target_Particle_Bone_Name>
+				<Target_Light_Effect_Type>Color_Flash</Target_Light_Effect_Type>
+				<Target_Light_Effect_Color>1.2, 2.0, 1.2</Target_Light_Effect_Color>
+				<Target_Light_Effect_Color2 />
+				<Target_Light_Effect_Duration>0.6</Target_Light_Effect_Duration>
+				<Target_Light_Effect_Pulse_Count>1</Target_Light_Effect_Pulse_Count>
+				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
+				<Owner_Light_Effect_Color>1.2, 2.0, 1.2</Owner_Light_Effect_Color>
+				<Owner_Light_Effect_Color2 />
+				<Owner_Light_Effect_Duration>0.6</Owner_Light_Effect_Duration>
+				<Owner_Light_Effect_Pulse_Count>1</Owner_Light_Effect_Pulse_Count>
+			</Force_Healing_Ability>
+			
+			<Berserker_Ability Name="Shaala_Doneeta_Force_Attack">
+				<Activation_Style> Special_Attack </Activation_Style>
+				<Activation_Min_Range>0.0</Activation_Min_Range>
+				<Activation_Max_Range>120.0</Activation_Max_Range>
+				<Berserker_Speed>2.0</Berserker_Speed>
+				<Berserker_Damage>20.0</Berserker_Damage>
+				<Berserker_Damage_Range>12.0</Berserker_Damage_Range>
+				<Berserker_Duration_In_Secs>4.0</Berserker_Duration_In_Secs>
+				<Applicable_Unit_Categories>Infantry</Applicable_Unit_Categories>
+			</Berserker_Ability>
+
+			<Battlefield_Modifier_Ability Name="Shaala_Doneeta_FOW_Increase">
+				<Initially_Enabled>Yes</Initially_Enabled>
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<FOW_Reveal_Range_Multiplier>1.3</FOW_Reveal_Range_Multiplier>
+				<Apply_To_All_Allies>Yes</Apply_To_All_Allies>
+				<Stacking_Category>0</Stacking_Category>
+			</Battlefield_Modifier_Ability>
+		</Abilities>
+
+	</HeroUnit>
+	<HeroCompany Name="Shaala_Doneeta_Team">
+		<LOD_Bias>5</LOD_Bias>
+		<Text_ID>TEXT_HERO_SHAALA_DONEETA</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE 
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_SHAALA_DONEETA
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_GINIVEX
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_SHAALA_DONEETA_HEALTH
+		TEXT_TOOLTIP_SHAALA_DONEETA_MOVE
+		TEXT_TOOLTIP_SHAALA_DONEETA_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_Shaala_Doneeta.tga</Icon_Name>
+		<Build_Time_Seconds>15</Build_Time_Seconds>
+		<Tech_Level>99</Tech_Level>
+		<Required_Ground_Base_Level>1</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+
+		<Required_Special_Structures></Required_Special_Structures>
+		<Required_Planets></Required_Planets>
+		<Build_Cost_Credits> 2000 </Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Shaala_Doneeta_Ginivex</Company_Transport_Unit>
+		<Company_Units>Shaala_Doneeta</Company_Units>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
+		<Available_In_Skirmish>yes</Available_In_Skirmish>
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+		<Is_Buildable>Yes</Is_Buildable>
+		
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>50</Damage>
+		<Affiliation>Rebel</Affiliation>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+				
+		<SFXEvent_Build_Started>RHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>RHD_Request_Canceled</SFXEvent_Build_Cancelled>		
+		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned></SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Move_Twilek</SFXEvent_Fleet_Move>
+
+		<CategoryMask>LandHero</CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Population_Value>1</Population_Value>
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>1625</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>13</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites>Ground_Level_Two_Tech_Upgrade</Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>   
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+	</HeroCompany>
+	
+	<UniqueUnit Name="Shaala_Doneeta_Ginivex">
+		<Variant_Of_Existing_Type>Ginivex</Variant_Of_Existing_Type>
+		<Text_ID>TEXT_HERO_SHAALA_DONEETA</Text_ID>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_SHAALA_DONEETA 
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_UNIT_GINIVEX
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_STATBLOCK_GINIVEX_SEVRANCE_BASE
+		TEXT_STATBLOCK_GINIVEX_MOVE
+		TEXT_STATBLOCK_GINIVEX_WEAP1
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_DARK_ACOLYTE </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_Shaala_Doneeta.tga</Icon_Name>
+
+		<Behavior>SELECTABLE, TRANSPORT</Behavior>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Tactical_Health>260</Tactical_Health>
+		<Shield_Points>60</Shield_Points>
+		<Shield_Refresh_Rate>5</Shield_Refresh_Rate>
+		
+		<Collision_Box_Modifier>1.0</Collision_Box_Modifier>
+		
+		<SpaceBehavior>HUNT, SHIELDED, FIGHTER_LOCOMOTOR, SELECTABLE, TARGETING, WEAPON, POWERED, HIDE_WHEN_FOGGED, AMBIENT_SFX, DAMAGE_TRACKING, NEBULA, REVEAL, ABILITY_COUNTDOWN </SpaceBehavior>
+
+		<HardPoints> HP_Ginivex_00, HP_Ginivex_01 </HardPoints>
+		
+		<Space_FOW_Reveal_Range>500.0</Space_FOW_Reveal_Range>
+
+		<Guard_Chase_Range>1000.0</Guard_Chase_Range>
+		<Idle_Chase_Range>1200.0</Idle_Chase_Range>
+		<Attack_Move_Response_Range>500.0</Attack_Move_Response_Range>
+		<Autonomous_Move_Extension_Vs_Attacker>1200.0</Autonomous_Move_Extension_Vs_Attacker>
+		
+		<SFXEvent_Select>Unit_Select_Twilek</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Twilek</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Move_Twilek</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Twilek</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Twilek</SFXEvent_Guard>
+		<SFXEvent_Health_Low_Warning>  </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning>  </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die>  </Death_SFXEvent_Start_Die>
+
+		<CategoryMask> Fighter | AntiFighter </CategoryMask>
+		<Victory_Relevant>yes</Victory_Relevant>
+
+		<Landing_Transport_Variant>Ginivex_Landing</Landing_Transport_Variant>
+		
+		<Damage>1</Damage>
+		<AI_Combat_Power>80</AI_Combat_Power>
+
+		<Abilities SubObjectList="Yes">
+			
+			<Battlefield_Modifier_Ability Name="Shaala_Doneeta_FOW_Space_Increase">
+			   <Initially_Enabled>Yes</Initially_Enabled>
+			   <Activation_Style>Space_Automatic</Activation_Style>
+			   <FOW_Reveal_Range_Multiplier>1.3</FOW_Reveal_Range_Multiplier>
+			   <Apply_To_All_Allies>Yes</Apply_To_All_Allies>
+			   <Stacking_Category>0</Stacking_Category>
+		   </Battlefield_Modifier_Ability>
+
+			<Absorb_Blaster_Ability Name="Jedi_Fighter_Absorb_Blaster">
+				<Activation_Style>Take_Damage</Activation_Style>
+				<Absorb_Chance>0.25</Absorb_Chance>
+				<!-- Absorb Percentage and Amount work together in the following way: -->
+				<!-- Actual Amount healed = (Projectile Damage * Absorb Percentage) + Absorb Amount -->
+				<!-- Either value can be zero, but at least one should be non-zero. -->
+				<Damage_Absorb_Percentage>0.01</Damage_Absorb_Percentage>
+				<Damage_Absorb_Amount>0.01</Damage_Absorb_Amount>
+				<!-- We can absorb shots from the following units types (but no missiles or grenades): -->
+				<Applicable_Unit_Categories>Fighter | Bomber | Corvette | Gunship | Frigate | Capital | Structure</Applicable_Unit_Categories>
+				<Applicable_Unit_Types></Applicable_Unit_Types>
+				<SFXEvent_Activate>Unit_Force_Absorb</SFXEvent_Activate>
+				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
+				<Owner_Light_Effect_Color>2.0, 0.4, 0.4</Owner_Light_Effect_Color>
+				<Owner_Light_Effect_Color2></Owner_Light_Effect_Color2>
+				<Owner_Light_Effect_Duration>0.5</Owner_Light_Effect_Duration>
+				<Owner_Light_Effect_Pulse_Count></Owner_Light_Effect_Pulse_Count>
+			</Absorb_Blaster_Ability>
+
+		</Abilities>
+
+	</UniqueUnit>
 	
 	<DummyStructure Name="Yansu_Assign">
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>

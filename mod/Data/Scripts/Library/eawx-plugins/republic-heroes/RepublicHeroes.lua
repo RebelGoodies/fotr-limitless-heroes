@@ -35,6 +35,7 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 	herokilled_finished_event:attach_listener(self.on_galactic_hero_killed, self)
 	self.hero_clones_p2_disabled = hero_clones_p2_disabled
 	self.inited = false
+	yularen_second_chance_used = false
 	
 	if self.human_player ~= Find_Player("Empire") then
 		gc.Events.PlanetOwnerChanged:attach_listener(self.on_planet_owner_changed, self)
@@ -48,46 +49,54 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 	
 	crossplot:subscribe("VENATOR_HEROES", self.Venator_Heroes, self)
 	crossplot:subscribe("VICTORY_HEROES", self.VSD_Heroes, self)
+	crossplot:subscribe("VICTORY2_HEROES", self.VSD2_Heroes, self)
 	crossplot:subscribe("REPUBLIC_ADMIRAL_DECREMENT", self.admiral_decrement, self)
 	crossplot:subscribe("REPUBLIC_ADMIRAL_LOCKIN", self.admiral_lockin, self)
+	crossplot:subscribe("SPECIAL_TASK_FORCE_FUNDED", self.Special_Task_Force_Handler, self)
+	crossplot:subscribe("SECTOR_GOVERNANCE_DECREE_SUPPORTED", self.Sector_Governance_Decree_Handler, self)
+	crossplot:subscribe("ENHANCED_SECURITY_ACT_SUPPORTED", self.Enhanced_Security_Act_Support_Handler, self)
+	crossplot:subscribe("ENHANCED_SECURITY_ACT_PREVENTED", self.Enhanced_Security_Act_Prevent_Handler, self)
+	crossplot:subscribe("AHSOKA_ARRIVAL", self.New_Padawan_Handler, self)
 	crossplot:subscribe("ORDER_66_EXECUTED", self.Order_66_Handler, self)
 	crossplot:subscribe("VENATOR_RESEARCH_FINISHED", self.Venator_Heroes, self)
 	crossplot:subscribe("VICTORY_RESEARCH_FINISHED", self.VSD_Heroes, self)
+	crossplot:subscribe("VICTORY2_RESEARCH_FINISHED", self.VSD2_Heroes, self)
 	crossplot:subscribe("ERA_THREE_TRANSITION", self.Era_3, self)
 	crossplot:subscribe("ERA_FOUR_TRANSITION", self.Era_4, self)
+	crossplot:subscribe("ERA_FIVE_TRANSITION", self.Era_5, self)
 	crossplot:subscribe("REPUBLIC_ADMIRAL_EXIT", self.admiral_exit, self)
 	crossplot:subscribe("REPUBLIC_ADMIRAL_RETURN", self.admiral_return, self)
 	crossplot:subscribe("CLONE_UPGRADES", self.Phase_II, self)
+	crossplot:subscribe("REPUBLIC_FIGHTER_ENABLE", self.Add_Fighter_Sets, self)
+	crossplot:subscribe("REPUBLIC_FIGHTER_DISABLE", self.Remove_Fighter_Sets, self)
 	
 	admiral_data = {
-		group_name = "Commander",
-		total_slots = 4,			--18, Max slot number. Increased as more become available.
-		free_hero_slots = 4,		--Slots open to assign.
-		vacant_hero_slots = 0,	    --Slots of dead heroes.
-		vacant_limit = 0,           --Number of times a lost slot can be reopened.
+		total_slots = 3,       --Max number of concurrent slots. Set at the start of the GC and never change.
+		free_hero_slots = 3,   --Slots open to fill with a hero.
+		vacant_hero_slots = 0, --Slots that need another action to move to free.
+		vacant_limit = 3,      --Number of times a lost slot becomes a vacant slot (rather than remaining lost forever).
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Yularen"] = {"YULAREN_ASSIGN",{"YULAREN_RETIRE","YULAREN_RETIRE2"},{"YULAREN_RESOLUTE","YULAREN_INTEGRITY"},"TEXT_HERO_YULAREN"},
-			["Wieler"] = {"WIELER_ASSIGN",{"WIELER_RETIRE"},{"WIELER_RESILIENT"},"TEXT_HERO_WIELER"},
-			["Coburn"] = {"COBURN_ASSIGN",{"COBURN_RETIRE"},{"COBURN_TRIUMPHANT"},"TEXT_HERO_COBURN"},
-			["Kilian"] = {"KILIAN_ASSIGN",{"KILIAN_RETIRE"},{"KILIAN_ENDURANCE"},"TEXT_HERO_KILIAN"},
-			["Dao"] = {"DAO_ASSIGN",{"DAO_RETIRE"},{"DAO_VENATOR"},"TEXT_HERO_DAO"},
-			["Denimoor"] = {"DENIMOOR_ASSIGN",{"DENIMOOR_RETIRE"},{"DENIMOOR_TENACIOUS"},"TEXT_HERO_DENIMOOR"},
-			["Dron"] = {"DRON_ASSIGN",{"DRON_RETIRE"},{"DRON_VENATOR"},"TEXT_HERO_DRON"},
-			["Screed"] = {"SCREED_ASSIGN",{"SCREED_RETIRE"},{"SCREED_ARLIONNE"},"TEXT_HERO_SCREED_FOTR"},
-			["Dodonna"] = {"DODONNA_ASSIGN",{"DODONNA_RETIRE"},{"DODONNA_ARDENT"},"TEXT_HERO_DODONNA"},
-			["Pellaeon"] = {"PELLAEON_ASSIGN",{"PELLAEON_RETIRE"},{"PELLAEON_LEVELER"},"TEXT_HERO_PELLAEON"},
-			--["Salima"] = {"SALIMA_ASSIGN",{"SALIMA_RETIRE", "SALIMA_RETIRE2"},{"SALIMA_AKEN", "SALIMA_MAELSTROM"},"TEXT_HERO_SALIMA"},
-			["Tallon"] = {"TALLON_ASSIGN",{"TALLON_RETIRE", "TALLON_RETIRE2"},{"TALLON_SUNDIVER", "TALLON_BATTALION"},"TEXT_HERO_TALLON"},
-			["Dallin"] = {"DALLIN_ASSIGN",{"DALLIN_RETIRE"},{"DALLIN_KEBIR"},"TEXT_HERO_DALLIN"},
-			--["Talbot"] = {"TALBOT_ASSIGN",{"TALBOT_RETIRE"},{"TALBOT_ARRESTOR"},"TEXT_HERO_TALBOT"},
-			["Autem"] = {"AUTEM_ASSIGN",{"AUTEM_RETIRE"},{"AUTEM_VENATOR"},"TEXT_HERO_AUTEM"},
-			["Forral"] = {"FORRAL_ASSIGN",{"FORRAL_RETIRE"},{"FORRAL_VENSENOR"},"TEXT_HERO_FORRAL"},
-			["Maarisa"] = {"MAARISA_ASSIGN",{"MAARISA_RETIRE", "MAARISA_RETIRE2"},{"MAARISA_CAPTOR", "MAARISA_RETALIATION"},"TEXT_HERO_MAARISA"},
-			["Grumby"] = {"GRUMBY_ASSIGN",{"GRUMBY_RETIRE"},{"GRUMBY_INVINCIBLE"},"TEXT_UNIT_GRUMBY"},
-			["Baraka"] = {"BARAKA_ASSIGN",{"BARAKA_RETIRE"},{"BARAKA_NEXU"},"TEXT_HERO_BARAKA"},
-			["Martz"] = {"MARTZ_ASSIGN",{"MARTZ_RETIRE"},{"MARTZ_PROSECUTOR"},"TEXT_HERO_MARTZ"},
-			--["Oicunn"] = {"OICUNN_ASSIGN",{"OICUNN_RETIRE"},{"OICUNN_RAMDAR"},"TEXT_HERO_OICUNN"},
+			["Yularen"] = {"YULAREN_ASSIGN",{"YULAREN_RETIRE","YULAREN_RETIRE2","YULAREN_RETIRE3"},{"YULAREN_RESOLUTE","YULAREN_INTEGRITY","YULAREN_INVINCIBLE"},"Wulff Yularen"},
+			["Wieler"] = {"WIELER_ASSIGN",{"WIELER_RETIRE"},{"WIELER_RESILIENT"},"Wieler"},
+			["Coburn"] = {"COBURN_ASSIGN",{"COBURN_RETIRE"},{"COBURN_TRIUMPHANT"},"Barton Coburn"},
+			["Kilian"] = {"KILIAN_ASSIGN",{"KILIAN_RETIRE"},{"KILIAN_ENDURANCE"},"Shoan Kilian"},
+			["Tenant"] = {"TENANT_ASSIGN",{"TENANT_RETIRE"},{"TENANT_VENATOR"},"Nils Tenant"},
+			["Dao"] = {"DAO_ASSIGN",{"DAO_RETIRE"},{"DAO_VENATOR"},"Dao"},
+			["Denimoor"] = {"DENIMOOR_ASSIGN",{"DENIMOOR_RETIRE"},{"DENIMOOR_TENACIOUS"},"Denimoor"},
+			["Dron"] = {"DRON_ASSIGN",{"DRON_RETIRE"},{"DRON_VENATOR"},"Dron"},
+			["Screed"] = {"SCREED_ASSIGN",{"SCREED_RETIRE"},{"SCREED_ARLIONNE"},"Terrinald Screed"},
+			["Dodonna"] = {"DODONNA_ASSIGN",{"DODONNA_RETIRE"},{"DODONNA_ARDENT"},"Jan Dodonna"},
+			["Parck"] = {"PARCK_ASSIGN",{"PARCK_RETIRE"},{"PARCK_STRIKEFAST"},"Voss Parck"},
+			["Pellaeon"] = {"PELLAEON_ASSIGN",{"PELLAEON_RETIRE"},{"PELLAEON_LEVELER"},"Gilad Pellaeon"},
+			["Tallon"] = {"TALLON_ASSIGN",{"TALLON_RETIRE", "TALLON_RETIRE2"},{"TALLON_SUNDIVER", "TALLON_BATTALION"},"Adar Tallon"},
+			["Dallin"] = {"DALLIN_ASSIGN",{"DALLIN_RETIRE"},{"DALLIN_KEBIR"},"Jace Dallin"},
+			["Autem"] = {"AUTEM_ASSIGN",{"AUTEM_RETIRE"},{"AUTEM_VENATOR"},"Sagoro Autem"},
+			["Forral"] = {"FORRAL_ASSIGN",{"FORRAL_RETIRE"},{"FORRAL_VENSENOR"},"Bythen Forral"},
+			["Maarisa"] = {"MAARISA_ASSIGN",{"MAARISA_RETIRE", "MAARISA_RETIRE2"},{"MAARISA_CAPTOR", "MAARISA_RETALIATION"},"Maarisa Zsinj"},
+			["Grumby"] = {"GRUMBY_ASSIGN",{"GRUMBY_RETIRE"},{"GRUMBY_INVINCIBLE"},"Jona Grumby"},
+			["Baraka"] = {"BARAKA_ASSIGN",{"BARAKA_RETIRE"},{"BARAKA_NEXU"},"Arikakon Baraka"},
+			["Martz"] = {"MARTZ_ASSIGN",{"MARTZ_RETIRE"},{"MARTZ_PROSECUTOR"},"Stinnet Martz"},
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
 			"Dallin",
@@ -95,7 +104,9 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 			"Grumby",
 			--"Oicunn",
 		},
-		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
+		story_locked_list = {--Heroes not accessible, but able to return with the right conditions
+			["Tenant"] = true,
+		},
 		active_player = Find_Player("Empire"),
 		extra_name = "EXTRA_ADMIRAL_SLOT",
 		random_name = "RANDOM_ADMIRAL_ASSIGN",
@@ -119,18 +130,18 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		vacant_limit = 0,           --Number of times a lost slot can be reopened.
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Tarkin"] = {"TARKIN_ASSIGN",{"TARKIN_RETIRE","TARKIN_RETIRE2"},{"TARKIN_VENATOR","TARKIN_EXECUTRIX"},"TEXT_HERO_TARKIN"},
-			["Trachta"] = {"TRACHTA_ASSIGN",{"TRACHTA_RETIRE"},{"TRACHTA_VENATOR"},"TEXT_HERO_TRACHTA"},
-			["Wessex"] = {"WESSEX_ASSIGN",{"WESSEX_RETIRE"},{"WESSEX_REDOUBT"},"TEXT_HERO_DEN_WESSEX"},
-			["Grant"] = {"GRANT_ASSIGN",{"GRANT_RETIRE"},{"GRANT_VENATOR"},"TEXT_HERO_GRANT"},
-			["Vorru"] = {"VORRU_ASSIGN",{"VORRU_RETIRE"},{"VORRU_VENATOR"},"TEXT_HERO_VORRU"},
-			["Byluir"] = {"BYLUIR_ASSIGN",{"BYLUIR_RETIRE"},{"BYLUIR_VENATOR"},"TEXT_HERO_BYLUIR"},
-			["Hauser"] = {"HAUSER_ASSIGN",{"HAUSER_RETIRE"},{"HAUSER_DREADNAUGHT"},"TEXT_HERO_HAUSER"},
-			["Wessel"] = {"WESSEL_ASSIGN",{"WESSEL_RETIRE"},{"WESSEL_ACCLAMATOR"},"TEXT_HERO_WESSEL"},
-			["Seerdon"] = {"SEERDON_ASSIGN",{"SEERDON_RETIRE"},{"SEERDON_INVINCIBLE"},"TEXT_HERO_SEERDON"},			
-			["Praji"] = {"PRAJI_ASSIGN",{"PRAJI_RETIRE"},{"PRAJI_VALORUM"},"TEXT_HERO_COLLIN_PRAJI"},
-			["Ravik"] = {"RAVIK_ASSIGN",{"RAVIK_RETIRE"},{"RAVIK_VICTORY"},"TEXT_HERO_RAVIK"},
-			["Coy"] = {"COY_ASSIGN",{"COY_RETIRE"},{"COY_IMPERATOR"},"TEXT_HERO_COY"},			
+			["Tarkin"] = {"TARKIN_ASSIGN",{"TARKIN_RETIRE","TARKIN_RETIRE2"},{"TARKIN_VENATOR","TARKIN_EXECUTRIX"},"Wilhuff Tarkin"},
+			["Trachta"] = {"TRACHTA_ASSIGN",{"TRACHTA_RETIRE"},{"TRACHTA_VENATOR"},"Trachta"},
+			["Wessex"] = {"WESSEX_ASSIGN",{"WESSEX_RETIRE"},{"WESSEX_REDOUBT"},"Denn Wessex"},
+			["Grant"] = {"GRANT_ASSIGN",{"GRANT_RETIRE"},{"GRANT_VENATOR"},"Octavian Grant"},
+			["Vorru"] = {"VORRU_ASSIGN",{"VORRU_RETIRE"},{"VORRU_VENATOR"},"Fliry Vorru"},
+			["Byluir"] = {"BYLUIR_ASSIGN",{"BYLUIR_RETIRE"},{"BYLUIR_VENATOR"},"Byluir"},
+			["Hauser"] = {"HAUSER_ASSIGN",{"HAUSER_RETIRE"},{"HAUSER_DREADNAUGHT"},"Lynch Hauser"},
+			["Wessel"] = {"WESSEL_ASSIGN",{"WESSEL_RETIRE"},{"WESSEL_ACCLAMATOR"},"Marcellin Wessel"},
+			["Seerdon"] = {"SEERDON_ASSIGN",{"SEERDON_RETIRE"},{"SEERDON_INVINCIBLE"},"Kohl Seerdon"},			
+			["Praji"] = {"PRAJI_ASSIGN",{"PRAJI_RETIRE"},{"PRAJI_VALORUM"},"Collin Praji"},
+			["Ravik"] = {"RAVIK_ASSIGN",{"RAVIK_RETIRE"},{"RAVIK_VICTORY"},"Ravik"},
+			["Therbon"] = {"THERBON_ASSIGN",{"THERBON_RETIRE"},{"THERBON_CERULEAN_SUNRISE"},"Therbon"},
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
 			"Hauser",
@@ -153,17 +164,19 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		vacant_limit = 0,           --Number of times a lost slot can be reopened.
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Yoda"] = {"YODA_ASSIGN",{"YODA_RETIRE","YODA_RETIRE2"},{"YODA","YODA2"},"TEXT_HERO_YODA", ["Companies"] = {"YODA_DELTA_TEAM","YODA_ETA_TEAM"}},
-			["Mace"] = {"MACE_ASSIGN",{"MACE_RETIRE","MACE_RETIRE2"},{"MACE_WINDU","MACE_WINDU2"},"TEXT_HERO_MACE_WINDU", ["Companies"] = {"MACE_WINDU_DELTA_TEAM","MACE_WINDU_ETA_TEAM"}},
-			["Plo"] = {"PLO_ASSIGN",{"PLO_RETIRE"},{"PLO_KOON"},"TEXT_HERO_PLO_KOON", ["Companies"] = {"PLO_KOON_DELTA_TEAM"}},
-			["Kit"] = {"KIT_ASSIGN",{"KIT_RETIRE","KIT_RETIRE2"},{"KIT_FISTO","KIT_FISTO2"},"TEXT_HERO_KIT_FISTO", ["Companies"] = {"KIT_FISTO_DELTA_TEAM","KIT_FISTO_ETA_TEAM"}},
-			["Mundi"] = {"MUNDI_ASSIGN",{"MUNDI_RETIRE","MUNDI_RETIRE2"},{"KI_ADI_MUNDI","KI_ADI_MUNDI2"},"TEXT_HERO_KI_ADI_MUNDI", ["Companies"] = {"KI_ADI_MUNDI_DELTA_TEAM","KI_ADI_MUNDI_ETA_TEAM"}},
-			["Luminara"] = {"LUMINARA_ASSIGN",{"LUMINARA_RETIRE","LUMINARA_RETIRE2"},{"LUMINARA_UNDULI","LUMINARA_UNDULI2"},"TEXT_HERO_LUMINARA", ["Companies"] = {"LUMINARA_UNDULI_DELTA_TEAM","LUMINARA_UNDULI_ETA_TEAM"}},
-			["Barriss"] = {"BARRISS_ASSIGN",{"BARRISS_RETIRE","BARRISS_RETIRE2"},{"BARRISS_OFFEE","BARRISS_OFFEE2"},"TEXT_HERO_BARRISS", ["Companies"] = {"BARRISS_OFFEE_DELTA_TEAM","BARRISS_OFFEE_ETA_TEAM"}},
-			["Ahsoka"] = {"AHSOKA_ASSIGN",{"AHSOKA_RETIRE","AHSOKA_RETIRE2"},{"AHSOKA","AHSOKA2"},"TEXT_HERO_AHSOKA", ["Companies"] = {"AHSOKA_DELTA_TEAM","AHSOKA_ETA_TEAM"}},
-			["Aayla"] = {"AAYLA_ASSIGN",{"AAYLA_RETIRE","AAYLA_RETIRE2"},{"AAYLA_SECURA","AAYLA_SECURA2"},"TEXT_HERO_AAYLA_SECURA", ["Companies"] = {"AAYLA_SECURA_DELTA_TEAM","AAYLA_SECURA_ETA_TEAM"}},
-			["Shaak"] = {"SHAAK_ASSIGN",{"SHAAK_RETIRE","SHAAK_RETIRE2"},{"SHAAK_TI","SHAAK_TI2"},"TEXT_HERO_SHAAK_TI", ["Companies"] = {"SHAAK_TI_DELTA_TEAM","SHAAK_TI_ETA_TEAM"}},
-			["Kota"] = {"KOTA_ASSIGN",{"KOTA_RETIRE"},{"RAHM_KOTA"},"TEXT_HERO_RAHM_KOTA", ["Companies"] = {"RAHM_KOTA_TEAM"}}
+			["Yoda"] = {"YODA_ASSIGN",{"YODA_RETIRE","YODA_RETIRE2"},{"YODA","YODA2"},"Yoda", ["Companies"] = {"YODA_DELTA_TEAM","YODA_ETA_TEAM"}},
+			["Mace"] = {"MACE_ASSIGN",{"MACE_RETIRE","MACE_RETIRE2"},{"MACE_WINDU","MACE_WINDU2"},"Mace Windu", ["Companies"] = {"MACE_WINDU_DELTA_TEAM","MACE_WINDU_ETA_TEAM"}},
+			["Plo"] = {"PLO_ASSIGN",{"PLO_RETIRE"},{"PLO_KOON"},"Plo Koon", ["Companies"] = {"PLO_KOON_DELTA_TEAM"}},
+			["Kit"] = {"KIT_ASSIGN",{"KIT_RETIRE","KIT_RETIRE2"},{"KIT_FISTO","KIT_FISTO2"},"Kit Fisto", ["Companies"] = {"KIT_FISTO_DELTA_TEAM","KIT_FISTO_ETA_TEAM"}},
+			["Mundi"] = {"MUNDI_ASSIGN",{"MUNDI_RETIRE","MUNDI_RETIRE2"},{"KI_ADI_MUNDI","KI_ADI_MUNDI2"},"Ki-Adi-Mundi", ["Companies"] = {"KI_ADI_MUNDI_DELTA_TEAM","KI_ADI_MUNDI_ETA_TEAM"}},
+			["Luminara"] = {"LUMINARA_ASSIGN",{"LUMINARA_RETIRE","LUMINARA_RETIRE2"},{"LUMINARA_UNDULI","LUMINARA_UNDULI2"},"Luminara Unduli", ["Companies"] = {"LUMINARA_UNDULI_DELTA_TEAM","LUMINARA_UNDULI_ETA_TEAM"}},
+			["Barriss"] = {"BARRISS_ASSIGN",{"BARRISS_RETIRE","BARRISS_RETIRE2"},{"BARRISS_OFFEE","BARRISS_OFFEE2"},"Barriss Offee", ["Companies"] = {"BARRISS_OFFEE_DELTA_TEAM","BARRISS_OFFEE_ETA_TEAM"}},
+			["Ahsoka"] = {"AHSOKA_ASSIGN",{"AHSOKA_RETIRE","AHSOKA_RETIRE2"},{"AHSOKA","AHSOKA2"},"Ahsoka Tano", ["Companies"] = {"AHSOKA_DELTA_TEAM","AHSOKA_ETA_TEAM"}},
+			["Aayla"] = {"AAYLA_ASSIGN",{"AAYLA_RETIRE","AAYLA_RETIRE2"},{"AAYLA_SECURA","AAYLA_SECURA2"},"Aayla Secura", ["Companies"] = {"AAYLA_SECURA_DELTA_TEAM","AAYLA_SECURA_ETA_TEAM"}},
+			["Shaak"] = {"SHAAK_ASSIGN",{"SHAAK_RETIRE","SHAAK_RETIRE2"},{"SHAAK_TI","SHAAK_TI2"},"Shaak Ti", ["Companies"] = {"SHAAK_TI_DELTA_TEAM","SHAAK_TI_ETA_TEAM"}},
+			["Kota"] = {"KOTA_ASSIGN",{"KOTA_RETIRE"},{"RAHM_KOTA"},"Rahm Kota", ["Companies"] = {"RAHM_KOTA_TEAM"}},
+			["Knol"] = {"KNOL_VENNARI_ASSIGN",{"KNOL_VENNARI_RETIRE"},{"KNOL_VENNARI"},"Knol Ven'nari", ["Companies"] = {"KNOL_VENNARI_TEAM"}},
+			["Halcyon"] = {"NEJAA_HALCYON_ASSIGN",{"NEJAA_HALCYON_RETIRE"},{"NEJAA_HALCYON"},"Nejaa Halcyon", ["Companies"] = {"NEJAA_HALCYON_TEAM"}}
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
 			"Yoda",
@@ -173,10 +186,11 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 			"Mundi",
 			"Luminara",
 			"Barriss",
-			"Ahsoka",
 			"Aayla",
 			"Shaak",
-			"Kota"
+			"Kota",
+			"Knol",
+			"Halcyon"
 		},
 		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
 		active_player = Find_Player("Empire"),
@@ -194,21 +208,22 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		vacant_limit = 0,           --Number of times a lost slot can be reopened.
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Cody"] = {"CODY_ASSIGN",{"CODY_RETIRE","CODY_RETIRE"},{"CODY","CODY2"},"TEXT_HERO_CODY", ["Companies"] = {"CODY_TEAM","CODY2_TEAM"}},
-			["Rex"] = {"REX_ASSIGN",{"REX_RETIRE","REX_RETIRE"},{"REX","REX2"},"TEXT_HERO_REX", ["Companies"] = {"REX_TEAM","REX2_TEAM"}},
-			["Vill"] = {"VILL_ASSIGN",{"VILL_RETIRE"},{"VILL"},"TEXT_HERO_VILL", ["Companies"] = {"VILL_TEAM"}},
-			["Appo"] = {"APPO_ASSIGN",{"APPO_RETIRE","APPO_RETIRE"},{"APPO","APPO2"},"TEXT_HERO_APPO", ["Companies"] = {"APPO_TEAM","APPO2_TEAM"}},
-			["Bow"] = {"BOW_ASSIGN",{"BOW_RETIRE"},{"BOW"},"TEXT_HERO_BOW", ["Companies"] = {"BOW_TEAM"}},
-			["Bly"] = {"BLY_ASSIGN",{"BLY_RETIRE","BLY_RETIRE"},{"BLY","BLY2"},"TEXT_HERO_BLY", ["Companies"] = {"BLY_TEAM","BLY2_TEAM"}},
-			["Deviss"] = {"DEVISS_ASSIGN",{"DEVISS_RETIRE","DEVISS_RETIRE"},{"DEVISS","DEVISS2"},"TEXT_HERO_DEVISS", ["Companies"] = {"DEVISS_TEAM","DEVISS2_TEAM"}},
-			["Wolffe"] = {"WOLFFE_ASSIGN",{"WOLFFE_RETIRE","WOLFFE_RETIRE"},{"WOLFFE","WOLFFE2"},"TEXT_HERO_WOLFFE", ["Companies"] = {"WOLFFE_TEAM","WOLFFE2_TEAM"}},
-			["Gree"] = {"GREE_ASSIGN",{"GREE_RETIRE","GREE_RETIRE"},{"GREE","GREE2"},"TEXT_HERO_GREE", ["Companies"] = {"GREE_TEAM","GREE2_TEAM"}},
-			["71"] = {"71_ASSIGN",{"71_RETIRE","71_RETIRE"},{"COMMANDER_71","COMMANDER_71_2"},"TEXT_HERO_71", ["Companies"] = {"COMMANDER_71_TEAM","COMMANDER_71_2_TEAM"}},
-			["Keller"] = {"KELLER_ASSIGN",{"KELLER_RETIRE"},{"KELLER"},"TEXT_HERO_KELLER", ["Companies"] = {"KELLER_TEAM"}},
-			["Faie"] = {"FAIE_ASSIGN",{"FAIE_RETIRE"},{"FAIE"},"TEXT_HERO_FAIE", ["Companies"] = {"FAIE_TEAM"}},
-			["Bacara"] = {"BACARA_ASSIGN",{"BACARA_RETIRE","BACARA_RETIRE"},{"BACARA","BACARA2"},"TEXT_HERO_BACARA", ["Companies"] = {"BACARA_TEAM","BACARA2_TEAM"}},
-			["Jet"] = {"JET_ASSIGN",{"JET_RETIRE","JET_RETIRE"},{"JET","JET2"},"TEXT_HERO_JET", ["Companies"] = {"JET_TEAM","JET2_TEAM"}},
-			["Gaffa"] = {"GAFFA_ASSIGN",{"GAFFA_RETIRE"},{"GAFFA_A5RX"},"TEXT_HERO_GAFFA", ["Companies"] = {"GAFFA_TEAM"}},
+			["Cody"] = {"CODY_ASSIGN",{"CODY_RETIRE","CODY_RETIRE"},{"CODY","CODY2"},"Cody", ["Companies"] = {"CODY_TEAM","CODY2_TEAM"}},
+			["Rex"] = {"REX_ASSIGN",{"REX_RETIRE","REX_RETIRE"},{"REX","REX2"},"Rex", ["Companies"] = {"REX_TEAM","REX2_TEAM"}},
+			["Vill"] = {"VILL_ASSIGN",{"VILL_RETIRE"},{"VILL"},"Vill", ["Companies"] = {"VILL_TEAM"}},
+			["Appo"] = {"APPO_ASSIGN",{"APPO_RETIRE","APPO_RETIRE"},{"APPO","APPO2"},"Appo", ["Companies"] = {"APPO_TEAM","APPO2_TEAM"}},
+			["Bow"] = {"BOW_ASSIGN",{"BOW_RETIRE"},{"BOW"},"Bow", ["Companies"] = {"BOW_TEAM"}},
+			["Bly"] = {"BLY_ASSIGN",{"BLY_RETIRE","BLY_RETIRE"},{"BLY","BLY2"},"Bly", ["Companies"] = {"BLY_TEAM","BLY2_TEAM"}},
+			["Deviss"] = {"DEVISS_ASSIGN",{"DEVISS_RETIRE","DEVISS_RETIRE"},{"DEVISS","DEVISS2"},"Deviss", ["Companies"] = {"DEVISS_TEAM","DEVISS2_TEAM"}},
+			["Wolffe"] = {"WOLFFE_ASSIGN",{"WOLFFE_RETIRE","WOLFFE_RETIRE"},{"WOLFFE","WOLFFE2"},"Wolffe", ["Companies"] = {"WOLFFE_TEAM","WOLFFE2_TEAM"}},
+			["Gree_Clone"] = {"GREE_ASSIGN",{"GREE_RETIRE","GREE_RETIRE"},{"GREE_CLONE","GREE2"},"Gree", ["Companies"] = {"GREE_TEAM","GREE2_TEAM"}},
+			["Neyo"] = {"NEYO_ASSIGN",{"NEYO_RETIRE","NEYO_RETIRE"},{"NEYO","NEYO2"},"Neyo", ["Companies"] = {"NEYO_TEAM","NEYO2_TEAM"}},
+			["71"] = {"71_ASSIGN",{"71_RETIRE","71_RETIRE"},{"COMMANDER_71","COMMANDER_71_2"},"CRC-09/571", ["Companies"] = {"COMMANDER_71_TEAM","COMMANDER_71_2_TEAM"}},
+			["Keller"] = {"KELLER_ASSIGN",{"KELLER_RETIRE"},{"KELLER"},"Keller", ["Companies"] = {"KELLER_TEAM"}},
+			["Faie"] = {"FAIE_ASSIGN",{"FAIE_RETIRE"},{"FAIE"},"Faie", ["Companies"] = {"FAIE_TEAM"}},
+			["Bacara"] = {"BACARA_ASSIGN",{"BACARA_RETIRE","BACARA_RETIRE"},{"BACARA","BACARA2"},"Bacara", ["Companies"] = {"BACARA_TEAM","BACARA2_TEAM"}},
+			["Jet"] = {"JET_ASSIGN",{"JET_RETIRE","JET_RETIRE"},{"JET","JET2"},"Jet", ["Companies"] = {"JET_TEAM","JET2_TEAM"}},
+			["Gaffa"] = {"GAFFA_ASSIGN",{"GAFFA_RETIRE"},{"GAFFA_A5RX"},"Gaffa", ["Companies"] = {"GAFFA_TEAM"}},
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
 			"Cody",
@@ -216,12 +231,15 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 			"Appo",
 			"Bly",
 			"Wolffe",
-			"Gree",
+			"Gree_Clone",
+			"Neyo",
 			"71",
 			"Bacara",
 			"Gaffa"
 		},
-		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
+		story_locked_list = {--Heroes not accessible, but able to return with the right conditions
+			["Jet"] = true,
+		},
 		active_player = Find_Player("Empire"),
 		extra_name = "EXTRA_CLONE_SLOT",
 		random_name = "RANDOM_CLONE_ASSIGN",
@@ -237,26 +255,24 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		vacant_limit = 0,           --Number of times a lost slot can be reopened.
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Alpha"] = {"ALPHA_ASSIGN",{"ALPHA_RETIRE","ALPHA_RETIRE"},{"ALPHA_17","ALPHA_17_2"},"TEXT_HERO_ALPHA17", ["Companies"] = {"ALPHA_17_TEAM","ALPHA_17_2_TEAM"}},
-			["Fordo"] = {"FORDO_ASSIGN",{"FORDO_RETIRE","FORDO_RETIRE"},{"FORDO","FORDO2"},"TEXT_HERO_FORDO", ["Companies"] = {"FORDO_TEAM","FORDO2_TEAM"}},
-			["Neyo"] = {"NEYO_ASSIGN",{"NEYO_RETIRE","NEYO_RETIRE"},{"NEYO","NEYO2"},"TEXT_HERO_NEYO", ["Companies"] = {"NEYO_TEAM","NEYO2_TEAM"}},
-			["Gregor"] = {"GREGOR_ASSIGN",{"GREGOR_RETIRE"},{"GREGOR"},"TEXT_HERO_GREGOR", ["Companies"] = {"GREGOR_TEAM"}},
-			["Voca"] = {"VOCA_ASSIGN",{"VOCA_RETIRE"},{"VOCA"},"TEXT_HERO_VOCA", ["Companies"] = {"VOCA_TEAM"}},
-			["Delta"] = {"DELTA_ASSIGN",{"DELTA_RETIRE"},{"DELTA_SQUAD"},"TEXT_DELTA_SQUAD", ["Units"] = {{"BOSS","FIXER","SEV","SCORCH"}}},
-			["Omega"] = {"OMEGA_ASSIGN",{"OMEGA_RETIRE"},{"OMEGA_SQUAD"},"TEXT_OMEGA_SQUAD", ["Units"] = {{"DARMAN","ATIN","FI","NINER"}}},
-			["Ordo"] = {"ORDO_ASSIGN",{"ORDO_RETIRE","ORDO_RETIRE"},{"ORDO_SKIRATA","ORDO_SKIRATA2"},"TEXT_HERO_ORDO", ["Companies"] = {"ORDO_SKIRATA_TEAM","ORDO_SKIRATA2_TEAM"}},
-			["Aden"] = {"ADEN_ASSIGN",{"ADEN_RETIRE","ADEN_RETIRE"},{"ADEN_SKIRATA","ADEN_SKIRATA2"},"TEXT_HERO_ADEN", ["Companies"] = {"ADEN_SKIRATA_TEAM","ADEN_SKIRATA2_TEAM"}},
+			["Alpha"] = {"ALPHA_ASSIGN",{"ALPHA_RETIRE","ALPHA_RETIRE"},{"ALPHA_17","ALPHA_17_2"},"Alpha-17", ["Companies"] = {"ALPHA_17_TEAM","ALPHA_17_2_TEAM"}},
+			["Fordo"] = {"FORDO_ASSIGN",{"FORDO_RETIRE","FORDO_RETIRE"},{"FORDO","FORDO2"},"Fordo", ["Companies"] = {"FORDO_TEAM","FORDO2_TEAM"}},
+			["Gregor"] = {"GREGOR_ASSIGN",{"GREGOR_RETIRE"},{"GREGOR"},"Gregor", ["Companies"] = {"GREGOR_TEAM"}},
+			["Voca"] = {"VOCA_ASSIGN",{"VOCA_RETIRE"},{"VOCA"},"Voca", ["Companies"] = {"VOCA_TEAM"}},
+			["Delta"] = {"DELTA_ASSIGN",{"DELTA_RETIRE"},{"DELTA_SQUAD"},"Delta Squad", ["Units"] = {{"BOSS","FIXER","SEV","SCORCH"}}},
+			["Omega"] = {"OMEGA_ASSIGN",{"OMEGA_RETIRE"},{"OMEGA_SQUAD"},"Omega Squad", ["Units"] = {{"DARMAN","ATIN","FI","NINER"}}},
+			["Ordo"] = {"ORDO_ASSIGN",{"ORDO_RETIRE","ORDO_RETIRE"},{"ORDO_SKIRATA","ORDO_SKIRATA2"},"Ordo Skirata", ["Companies"] = {"ORDO_SKIRATA_TEAM","ORDO_SKIRATA2_TEAM"}},
+			["Aden"] = {"ADEN_ASSIGN",{"ADEN_RETIRE","ADEN_RETIRE"},{"ADEN_SKIRATA","ADEN_SKIRATA2"},"A'den Skirata", ["Companies"] = {"ADEN_SKIRATA_TEAM","ADEN_SKIRATA2_TEAM"}},
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
 			"Alpha",
-			"Fordo",
-			"Neyo",
+			"Fordo",	
 			"Gregor",
 			"Voca",
 			"Delta",
 			"Omega",
 			"Ordo",
-			"Aden"
+			"Aden",
 		},
 		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
 		active_player = Find_Player("Empire"),
@@ -274,12 +290,14 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		vacant_limit = 0,           --Number of times a lost slot can be reopened.
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Rom"] = {"ROM_MOHC_ASSIGN",{"ROM_MOHC_RETIRE"},{"ROM_MOHC"},"TEXT_HERO_ROM_MOHC", ["Companies"] = {"ROM_MOHC_TEAM"}},
-			["Gentis"] = {"GENTIS_ASSIGN",{"GENTIS_RETIRE"},{"GENTIS_AT_TE"},"TEXT_HERO_GENTIS", ["Companies"] = {"GENTIS_TEAM"}},
-			["Geen"] = {"GEEN_ASSIGN",{"GEEN_RETIRE"},{"GEEN_UT_AT"},"TEXT_HERO_GEEN", ["Companies"] = {"GEEN_TEAM"}},
-			["Ozzel"] = {"OZZEL_ASSIGN",{"OZZEL_RETIRE"},{"OZZEL_LAAT"},"TEXT_HERO_OZZEL", ["Companies"] = {"OZZEL_TEAM"}},
-			["Romodi"] = {"ROMODI_ASSIGN",{"ROMODI_RETIRE"},{"ROMODI_A5_JUGGERNAUT"},"TEXT_HERO_ROMODI", ["Companies"] = {"ROMODI_TEAM"}},
-			["Solomahal"] = {"SOLOMAHAL_ASSIGN",{"SOLOMAHAL_RETIRE"},{"SOLOMAHAL_RX200"},"TEXT_HERO_SOLOMAHAL", ["Companies"] = {"SOLOMAHAL_TEAM"}},
+			["Rom"] = {"ROM_MOHC_ASSIGN",{"ROM_MOHC_RETIRE"},{"ROM_MOHC"},"Rom Mohc", ["Companies"] = {"ROM_MOHC_TEAM"}},
+			["Gentis"] = {"GENTIS_ASSIGN",{"GENTIS_RETIRE"},{"GENTIS_AT_TE"},"Gentis", ["Companies"] = {"GENTIS_TEAM"}},
+			["Geen"] = {"GEEN_ASSIGN",{"GEEN_RETIRE"},{"GEEN_UT_AT"},"Locus Geen", ["Companies"] = {"GEEN_TEAM"}},
+			["Ozzel"] = {"OZZEL_ASSIGN",{"OZZEL_RETIRE"},{"OZZEL_LAAT"},"Kendal Ozzel", ["Companies"] = {"OZZEL_TEAM"}},
+			["Romodi"] = {"ROMODI_ASSIGN",{"ROMODI_RETIRE"},{"ROMODI_A5_JUGGERNAUT"},"Hurst Romodi", ["Companies"] = {"ROMODI_TEAM"}},
+			["Solomahal"] = {"SOLOMAHAL_ASSIGN",{"SOLOMAHAL_RETIRE"},{"SOLOMAHAL_RX200"},"Solomahal", ["Companies"] = {"SOLOMAHAL_TEAM"}},
+			["Jesra"] = {"JESRA_LOTURE_ASSIGN",{"JESRA_LOTURE_RETIRE"},{"JESRA_LOTURE"},"Jesra Loture", ["Companies"] = {"JESRA_LOTURE_TEAM"}},
+			["Jayfon"] = {"JAYFON_ASSIGN",{"JAYFON_RETIRE"},{"JAYFON"},"Jayfon", ["Companies"] = {"JAYFON_TEAM"}},
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
 			"Rom",
@@ -297,44 +315,12 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		disabled = true
 	}
 	
-	senator_data = {
-		group_name = "Senator",
-		total_slots = 6,			--8, Max slot number.
-		free_hero_slots = 6,		--Slots open to assign.
-		vacant_hero_slots = 0,	    --Slots of dead heroes.
-		vacant_limit = 0,           --Number of times a lost slot can be reopened.
-		initialized = false,
-		full_list = { --All options for reference operations
-			["Pestage"] = {"PESTAGE_ASSIGN",{"PESTAGE_RETIRE"},{"SATE_PESTAGE"},"TEXT_HERO_PESTAGE", ["Companies"] = {"PESTAGE_TEAM"}},
-			["Orn"] = {"ORN_FREE_TAA_ASSIGN",{"ORN_FREE_TAA_RETIRE"},{"ORN_FREE_TAA"},"TEXT_HERO_ORN_FREE_TAA", ["Companies"] = {"ORN_FREE_TAA_TEAM"}},
-			["Ask"] = {"ASK_AAK_ASSIGN",{"ASK_AAK_RETIRE"},{"ASK_AAK"},"TEXT_HERO_ASK_AAK", ["Companies"] = {"ASK_AAK_TEAM"}},
-			["Nala"] = {"NALA_SE_ASSIGN",{"NALA_SE_RETIRE"},{"NALA_SE"},"TEXT_HERO_NALA_SE", ["Companies"] = {"NALA_SE_TEAM"}},
-			["Padme"] = {"PADME_ASSIGN",{"PADME_RETIRE"},{"PADME_AMIDALA"},"TEXT_HERO_PADME", ["Companies"] = {"PADME_AMIDALA_TEAM"}},
-			["Jar"] = {"JAR_JAR_ASSIGN",{"JAR_JAR_RETIRE"},{"JAR_JAR_BINKS"},"TEXT_HERO_JAR_JAR", ["Companies"] = {"JAR_JAR_TEAM"}},
-			["Mothma"] = {"MON_MOTHMA_ASSIGN",{"MON_MOTHMA_RETIRE"},{"MON_MOTHMA"},"TEXT_HERO_MON_MOTHMA", ["Companies"] = {"MON_MOTHMA_TEAM"}},
-			["Bail"] = {"BAIL_ASSIGN",{"BAIL_RETIRE"},{"BAIL_ORGANA"},"TEXT_HERO_BAIL_ORGANA", ["Companies"] = {"BAIL_TEAM"}},
-			["Giddean"] = {"GIDDEAN_ASSIGN",{"GIDDEAN_RETIRE"},{"GIDDEAN_DANU"},"TEXT_HERO_GIDDEAN_DANU", ["Companies"] = {"GIDDEAN_TEAM"}},
-		},
-		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
-			"Orn",
-			"Ask",
-			"Nala",
-			"Padme",
-			"Jar",
-			"Bail",
-			"Giddean"
-		},
-		story_locked_list = {--Heroes not accessible, but able to return with the right conditions
-			["Pestage"] = true,
-			["Mothma"] = true
-			},
-		active_player = Find_Player("Empire"),
-		extra_name = "EXTRA_SENATOR_SLOT",
-		random_name = "RANDOM_SENATOR_ASSIGN",
-		global_display_list = "REP_SENATOR_LIST", --Name of global array used for documention of currently active heroes
-		disabled = true
+	fighter_assigns = {
+		"Garven_Dreis_Location_Set",
+		"Nial_Declann_Location_Set",
+		"Rhys_Dallows_Location_Set",
 	}
-	
+	fighter_assign_enabled = false
 	
 	viewers = {
 		["VIEW_ADMIRALS"] = 1,
@@ -343,7 +329,7 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 		["VIEW_CLONES"] = 4,
 		["VIEW_COMMANDOS"] = 5,
 		["VIEW_GENERALS"] = 6,
-		["VIEW_SENATORS"] = 7
+		["VIEW_FIGHTERS"] = 7,
 	}
 	
 	old_view = 1
@@ -355,6 +341,9 @@ function RepublicHeroes:new(gc, herokilled_finished_event, human_player, hero_cl
 	Jet_Checks = 0
 	Bow_Checks = 0
 	Vill_Checks = 0
+	Tenant_Checks = 0
+	
+	Venator_init = false
 end
 
 function get_hero_data(set)
@@ -455,7 +444,18 @@ function RepublicHeroes:on_production_finished(planet, object_type_name)--object
 			find_it.Despawn()
 		end
 	end
-	--Logger:trace("exiting RepublicHeroes:on_production_finished")
+	Handle_Build_Options(object_type_name, admiral_data)
+	Handle_Build_Options(object_type_name, moff_data)
+	Handle_Build_Options(object_type_name, council_data)
+	Handle_Build_Options(object_type_name, clone_data)
+	Handle_Build_Options(object_type_name, commando_data)
+	Handle_Build_Options(object_type_name, general_data)
+	
+	if object_type_name == "REFORM_SQUAD_SEVEN" then
+		RepublicHeroes:Remove_Fighter_Set("Reform_Squad_Seven")
+		UnitUtil.SetBuildable(admiral_data.active_player, "Odd_Ball_Torrent_Location_Set", true)
+		UnitUtil.SetBuildable(admiral_data.active_player, "Odd_Ball_ARC170_Location_Set", true)
+	end
 end
 
 function switch_views(new_view)
@@ -463,12 +463,87 @@ function switch_views(new_view)
 	local hero_data = get_hero_data(new_view)
 	local tech_unit = get_viewer_tech(new_view)
 	
-	if not hero_data or not tech_unit or new_view == old_view then
-		return
+	local tech_unit
+	
+	if new_view == 1 then
+		tech_unit = Find_Object_Type("VIEW_ADMIRALS")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Hero_Options(admiral_data)
+		Show_Hero_Info(admiral_data)
+	end
+	if new_view == 2 then
+		tech_unit = Find_Object_Type("VIEW_MOFFS")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Hero_Options(moff_data)
+		Show_Hero_Info(moff_data)
+	end
+	if new_view == 3 then
+		tech_unit = Find_Object_Type("VIEW_COUNCIL")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Hero_Options(council_data)
+		Show_Hero_Info(council_data)
+	end
+	if new_view == 4 then
+		tech_unit = Find_Object_Type("VIEW_CLONES")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Hero_Options(clone_data)
+		Show_Hero_Info(clone_data)
+	end
+	if new_view == 5 then
+		tech_unit = Find_Object_Type("VIEW_COMMANDOS")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Hero_Options(commando_data)
+		Show_Hero_Info(commando_data)
+	end
+	if new_view == 6 then
+		tech_unit = Find_Object_Type("VIEW_GENERALS")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Hero_Options(general_data)
+		Show_Hero_Info(general_data)
+	end
+	if new_view == 7 then
+		tech_unit = Find_Object_Type("VIEW_FIGHTERS")
+		moff_data.active_player.Lock_Tech(tech_unit)
+		Enable_Fighter_Sets()
+		fighter_assign_enabled = true
 	end
 	
-	hero_data.active_player.Lock_Tech(tech_unit)
-	Enable_Hero_Options(hero_data)
+	if old_view == 1 and admiral_data.vacant_limit > -1 then
+		tech_unit = Find_Object_Type("VIEW_ADMIRALS")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Hero_Options(admiral_data)
+	end
+	if old_view == 2 and moff_data.vacant_limit > -1 then
+		tech_unit = Find_Object_Type("VIEW_MOFFS")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Hero_Options(moff_data)
+	end
+	if old_view == 3 and council_data.vacant_limit > -1 then
+		tech_unit = Find_Object_Type("VIEW_COUNCIL")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Hero_Options(council_data)
+	end
+	if old_view == 4 and clone_data.vacant_limit > -1 then
+		tech_unit = Find_Object_Type("VIEW_CLONES")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Hero_Options(clone_data)
+	end
+	if old_view == 5 and commando_data.vacant_limit > -1 then
+		tech_unit = Find_Object_Type("VIEW_COMMANDOS")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Hero_Options(commando_data)
+	end
+	if old_view == 6 and general_data.vacant_limit > -1 then
+		tech_unit = Find_Object_Type("VIEW_GENERALS")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Hero_Options(general_data)
+	end
+	if old_view == 7 then
+		tech_unit = Find_Object_Type("VIEW_FIGHTERS")
+		moff_data.active_player.Unlock_Tech(tech_unit)
+		Disable_Fighter_Sets()
+		fighter_assign_enabled = false
+	end
 	
 	hero_data = get_hero_data(old_view)
 	tech_unit = get_viewer_tech(old_view)
@@ -491,11 +566,6 @@ function RepublicHeroes:init_heroes()
 	init_hero_system(senator_data)
 	
 	Set_Fighter_Hero("IMA_GUN_DI_DELTA","DAO_VENATOR")
-	
-	local gc_type = GlobalValue.Get("GC_TYPE")
-	if gc_type == 1 then --Historical
-		Handle_Hero_Exit("Giddean", senator_data, true) --Returns later
-	end
 	
 	local tech_level = GlobalValue.Get("CURRENT_ERA")
 	
@@ -524,14 +594,27 @@ function RepublicHeroes:init_heroes()
 	
 	if tech_level == 2 then
 		Handle_Hero_Add("Martz", admiral_data)
+		Handle_Hero_Add("Jayfon", general_data)
 	end
 	
 	if (tech_level > 2 and not self.new_face_of_war) or tech_level > 3 then
 		Handle_Hero_Exit("Dao", admiral_data)
-		Handle_Hero_Exit("Kilian", admiral_data)
-		Handle_Hero_Add("Autem", admiral_data)
-		set_unit_index("Maarisa", 2, admiral_data)
+		Handle_Hero_Exit("Martz", admiral_data)
 		Handle_Hero_Exit("71", clone_data)
+
+		Handle_Hero_Add("Tenant", admiral_data)
+		Handle_Hero_Add("Jesra", general_data)
+		Handle_Hero_Add("Ahsoka", council_data)
+	end
+	
+	if tech_level > 3 then
+		Handle_Hero_Exit("Kilian", admiral_data)
+		Handle_Hero_Exit("Knol", council_data)
+
+		Handle_Hero_Add("Autem", admiral_data)
+
+		set_unit_index("Maarisa", 2, admiral_data)
+
 		Eta_Unlock()
 		Trachta_Checks = 1
 		if not self.hero_clones_p2_disabled then
@@ -539,58 +622,70 @@ function RepublicHeroes:init_heroes()
 		end
 	else
 		local Grievous = Find_First_Object("Grievous_Malevolence_Hunt_Campaign")
-		if not TestValid(Grievous) then
-			Set_Fighter_Hero("SHADOW_SQUADRON","YULAREN_RESOLUTE")
+		local McQuarrie = Find_First_Object("McQuarrie_Concept")
+		if not TestValid(Grievous) and not TestValid(McQuarrie) then
+			Set_Fighter_Hero("BROADSIDE_SHADOW_SQUADRON","YULAREN_RESOLUTE")
 		end
 	end
-	
-	if tech_level > 3 then
+
+	if tech_level > 4 then
 		Handle_Hero_Add("Trachta", moff_data)
-		if self.new_face_of_war then
-			Handle_Hero_Exit("Oicunn", admiral_data)
-		end
-	end
-	
-	adjust_slot_amount(admiral_data)
-	adjust_slot_amount(moff_data)
-	adjust_slot_amount(council_data)
-	adjust_slot_amount(clone_data)
-	adjust_slot_amount(commando_data)
-	adjust_slot_amount(general_data)
-	adjust_slot_amount(senator_data)
-	if self.new_face_of_war then
-		Logger:trace("RepublicHeroes:init_heroes Success")
+
+		Handle_Hero_Exit("Ahsoka", council_data)
+		Handle_Hero_Exit("Halcyon", council_data)
+		Handle_Hero_Exit("Gregor", commando_data)
+
+		RepublicHeroes:Add_Fighter_Set("Odd_Ball_ARC170_Location_Set")
 	end
 end
 
 --Era transitions
 function RepublicHeroes:Era_3()
 	--Logger:trace("entering RepublicHeroes:Era_3")
-	Autem_Check()
+	if Handle_Hero_Exit("Martz", admiral_data) then
+		if admiral_data.active_player.Is_Human() then
+			StoryUtil.Multimedia("TEXT_CONQUEST_GOVERNMENT_REP_HERO_REPLACEMENT_SPEECH_MARTZ", 20, nil, "Piett_Loop", 0)
+		end
+	end
 	Eta_Unlock()
-	Clear_Fighter_Hero("SHADOW_SQUADRON")
+	Clear_Fighter_Hero("BROADSIDE_SHADOW_SQUADRON")
 end
 
 function RepublicHeroes:Era_4()
 	--Logger:trace("entering RepublicHeroes:Era_4")
+	if Handle_Hero_Exit("Kilian", admiral_data) then
+		if admiral_data.active_player.Is_Human() then
+			StoryUtil.Multimedia("TEXT_CONQUEST_GOVERNMENT_REP_HERO_REPLACEMENT_SPEECH_KILIAN", 20, nil, "Piett_Loop", 0)
+		end
+	end
+	Autem_Check()
+end
+
+function RepublicHeroes:Era_5()
+	--Logger:trace("entering RepublicHeroes:Era_5")
 	Trachta_Check()
 end
 
---Only needed to disable or enable all staff.
-function RepublicHeroes:admiral_decrement(quantity, set)
+function RepublicHeroes:admiral_decrement(quantity, set, vacant)
 	--Logger:trace("entering RepublicHeroes:admiral_decrement")
-	local hero_data = get_hero_data(set)
-	local tech_unit = get_viewer_tech(set)
+	local decrements = {}
+	local systems = {admiral_data, moff_data, council_data, clone_data, commando_data, general_data}
 	
-	--For submod, only want to fully disable/enable
-	if hero_data and tech_unit and hero_data.active_player.Is_Human() then
-		if quantity >= 9 then --disable staff
-			Decrement_Hero_Amount(quantity, hero_data)
-			hero_data.active_player.Lock_Tech(tech_unit)
-			Get_Active_Heroes(false, hero_data)
-		elseif quantity <= -9 then --enable staff
-			adjust_slot_amount(hero_data, true)
-			switch_views(set)
+	local start = set
+	local stop = set
+	if set == 0 then
+		start = 1
+		stop = table.getn(systems)
+		decrements = quantity
+	else
+		decrements[set] = quantity
+	end
+	
+	for id=start,stop do
+		if vacant then
+			Set_Locked_Slots(systems[id], decrements[id])
+		else
+			Decrement_Hero_Amount(decrements[id], systems[id])
 		end
 	end
 end
@@ -631,20 +726,54 @@ end
 
 function RepublicHeroes:on_galactic_hero_killed(hero_name, owner)
 	--Logger:trace("entering RepublicHeroes:on_galactic_hero_killed")
-	Handle_Hero_Killed(hero_name, owner, admiral_data)
+	local tag_admiral = Handle_Hero_Killed(hero_name, owner, admiral_data)
+	if tag_admiral == "Dao" then
+		Handle_Hero_Add("Tenant", admiral_data)
+		StoryUtil.Multimedia("TEXT_CONQUEST_GOVERNMENT_REP_HERO_REPLACEMENT_SPEECH_TENANT", 20, nil, "Piett_Loop", 0)
+	elseif tag_admiral == "Yularen" then
+		if yularen_second_chance_used == false then
+			yularen_second_chance_used = true
+			if hero_name == "YULAREN_INVINCIBLE" then 
+				UnitUtil.SetLockList("EMPIRE", {"Yularen_Integrity_Upgrade_Invincible"}, false)
+			end
+			admiral_data.full_list["Yularen"].unit_id = 2 --YULAREN_INTEGRITY
+			Handle_Hero_Add("Yularen", admiral_data)
+			if Find_Player("Empire").Is_Human() then
+				StoryUtil.Multimedia("TEXT_SPEECH_YULAREN_RETURNS_INTEGRITY", 15, nil, "Piett_Loop", 0)
+			end
+		end
+	end
+
 	Handle_Hero_Killed(hero_name, owner, moff_data)
+
 	Handle_Hero_Killed(hero_name, owner, council_data)
-	local tag = Handle_Hero_Killed(hero_name, owner, clone_data)
-	if tag == "Bly" then
-		Deviss_Check()
-	elseif tag == "Bacara" then
-		Jet_Check()
-	elseif tag == "Appo" then
+
+	local clone_tag = Handle_Hero_Killed(hero_name, owner, clone_data)
+	if clone_tag == "Bly" then
+		Handle_Hero_Add("Deviss", clone_data)
+	elseif clone_tag == "Bacara" then
+		Handle_Hero_Add("Jet", clone_data)
+	elseif clone_tag == "Appo" then
 		Bow_Check()
-	elseif tag == "Rex" then
+	elseif clone_tag == "Rex" then
 		Vill_Check()
 	end
+
+	if hero_name == "ODD_BALL_P1_TEAM" or hero_name == "ODD_BALL_P2_TEAM" then
+		if admiral_data.active_player.Is_Human() then
+			RepublicHeroes:Add_Fighter_Set("Reform_Squad_Seven")
+			UnitUtil.SetBuildable(admiral_data.active_player, "Odd_Ball_Torrent_Location_Set", false)
+			UnitUtil.SetBuildable(admiral_data.active_player, "Odd_Ball_ARC170_Location_Set", false)
+			Clear_Fighter_Hero("ODD_BALL_TORRENT_SQUAD_SEVEN_SQUADRON")
+			Clear_Fighter_Hero("ODD_BALL_ARC170_SQUAD_SEVEN_SQUADRON")
+			StoryUtil.ShowScreenText("Squad Seven has taken crippling casualties and must be reformed.", 5, nil, {r = 244, g = 244, b = 0})
+		else
+			admiral_data.active_player.Give_Money(-1000)
+		end
+	end
+	
 	Handle_Hero_Killed(hero_name, owner, commando_data)
+	
 	Handle_Hero_Killed(hero_name, owner, general_data)
 	tag = Handle_Hero_Killed(hero_name, owner, senator_data)
 	if tag == "Mothma" then
@@ -678,14 +807,18 @@ end
 function RepublicHeroes:Phase_II()
 	--Logger:trace("entering RepublicHeroes:Phase_II")
 	if not Phase_II_Checked then
+		clone_data.total_slots = clone_data.total_slots + 1
+		clone_data.free_hero_slots = clone_data.free_hero_slots + 1
+		
 		set_unit_index("Cody",2,clone_data)
 		set_unit_index("Rex",2,clone_data)
 		set_unit_index("Appo",2,clone_data)
 		set_unit_index("Bly",2,clone_data)
 		set_unit_index("Deviss",2,clone_data)
 		set_unit_index("Wolffe",2,clone_data)
-		set_unit_index("Gree",2,clone_data)
+		set_unit_index("Gree_Clone",2,clone_data)
 		set_unit_index("71",2,clone_data)
+		set_unit_index("Neyo",2,clone_data)
 		set_unit_index("Bacara",2,clone_data)
 		set_unit_index("Jet",2,clone_data)
 		
@@ -694,12 +827,14 @@ function RepublicHeroes:Phase_II()
 		
 		set_unit_index("Fordo",2,commando_data)
 		set_unit_index("Alpha",2,commando_data)
-		set_unit_index("Neyo",2,commando_data)
 		set_unit_index("Ordo",2,commando_data)
 		set_unit_index("Aden",2,commando_data)
 		
 		Bow_Check()
 		Vill_Check()
+		
+		Unlock_Hero_Options(clone_data)
+		Get_Active_Heroes(false, clone_data)
 	end
 	
 	Phase_II_Checked = true
@@ -707,32 +842,44 @@ end
 
 function RepublicHeroes:Venator_Heroes()
 	--Logger:trace("entering RepublicHeroes:Venator_Heroes")
-	Handle_Hero_Add_2("Yularen", admiral_data)
-	Handle_Hero_Add_2("Wieler", admiral_data)
-	Handle_Hero_Add_2("Coburn", admiral_data)
-	Handle_Hero_Add_2("Kilian", admiral_data)
-	Handle_Hero_Add_2("Dao", admiral_data)
-	Handle_Hero_Add_2("Denimoor", admiral_data)
-	Handle_Hero_Add_2("Dron", admiral_data)
-	Handle_Hero_Add_2("Forral", admiral_data)
-	Handle_Hero_Add_2("Tarkin", moff_data)
-	Handle_Hero_Add_2("Wessex", moff_data)
-	Handle_Hero_Add_2("Grant", moff_data)
-	Handle_Hero_Add_2("Vorru", moff_data)	
-	Handle_Hero_Add_2("Byluir", moff_data)	
-	
-	local upgrade_unit = Find_Object_Type("Maarisa_Retaliation_Upgrade")
-	admiral_data.active_player.Unlock_Tech(upgrade_unit)
-	
-	Autem_Check()
-	Trachta_Check()
+	if not Venator_init then
+		Handle_Hero_Add("Yularen", admiral_data)
+		Handle_Hero_Add("Wieler", admiral_data)
+		Handle_Hero_Add("Coburn", admiral_data)
+		Handle_Hero_Add("Kilian", admiral_data)
+		Handle_Hero_Add("Dao", admiral_data)
+		Handle_Hero_Add("Denimoor", admiral_data)
+		Handle_Hero_Add("Dron", admiral_data)
+		Handle_Hero_Add("Forral", admiral_data)
+		Handle_Hero_Add("Tarkin", moff_data)
+		Handle_Hero_Add("Wessex", moff_data)
+		Handle_Hero_Add("Grant", moff_data)
+		Handle_Hero_Add("Vorru", moff_data)	
+		Handle_Hero_Add("Byluir", moff_data)	
+		
+		if admiral_data.active_player.Get_Tech_Level() < 4 then
+			RepublicHeroes:Add_Fighter_Set("Odd_Ball_Torrent_Location_Set")
+		end
+		RepublicHeroes:Add_Fighter_Set("Arhul_Narra_Location_Set")
+		
+		local upgrade_unit = Find_Object_Type("Maarisa_Retaliation_Upgrade")
+		admiral_data.active_player.Unlock_Tech(upgrade_unit)
+		
+		Autem_Check()
+		Trachta_Check()
+	end
+	Venator_init = true
 end
 
 function Autem_Check()
 	--Logger:trace("entering RepublicHeroes:Autem_Check")
 	Autem_Checks = Autem_Checks + 1
 	if Autem_Checks == 2 then
-		Handle_Hero_Add_2("Autem", admiral_data)
+		Handle_Hero_Add("Autem", admiral_data)
+		Handle_Hero_Add("Tenant", admiral_data)
+		RepublicHeroes:Add_Fighter_Set("Odd_Ball_ARC170_Location_Set")
+		Clear_Fighter_Hero("ODD_BALL_TORRENT_SQUAD_SEVEN_SQUADRON")
+		RepublicHeroes:Remove_Fighter_Set("Odd_Ball_Torrent_Location_Set")
 	end
 end
 
@@ -778,15 +925,30 @@ end
 
 function RepublicHeroes:VSD_Heroes()
 	--Logger:trace("entering RepublicHeroes:VSD_Heroes")
-	Handle_Hero_Add_2("Dodonna", admiral_data)
-	Handle_Hero_Add_2("Screed", admiral_data)
-	Handle_Hero_Add_2("Praji", moff_data)
-	Handle_Hero_Add_2("Ravik", moff_data)
-	Handle_Hero_Add_2("Coy", moff_data)
+	Handle_Hero_Add("Dodonna", admiral_data)
+	Handle_Hero_Add("Screed", admiral_data)
+	Handle_Hero_Add("Praji", moff_data)
+	Handle_Hero_Add("Ravik", moff_data)
+	
+	RepublicHeroes:Add_Fighter_Set("Arhul_Narra_Location_Set")
+end
+
+function RepublicHeroes:VSD2_Heroes()
+	--Logger:trace("entering RepublicHeroes:VSD2_Heroes")
+	Handle_Hero_Add("Parck", admiral_data)
+	Handle_Hero_Add("Therbon", moff_data)
+	
+	RepublicHeroes:Add_Fighter_Set("Arhul_Narra_Location_Set")
 end
 
 function RepublicHeroes:Order_66_Handler()
 	--Logger:trace("entering RepublicHeroes:Order_66_Handler")
+	
+	moff_data.total_slots = moff_data.total_slots + 1
+	moff_data.free_hero_slots = moff_data.free_hero_slots + 1
+	Unlock_Hero_Options(moff_data)
+	Get_Active_Heroes(false, moff_data)
+	
 	council_data.vacant_limit = -1
 	Decrement_Hero_Amount(99, council_data)
 	Handle_Hero_Exit_2("Autem", admiral_data)
@@ -796,5 +958,126 @@ function RepublicHeroes:Order_66_Handler()
 	Handle_Hero_Exit_2("Mothma", senator_data)
 	Handle_Hero_Exit_2("Bail", senator_data)
 	Clear_Fighter_Hero("IMA_GUN_DI_DELTA")
-	senator_data.active_player.Lock_Tech(Find_Object_Type("PESTAGE_MOTHMA"))
+	Decrement_Hero_Amount(10, council_data)
+end
+
+function RepublicHeroes:New_Padawan_Handler()
+	--Logger:trace("entering RepublicHeroes:New_Padawan_Handler")
+	
+	Handle_Hero_Add("Ahsoka", council_data)
+end
+
+function RepublicHeroes:Sector_Governance_Decree_Handler()
+	--Logger:trace("entering RepublicHeroes:Sector_Governance_Decree_Handler")
+
+	moff_data.total_slots = moff_data.total_slots + 1
+	moff_data.free_hero_slots = moff_data.free_hero_slots + 1
+	Unlock_Hero_Options(moff_data)
+	Get_Active_Heroes(false, moff_data)
+
+	general_data.total_slots = general_data.total_slots + 1
+	general_data.free_hero_slots = general_data.free_hero_slots + 1
+	Unlock_Hero_Options(general_data)
+	Get_Active_Heroes(false, general_data)
+end
+
+function RepublicHeroes:Enhanced_Security_Act_Support_Handler()
+	--Logger:trace("entering RepublicHeroes:Enhanced_Security_Act_Support_Handler")
+
+	moff_data.total_slots = moff_data.total_slots + 1
+	moff_data.free_hero_slots = moff_data.free_hero_slots + 1
+	Unlock_Hero_Options(moff_data)
+	Get_Active_Heroes(false, moff_data)
+end
+
+function RepublicHeroes:Enhanced_Security_Act_Prevent_Handler()
+	--Logger:trace("entering RepublicHeroes:Enhanced_Security_Act_Prevent_Handler")
+
+	council_data.total_slots = council_data.total_slots + 1
+	council_data.free_hero_slots = council_data.free_hero_slots + 1
+	Unlock_Hero_Options(council_data)
+	Get_Active_Heroes(false, council_data)
+end
+
+function RepublicHeroes:Special_Task_Force_Handler()
+	--Logger:trace("entering RepublicHeroes:Special_Task_Force_Handler")
+
+	council_data.total_slots = council_data.total_slots + 1
+	council_data.free_hero_slots = council_data.free_hero_slots + 1
+	Unlock_Hero_Options(council_data)
+	Get_Active_Heroes(false, council_data)
+
+	clone_data.total_slots = clone_data.total_slots + 1
+	clone_data.free_hero_slots = clone_data.free_hero_slots + 1
+	Unlock_Hero_Options(clone_data)
+	Get_Active_Heroes(false, clone_data)
+
+	admiral_data.total_slots = admiral_data.total_slots + 1
+	admiral_data.free_hero_slots = admiral_data.free_hero_slots + 1
+	Unlock_Hero_Options(admiral_data)
+	Get_Active_Heroes(false, admiral_data)
+end
+
+function Enable_Fighter_Sets()
+	--Logger:trace("entering RepublicHeroes:Enable_Fighter_Sets")
+	for _, setter in pairs(fighter_assigns) do
+		tech_unit = Find_Object_Type(setter)
+		moff_data.active_player.Unlock_Tech(tech_unit)
+	end
+end
+
+function Disable_Fighter_Sets()
+	--Logger:trace("entering RepublicHeroes:Disable_Fighter_Sets")
+	for _, setter in pairs(fighter_assigns) do
+		tech_unit = Find_Object_Type(setter)
+		moff_data.active_player.Lock_Tech(tech_unit)
+	end
+end
+
+function RepublicHeroes:Add_Fighter_Sets(sets)
+--Logger:trace("entering RepublicHeroes:Add_Fighter_Sets")
+	for _, set in pairs(sets) do
+		RepublicHeroes:Add_Fighter_Set(set, true)
+	end
+	if fighter_assign_enabled then
+		Enable_Fighter_Sets()
+	end
+end
+
+function RepublicHeroes:Add_Fighter_Set(set, nounlock)
+--Logger:trace("entering RepublicHeroes:Add_Fighter_Set")
+	--Wrapper for avoiding duplicates in list
+	for i, setter in pairs(fighter_assigns) do
+		if setter == set then
+			return
+		end
+	end
+	table.insert(fighter_assigns,set)
+	if fighter_assign_enabled and nounlock == nil then
+		Enable_Fighter_Sets()
+	end
+end
+
+function RepublicHeroes:Remove_Fighter_Sets(sets)
+--Logger:trace("entering RepublicHeroes:Disable_Fighter_Sets")
+	for _, set in pairs(sets) do
+		RepublicHeroes:Remove_Fighter_Set(set, true)
+	end
+	if fighter_assign_enabled then
+		Enable_Fighter_Sets()
+	end
+end
+
+function RepublicHeroes:Remove_Fighter_Set(set, nolock)
+--Logger:trace("entering RepublicHeroes:Disable_Fighter_Set")
+	for i, setter in pairs(fighter_assigns) do
+		if setter == set then
+			table.remove(fighter_assigns,i)
+			local assign_unit = Find_Object_Type(setter)
+			admiral_data.active_player.Lock_Tech(assign_unit)
+		end
+	end
+	if fighter_assign_enabled and nolock == nil then
+		Enable_Fighter_Sets()
+	end
 end
