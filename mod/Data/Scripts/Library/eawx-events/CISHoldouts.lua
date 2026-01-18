@@ -18,7 +18,17 @@ function CISHoldoutsEvent:new(gc)
 
     self.galactic_hero_killed_event = gc.Events.GalacticHeroKilled
     self.galactic_hero_killed_event:attach_listener(self.on_galactic_hero_killed, self)
+	
+	self.production_finished_event = gc.Events.GalacticProductionFinished
+	self.production_finished_event:attach_listener(self.on_production_finished, self)
+	
+end
 
+function CISHoldoutsEvent:on_production_finished(planet, object_type_name)
+	if object_type_name == "OPTION_COMPLETE_HOLDOUTS" then
+		UnitUtil.DespawnList({"OPTION_COMPLETE_HOLDOUTS"})
+		self:fulfil()
+	end
 end
 
 function CISHoldoutsEvent:activate()
@@ -40,6 +50,7 @@ end
 function CISHoldoutsEvent:fulfil()
     if self.is_complete == false then
         self.is_complete = true
+		self.HumanPlayer.Lock_Tech(Find_Object_Type("OPTION_COMPLETE_HOLDOUTS"))
 
         self.Active_Planets = StoryUtil.GetSafePlanetTable()
         StoryUtil.SpawnAtSafePlanet("MUSTAFAR", Find_Player("Rebel"), self.Active_Planets, {"Dellso_Providence", "Kendu_Team"})
@@ -49,6 +60,7 @@ function CISHoldoutsEvent:fulfil()
         end
 
         self.galactic_hero_killed_event:detach_listener(self.on_galactic_hero_killed)
+        self.production_finished_event:detach_listener(self.on_production_finished)
     end
 end
 

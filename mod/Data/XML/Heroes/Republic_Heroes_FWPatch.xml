@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 
-<!--********************************-->
-<!--* Limitless Heroes Default *-->
-<!--********************************-->
+<!--********************************************-->
+<!--* Limitless Heroes + New Face Of War PATCH *-->
+<!--********************************************-->
 
 <Republic_Heroes>
 
@@ -13,7 +13,7 @@
 		<GUI_Row> 1 </GUI_Row>
 
 		<Population_Value>0</Population_Value>
-		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Cost_Credits>10000</Build_Cost_Credits>
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Time_Seconds>50</Build_Time_Seconds>
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
@@ -82,6 +82,339 @@
 	</DummyStructure>
 
 	<!-- Always available -->
+	
+	<UniqueUnit Name="Needa_Integrity">
+		<Variant_Of_Existing_Type>Template_Carrack_Cruiser</Variant_Of_Existing_Type>
+		<Icon_Name>I_BUTTON_NEEDA.TGA</Icon_Name>
+		<Prevents_Story_Campaign_Autoresolve>no</Prevents_Story_Campaign_Autoresolve>
+		<Is_Named_Hero>Yes</Is_Named_Hero>	
+		<Text_ID>TEXT_HERO_NEEDA</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND5_SPACE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_NEEDA
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_INTEGRITY_CARRACK
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK 
+		TEXT_TOOLTIP_CARRACK_HULL
+		TEXT_TOOLTIP_CARRACK_SHIELD
+		TEXT_TOOLTIP_CARRACK_MOVE
+		TEXT_TOOLTIP_CARRACK_SQUADRON
+		TEXT_TOOLTIP_CARRACK_WEAP1
+		TEXT_TOOLTIP_CARRACK_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_ORBITAL_BOMBARDMENT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_LIEUTENANT </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 180, 180, 255, 255 </No_Colorization_Color>
+		
+		<SpaceBehavior>TELEKINESIS_TARGET,ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, TARGETING, POWERED, SHIELDED, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI,DAMAGE_TRACKING, ION_STUN_EFFECT, NEBULA </SpaceBehavior>
+		<Lua_Script>GenericGameObject</Lua_Script>
+		<Tech_Level>99</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		<Shield_Armor_Type>ShieldS_Frigate</Shield_Armor_Type>
+		<Shield_Points>1000</Shield_Points>
+		<Shield_Refresh_Rate>17.5</Shield_Refresh_Rate>
+		<Tactical_Health>1700</Tactical_Health>
+
+
+		<HardPoints>
+			HP_Carrack_Weapon_01, HP_Carrack_Weapon_02, HP_Carrack_Weapon_03, HP_Carrack_Weapon_04, HP_Carrack_Hangar
+		</HardPoints>
+
+
+
+		<Score_Cost_Credits> 60000 </Score_Cost_Credits>
+		<CategoryMask> Corvette | AntiCapital</CategoryMask>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>DEFEND</Type>
+				<Recharge_Seconds>60</Recharge_Seconds>
+				<Mod_Multiplier>WEAPON_DELAY_MULTIPLIER,	1.25f</Mod_Multiplier>
+				<Mod_Multiplier>SHIELD_REGEN_MULTIPLIER,	1.0f</Mod_Multiplier>
+				<Mod_Multiplier>SHIELD_REGEN_INTERVAL_MULTIPLIER,	0.20f</Mod_Multiplier> <!-- make it faster to recharge -->
+				<Mod_Multiplier>ENERGY_REGEN_INTERVAL_MULTIPLIER,	0.20f</Mod_Multiplier> <!-- make it faster to recharge -->
+				<Mod_Multiplier>ENERGY_REGEN_MULTIPLIER,	3.0f</Mod_Multiplier>
+				<Mod_Multiplier>SPEED_MULTIPLIER,		0.8f</Mod_Multiplier>
+				<Expiration_Seconds>15</Expiration_Seconds>
+
+				<SFXEvent_GUI_Unit_Ability_Activated>Unit_Defend_Nebulon</SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+
+		</Unit_Abilities_Data>
+
+		
+		<Abilities SubObjectList="Yes">
+
+			<Combat_Bonus_Ability Name="Needa_Combat_Bonus">
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<Unit_Strength_Category>All</Unit_Strength_Category>
+				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.05</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.00</Damage_Bonus_Percentage>
+				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Shield_Bonus_Percentage>0.00</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.00</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.0</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+
+
+
+		</Abilities>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>1330</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>18</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+		
+		
+		<SFXEvent_Select>Unit_Select_Admiral_Jona_Grumby</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Admiral_Jona_Grumby</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Move_Admiral_Jona_Grumby</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Admiral_Jona_Grumby</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Select_Admiral_Jona_Grumby</SFXEvent_Guard>
+		<SFXEvent_Group_Move>Unit_Move_Admiral_Jona_Grumby</SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack>Unit_Attack_Admiral_Jona_Grumby</SFXEvent_Group_Attack>
+		<SFXEvent_Health_Low_Warning>  </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning>  </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Die_Admiral_Jona_Grumby </Death_SFXEvent_Start_Die>   
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Admiral_Jona_Grumby </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+		
+		
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_LASER, Unit_Attack_Admiral_Jona_Grumby </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_MISSILE, Unit_Attack_Admiral_Jona_Grumby</SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_TORPEDO, Unit_Attack_Admiral_Jona_Grumby </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_ION_CANNON, Unit_Attack_Admiral_Jona_Grumby </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_SHIELD_GENERATOR, Unit_Attack_Admiral_Jona_Grumby</SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_ENGINE, Unit_Attack_Admiral_Jona_Grumby </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_GRAVITY_WELL, Unit_Attack_Admiral_Jona_Grumby </SFXEvent_Attack_Hardpoint>
+		
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_LASER,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_MISSILE,   </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_TORPEDO,   </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_ION_CANNON,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_SHIELD_GENERATOR,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_ENGINE, Unit_Die_Admiral_Jona_Grumby </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_GRAVITY_WELL,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_FIGHTER_BAY,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_TRACTOR_BEAM, </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_ENABLE_SPECIAL_ABILITY, </SFXEvent_Hardpoint_Destroyed>
+
+
+	</UniqueUnit>
+	
+	<UniqueUnit Name="Oicunn_Ramdar">
+		<Variant_Of_Existing_Type>Dreadnaught</Variant_Of_Existing_Type>
+		<Icon_Name>i_button_oicunn.tga</Icon_Name>
+		<Prevents_Story_Campaign_Autoresolve>no</Prevents_Story_Campaign_Autoresolve>
+			<Is_Named_Hero>Yes</Is_Named_Hero>	
+		<Text_ID>TEXT_HERO_OICUNN</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND3_SPACE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_OICUNN 
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_RAMDAR
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_OICUNN
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_DREADNAUGHT_HULL 
+		TEXT_TOOLTIP_DREADNAUGHT_SHIELD
+		TEXT_TOOLTIP_DREADNAUGHT_MOVE
+		TEXT_TOOLTIP_DREADNAUGHT_SQUADRON_FOTR_HERO
+		TEXT_TOOLTIP_DREADNAUGHT_WEAP1
+		TEXT_TOOLTIP_DREADNAUGHT_WEAP2
+		TEXT_TOOLTIP_DREADNAUGHT_WEAP3
+		TEXT_TOOLTIP_DREADNAUGHT_WEAP4
+		TEXT_TOOLTIP_DREADNAUGHT_EMPIRE_WEAP4
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_ORBITAL_BOMBARDMENT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
+		
+		<SpaceBehavior> SPAWN_SQUADRON, LURE, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		<Lua_Script>GenericGameObject</Lua_Script>
+		<Tech_Level>99</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		<No_Colorization_Color> 180, 180, 255, 255 </No_Colorization_Color>
+		<Tactical_Health>2420</Tactical_Health>
+
+
+		<HardPoints>
+			HP_Dreadnaught_Republic_Weapon_01,
+			HP_Dreadnaught_Republic_Weapon_02,
+			HP_Dreadnaught_Republic_Weapon_03,
+			HP_Dreadnaught_Republic_Weapon_04,
+			HP_Dreadnaught_Republic_Weapon_05,
+			HP_Dreadnaught_Republic_Weapon_06,
+			HP_Dreadnaught_Republic_Weapon_07,
+			HP_Dreadnaught_Republic_Weapon_08,
+			HP_Dreadnaught_Fighter_Bay,
+			HP_Dreadnaught_Hero_Extra,
+			HP_Dreadnaught_Republic_Engines
+		</HardPoints>
+
+
+
+				<Starting_Spawned_Units_Tech_0>Needa_Integrity, 1</Starting_Spawned_Units_Tech_0>
+				<Starting_Spawned_Units_Tech_0>Carrack_Cruiser, 2</Starting_Spawned_Units_Tech_0>
+
+
+		<Score_Cost_Credits> 60000 </Score_Cost_Credits>
+		<CategoryMask> SpaceHero | AntiFrigate </CategoryMask>
+		
+		
+		<Unit_Ability>
+				<Type>LURE</Type>
+				
+				<Alternate_Name_Text>TEXT_TOOLTIP_ABILITY_RESPECT_FOR_JEDI_NAME</Alternate_Name_Text>
+				<Alternate_Description_Text>TEXT_TOOLTIP_ABILITY_RESPECT_FOR_JEDI_DESCRIPTION</Alternate_Description_Text>
+				<Alternate_Icon_Name>i_sa_RESPECT_FOR_JEDI.tga</Alternate_Icon_Name>
+				<!-- If you change this - please make sure you communicate the change to artists (to Mike specifically).
+					 Any change to this radius will require a manual adjustment to the particle effect. Thank you. -->
+				<Effective_Radius>1</Effective_Radius>
+				
+				<Target_Types />
+
+				<Recharge_Seconds>120</Recharge_Seconds>
+				<Expiration_Seconds>60</Expiration_Seconds>
+				
+				<Is_Pulsing>Yes</Is_Pulsing>
+				<Pulse_Frequency_Secs>0.5</Pulse_Frequency_Secs>
+				<Max_Number_Of_Pulses>120</Max_Number_Of_Pulses>
+				<Particle_Effect>Cautiousness_Ability_Particle</Particle_Effect>
+
+				<Supports_Autofire>False</Supports_Autofire>
+			</Unit_Ability>
+			
+
+		
+		<Abilities SubObjectList="Yes">
+
+			<Combat_Bonus_Ability Name="Oicunn_Combat_Bonus">
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<Unit_Strength_Category>All</Unit_Strength_Category>
+				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.05</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.00</Damage_Bonus_Percentage>
+				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Shield_Bonus_Percentage>0.00</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.00</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.0</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+
+
+
+		</Abilities>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>1330</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>18</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+		
+		
+		<SFXEvent_Select>Unit_Select_Captain_Dallin</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Captain_Dallin</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Captain_Dallin</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Captain_Dallin</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Captain_Dallin</SFXEvent_Guard>
+		<SFXEvent_Group_Move>Unit_Assist_Move_Captain_Dallin</SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack>Unit_Assist_Attack_Captain_Dallin</SFXEvent_Group_Attack>
+		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Captain_Dallin </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Captain_Dallin </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Die_Captain_Dallin </Death_SFXEvent_Start_Die>   
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Captain_Dallin </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+		
+		
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_LASER, Unit_Attack_Captain_Dallin </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_MISSILE, Unit_Attack_Captain_Dallin</SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_TORPEDO, Unit_Attack_Captain_Dallin </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_ION_CANNON, Unit_Attack_Captain_Dallin </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_SHIELD_GENERATOR, Unit_Attack_Captain_Dallin</SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_ENGINE, Unit_Attack_Captain_Dallin </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_GRAVITY_WELL, Unit_Attack_Captain_Dallin </SFXEvent_Attack_Hardpoint>
+		
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_LASER, Unit_Lost_Laser_Acclamator </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_MISSILE,  Unit_Die_Captain_Dallin </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_TORPEDO,  Unit_Die_Captain_Dallin </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_ION_CANNON,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_SHIELD_GENERATOR, Unit_Die_Captain_Dallin </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_ENGINE, Unit_Health_Critical_Captain_Dallin </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_GRAVITY_WELL,  </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_FIGHTER_BAY, Unit_Health_Critical_Captain_Dallin </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_TRACTOR_BEAM, </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_ENABLE_SPECIAL_ABILITY, </SFXEvent_Hardpoint_Destroyed>
+
+
+	</UniqueUnit>
+	
+	<DummyStructure Name="Oicunn_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_OICUNN</Text_ID>
+		<Icon_Name>i_button_oicunn_command.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Complete_Captain_Dallin </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND3_SPACE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_OICUNN
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_RAMDAR
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_OICUNN
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Oicunn_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Unassigned_Captain_Dallin </SFXEvent_Build_Complete>
+		
+		<Text_ID>TEXT_HERO_OICUNN</Text_ID>
+		<Icon_Name>i_button_oicunn_retire.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Oicunn_Ramdar</Required_Orbiting_Units>
+	</DummyStructure>	
 
 	<UniqueUnit Name="Dallin_Kebir">
 		<Variant_Of_Existing_Type>Dreadnaught</Variant_Of_Existing_Type>
@@ -584,7 +917,6 @@
 		TEXT_TOOLTIP_CAPABILITY_BOMBING_RUN
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_COMMANDER </Encyclopedia_Unit_Class>
-		
 		<SpaceBehavior> ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
 		<Lua_Script>GenericGameObject</Lua_Script>
 		<Tech_Level>99</Tech_Level>
@@ -784,6 +1116,7 @@
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
 		TEXT_TOOLTIP_COMMAND_SUNDIVER
 		TEXT_TOOLTIP_COMMAND_BATTALION
+		TEXT_TOOLTIP_TALLON_SPECIAL
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
@@ -813,7 +1146,302 @@
 		<Affiliation>Empire</Affiliation>
 
 		<Required_Orbiting_Units>Tallon_Battalion</Required_Orbiting_Units>
-	</DummyStructure>	
+	</DummyStructure>
+
+	<UniqueUnit Name="Salima_Aken">
+		<Variant_Of_Existing_Type>Generic_Acclamator_Assault_Ship_I</Variant_Of_Existing_Type>
+		<Icon_Name>I_BUTTON_SALIMA.TGA</Icon_Name>
+		<Prevents_Story_Campaign_Autoresolve>no</Prevents_Story_Campaign_Autoresolve>
+		<Is_Named_Hero>Yes</Is_Named_Hero>	
+		<Text_ID>TEXT_HERO_SALIMA</Text_ID>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_TRAIT_CREATIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_SALIMA
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
+		TEXT_TOOLTIP_COMMAND_SALIMA
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_ACCLAMATOR_I_HULL
+		TEXT_TOOLTIP_ACCLAMATOR_I_SHIELD
+		TEXT_TOOLTIP_ACCLAMATOR_I_MOVE
+		TEXT_TOOLTIP_ACCLAMATOR_I_SQUADRON
+		TEXT_TOOLTIP_ACCLAMATOR_I_WEAP1
+		TEXT_TOOLTIP_ACCLAMATOR_I_WEAP2
+		TEXT_TOOLTIP_ACCLAMATOR_I_WEAP3
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FLEET_TENDER_FIGHTERS
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_ORBITAL_BOMBARDMENT
+		TEXT_TOOLTIP_CAPABILITY_BOMBING_RUN
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ADMIRAL </Encyclopedia_Unit_Class>
+		<SpaceBehavior> ABILITY_COUNTDOWN, TELEKINESIS_TARGET, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		<Lua_Script>GenericGameObject</Lua_Script>
+		<Tech_Level>99</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		<Space_Model_Name>EV_ACCLAMATOR_H.ALO</Space_Model_Name>
+
+		<Starting_Spawned_Units_Tech_1>Generic_Z95_Headhunter_Squadron_Double, 1</Starting_Spawned_Units_Tech_1>
+		<Starting_Spawned_Units_Tech_1>BTLB_Y-Wing_Squadron_Double, 1</Starting_Spawned_Units_Tech_1>
+		<Reserve_Spawned_Units_Tech_1>Generic_Z95_Headhunter_Squadron_Double, 2</Reserve_Spawned_Units_Tech_1>
+		<Reserve_Spawned_Units_Tech_1>BTLB_Y-Wing_Squadron_Double, 2</Reserve_Spawned_Units_Tech_1>
+
+		<Starting_Spawned_Units_Tech_3>Missile_TIE_Squadron_Double, 1</Starting_Spawned_Units_Tech_3>
+		<Starting_Spawned_Units_Tech_3>BTLB_Y-Wing_Squadron_Double, 1</Starting_Spawned_Units_Tech_3>
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
+		<Reserve_Spawned_Units_Tech_3>Missile_TIE_Squadron_Double, 2</Reserve_Spawned_Units_Tech_3>
+		<Reserve_Spawned_Units_Tech_3>BTLB_Y-Wing_Squadron_Double, 2</Reserve_Spawned_Units_Tech_3>
+		
+		<CategoryMask> SpaceHero | AntiFrigate </CategoryMask>
+		
+		<SFXEvent_Build_Complete>Unit_Respawn_Mara_Jade</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Respawn_Mara_Jade</SFXEvent_Hero_Respawned>
+
+		<SFXEvent_Select>Unit_Select_Mara_Jade</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Mara_Jade</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Mara_Jade</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Mara_Jade</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Mara_Jade</SFXEvent_Guard>
+		<SFXEvent_Group_Move>Unit_Move_Mara_Jade</SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack>Unit_Attack_Mara_Jade</SFXEvent_Group_Attack>
+		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Mara_Jade </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Mara_Jade </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Defeat_Mara_Jade </Death_SFXEvent_Start_Die>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+		 <Unit_Ability>
+				<Type>HARMONIC_BOMB</Type>
+				<Recharge_Seconds>60</Recharge_Seconds>
+				<Spawned_Object_Type>Proj_Fleet_Tender_Fighter_Heal</Spawned_Object_Type>
+				<Bomb_Countdown_Seconds>0.0</Bomb_Countdown_Seconds>
+				<SFXEvent_GUI_Unit_Ability_Activated>Unit_Force_Area_Heal</SFXEvent_GUI_Unit_Ability_Activated>
+				<Alternate_Name_Text>TEXT_TOOLTIP_ABILITY_FLEET_TENDER_NAME</Alternate_Name_Text>
+				<Alternate_Description_Text>TEXT_TOOLTIP_ABILITY_FLEET_TENDER_DESCRIPTION</Alternate_Description_Text>
+				<Alternate_Icon_Name>i_sa_repair_vehicle.tga</Alternate_Icon_Name>
+				<Supports_Autofire>True</Supports_Autofire>
+		  </Unit_Ability>
+
+		</Unit_Abilities_Data>
+		
+		<Abilities SubObjectList="Yes">
+
+			<Force_Healing_Ability Name="Fleet_Tender_Facility_Healing">
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<Heal_Range>750.0</Heal_Range>
+				<Heal_Percent> 0.05 </Heal_Percent>
+                <Blob_Color>0, 255, 0, 255</Blob_Color>
+				<Heal_Interval_In_Secs>2.0</Heal_Interval_In_Secs>
+				<Single_Target_Heal>Yes</Single_Target_Heal>
+				<Heal_Range_Blob_Material>Reinforcement_Point_Radius_Overlay</Heal_Range_Blob_Material>
+				<!-- We can heal the following unit types: -->
+				<Applicable_Unit_Categories>Corvette, Frigate, Capital, Hero, SuperCapital, SpaceHero</Applicable_Unit_Categories>
+				<Applicable_Unit_Types/>
+				<SFXEvent_Target_Affected>Unit_Force_Healing_Pulse</SFXEvent_Target_Affected>
+				<Target_Particle_Effect>Shield_Sparks_Medium</Target_Particle_Effect>
+				<Target_Particle_Bone_Name>B_TURRET, TURRET_00, B_TURRET_BASE</Target_Particle_Bone_Name>
+				<Target_Light_Effect_Type>Color_Flash</Target_Light_Effect_Type>
+				<Target_Light_Effect_Color>1.2, 1.2, 2.0</Target_Light_Effect_Color>
+				<Target_Light_Effect_Color2/>
+				<Target_Light_Effect_Duration>0.6</Target_Light_Effect_Duration>
+				<Target_Light_Effect_Pulse_Count>1</Target_Light_Effect_Pulse_Count>
+				<Owner_Particle_Bone_Name>ROOT</Owner_Particle_Bone_Name>
+				<Owner_Light_Effect_Type>Color_Flash</Owner_Light_Effect_Type>
+				<Owner_Light_Effect_Color>1.2, 1.2, 2.0</Owner_Light_Effect_Color>
+				<Owner_Light_Effect_Color2/>
+				<Owner_Light_Effect_Duration>0.6</Owner_Light_Effect_Duration>
+				<Owner_Light_Effect_Pulse_Count>1</Owner_Light_Effect_Pulse_Count>
+				<!--<Lightning_Effect_Name>Repair_Facility_Effect</Lightning_Effect_Name>-->
+			</Force_Healing_Ability>
+
+			<Combat_Bonus_Ability Name="Salima_Combat_Bonus">
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<Unit_Strength_Category>All</Unit_Strength_Category>
+				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.15</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.15</Damage_Bonus_Percentage>
+				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Shield_Bonus_Percentage>0.10</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.10</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.00</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+
+		</Abilities>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>2365</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>26</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+	</UniqueUnit>
+
+	<UniqueUnit Name="Salima_Maelstrom">
+		<Variant_Of_Existing_Type>Maelstrom_Battlecruiser</Variant_Of_Existing_Type>
+		<Icon_Name>I_BUTTON_SALIMA.TGA</Icon_Name>
+		<Prevents_Story_Campaign_Autoresolve>yes</Prevents_Story_Campaign_Autoresolve>
+		<Is_Named_Hero>Yes</Is_Named_Hero>	
+		<Text_ID>TEXT_HERO_SALIMA</Text_ID>
+		<Space_Model_Name>Hero_Maelstrom-class_battlecruiser.ALO</Space_Model_Name>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ADMIRAL </Encyclopedia_Unit_Class>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_TRAIT_CREATIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+		TEXT_TOOLTIP_SALIMA
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_SALIMAB
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_MAELSTROM_HULL
+		TEXT_TOOLTIP_MAELSTROM_SHIELD
+		TEXT_TOOLTIP_MAELSTROM_MOVE 
+		TEXT_TOOLTIP_MAELSTROM_SQUADRON
+		TEXT_TOOLTIP_MAELSTROM_WEAP1
+		TEXT_TOOLTIP_MAELSTROM_WEAP2 
+		TEXT_TOOLTIP_MAELSTROM_WEAP3 
+		TEXT_TOOLTIP_MAELSTROM_WEAP4
+		TEXT_TOOLTIP_MAELSTROM_WEAP5
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_ORBITAL_BOMBARDMENT 
+		TEXT_TOOLTIP_CAPABILITY_BOMBING_RUN
+		</Encyclopedia_Text>
+		
+		<CategoryMask> SpaceHero | AntiCapital </CategoryMask>
+		
+		<SpaceBehavior> ABILITY_COUNTDOWN, SPAWN_SQUADRON, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		<Lua_Script>CapitalHero</Lua_Script>
+		<Population_Value>33</Population_Value>
+	
+		<Starting_Spawned_Units_Tech_0>Generic_ARC_170_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Torrent_Squadron_Double, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Early_Skipray_Squadron_Half, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>BTLB_Y-Wing_Squadron, 1</Starting_Spawned_Units_Tech_0>
+		
+		<Starting_Spawned_Units_Tech_4>Generic_ARC_170_Squadron, 1</Starting_Spawned_Units_Tech_4>
+		<Starting_Spawned_Units_Tech_4>V-Wing_Squadron_Double, 1</Starting_Spawned_Units_Tech_4>
+		<Starting_Spawned_Units_Tech_4>Early_Skipray_Squadron_Half, 1</Starting_Spawned_Units_Tech_4>
+		<Starting_Spawned_Units_Tech_4>BTLB_Y-Wing_Squadron, 1</Starting_Spawned_Units_Tech_4>
+		
+		<Spawned_Squadron_Delay_Seconds>5</Spawned_Squadron_Delay_Seconds>
+		
+		<Reserve_Spawned_Units_Tech_0>Generic_ARC_170_Squadron, 2</Reserve_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Torrent_Squadron_Double, 2</Reserve_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>Early_Skipray_Squadron_Half, 1</Reserve_Spawned_Units_Tech_0>
+		<Reserve_Spawned_Units_Tech_0>BTLB_Y-Wing_Squadron, 2</Reserve_Spawned_Units_Tech_0>
+		
+		<Reserve_Spawned_Units_Tech_4>Generic_ARC_170_Squadron, 2</Reserve_Spawned_Units_Tech_4>
+		<Reserve_Spawned_Units_Tech_4>V-Wing_Squadron_Double, 2</Reserve_Spawned_Units_Tech_4>
+		<Reserve_Spawned_Units_Tech_4>Early_Skipray_Squadron_Half, 1</Reserve_Spawned_Units_Tech_4>
+		<Reserve_Spawned_Units_Tech_4>BTLB_Y-Wing_Squadron, 2</Reserve_Spawned_Units_Tech_4>
+		
+		<Death_Clone>Damage_Normal, Hero_Star_Destroyer_Death_Clone</Death_Clone>
+		
+		<Abilities SubObjectList="Yes">
+			<Combat_Bonus_Ability Name="Coy_Combat_Bonus">
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<Unit_Strength_Category>All</Unit_Strength_Category>
+				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.15</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.15</Damage_Bonus_Percentage>
+				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Shield_Bonus_Percentage>0.10</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.10</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.00</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+
+		</Abilities>
+		
+		
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer></Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds></Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue></Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+	</UniqueUnit>	
+	
+	<DummyStructure Name="Salima_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SALIMA</Text_ID>
+		<Icon_Name>I_BUTTON_SALIMA_COMMAND.tga</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_TRAIT_CREATIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_SALIMA
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
+		TEXT_TOOLTIP_COMMAND_SALIMA
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+	</DummyStructure>
+
+	<DummyStructure Name="Salima_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SALIMA</Text_ID>
+		<Icon_Name>I_BUTTON_SALIMA_RETIRE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Salima_Aken</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<DummyStructure Name="Salima_Retire2">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SALIMA</Text_ID>
+		<Icon_Name>I_BUTTON_SALIMA_RETIRE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Salima_Maelstrom</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<DummyStructure Name="Salima_Upgrade">
+		<Variant_Of_Existing_Type>Template_Flagship_Swap</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+		<Build_Cost_Credits>6000</Build_Cost_Credits>
+		
+		<Build_Time_Seconds>3</Build_Time_Seconds>
+		
+		<Text_ID>TEXT_TOOLTIP_COMMAND_SALIMAB</Text_ID>
+		<Affiliation>Empire</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Icon_Name>I_BUTTON_SALIMA.TGA</Icon_Name>
+		
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_UPGRADE_FLAG
+		</Encyclopedia_Text>
+		
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Required_Orbiting_Units>Salima_Aken</Required_Orbiting_Units>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Republic_Shipyard_Level_Four</Required_Special_Structures>
+	</DummyStructure>
 
 
 	<UniqueUnit Name="Pellaeon_Leveler">
@@ -843,7 +1471,6 @@
 		TEXT_TOOLTIP_CAPABILITY_BOMBING_RUN
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
-		
 		<SpaceBehavior> ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
 		<Lua_Script>GenericGameObject</Lua_Script>
 		<Tech_Level>99</Tech_Level>
@@ -978,6 +1605,198 @@
 		<Affiliation>Empire</Affiliation>
 
 		<Required_Orbiting_Units>Pellaeon_Leveler</Required_Orbiting_Units>
+	</DummyStructure>
+	
+	<UniqueUnit Name="Talbot_Arrestor">
+		<Variant_Of_Existing_Type>Generic_Acclamator_Assault_Ship_I</Variant_Of_Existing_Type>
+		<Icon_Name>i_button_talbot.tga</Icon_Name>
+		<Prevents_Story_Campaign_Autoresolve>no</Prevents_Story_Campaign_Autoresolve>
+		<Is_Named_Hero>Yes</Is_Named_Hero>	
+		<Text_ID>TEXT_HERO_TALBOT</Text_ID>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND3_SPACE
+		TEXT_TOOLTIP_TRAIT_GAMBLER
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_TALBOT
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
+		TEXT_TOOLTIP_COMMAND_ARRESTOR
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_ACCLAMATOR_IB_HULL
+		TEXT_TOOLTIP_ACCLAMATOR_I_SHIELD
+		TEXT_TOOLTIP_ACCLAMATOR_I_MOVE
+		TEXT_TOOLTIP_ACCLAMATOR_I_SQUADRON
+		TEXT_TOOLTIP_ACCLAMATOR_II_WEAP1
+		TEXT_TOOLTIP_ACCLAMATOR_I_WEAP3
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_ORBITAL_BOMBARDMENT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
+		
+		<Tactical_Health>2400</Tactical_Health>
+		
+		<SpaceBehavior> LURE, ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
+		
+		<HardPoints>
+		HP_Acclamator_1B_Weapon_FL, HP_Acclamator_1B_Weapon_FR, HP_Acclamator_Weapon_FC, HP_Acclamator_1B_Weapon_BL, HP_Acclamator_1B_Weapon_BR, HP_Acclamator_Weapon_BC, HP_Acclamator_Engines, HP_Acclamator_Fighter_Bay
+		</HardPoints>
+		
+		<Lua_Script>GenericGameObject</Lua_Script>
+		<Tech_Level>99</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		<No_Colorization_Color> 255, 255, 255, 255 </No_Colorization_Color>
+		
+		<Score_Cost_Credits> 60000 </Score_Cost_Credits>
+		<CategoryMask> SpaceHero | AntiFrigate </CategoryMask>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+		
+		<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+				<Expiration_Seconds>25</Expiration_Seconds>
+				<Mod_Multiplier>WEAPON_DELAY_MULTIPLIER,    0.85f</Mod_Multiplier>
+				<Mod_Multiplier>SHIELD_REGEN_MULTIPLIER,    -1f</Mod_Multiplier>
+				<Mod_Multiplier>ENERGY_REGEN_MULTIPLIER,    1.0f</Mod_Multiplier>
+				<Mod_Multiplier>SPEED_MULTIPLIER,        0.5f</Mod_Multiplier>
+				<Recharge_Seconds>45</Recharge_Seconds>
+
+				<SFXEvent_GUI_Unit_Ability_Activated>Unit_Barrage_Victory_Destroyer</SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+			
+			<Unit_Ability>
+			
+			
+				<Type>WEAKEN_ENEMY</Type>
+
+				<Recharge_Seconds>60</Recharge_Seconds>
+				<!-- This is the radius within which we can "drop" the projectile (targeting radius) -->
+				<!-- The actual radius of ability is in projectile XML -->
+				<Effective_Radius> 10000.0 </Effective_Radius>
+				<Spawned_Object_Type>Microjump_Marker</Spawned_Object_Type>
+				<Alternate_Name_Text>TEXT_ABILITY_MICROJUMPB</Alternate_Name_Text>
+				<Alternate_Description_Text>TEXT_ABILITY_MICROJUMP_TALBOT_DESCRIPTION</Alternate_Description_Text>
+				<!-- <Alternate_Icon_Name>I_SA_FORCE_CONFUSE.TGA</Alternate_Icon_Name> --> <!-- new icon when it'll be somewhere else too? -->
+				<SFXEvent_Target_Ability> Unit_Energy_Flux_Antilles </SFXEvent_Target_Ability>
+				<SFXEvent_GUI_Unit_Ability_Activated>Unit_Energy_Flux_Antilles</SFXEvent_GUI_Unit_Ability_Activated>
+				<SFXEvent_GUI_Unit_Ability_Deactivated/>
+
+				<!-- Area effect decal size depends on "Antills_Weaken_Enemy_Effect" -->
+				<Area_Effect_Decal_Distance> 300 </Area_Effect_Decal_Distance>
+
+			</Unit_Ability>
+
+		</Unit_Abilities_Data>
+		
+		<Abilities SubObjectList="Yes">
+
+			<Combat_Bonus_Ability Name="Talbot_Combat_Bonus">
+				<Activation_Style>Space_Automatic</Activation_Style>
+				<Unit_Strength_Category>All</Unit_Strength_Category>
+				<Applicable_Unit_Categories>All</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>-0.05</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.10</Damage_Bonus_Percentage>
+				<Energy_Pool_Bonus_Percentage>0.0</Energy_Pool_Bonus_Percentage>
+				<Shield_Bonus_Percentage>0.0</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.0</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.10</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+
+
+
+		</Abilities>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>2365</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>26</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Units</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+		
+		
+		
+		<SFXEvent_Select>Unit_Select_Admiral_Yularen</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Admiral_Yularen</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Admiral_Yularen</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Admiral_Yularen</SFXEvent_Attack>
+		<SFXEvent_Guard>Unit_Guard_Admiral_Yularen</SFXEvent_Guard>
+		<SFXEvent_Group_Move>Unit_Assist_Move_Admiral_Yularen</SFXEvent_Group_Move>
+		<SFXEvent_Group_Attack>Unit_Assist_Attack_Admiral_Yularen</SFXEvent_Group_Attack>
+		<SFXEvent_Health_Low_Warning> Unit_Health_Low_Admiral_Yularen </SFXEvent_Health_Low_Warning>
+		<SFXEvent_Health_Critical_Warning> Unit_Health_Critical_Admiral_Yularen </SFXEvent_Health_Critical_Warning>
+		<Death_SFXEvent_Start_Die> Unit_Die_Admiral_Yularen </Death_SFXEvent_Start_Die>   
+
+		<SFXEvent_Tactical_Build_Started> RHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>		
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_Admiral_Yularen </SFXEvent_Tactical_Build_Complete>		
+		<SFXEvent_Tactical_Build_Cancelled> RHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+		
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_LASER, Unit_Attack_Admiral_Yularen </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_MISSILE, Unit_Attack_Admiral_Yularen</SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_TORPEDO, Unit_Attack_Admiral_Yularen </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_WEAPON_ION_CANNON, Unit_Attack_Admiral_Yularen </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_SHIELD_GENERATOR, Unit_Attack_Admiral_Yularen </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_ENGINE, Unit_Attack_Admiral_Yularen </SFXEvent_Attack_Hardpoint>
+		<SFXEvent_Attack_Hardpoint> HARD_POINT_GRAVITY_WELL, Unit_Attack_Admiral_Yularen </SFXEvent_Attack_Hardpoint>
+		
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_LASER, Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_MISSILE,  Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_TORPEDO,  Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_WEAPON_ION_CANNON, Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_SHIELD_GENERATOR, Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_ENGINE, Unit_Lost_Engine_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_GRAVITY_WELL, Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_FIGHTER_BAY, Unit_Lost_Hangar_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_TRACTOR_BEAM, Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+		<SFXEvent_Hardpoint_Destroyed> HARD_POINT_ENABLE_SPECIAL_ABILITY, Unit_Health_Critical_Admiral_Yularen </SFXEvent_Hardpoint_Destroyed>
+
+
+	</UniqueUnit>
+	
+	<DummyStructure Name="Talbot_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TALBOT</Text_ID>
+		<Icon_Name>i_button_talbot_command.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Yularen </SFXEvent_Build_Complete>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK 
+		TEXT_TOOLTIP_TRAIT_COMMAND3_SPACE
+		TEXT_TOOLTIP_TRAIT_GAMBLER
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_TALBOT
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK 
+		TEXT_TOOLTIP_COMMAND_ARRESTOR
+		</Encyclopedia_Text>
+
+		<Affiliation>Empire</Affiliation>
+	</DummyStructure>
+
+	<DummyStructure Name="Talbot_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TALBOT</Text_ID>
+		<Icon_Name>i_button_talbot_retire.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Yularen </SFXEvent_Build_Complete>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Talbot_Arrestor</Required_Orbiting_Units>
 	</DummyStructure>
 
 
@@ -3675,7 +4494,6 @@
 		TEXT_TOOLTIP_CAPABILITY_BOMBING_RUN 
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_COLONEL </Encyclopedia_Unit_Class>
-		
 		<SpaceBehavior> ABILITY_COUNTDOWN, SIMPLE_SPACE_LOCOMOTOR, POWERED, SHIELDED, SELECTABLE, TARGETING, REVEAL, HIDE_WHEN_FOGGED, UNIT_AI, DAMAGE_TRACKING, ASTEROID_FIELD_DAMAGE, ION_STUN_EFFECT, NEBULA</SpaceBehavior>
 		<Lua_Script>GenericGameObject</Lua_Script>
 		<Tech_Level>99</Tech_Level>
@@ -5357,7 +6175,7 @@
 		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
 		
 		<Text_ID>TEXT_HERO_COY</Text_ID>
-		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+		<Icon_Name>I_BUTTON_COY_COMMAND.tga</Icon_Name>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
@@ -5381,7 +6199,7 @@
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
 		
 		<Text_ID>TEXT_HERO_COY</Text_ID>
-		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+		<Icon_Name>I_BUTTON_COY_RETIRE.tga</Icon_Name>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_RETIRE_REPUBLIC_MOFF
@@ -8093,7 +8911,7 @@
 	</HeroUnit>
 
 	<HeroCompany Name="Mon_Mothma_Team">
-		<Text_ID>TEXT_HERO_MON_MOTHMA</Text_ID>
+		<Text_ID>TEXT_HERO_MON_MOTHMA_TEAM</Text_ID>
 		<Icon_Name>i_button_mon_mothma_cw.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Affiliation>Empire</Affiliation>

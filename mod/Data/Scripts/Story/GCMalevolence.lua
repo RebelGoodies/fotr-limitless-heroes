@@ -99,31 +99,27 @@ function Initialize(message)
     if message == OnEnter then
 		GlobalValue.Set("CURRENT_ERA", 2)
 		crossplot:galactic()
+		crossplot:publish("CIS_ADMIRAL_EXIT", {"Doctor"}, 1, true) --Space
+		crossplot:publish("CIS_ADMIRAL_EXIT", {"Calli"}, 1)
+		crossplot:publish("CIS_ADMIRAL_LOCKIN", {"Argente"}, 2) --Ground
+		crossplot:publish("CIS_ADMIRAL_LOCKIN", {"Argente"}, 2, true)
+		crossplot:publish("CIS_ADMIRAL_LOCKIN", {"Lorz"}, 2)
+		crossplot:publish("CIS_ADMIRAL_EXIT", {"Yansu"}, 3) --Sith
+		
 		crossplot:publish("VENATOR_HEROES", "empty")
-		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 1, 2)
-		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 2, 5)
-		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 2, 6)
+		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 99, 2) --Moffs
+		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 99, 5) --Commandos
+		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 99, 6) --Generals
 
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Yularen"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Coburn"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Plo"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Ahsoka"}, 3)
-
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Pellaeon"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Dallin"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Tallon"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Autem"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Forral"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Grumby"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Baraka"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Martz"}, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Maarisa"}, 1)
-
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Barriss"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Aayla"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Mundi"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Kota"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Kit"}, 3)
+		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Yularen", "Coburn"}, 1)
+		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Plo", "Ahsoka"}, 3) --Jedi
+		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Ask", "Padme"}, 7) --Senators
+		Sleep(1)
+		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Pellaeon","Dallin","Tallon","Autem","Forral","Grumby","Baraka","Martz","Maarisa"}, 1)
+		Sleep(1)
+		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Barriss", "Aayla", "Mundi", "Kota", "Kit"}, 3)
+		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Ask", "Padme", "Nala", "Bail"}, 7, true)
+		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Orn"}, 7)
 	else
 		crossplot:update()
     end
@@ -187,6 +183,7 @@ function State_CIS_Player_Checker(message)
 
 			local BormusSpawn = {"Ask_Aak_Team"}
 			StoryUtil.SpawnAtSafePlanet("BORMUS", p_republic, StoryUtil.GetSafePlanetTable(), BormusSpawn)
+			crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Ask"}, 7, true)
 
 			plot = Get_Story_Plot("Conquests\\CloneWarsMalevolence\\Story_Sandbox_Malevolence_CIS.XML")
 
@@ -282,6 +279,7 @@ function State_CIS_Moorja_Checker()
 		local Safe_House_Planet = StoryUtil.GetSafePlanetTable()
 		StoryUtil.SpawnAtSafePlanet("MOORJA", Find_Player("Rebel"), Safe_House_Planet, {"Argente_Team"})
 		Clear_Fighter_Research("RepublicWarpods")
+		crossplot:publish("CIS_ADMIRAL_RETURN", {"Argente"}, 2, true)
 	end
 end
 
@@ -371,6 +369,8 @@ function State_Rep_Player_Checker(message)
 			local Safe_House_Planet = StoryUtil.GetSafePlanetTable()
 			StoryUtil.SpawnAtSafePlanet("MOORJA", Find_Player("Rebel"), Safe_House_Planet, {"Argente_Team"})
 			--StoryUtil.SpawnAtSafePlanet("MOORJA", Find_Player("Rebel"), Safe_House_Planet, {"Doctor_Instinction"})
+			crossplot:publish("CIS_ADMIRAL_RETURN", {"Argente"}, 2, true)
+			crossplot:publish("CIS_ADMIRAL_RETURN", {"Doctor"}, 1)
 		end
     end
 end
@@ -397,6 +397,7 @@ function State_Rep_Malevolence_Hunt_Y_Wing_Research(message)
 		Story_Event("REP_YWINGS_RESEARCHED")
 		local BormusSpawn = {"Ask_Aak_Team"}
 		StoryUtil.SpawnAtSafePlanet("BORMUS", p_republic, StoryUtil.GetSafePlanetTable(), BormusSpawn)
+		crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Ask"}, 7, true)
 	end
 end
 
@@ -420,5 +421,7 @@ function State_Rep_Post_Malevolence(message)
 		StoryUtil.SpawnAtSafePlanet("NABOO", p_republic, StoryUtil.GetSafePlanetTable(), {"Obi_Wan_Delta_Team"})
 		p_republic.Unlock_Tech(Find_Object_Type("Pelta_Assault"))
 		p_republic.Unlock_Tech(Find_Object_Type("Pelta_Support"))
+		crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Padme"}, 7, true)
+		crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Nala"}, 7, true)
 	end
 end

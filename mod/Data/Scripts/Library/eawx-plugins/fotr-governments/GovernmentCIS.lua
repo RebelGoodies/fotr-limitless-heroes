@@ -1,4 +1,5 @@
 require("deepcore/std/class")
+require("eawx-events/TechHelper")
 StoryUtil = require("eawx-util/StoryUtil")
 UnitUtil = require("eawx-util/UnitUtil")
 
@@ -14,7 +15,13 @@ function GovernmentCIS:new(gc)
 		"B1 skin set to Geonosian",
 		"B1 skin set to Republic Commando",	
 	}
-
+	
+	self.new_face_of_war = false
+	if Find_Object_Type("DUMMY_KNIGHTING_CEREMONY") then
+		self.new_face_of_war = true
+	else
+		self.CISPlayer.Unlock_Tech(Find_Object_Type("OPTION_CYCLE_B1"))
+	end
 
     local all_planets = FindPlanet.Get_All_Planets()
 
@@ -40,13 +47,17 @@ function GovernmentCIS:new(gc)
     GlobalValue.Set("CommerceApprovalRating", influenceValue)
     GlobalValue.Set("TechnoApprovalRating", influenceValue)
     GlobalValue.Set("TradeFedApprovalRating", influenceValue)
-
+	
     self.SubfactionTable = {
         ["TECHNO_UNION"] = {
             tag = "Techno",
             influence = influenceValue,
             integration_list = {"Tambor_Team", "Treetor_Captor"},
-            stimulus = {"STIMULUS_TECHNO"},
+            integration_unlock = {"B2_Droid_Squad", "BX_Commando_Squad", "Crab_Droid_Company", "J1_Artillery_Corp", "Magna_Company", "Hardcell", "Hardcell_Tender"},
+            integration_unlock2 = {"Dummy_Research_B3", "Mini_Tri_Company"},
+            integration_locks = {"Military_Soldier_Team", "Geonosian_Warrior_Team", "T4_Turret_Droid_Company", "MZ8_Tank_Company", "Interceptor_Frigate", "Action_VI_Support"},
+            integration_locks2 = {},
+            stimulus = {"STIMULUS_TECHNO", "OPTION_COMPLETE_TECHNO"},
             integration_speech = "TEXT_CONQUEST_CIS_TECHNO_JOINS",
             reduction_speech = "TEXT_CONQUEST_CIS_TECHNO_REDUCE",
             leader_holo = "San_Hill_Loop",
@@ -57,7 +68,11 @@ function GovernmentCIS:new(gc)
             tag = "Commerce",
             influence = influenceValue,
             integration_list = {"Shu_Mai_Castell", "Stark_Recusant"},
-            stimulus = {"STIMULUS_COMMERCE"},
+            integration_unlock = {"Dwarf_Spider_Droid_Company", "OG9_Company", "Diamond_Frigate", "Recusant"},
+            integration_unlock2 = {"Dummy_Research_ADSD", "Dummy_Research_Providence", "Generic_Providence"},
+            integration_locks = {"SD_5_Hulk_Infantry_Droid_Company", "Arrow_23_Company", "Marauder_Missile_Cruiser"},
+            integration_locks2 = {},
+            stimulus = {"STIMULUS_COMMERCE", "OPTION_COMPLETE_COMMERCE"},
             integration_speech = "TEXT_CONQUEST_CIS_COMMERCE_JOINS",
             reduction_speech = "TEXT_CONQUEST_CIS_COMMERCE_REDUCE",
             leader_holo = "San_Hill_Loop",
@@ -68,7 +83,11 @@ function GovernmentCIS:new(gc)
             tag = "IGBC",
             influence = influenceValue,
             integration_list = {"Tonith_Corpulentus", "Canteval_Munificent"},
-            stimulus = {"STIMULUS_IGBC"},
+            integration_unlock = {"Hailfire_Company", "CIS_GAT_Group", "Munificent"},
+            integration_unlock2 = {},
+            integration_locks = {"Riot_Hailfire_Company", "GAT_Group", "CIS_Dreadnaught_Lasers"},
+            integration_locks2 = {"CIS_GAT_Group"},
+            stimulus = {"STIMULUS_IGBC", "OPTION_COMPLETE_IGBC"},
             integration_speech = "TEXT_CONQUEST_CIS_IGBC_JOINS",
             reduction_speech = "TEXT_CONQUEST_CIS_IGBC_REDUCE",
             leader_holo = "Tonith_Loop",
@@ -79,7 +98,11 @@ function GovernmentCIS:new(gc)
             tag = "TradeFed",
             influence = influenceValue,
             integration_list = {"Durd_Team", "Tuuk_Procurer"},
-            stimulus = {"STIMULUS_TRADEFED"},
+            integration_unlock = {"Option_Cycle_B1", "Destroyer_Coreship_Upgrade", "Battlecarrier_Lucrehulk_Upgrade", "B1_Droid_Squad", "Destroyer_Droid_Company", "AAT_Company", "PAC_Company", "HAG_Company", "Lupus_Missile_Frigate", "Lucrehulk_Core_Destroyer", "Generic_Lucrehulk"},
+            integration_unlock2 = {"Option_MTT_Swap", "Battleship_Lucrehulk"},
+            integration_locks = {"Police_Responder_Team", "Elite_Mercenary_Team", "PDF_AAT_Company", "JX30_Group", "CA_Artillery_Company", "Lucrehulk_Core_Ship", "Auxiliary_Lucrehulk"},
+            integration_locks2 = {},
+            stimulus = {"STIMULUS_TRADEFED", "OPTION_COMPLETE_TRADEFED"},
             integration_speech = "TEXT_CONQUEST_CIS_TRADEFED_JOINS",
             reduction_speech = "TEXT_CONQUEST_CIS_TRADEFED_REDUCE",
             leader_holo = "San_Hill_Loop",
@@ -87,6 +110,7 @@ function GovernmentCIS:new(gc)
             integrated = false
         }
     }
+	
     self.cis_starbase = Find_Object_Type("NewRepublic_Star_Base_1")
 	self.cis_gov_building = Find_Object_Type("NewRep_SenatorsOffice")
 
@@ -120,8 +144,12 @@ end
 function GovernmentCIS:on_construction_finished(planet, game_object_type_name)
     --Logger:trace("entering GovernmentCIS:on_construction_finished")
     for faction, table in pairs(self.SubfactionTable) do
-        if game_object_type_name == table.stimulus[1] then 
+        if game_object_type_name == table.stimulus[1] then
+			self:Support(faction)
+		elseif game_object_type_name == table.stimulus[2] then
+			table.influence = 100
             self:Support(faction)
+			UnitUtil.DespawnList({game_object_type_name})
         end
     end
 	if game_object_type_name == "OPTION_CYCLE_B1" then
@@ -156,6 +184,12 @@ function GovernmentCIS:Support(faction_name)
     --Logger:trace("entering GovernmentCIS:Support")
     
     self.SubfactionTable[faction_name].influence = self.SubfactionTable[faction_name].influence + 5
+
+    if self.new_face_of_war and self.SubfactionTable[faction_name].influence >= 50 then
+        UnitUtil.SetLockList("REBEL", self.SubfactionTable[faction_name].integration_unlock, true)
+        UnitUtil.SetLockList("REBEL", self.SubfactionTable[faction_name].integration_locks, false)
+    end
+
     if self.SubfactionTable[faction_name].influence >= 100 then
         self.SubfactionTable[faction_name].influence = 100
     end
@@ -175,7 +209,11 @@ function GovernmentCIS:Support(faction_name)
             StoryUtil.Multimedia(self.SubfactionTable[faction_name].integration_speech, 15, nil, self.SubfactionTable[faction_name].leader_holo, 0)
         end
     
-        UnitUtil.SetLockList("REBEL", self.SubfactionTable[faction_name].stimulus, false)
+		UnitUtil.SetLockList("REBEL", self.SubfactionTable[faction_name].stimulus, false)
+		if self.new_face_of_war then
+			UnitUtil.SetLockList("REBEL", self.SubfactionTable[faction_name].integration_unlock2, true)
+			UnitUtil.SetLockList("REBEL", self.SubfactionTable[faction_name].integration_locks2, false)
+		end
     end
  end
 

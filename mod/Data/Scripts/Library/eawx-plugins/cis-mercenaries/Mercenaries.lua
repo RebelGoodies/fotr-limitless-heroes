@@ -33,6 +33,11 @@ function Mercenaries:new(gc)
 		"Vazus_Team",
 		"Shahan_Alama_Team"
     }
+	if Find_Object_Type("DUMMY_KNIGHTING_CEREMONY") then -- New Face of War submod.
+		table.insert(self.MercenaryHeroes, "Cydon_Team")
+	end
+	
+	self.hondo_added = false
     self.PossibleRecruiters = {
         "Rebel"
     }
@@ -47,31 +52,50 @@ function Mercenaries:on_production_finished(planet, object_type_name)
     if object_type_name ~= "RANDOM_MERCENARY" then
         return
     end
-    --Grabs random array index for mercenary table
-    local mercenaryIndex = GameRandom.Free_Random(1,table.getn(self.MercenaryHeroes))
     --Grab Object Type for Random Mercenary dummy
     local RandomMercenary = Find_First_Object("Random_Mercenary")
-    --Grab selected mercenary via random index
-    local mercenary_to_spawn = self.MercenaryHeroes[mercenaryIndex]
-    --Remove selected mercenary from table
-    table.remove(self.MercenaryHeroes, mercenaryIndex)
     
-    if TestValid(RandomMercenary) then
-        --Grab Owner and Location of random mercenary dummy
-        local MercenaryOwner = RandomMercenary.Get_Owner()
-        local MercenaryLocation = RandomMercenary.Get_Planet_Location()
-        --Grab Object type for selected mercenary
-        local MercenaryUnit = Find_Object_Type(mercenary_to_spawn)
-        --Spawn Mercenary at location of mercenary dummy for mercenary owner
-        Spawn_Unit(MercenaryUnit, MercenaryLocation, MercenaryOwner)
-        --Despawn dummy object
-        RandomMercenary.Despawn()
-        --If no objects are left in table, lock the dummy and detach listener from production finished event
-        if table.getn(self.MercenaryHeroes) == 0 then
-            for _, faction in pairs(self.PossibleRecruiters) do
-                Find_Player(faction).Lock_Tech(Find_Object_Type("RANDOM_MERCENARY"))
-            end
-            self.gc.Events.GalacticProductionFinished:detach_listener(self.on_production_finished, self)
-        end
-    end
+	if TestValid(RandomMercenary) then
+		--Grabs random array index for mercenary table
+		local mercenaryIndex = GameRandom.Free_Random(1,table.getn(self.MercenaryHeroes))
+		--Grab selected mercenary via random index
+		local mercenary_to_spawn = self.MercenaryHeroes[mercenaryIndex]
+		--Grab Owner and Location of random mercenary dummy
+		local MercenaryOwner = RandomMercenary.Get_Owner()
+		local MercenaryLocation = RandomMercenary.Get_Planet_Location()
+		--Grab Object type for selected mercenary
+		local MercenaryUnit = Find_Object_Type(mercenary_to_spawn)
+		
+		if mercenary_to_spawn == "Hondo_Ohnaka_Team" then
+			local check_hero = Find_First_Object("Hondo_Ohnaka")
+			if TestValid(check_hero) then
+				check_hero.Despawn()
+			end
+		end
+		
+		--Spawn Mercenary at location of mercenary dummy for mercenary owner
+		Spawn_Unit(MercenaryUnit, MercenaryLocation, MercenaryOwner)
+		table.remove(self.MercenaryHeroes, mercenaryIndex)
+		RandomMercenary.Despawn()
+		
+		if not MercenaryOwner.Is_Human() then
+			for i, hero in pairs(self.MercenaryHeroes) do
+				StoryUtil.SpawnAtSafePlanet(nil, MercenaryOwner, StoryUtil.GetSafePlanetTable(), {hero})
+			end
+			self.MercenaryHeroes = {}
+			self.gc.Events.GalacticProductionFinished:detach_listener(self.on_production_finished, self)
+		elseif table.getn(self.MercenaryHeroes) == 0 and not self.hondo_added then
+			self.hondo_added = true
+			table.insert(self.MercenaryHeroes, "Hondo_Ohnaka_Team")
+		end
+		
+		if table.getn(self.MercenaryHeroes) == 0 then
+			StoryUtil.ShowScreenText("All Mercenaries have been hired.", 5, nil, {r = 244, g = 200, b = 0})
+			for _, faction in pairs(self.PossibleRecruiters) do
+				Find_Player(faction).Lock_Tech(Find_Object_Type("RANDOM_MERCENARY"))
+			end
+		else
+			StoryUtil.ShowScreenText("There are " .. table.getn(self.MercenaryHeroes) .. " mercenaries available to hire.", 5, nil, {r = 244, g = 200, b = 0})
+		end
+	end
 end

@@ -140,21 +140,23 @@ end
 function Initialize(message)
     if message == OnEnter then
 		GlobalValue.Set("CURRENT_ERA", 2)
+		Sleep(0.25)
 		crossplot:galactic()
 		crossplot:publish("VENATOR_HEROES", "empty")
-		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 1, 1)
-		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 1, 2)
-		crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 0, 3)
+		--crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 1, 1)
+		--crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 1, 2)
+		--crossplot:publish("REPUBLIC_ADMIRAL_DECREMENT", 0, 3)
 		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Kilian"}, 1)
 		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Yularen"}, 1)
 		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Byluir"}, 2)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Aayla"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Shaak"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Kit"}, 3)
-		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Ahsoka"}, 3)
+		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Aayla", "Shaak", "Kit", "Ahsoka"}, 3)
 		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Rex"}, 4)
-		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Mace"}, 3)
+		crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Jar", "Orn"}, 7)
+		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Jar", "Orn"}, 7, true)
+		crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Mace"}, 3, true)
 		--crossplot:publish("REPUBLIC_ADMIRAL_EXIT", {"Ponds"}, 4)
+		
+		crossplot:publish("CIS_ADMIRAL_LOCKIN", {"TF1726"}, 1)
 	else
 		crossplot:update()
     end
@@ -423,8 +425,10 @@ function State_CIS_Venator_Venture_Epilogue(message)
 		if p_cis.Is_Human() then
 			if (GlobalValue.Get("Rimward_CIS_Venator_Venture_Outcome") == 0) then
 				ChangePlanetOwnerAndRetreat(FindPlanet("Quell"), p_cis)
+				crossplot:publish("CIS_ADMIRAL_EXIT", {"TF1726"}, 1, true)
 				local QuellSpawn = {"TF1726_Munificent"}
 				StoryUtil.SpawnAtSafePlanet("QUELL", p_cis, StoryUtil.GetSafePlanetTable(), QuellSpawn)
+				crossplot:publish("CIS_ADMIRAL_RETURN", {"TF1726"}, 1, true)
 			end
 			StoryUtil.SetPlanetRestricted("QUELL", 0)
 		end
@@ -447,6 +451,7 @@ function State_CIS_Gunray_Deploy_Rodia(message)
 
 			Story_Event("CIS_RODIA_RENDEZVOUS_DONE")
 			UnitUtil.DespawnList({"Gunray"})
+			crossplot:publish("CIS_ADMIRAL_EXIT", {"Gunray"}, 2, true)
 			Sleep(5.0)
 		end
     end
@@ -472,6 +477,7 @@ function State_CIS_Venator_Ventress_Checker(message)
 
 			local GunraySpawn = {"Gunray_Team"}
 			StoryUtil.SpawnAtSafePlanet("CHRONDRE", p_cis, StoryUtil.GetSafePlanetTable(), GunraySpawn)
+			crossplot:publish("CIS_ADMIRAL_RETURN", {"Gunray"}, 2, true)
 		end
 		if (GlobalValue.Get("Rimward_CIS_Venator_Ventress_Outcome") == 1) then
 			Story_Event("CIS_GUNRAY_DIED")
@@ -703,6 +709,7 @@ function State_Rep_Player_Checker(message)
 				Safe_House_Planet = StoryUtil.GetSafePlanetTable()
 				StoryUtil.SpawnAtSafePlanet("RODIA", Find_Player("Empire"), Safe_House_Planet, {"Padme_Amidala_Team"})
 				StoryUtil.SpawnAtSafePlanet("KAMINO", Find_Player("Empire"), Safe_House_Planet, {"Nala_Se_Team"})
+				crossplot:publish("REPUBLIC_ADMIRAL_LOCKIN", {"Padme", "Nala"}, 7)
 			end
 
 			Set_Fighter_Hero("TORRENT_BLUE_SQUADRON","YULAREN_RESOLUTE")
@@ -1329,6 +1336,7 @@ function State_Rep_Breaking_Bridges_Epilogue(message)
 				--crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Ponds"}, 4)
 				Safe_House_Planet = StoryUtil.GetSafePlanetTable()
 				StoryUtil.SpawnAtSafePlanet("RYLOTH", Find_Player("Empire"), Safe_House_Planet, {"Orn_Free_Taa_Team"})
+				crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Orn"}, 7, true)
 			end
 		end
     end
@@ -1342,6 +1350,7 @@ function State_Rep_Rimward_Pirate_Deal(message)
 				if not jar_jar_rescue then
 					Safe_House_Planet = StoryUtil.GetSafePlanetTable()
 					StoryUtil.SpawnAtSafePlanet("BOTHAWUI", Find_Player("Empire"), Safe_House_Planet, {"Jar_Jar_Team"})
+					crossplot:publish("REPUBLIC_ADMIRAL_RETURN", {"Jar"}, 7, true)
 					jar_jar_rescue = true
 				end
 			end
@@ -1393,9 +1402,9 @@ function State_Rep_Rimward_Perfect_Piracy_Checker(message)
     if message == OnEnter then
 		if p_republic.Is_Human() then
 			Story_Event("REP_PERFECT_PIRACY_DONE")
-			if TestValid(Find_First_Object("Jar_Jar_Binks")) then
-				Find_First_Object("Jar_Jar_Binks").Despawn()
-			end
+			-- if TestValid(Find_First_Object("Jar_Jar_Binks")) then
+				-- Find_First_Object("Jar_Jar_Binks").Despawn()
+			-- end
 			if not TestValid(Find_First_Object("Anakin")) then
 				Safe_House_Planet = StoryUtil.GetSafePlanetTable()
 				StoryUtil.SpawnAtSafePlanet("FLORRUM", Find_Player("Empire"), Safe_House_Planet, {"Anakin_Delta_Team"})

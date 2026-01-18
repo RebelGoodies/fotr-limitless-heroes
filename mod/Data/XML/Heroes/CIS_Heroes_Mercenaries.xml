@@ -62,6 +62,38 @@
 		</Abilities>
 		
 	</UniqueUnit>
+	
+	<DummyStructure Name="Cavik_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_CAVIK_TOTH</Text_ID>
+		<Icon_Name>i_button_cavik_toth.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND4_SPACE
+		TEXT_TOOLTIP_TRAIT_RUTHLESS
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_CAVIK_TOTH
+		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+		TEXT_TOOLTIP_COMMAND_REAVER
+		</Encyclopedia_Text>
+	</DummyStructure>
+	
+	<DummyStructure Name="Cavik_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_CAVIK_TOTH</Text_ID>
+		<Icon_Name>i_button_cavik_toth.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Cavik_Toth_Reaver</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<DummyStructure Name="Random_Mercenary">
@@ -76,17 +108,18 @@
 		TEXT_HERO_ARGYUS
 		TEXT_HERO_VAZUS
 		TEXT_HERO_SHAHAN_ALAMA
+		TEXT_HERO_HONDO_OHNAKA
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_MERCENARY</Encyclopedia_Unit_Class>
 		
 		<Icon_Name>I_BUTTON_IG88.tga</Icon_Name>
-		<GUI_Row> 0 </GUI_Row>
+		<GUI_Row> 1 </GUI_Row>
 		
 		<Affiliation>Rebel</Affiliation>
 		<Tech_Level>0</Tech_Level>
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-		<Build_Cost_Credits>3000</Build_Cost_Credits>
-		<Build_Time_Seconds>30</Build_Time_Seconds>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
 		
 		<CategoryMask>Upgrade</CategoryMask>
 		
@@ -97,7 +130,7 @@
 		<SFXEvent_Build_Cancelled>EHD_Recruitment_Canceled</SFXEvent_Build_Cancelled>
 		
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+		<!-- <Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> -->
 	</DummyStructure>
 
 
@@ -1900,7 +1933,7 @@
 		<Tech_Level>1</Tech_Level>
 		<Required_Timeline>0</Required_Timeline>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Kappa_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Kappa_Shuttle_Landing_Craft_Lorz</Company_Transport_Unit>
 		<Company_Units>Lorz_Geptun</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Stealth_Company>Yes</Is_Stealth_Company>
@@ -1959,6 +1992,36 @@
 			</Unit_Ability>
 		</Unit_Abilities_Data>
 	</HeroCompany>
+	
+	<DummyStructure Name="Lorz_Assign">
+		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_LORZ_GEPTUN</Text_ID>
+		<Icon_Name>i_button_lorz_geptun.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND5_LAND
+		TEXT_TOOLTIP_TRAIT_FORCESENSITIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_LORZ_GEPTUN
+		</Encyclopedia_Text>
+	</DummyStructure>
+
+	<DummyStructure Name="Lorz_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_LORZ_GEPTUN</Text_ID>
+		<Icon_Name>i_button_lorz_geptun.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Kappa_Shuttle_Landing_Craft_Lorz</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<!-- Mandalorian Protectors -->
@@ -2008,7 +2071,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_Clone_Carbine, HP_Hero_Wrist_Flamer</HardPoints>
 		
@@ -2131,7 +2194,7 @@
 		<Icon_Name>i_button_spar.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		<Combat_Power_Value>0</Combat_Power_Value>
@@ -2207,7 +2270,7 @@
 		<Icon_Name>i_button_spar.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -2317,7 +2380,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_EE3_Carbine, HP_Hero_Wrist_Blaster_Red, HP_Hero_Jetpack_Missile</HardPoints>
 		
@@ -2402,7 +2465,7 @@
 		<Icon_Name>i_button_fenn_shysa_cw.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		<Combat_Power_Value>0</Combat_Power_Value>
@@ -2470,7 +2533,7 @@
 		<Icon_Name>i_button_fenn_shysa_cw.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -2579,7 +2642,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_EE3_Carbine, HP_Hero_Wrist_Rocket, HP_Hero_Jetpack_Missile</HardPoints>
 		
@@ -2673,7 +2736,7 @@
 		<Icon_Name>i_button_tobbi_dala.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		<Combat_Power_Value>0</Combat_Power_Value>
@@ -2741,7 +2804,7 @@
 		<Icon_Name>i_button_tobbi_dala.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -2880,7 +2943,7 @@
 		<Scale_Factor>1.1</Scale_Factor>
 		<Type>Walk</Type>
 		<Deploys>No</Deploys>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<Size_Value>10</Size_Value>
 		<Sensor_Range>20</Sensor_Range>
 		<Shield_Points>0</Shield_Points>
@@ -3051,7 +3114,7 @@
 		<Icon_Name>i_button_pre_vizsla.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		<Combat_Power_Value>0</Combat_Power_Value>
@@ -3171,7 +3234,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Max_Lift> .6 </Max_Lift>
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_WESTAR_35_Pistol, HP_Hero_Wrist_Blaster_Red_Double, HP_Hero_Wrist_Rocket</HardPoints>
 		
@@ -3276,7 +3339,7 @@
 		<Icon_Name>i_button_bo_katan.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 		
 		<Combat_Power_Value>0</Combat_Power_Value>
@@ -3352,7 +3415,7 @@
 		<Icon_Name>i_button_bo_katan.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 
@@ -3449,7 +3512,7 @@
 		<OverrideDeceleration> 1.1 </OverrideDeceleration>
 		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
 
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 
 		<HardPoints>HP_Hero_DLT_20A_LMG</HardPoints>
 		
@@ -3532,7 +3595,7 @@
 		<Icon_Name>i_button_lorka_gedyc.tga</Icon_Name>
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		<GUI_Row> 1 </GUI_Row>
 
 		<Combat_Power_Value>0</Combat_Power_Value>
@@ -3600,7 +3663,7 @@
 		<Icon_Name>i_button_lorka_gedyc.tga</Icon_Name>
 		<!-- <Icon_Name>i_button_slave1.tga</Icon_Name> I'm unsure how to get this to not override the team icon on galactic, though it doesn't in vanilla -->
 		
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Empire</Affiliation>
 		
 		<Behavior>DUMMY_STARSHIP, TRANSPORT </Behavior>
 		<LandBehavior>REVEAL, HIDE_WHEN_FOGGED, IDLE</LandBehavior> 

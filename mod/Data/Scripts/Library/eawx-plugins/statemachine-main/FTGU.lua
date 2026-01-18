@@ -5,7 +5,7 @@ return function(dsl)
     local policy = dsl.policy
 
     local initialize = DeepCoreState.with_empty_policy()
-    local setup = DeepCoreState.with_empty_policy()
+    local setup = DeepCoreState(require("eawx-states/fotr-ftgu-setup-state"))
     local era_two = DeepCoreState(require("eawx-states/fotr-ftgu-era-two"))
     local era_three = DeepCoreState(require("eawx-states/fotr-ftgu-era-three"))
     local era_four = DeepCoreState(require("eawx-states/fotr-ftgu-era-four"))

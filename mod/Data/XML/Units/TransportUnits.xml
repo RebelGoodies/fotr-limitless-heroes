@@ -3157,5 +3157,162 @@
 	<TransportUnit Name="Kappa_Shuttle_Landing_Craft_Kota_Landing">
 		<Variant_Of_Existing_Type>Kappa_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
 	</TransportUnit>
-
+	
+	<!-- Senators -->
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Pestage">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Pestage_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Pestage_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Orn_Free_Taa">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Orn_Free_Taa_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Orn_Free_Taa_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ask_Aak">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Ask_Aak_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ask_Aak_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Alliance_Shuttle_Landing_Craft_Nala_Se">
+		<Variant_Of_Existing_Type>Alliance_Shuttle</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Alliance_Shuttle_Landing_Craft_Nala_Se_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Alliance_Shuttle_Landing_Craft_Nala_Se_Landing">
+		<Variant_Of_Existing_Type>Alliance_Shuttle_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="T6_Shuttle_Landing_Craft_Padme">
+		<Variant_Of_Existing_Type>T6_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>T6_Shuttle_Landing_Craft_Padme_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="T6_Shuttle_Landing_Craft_Padme_Landing">
+		<Variant_Of_Existing_Type>T6_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jar_Jar">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Jar_Jar_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jar_Jar_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Mon_Mothma">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Mon_Mothma_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Mon_Mothma_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Bail">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Bail_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Bail_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Giddean">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Giddean_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Giddean_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<!-- CIS Ground -->
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Argente">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Argente_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Argente_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Stock_Sheathipede_Landing_Craft_Gunray">
+		<Variant_Of_Existing_Type>Stock_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Stock_Sheathipede_Landing_Craft_Gunray_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Stock_Sheathipede_Landing_Craft_Gunray_Landing">
+		<Variant_Of_Existing_Type>Stock_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Hoolidan">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Hoolidan_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Hoolidan_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="CIS_Hero_Landing_Craft_Whorm">
+		<Variant_Of_Existing_Type>CIS_Hero_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Hero_Landing_Craft_Whorm_Landing</Landing_Transport_Variant>
+		<CategoryMask>Transport</CategoryMask>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Hero_Landing_Craft_Whorm_Landing">
+		<Variant_Of_Existing_Type>CIS_Hero_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="CIS_Hero_Landing_Craft_Sentepth">
+		<Variant_Of_Existing_Type>CIS_Hero_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Hero_Landing_Craft_Sentepth_Landing</Landing_Transport_Variant>
+		<CategoryMask>Transport</CategoryMask>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Hero_Landing_Craft_Sentepth_Landing">
+		<Variant_Of_Existing_Type>CIS_Hero_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Kalani">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Kalani_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Kalani_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<!-- CIS Sith -->
+	<TransportUnit Name="Stock_Sheathipede_Landing_Craft_Sora">
+		<Variant_Of_Existing_Type>Stock_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Stock_Sheathipede_Landing_Craft_Sora_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Stock_Sheathipede_Landing_Craft_Sora_Landing">
+		<Variant_Of_Existing_Type>Stock_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Yansu">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Yansu_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Yansu_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Palpatine">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Palpatine_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Palpatine_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<TransportUnit Name="Kappa_Shuttle_Landing_Craft_Lorz">
+		<Variant_Of_Existing_Type>Kappa_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Kappa_Shuttle_Landing_Craft_Lorz_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Kappa_Shuttle_Landing_Craft_Lorz_Landing">
+		<Variant_Of_Existing_Type>Kappa_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
 </TransportUnits>
