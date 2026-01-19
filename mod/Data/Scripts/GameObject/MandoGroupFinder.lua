@@ -1,4 +1,3 @@
----@diagnostic disable: lowercase-global
 require("PGStateMachine")
 
 
@@ -11,27 +10,13 @@ function Definitions()
 end
 
 function State_Init(message)
-	if Get_Game_Mode() ~= "Land" then
+	-- prevent this from doing anything in galactic mode and skirmish
+	if Get_Game_Mode() ~= "Land" or Find_First_Object("Team_00_Base_Position_Marker") then
 		ScriptExit()
 	end
 
 	if message == OnEnter then
 		local female = GameRandom.Free_Random(1, 2)
-		local mando_skin = GlobalValue.Get("MANDO_DEFAULT")
-		
-		if mando_skin == 2 then
-			mando_group_maul = false
-			mando_group_dw = false
-			mando_group_protectors = true
-		elseif mando_skin == 3 then
-			mando_group_maul = false
-			mando_group_dw = true
-			mando_group_protectors = false
-		elseif mando_skin == 4 then
-			mando_group_maul = true
-			mando_group_dw = false
-			mando_group_protectors = false
-		end
 
 		if Find_First_Object("Darth_Maul") then
 			if Find_First_Object("Darth_Maul").Get_Owner() == Object.Get_Owner() then
@@ -47,13 +32,22 @@ function State_Init(message)
 				mando_group_protectors = false
 			end
 		end
-		--[[if Find_First_Object("Rook_Kast") then
+		
+		if Find_First_Object("Gar_Saxon") then
+			if Find_First_Object("Gar_Saxon").Get_Owner() == Object.Get_Owner() then
+				mando_group_maul = true
+				mando_group_dw = false
+				mando_group_protectors = false
+			end
+		end
+		
+		if Find_First_Object("Rook_Kast") then
 			if Find_First_Object("Rook_Kast").Get_Owner() == Object.Get_Owner() then
 				mando_group_maul = true
 				mando_group_dw = false
 				mando_group_protectors = false
 			end
-		end]]
+		end
 
 		if Find_First_Object("Pre_Vizsla") then
 			if Find_First_Object("Pre_Vizsla").Get_Owner() == Object.Get_Owner() then

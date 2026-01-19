@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<Options>
+	<DummyStructure Name="Option_Cycle_Clones">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_OPTION_DUMMY_CYCLE_SKIN_CLONE_LEGION</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_OPTION_DUMMY_CYCLE_SKIN_DESCRIPTION_CLONE_LEGION
+		TEXT_TOOLTIP_LEGIONS_OBI_WAN
+		TEXT_TOOLTIP_LEGIONS_ANAKIN
+		TEXT_TOOLTIP_LEGIONS_PLOKOON
+		TEXT_TOOLTIP_LEGIONS_AAYLA
+		TEXT_TOOLTIP_LEGIONS_MACE
+		TEXT_TOOLTIP_LEGIONS_MUNDI
+		TEXT_TOOLTIP_LEGIONS_LUMINARA
+		TEXT_TOOLTIP_LEGIONS_RANDOM1
+		TEXT_TOOLTIP_LEGIONS_RANDOM2
+		TEXT_TOOLTIP_LEGIONS_DEFAULT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_CloneSkinToggle.tga</Icon_Name>
+
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+	</DummyStructure>
+
+	<DummyStructure Name="Option_Cycle_Rep_Fleet">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_OPTION_DUMMY_CYCLE_SKIN_FLEET_HULL</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_OPTION_DUMMY_CYCLE_SKIN_DESCRIPTION_FLEET_HULL
+		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
+		TEXT_TOOLTIP_FLEET_LEGIONS_KDY
+		TEXT_TOOLTIP_FLEET_LEGIONS_ORSF
+		TEXT_TOOLTIP_FLEET_LEGIONS_TAPANI
+		TEXT_TOOLTIP_FLEET_LEGIONS_DEFAULT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_VenatorSkinToggle.tga</Icon_Name>
+
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+	</DummyStructure>
+
+	<DummyStructure Name="Option_Cycle_B1">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_OPTION_DUMMY_CYCLE_SKIN_B1</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_OPTION_DUMMY_CYCLE_SKIN_DESCRIPTION_B1
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_B1SkinToggle.tga</Icon_Name>
+
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Cycle_CIS_Paint">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_OPTION_DUMMY_CYCLE_SKIN_CIS</Text_ID>
+		<Encyclopedia_Text>
+		TEXT_OPTION_DUMMY_CYCLE_SKIN_DESCRIPTION_CIS
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_CISSkinToggle.tga</Icon_Name>
+
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+	</DummyStructure>
+</Options>
