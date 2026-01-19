@@ -1,6 +1,79 @@
 <?xml version="1.0"?>
 <CIS_Heroes>
 
+	<!-- 2. CIS Fleet -->
+
+	<DummyStructure Name="Extra_Space_Slot">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>50</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<Text_ID>TEXT_HERO_OPEN_NR_ADMIRAL</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Rebel</Affiliation>
+		<Icon_Name>i_button_cis.tga</Icon_Name>
+		
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_OPEN_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="View_Space">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>TEXT_HERO_VIEW_ADMIRALS</Text_ID>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Affiliation>Rebel</Affiliation>
+		<Icon_Name>i_button_cis.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>		
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Random_Space_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
+		<Icon_Name>I_BUTTON_UNKNOWN.tga</Icon_Name>
+		
+		<CategoryMask>Upgrade</CategoryMask>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL
+		TEXT_DOCUMENTATION_SEPARATOR_SMALL
+		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL2
+		</Encyclopedia_Text>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+
 	<!-- Battlecruiser Heroes -->
 	<UniqueUnit Name="Krett_Lucrehulk_Battleship">
 		<Variant_Of_Existing_Type>Lucrehulk_Battleship</Variant_Of_Existing_Type>
@@ -78,6 +151,44 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Krett_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KRETT</Text_ID>
+		<Icon_Name>I_BUTTON_KRETT.TGA</Icon_Name>
+
+		<Build_Cost_Credits>7000</Build_Cost_Credits>
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KRETT
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_FEDERATIONS_FEALTY
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>i_sa_Cautiousness.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Krett_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KRETT</Text_ID>
+		<Icon_Name>I_BUTTON_KRETT.TGA</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Krett_Lucrehulk_Battleship</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Merai_Free_Dac"> <!-- Auxiliary Version -->
 		<Variant_Of_Existing_Type>Lucrehulk_Auxiliary</Variant_Of_Existing_Type>
@@ -225,6 +336,50 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="Merai_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MERAI</Text_ID>
+		<Icon_Name>I_BUTTON_MERAI.TGA</Icon_Name>
+
+		<SFXEvent_Build_Complete> Unit_Select_Calamarian </SFXEvent_Build_Complete>	
+
+		<Build_Cost_Credits>3500</Build_Cost_Credits>
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_05_SPACE
+			TEXT_TOOLTIP_TRAIT_SPECIALIZATION_STARFIGHTER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_MERAI
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_FREE_DAC
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>I_SA_SHIELD_FLARE.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>DEFEND</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Merai_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MERAI</Text_ID>
+		<Icon_Name>I_BUTTON_MERAI.TGA</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Merai_Free_Dac</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Doctor_Instinction"> <!-- Carrier Version -->
 		<Variant_Of_Existing_Type>Lucrehulk_Carrier</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_DOCTOR</Text_ID>
@@ -317,6 +472,39 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Doctor_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DOCTOR</Text_ID>
+		<Icon_Name>I_BUTTON_TDOCTOR.TGA</Icon_Name>
+		
+		<SFXEvent_Build_Complete> CIS_Providence_Select </SFXEvent_Build_Complete>	
+
+		<Build_Cost_Credits>6000</Build_Cost_Credits>
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_DOCTOR
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_INSTINCTION
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Doctor_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DOCTOR</Text_ID>
+		<Icon_Name>I_BUTTON_TDOCTOR.TGA</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Doctor_Instinction</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Tonith_Corpulentus"> <!-- Carrier Control Version --> <!-- Banking Clan Integration -->
 		<Variant_Of_Existing_Type>Lucrehulk_Carrier_Control</Variant_Of_Existing_Type>
@@ -884,6 +1072,73 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Trench_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TRENCH</Text_ID>
+		<Icon_Name>i_button_trench.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_08_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_TRENCH
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_INVINCIBLE
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>DEFEND</Type>
+				<Alternate_Icon_Name>I_SA_TRENCH.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Trench_Assign2">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TRENCH</Text_ID>
+		<Icon_Name>i_button_trench2.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_08_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_TRENCH
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_INVULNERABLE
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>DEFEND</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Trench_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TRENCH</Text_ID>
+		<Icon_Name>i_button_trench.tga</Icon_Name>
+
+		<Tech_Level>99</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Trench_Invincible</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Trench_Retire2">
+		<Variant_Of_Existing_Type>Trench_Retire</Variant_Of_Existing_Type>
+
+		<Icon_Name>i_button_trench2.tga</Icon_Name>
+
+		<Required_Orbiting_Units>Trench_Invulnerable</Required_Orbiting_Units>
+	</DummyStructure>
+
 	
 	<UniqueUnit Name="Shu_Mai_Subjugator"> <!-- Upgrade for Shu Mai -->
 		<Variant_Of_Existing_Type>Subjugator</Variant_Of_Existing_Type>
@@ -1035,6 +1290,7 @@
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
 	</DummyStructure>
 
+
 	<UniqueUnit Name="Sai_Sircu_Devastation">
 		<Variant_Of_Existing_Type>Devastation</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_SAI_SIRCU</Text_ID>
@@ -1121,6 +1377,38 @@
 			</Super_Laser_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Sai_Sircu_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SAI_SIRCU</Text_ID>
+		<Icon_Name>I_BUTTON_SAI_SIRCU.tga</Icon_Name>
+
+		<Build_Cost_Credits>7000</Build_Cost_Credits>
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SAI_SIRCU
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_DEVASTATION
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Sai_Sircu_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SAI_SIRCU</Text_ID>
+		<Icon_Name>I_BUTTON_SAI_SIRCU.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Sai_Sircu_Devastation</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<!-- Cruiser Heroes -->
 	<UniqueUnit Name="AutO_Providence"> <!-- Carrier/Destroyer Version -->
 		<Variant_Of_Existing_Type>Providence_Carrier_Destroyer</Variant_Of_Existing_Type>
@@ -1200,6 +1488,40 @@
 		<Build_Limit_Lifetime_For_All_Allies>1</Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+
+	<DummyStructure Name="AutO_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_AUTO</Text_ID>
+		<Icon_Name>i_button_AutO.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete> CIS_Providence_Select </SFXEvent_Build_Complete>	
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_SPACE
+			TEXT_TOOLTIP_TRAIT_COMMAND_INTEL_FOCUS
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_AUTO 
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_AUTO
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="AutO_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_AUTO</Text_ID>
+		<Icon_Name>i_button_AutO.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>AutO_Providence</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="K2B4_Providence"> <!-- Carrier/Destroyer Version -->
 		<Variant_Of_Existing_Type>Providence_Carrier_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -1304,6 +1626,44 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="K2B4_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_K2B4</Text_ID>
+		<Icon_Name>i_button_k2b4.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete> CIS_Providence_Select </SFXEvent_Build_Complete>	
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_K2B4
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_K2B4
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>DEFEND</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="K2B4_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_K2B4</Text_ID>
+		<Icon_Name>i_button_k2b4.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>K2B4_Providence</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Colicoid_Swarm"> <!-- Carrier/Destroyer Version -->
 		<Variant_Of_Existing_Type>Template_Providence_Carrier_Destroyer</Variant_Of_Existing_Type>
 		<Show_Hero_Head>No</Show_Hero_Head>
@@ -1331,13 +1691,20 @@
 		
 		<Space_Model_Name>Providence_Colicoid_Swarm.ALO</Space_Model_Name>
 
-		<Tech_Level>99</Tech_Level>
+		<Tech_Level>0</Tech_Level>
 		<Affiliation>Rebel</Affiliation>
 		<Lua_Script>GenericGameObject</Lua_Script>
 
 		<Tactical_Health>3600</Tactical_Health>
 		<Shield_Points>3500</Shield_Points>
 		<Shield_Refresh_Rate>43.75</Shield_Refresh_Rate>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+
+		<Required_Special_Structures>
+			CIS_Shipyard_Level_Three | CIS_Shipyard_Level_Four | Options_Category_Dummy,
+			AI_Category_Dummy | Capital_Category_Dummy | Options_Category_Dummy
+		</Required_Special_Structures>
 		
 		<CategoryMask> SpaceHero | AntiFrigate </CategoryMask>
 		<Property_Flags>GTSImmune</Property_Flags>
@@ -1435,13 +1802,20 @@
 		
 		<Space_Model_Name>Providence_Lucid_Voice.ALO</Space_Model_Name>
 
-		<Tech_Level>99</Tech_Level>
+		<Tech_Level>0</Tech_Level>
 		<Affiliation>Rebel</Affiliation>
 		<Lua_Script>GenericGameObject</Lua_Script>
 
 		<Tactical_Health>3600</Tactical_Health>
 		<Shield_Points>3500</Shield_Points>
 		<Shield_Refresh_Rate>43.75</Shield_Refresh_Rate>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+
+		<Required_Special_Structures>
+			CIS_Shipyard_Level_Three | CIS_Shipyard_Level_Four | Options_Category_Dummy,
+			AI_Category_Dummy | Capital_Category_Dummy | Options_Category_Dummy
+		</Required_Special_Structures>
 		
 		<CategoryMask> SpaceHero | AntiFrigate </CategoryMask>
 		<Property_Flags>GTSImmune</Property_Flags>
@@ -1789,6 +2163,48 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Dua_Ningo_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DUA_NINGO</Text_ID>
+		<Icon_Name>i_button_dua_ningo.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_07_SPACE
+			TEXT_TOOLTIP_TRAIT_COMMAND_OFFENSE_FOCUS
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_DUA_NINGO
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_UNREPENTANT 
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>i_sa_brace_onslaught.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>SENSOR_JAMMING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Dua_Ningo_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DUA_NINGO</Text_ID>
+		<Icon_Name>i_button_dua_ningo.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Dua_Ningo_Unrepentant</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Calli_Trilm_Bulwark">
 		<Variant_Of_Existing_Type>Bulwark_I</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -1878,6 +2294,41 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="Calli_Trilm_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_CALLI_TRILM</Text_ID>
+		<Icon_Name>i_button_calli_trilm.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_CALLI_TRILM
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_TRILM
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>HARMONIC_BOMB</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Calli_Trilm_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_CALLI_TRILM</Text_ID>
+		<Icon_Name>i_button_calli_trilm.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Calli_Trilm_Bulwark</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Vetlya_Core_Destroyer">
 		<Variant_Of_Existing_Type>Lucrehulk_Core_Destroyer</Variant_Of_Existing_Type>
@@ -1961,6 +2412,36 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="Vetlya_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KARAKSK_VETLYA</Text_ID>
+		<Icon_Name>I_BUTTON_KARAKSK_VETLYA.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KARAKSK_VETLYA
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_LUCREHULK_CORE_DESTROYER
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Vetlya_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KARAKSK_VETLYA</Text_ID>
+		<Icon_Name>I_BUTTON_KARAKSK_VETLYA.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Vetlya_Core_Destroyer</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Venator_Renown"> <!-- Foerost Campaign Mission Unit -->
 		<Variant_Of_Existing_Type>Template_Venator_Star_Destroyer</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_VENATOR_RENOWN</Text_ID>
@@ -1977,12 +2458,21 @@
 		TEXT_TOOLTIP_VENATOR_WEAP5
 		</Encyclopedia_Text>
 		<No_Colorization_Color> 250, 44, 44, 255 </No_Colorization_Color>
-		<Tech_Level>99</Tech_Level>
+		<Tech_Level>0</Tech_Level>
 		<Affiliation>Rebel</Affiliation>
 		<Icon_Name>i_button_jedi_Cruiser_rep.tga</Icon_Name>
 
 		<Population_Value>16</Population_Value>
 		<Expensive_Bribe_Cost>0</Expensive_Bribe_Cost>
+
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+
+		<Required_Special_Structures>
+			CIS_Shipyard_Level_Three | CIS_Shipyard_Level_Four | Options_Category_Dummy,
+			AI_Category_Dummy | Capital_Category_Dummy | Options_Category_Dummy
+		</Required_Special_Structures>
 
 		<HardPoints>
 		Venator_Bay_Renown, Venator_Engines_Renown, HP_Venator_01, HP_Venator_02, HP_Venator_03, HP_Venator_04, HP_Venator_05, HP_Venator_06, HP_Venator_07, HP_Venator_08, HP_Venator_Turret_01_Renown, HP_Venator_Turret_02_Renown, HP_Venator_Turret_03_Renown, HP_Venator_Turret_04_Renown
@@ -2000,6 +2490,7 @@
 			</Unit_Ability>
 		</Unit_Abilities_Data>
 	</UniqueUnit>
+
 
 	<!-- Frigate Heroes -->
 	<UniqueUnit Name="TF1726_Munificent"> <!-- Munificent Heavy Cruiser version -->
@@ -2096,6 +2587,39 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+
+	<DummyStructure Name="TF1726_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TF1726</Text_ID>
+		<Icon_Name>i_button_TF1726.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete> CIS_Providence_Select </SFXEvent_Build_Complete>	
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_SPACE
+			TEXT_TOOLTIP_TRAIT_COMMAND_OFFENSE_FOCUS
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_TF1726
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_MUNIFICENT_HEAVY_CRUISER
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="TF1726_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_TF1726</Text_ID>
+		<Icon_Name>i_button_TF1726.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>TF1726_Munificent</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Canteval_Munificent"> <!-- Banking Clan Integration -->
 		<Variant_Of_Existing_Type>Munificent</Variant_Of_Existing_Type>
@@ -2210,6 +2734,8 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+
+
 	<UniqueUnit Name="Harsol_Munificent">
 		<Variant_Of_Existing_Type>Munificent</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2345,6 +2871,45 @@
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
 
+	<DummyStructure Name="Harsol_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_HARSOL</Text_ID>
+		<Icon_Name>I_BUTTON_HARSOL.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_HARSOL
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_SALNALAOR
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SENSOR_JAMMING</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>LURE</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Harsol_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_HARSOL</Text_ID>
+		<Icon_Name>I_BUTTON_HARSOL.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Harsol_Munificent</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Mad_Clone_Munificent"> <!-- ODL Prisoner Convoy -->
 		<Variant_Of_Existing_Type>Munificent_Transport</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_MAD_CLONE</Text_ID>
@@ -2367,14 +2932,24 @@
 		<Ranking_In_Category> 10 </Ranking_In_Category>
 
 		<Is_Named_Hero>Yes</Is_Named_Hero>
-		<Tech_Level>99</Tech_Level>
+		<Tech_Level>0</Tech_Level>
 		<Affiliation>Rebel</Affiliation>
+
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+
+		<Required_Special_Structures>
+			CIS_Shipyard_Level_Three | CIS_Shipyard_Level_Four | Options_Category_Dummy,
+			AI_Category_Dummy | Heavy_Frigate_Category_Dummy | Options_Category_Dummy
+		</Required_Special_Structures>
 		
 		<CategoryMask> SpaceHero | AntiCorvette </CategoryMask>
 
 		<Lua_Script>Mad_Clone_Raid_Fleet</Lua_Script>
 	</UniqueUnit>
-	
+
+
 	<UniqueUnit Name="Dalesham_Nova_Defiant">
 		<Variant_Of_Existing_Type>Recusant_Light_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2477,6 +3052,38 @@
 			</Bounty_On_Faction_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Dalesham_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DALESHAM</Text_ID>
+		<Icon_Name>I_BUTTON_DALESHAM.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_SPACE
+			TEXT_TOOLTIP_TRAIT_UTILITY_SALVAGER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_DALESHAM
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_DALESHAM
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Dalesham_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DALESHAM</Text_ID>
+		<Icon_Name>I_BUTTON_DALESHAM.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Dalesham_Nova_Defiant</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Shonn_Recusant">
 		<Variant_Of_Existing_Type>Recusant_Light_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2568,6 +3175,38 @@
 		<Build_Limit_Lifetime_For_All_Allies>1</Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+
+	<DummyStructure Name="Shonn_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SHONN</Text_ID>
+		<Icon_Name>I_BUTTON_SHONN_VOLTA.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SHONN
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_SHONN
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Shonn_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SHONN</Text_ID>
+		<Icon_Name>I_BUTTON_SHONN_VOLTA.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Shonn_Recusant</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Stark_Recusant"> <!-- Commerce Guild Integration -->
 		<Variant_Of_Existing_Type>Recusant_Light_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2690,6 +3329,7 @@
 		</Abilities>
 	</UniqueUnit>
 	
+
 	<UniqueUnit Name="Mellor_Yago_Rendili_Reign">
 		<Variant_Of_Existing_Type>CIS_DHC</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2791,6 +3431,43 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
+
+	<DummyStructure Name="Mellor_Yago_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MELLOR_YAGO</Text_ID>
+		<Icon_Name>I_BUTTON_MELLOR_YAGO.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_01_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_MELLOR_YAGO
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_RENDILI_REIGN
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+            <Unit_Ability>
+                <Type>STIM_PACK</Type>
+                <Alternate_Icon_Name>i_sa_PUSH_THE_LIMIT.tga</Alternate_Icon_Name>
+            </Unit_Ability>
+        </Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Mellor_Yago_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MELLOR_YAGO</Text_ID>
+		<Icon_Name>I_BUTTON_MELLOR_YAGO.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Mellor_Yago_Rendili_Reign</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Treetor_Captor"> <!-- Techno Union Integration -->
 		<Variant_Of_Existing_Type>Captor</Variant_Of_Existing_Type>
@@ -2961,6 +3638,36 @@
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
 
+	<DummyStructure Name="Solenoid_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SOLENOID</Text_ID>
+		<Icon_Name>I_BUTTON_SOLENOID.TGA</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SOLENOID
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_CORELLIAN_CORVETTE
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Solenoid_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SOLENOID</Text_ID>
+		<Icon_Name>I_BUTTON_SOLENOID.TGA</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Solenoid_CR90</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Shu_Mai_Castell"> <!-- Commerce Guild Integration -->
 		<Variant_Of_Existing_Type>Diamond_Frigate</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -3094,5 +3801,41 @@
 			</Planet_Income_Bonus_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+
+	<DummyStructure Name="Cavik_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_CAVIK_TOTH</Text_ID>
+		<Icon_Name>I_BUTTON_CAVIK_TOTH.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_CAVIK_TOTH
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_REAVER
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Cavik_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_CAVIK_TOTH</Text_ID>
+		<Icon_Name>I_BUTTON_CAVIK_TOTH.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Cavik_Toth_Reaver</Required_Orbiting_Units>
+	</DummyStructure>
 
 </CIS_Heroes>

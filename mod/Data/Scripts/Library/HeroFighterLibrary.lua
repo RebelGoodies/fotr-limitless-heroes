@@ -36,7 +36,7 @@ function Get_Hero_Entries(upgrade_object)
 	--GroundReinforcementPerception = the perception to detect when a unit is in orbit. Requires Faction and GroundCompany
 	--NoSpawnFlag = name of global variable that will prevent spawn
 	
-	--WARNING: using indexes with too long of names can prevent them from working in grount tactical. It makes no sense, but watch that
+	--WARNING: using indexes with too long of names can prevent them from working in ground tactical. It makes no sense, but watch that
 	local heroes = {
 		--GAR
 		["ARHUL_NARRA_LOCATION_SET"] = {
@@ -47,7 +47,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"PARCK", Locations = {"PARCK_STRIKEFAST"}},
 				{"TARKIN", Locations = {"TARKIN_VENATOR","TARKIN_EXECUTRIX"}},
 				{"THERBON", Locations = {"THERBON_CERULEAN_SUNRISE"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["GARVEN_DREIS_LOCATION_SET"] = {
 			Hero_Squadron = "GARVEN_DREIS_RAREFIED_SQUADRON",
@@ -58,7 +59,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"PRAJI", Locations = {"PRAJI_VALORUM"}},
 				{"GRUMBY", Locations = {"GRUMBY_INVINCIBLE"}},
 				{"SCREED", Locations = {"SCREED_ARLIONNE","SCREED_DEMOLISHER"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["NIAL_DECLANN_LOCATION_SET"] = {
 			Hero_Squadron = "NIAL_DECLANN_SQUADRON",
@@ -69,7 +71,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"PELLAEON", Locations = {"PELLAEON_LEVELER"}},
 				{"MARTZ", Locations = {"MARTZ_PROSECUTOR"}},
 				{"TALLON", Locations = {"TALLON_SUNDIVER","TALLON_BATTALION"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["RHYS_DALLOWS_LOCATION_SET"] = {
 			Hero_Squadron = "RHYS_DALLOWS_BRAVO_SQUADRON",
@@ -79,7 +82,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"DALLIN", Locations = {"DALLIN_KEBIR"}},
 				{"HAUSER", Locations = {"HAUSER_DREADNAUGHT"}},
 				{"MAARISA", Locations = {"MAARISA_CAPTOR","MAARISA_RETALIATION"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["ARON_ONSTALL_LOCATION_SET"] = {
 			Hero_Squadron = "ONSTALL_NTB_630_SQUADRON",
@@ -90,7 +94,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"AUTEM", Locations = {"AUTEM_VENATOR"}},
 				{"DODONNA", Locations = {"DODONNA_ARDENT"}},
 				{"MAARISA", Locations = {"MAARISA_CAPTOR","MAARISA_RETALIATION"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["ODD_BALL_TORRENT_LOCATION_SET"] = {
 			Hero_Squadron = "ODD_BALL_TORRENT_SQUAD_SEVEN_SQUADRON",
@@ -102,6 +107,7 @@ function Get_Hero_Entries(upgrade_object)
 				{"COBURN", Locations = {"COBURN_VENATOR"}, GroundPerception = "Coburn_In_Orbit"},
 			},
 			GroundCompany = "ODD_BALL_P1_TEAM",
+			Faction = "EMPIRE",
 			Factions = {"Empire"},
 			Enabler = "REFORM_SQUAD_SEVEN",
 			DeathMessage = "Squad Seven has taken crippling casualties and must be reformed.",
@@ -117,6 +123,7 @@ function Get_Hero_Entries(upgrade_object)
 				{"COBURN", Locations = {"COBURN_VENATOR"}, GroundPerception = "Coburn_In_Orbit"},
 			},
 			GroundCompany = "ODD_BALL_P2_TEAM",
+			Faction = "EMPIRE",
 			Factions = {"Empire"},
 			Enabler = "REFORM_SQUAD_SEVEN2",
 			DeathMessage = "Squad Seven has taken crippling casualties and must be reformed.",
@@ -133,6 +140,7 @@ function Get_Hero_Entries(upgrade_object)
 				{"WESSEX", Locations = {"WESSEX_REDOUBT"}, GroundPerception = "Denn_Wessex_In_Orbit"},
 			},
 			GroundCompany = "WARTHOG_P1_TEAM",
+			Faction = "EMPIRE",
 			Factions = {"Empire"},
 			Enabler = "REFORM_HUNTER_SQUADRON",
 			DeathMessage = "Hunter Squadron has taken crippling casualties and must be reformed.",
@@ -150,6 +158,7 @@ function Get_Hero_Entries(upgrade_object)
 				{"WESSEX", Locations = {"WESSEX_REDOUBT"}, GroundPerception = "Denn_Wessex_In_Orbit"},
 			},
 			GroundCompany = "WARTHOG_P2_TEAM",
+			Faction = "EMPIRE",
 			Factions = {"Empire"},
 			Enabler = "REFORM_HUNTER_SQUADRON2",
 			DeathMessage = "Hunter Squadron has taken crippling casualties and must be reformed.",
@@ -167,7 +176,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"YULAREN", Locations = {"YULAREN_RESOLUTE","YULAREN_INTEGRITY","YULAREN_INVINCIBLE"}},
 				{"SCREED", Locations = {"SCREED_ARLIONNE","SCREED_DEMOLISHER"}},
 				{"PARCK", Locations = {"PARCK_STRIKEFAST"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["JORN_KULISH_LOCATION_SET"] = {
 			Hero_Squadron = "JORN_KULISH_FOXFIRE_SQUADRON",
@@ -179,7 +189,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"KILIAN", Locations = {"KILIAN_ENDURANCE"}},
 				{"DAO", Locations = {"DAO_VENATOR"}},
 				{"DRON", Locations = {"DRON_VENATOR"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["BRAND_ZETA_LOCATION_SET"] = {
 			Hero_Squadron = "BRAND_DELTA7_ZETA_SQUADRON",
@@ -190,7 +201,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"GRANT", Locations = {"GRANT_VENATOR"}},
 				{"DODONNA", Locations = {"DODONNA_ARDENT"}, GroundPerception = "Jan_Dodonna_In_Orbit"},
 				{"DALLIN", Locations = {"DALLIN_KEBIR"}, GroundPerception = "Dallin_In_Orbit"},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 		["ERK_HARMAN_LOCATION_SET"] = {
 			Hero_Squadron = "ERK_HARMAN_SQUADRON",
@@ -198,7 +210,8 @@ function Get_Hero_Entries(upgrade_object)
 			Options = {
 				{"SLAYKE", Locations = {"ZOZRIDOR_SLAYKE_CARRACK","ZOZRIDOR_SLAYKE_CR90"}},
 				{"TARKIN", Locations = {"TARKIN_VENATOR","TARKIN_EXECUTRIX"}},
-			}
+			},
+			Faction = "EMPIRE"
 		},
 	
 		--CIS
@@ -214,6 +227,7 @@ function Get_Hero_Entries(upgrade_object)
 				{"DEVASTATION", Locations = {"DEVASTATION"}, GroundPerception = "Devastation_In_Orbit"},
 			},
 			GroundCompany = "DFS1VR_LAND_TEAM",
+			Faction = "REBEL",
 			Factions = {"Rebel"},
 			Enabler = "REFORM_31ST_FLIGHT",
 			DeathMessage = "31st Flight has taken crippling casualties and must be rebuilt.",
@@ -228,7 +242,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"SHU_MAI", Locations = {"SHU_MAI_SUBJUGATOR"}},
 				{"DALESHAM", Locations = {"DALESHAM_NOVA_DEFIANT"}},
 				{"DEVASTATION", Locations = {"DEVASTATION"}},
-			}
+			},
+			Faction = "REBEL"
 		},
 		["NWON_RAINES_LOCATION_SET"] = {
 			Hero_Squadron = "NWON_RAINES_BELBULLAB23_SQUADRON",
@@ -240,7 +255,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"TUUK", Locations = {"TUUK_PROCURER"}},
 				{"TREETOR", Locations = {"TREETOR_CAPTOR"}},
 				{"STARK", Locations = {"STARK_RECUSANT"}},
-			}
+			},
+			Faction = "REBEL"
 		},
 		["VULPUS_LOCATION_SET"] = {
 			Hero_Squadron = "VULPUS_SQUADRON",
@@ -252,7 +268,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"K2B4", Locations = {"K2B4_PROVIDENCE"}},
 				{"CANTEVAL", Locations = {"CANTEVAL_MUNIFICENT"}},
 				{"DEVASTATION", Locations = {"DEVASTATION"}},
-			}
+			},
+			Faction = "REBEL"
 		},
 		["RAINA_QUILL_LOCATION_SET"] = {
 			Hero_Squadron = "RAINA_QUILL_SQUADRON",
@@ -264,7 +281,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"SHONN", Locations = {"SHONN_RECUSANT"}},
 				{"DELLSO", Locations = {"DELLSO_PROVIDENCE"}},
 				{"YAGO", Locations = {"MELLOR_YAGO_RENDILI_REIGN"}},
-			}
+			},
+			Faction = "REBEL"
 		},
 		["GORGOL_LOCATION_SET"] = {
 			Hero_Squadron = "GORGOL_NANTEX_SQUADRON",
@@ -277,7 +295,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"TF1726", Locations = {"TF1726_MUNIFICENT"}},
 				{"CANTEVAL", Locations = {"CANTEVAL_MUNIFICENT"}},
 				{"DEVASTATION", Locations = {"DEVASTATION"}},
-			}
+			},
+			Faction = "REBEL"
 		},
 		["88TH_FLIGHT_LOCATION_SET"] = {
 			Hero_Squadron = "88TH_FLIGHT_SQUADRON",
@@ -291,6 +310,7 @@ function Get_Hero_Entries(upgrade_object)
 				{"DEVASTATION", Locations = {"DEVASTATION"}, GroundPerception = "Devastation_In_Orbit"},
 			},
 			GroundCompany = "88TH_FLIGHT_LAND_TEAM",
+			Faction = "REBEL",
 			Factions = {"Rebel"},
 			Enabler = "REFORM_88TH_FLIGHT",
 			DeathMessage = "88th Flight has taken crippling casualties and must be rebuilt.",
@@ -299,6 +319,7 @@ function Get_Hero_Entries(upgrade_object)
 			NoInit = true,
 			GroundReinforcementPerception = "Grievous_In_Orbit",
 			GroundCompany = "GRIEVOUS_DEPLOYED_TEAM",
+			Faction = "REBEL",
 			Factions = {"Rebel"},
 			NoSpawnFlag = "GROUND_GRIEVOUS_DEAD",
 			DeathMessage = "General Grievous' body has been severely damaged and must be replaced."
@@ -316,7 +337,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"JILIAC", Locations = {"JILIAC_DRAGON_PEARL"}},
 				{"TOBBA", Locations = {"TOBBA_YTOBBA"}},
 				{"MIKA", Locations = {"MIKA_TEMPEST"}},
-			}
+			},
+			Faction = "HUTT_CARTELS"
 		},
 		["SIQO_VASS_LOCATION_SET"] = {
 			Hero_Squadron = "Siqo_Vass_Krayts_Honor_Squadron",
@@ -329,7 +351,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"RIBOGA", Locations = {"RIBOGA_RIGHTFUL_DOMINION"}},
 				{"TOBBA", Locations = {"TOBBA_YTOBBA"}},
 				{"MIKA", Locations = {"MIKA_TEMPEST"}},
-			}
+			},
+			Faction = "HUTT_CARTELS"
 		},
 		["TEROCH_LOCATION_SET"] = {
 			Hero_Squadron = "TEROCH_KOMRK_SQUADRON",
@@ -342,7 +365,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"RIBOGA", Locations = {"RIBOGA_RIGHTFUL_DOMINION"}},
 				{"TOBBA", Locations = {"TOBBA_YTOBBA"}},
 				{"MIKA", Locations = {"MIKA_TEMPEST"}},
-			}
+			},
+			Faction = "HUTT_CARTELS"
 		},
 		["SERISSU_LOCATION_SET"] = {
 			Hero_Squadron = "SERISSU_SCYK_FIGHTER_SQUADRON",
@@ -356,7 +380,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"RIBOGA", Locations = {"RIBOGA_RIGHTFUL_DOMINION"}},
 				{"TOBBA", Locations = {"TOBBA_YTOBBA"}},
 				{"MIKA", Locations = {"MIKA_TEMPEST"}},
-			}
+			},
+			Faction = "HUTT_CARTELS"
 		},
 		["TORANI_KULDA_LOCATION_SET"] = {
 			Hero_Squadron = "TORANI_KIMOGILA_SQUADRON",
@@ -370,7 +395,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"RIBOGA", Locations = {"RIBOGA_RIGHTFUL_DOMINION"}},
 				{"TOBBA", Locations = {"TOBBA_YTOBBA"}},
 				{"MIKA", Locations = {"MIKA_TEMPEST"}},
-			}
+			},
+			Faction = "HUTT_CARTELS"
 		},
 		["SSURUSSK_LOCATION_SET"] = {
 			Hero_Squadron = "Ssurussk_Nebula_Raiders_Squadron",
@@ -394,7 +420,8 @@ function Get_Hero_Entries(upgrade_object)
 				{"DREDNAR", Locations = {"DREDNAR_SABLE_III"}},
 				{"VULTURE_PIRATES", Locations = {"VULTURE_PIRATES"}},
 				{"LOOSE_CANNON", Locations = {"LOOSE_CANNON_PIRATES"}},
-			}
+			},
+			Faction = "HUTT_CARTELS"
 		},
 	}
 

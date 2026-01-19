@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <Independent_Heroes>
 
+	<!-- 15. Independent -->
+
 	<HeroUnit Name="Hondo_Ohnaka">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
 		<LOD_Bias>4</LOD_Bias>
@@ -154,15 +156,24 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_PIRATE </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_HONDO_OHNAKA.TGA</Icon_Name>
 		
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Planets>Florrum</Required_Planets>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
 		<Company_Transport_Unit>Hondo_Ohnaka_Firespray</Company_Transport_Unit>
 		<Company_Units>Hondo_Ohnaka</Company_Units>
 		
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Independent_Forces</Affiliation>
+		<Affiliation>Independent_Forces, Empire, Rebel, Hutt_Cartels</Affiliation>
 		<Population_Value>1</Population_Value>
-		<Tech_Level>99</Tech_Level>
+		<Tech_Level>0</Tech_Level>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
 
@@ -170,6 +181,9 @@
 		<SFXEvent_Build_Cancelled>UHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
 	</HeroCompany>
 
 	<UniqueUnit Name="Hondo_Ohnaka_Firespray">
@@ -332,7 +346,7 @@
 		<Icon_Name>I_BUTTON_HOOLIDAN_KEGGLE_ADMIN.tga</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Hoolidan_Keggle</Company_Transport_Unit>
 		<Company_Units>Hoolidan_Keggle</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -348,6 +362,43 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Hoolidan_Keggle">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Hoolidan_Keggle_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Hoolidan_Keggle_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Hoolidan_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_HOOLIDAN_KEGGLE</Text_ID>
+		<Icon_Name>I_BUTTON_HOOLIDAN_KEGGLE_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_01
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_HOOLIDAN_KEGGLE
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Hoolidan_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_HOOLIDAN_KEGGLE</Text_ID>
+		<Icon_Name>I_BUTTON_HOOLIDAN_KEGGLE_ADMIN.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>CIS_Sheathipede_Landing_Craft_Hoolidan_Keggle</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Katuunko">
@@ -406,7 +457,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_KING </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_KATUUNKO_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Katuunko</Company_Transport_Unit>
 		<Company_Units>Katuunko</Company_Units>
 		
 		<Affiliation>Empire, Rebel</Affiliation>
@@ -416,6 +467,43 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Katuunko">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Katuunko_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Katuunko_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Katuunko_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KATUUNKO</Text_ID>
+		<Icon_Name>I_BUTTON_KATUUNKO_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_01
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KATUUNKO
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Katuunko_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KATUUNKO</Text_ID>
+		<Icon_Name>I_BUTTON_KATUUNKO_ADMIN.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>CIS_Sheathipede_Landing_Craft_Katuunko</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Xist">
@@ -572,20 +660,20 @@
 
 		<Is_Dummy>Yes</Is_Dummy>
 		<Damage>80</Damage>
-		<Affiliation>Independent_Forces</Affiliation>
+		<Affiliation>Independent_Forces, Rebel, Hutt_Cartels</Affiliation>
 
 		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
 		<Population_Value>1</Population_Value>
 
-		<Build_Cost_Credits>3000</Build_Cost_Credits>
-		<Required_Planets></Required_Planets>
-		<Tech_Level>99</Tech_Level>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Required_Planets>Bespin, Mustafar</Required_Planets>
+		<Tech_Level>0</Tech_Level>
 		<Build_Initially_Locked>No</Build_Initially_Locked>
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>1</Required_Star_Base_Level>
-		<Build_Time_Seconds>30</Build_Time_Seconds>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
-		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy</Required_Special_Structures>
+		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
 		<Company_Transport_Unit>G9_Rigger</Company_Transport_Unit>
@@ -595,12 +683,14 @@
 		<Is_Stealth_Company>No</Is_Stealth_Company>
 		<Available_In_Skirmish>No</Available_In_Skirmish>
 		<Can_Be_Only_One>true</Can_Be_Only_One>
-		<Is_Stealth_Company>No</Is_Stealth_Company>
 
 		<SFXEvent_Build_Started>UHD_Request_Assistance</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>UHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
 	</HeroCompany>
 	
 	<UniqueUnit Name="Amanza_Space_ARC_Cruiser">
@@ -631,9 +721,13 @@
 		<Ranking_In_Category> 8 </Ranking_In_Category>
 
 		<Is_Named_Hero>Yes</Is_Named_Hero>
-		<Affiliation>Independent_Forces</Affiliation>
+		<Affiliation>Independent_Forces, Rebel, Hutt_Cartels</Affiliation>
 
-		<Tech_Level>99</Tech_Level>
+		<Tech_Level>0</Tech_Level>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Required_Planets>Bespin, Mustafar</Required_Planets>
+		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 
 		<Lua_Script>GenericGameObject</Lua_Script>
 
@@ -682,7 +776,14 @@
 				<Apply_To_All_Allies> Yes </Apply_To_All_Allies>
 			</Bounty_On_Faction_Ability>
 		</Abilities>
+
+		<SFXEvent_Build_Started>UHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Request_Canceled</SFXEvent_Build_Cancelled>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
 	</UniqueUnit>
+
 
 	<UniqueUnit Name="Gha_Nachkt_Vultures_Claw">
 		<Variant_Of_Existing_Type>Super_Transport_XI_Modified</Variant_Of_Existing_Type>
@@ -732,5 +833,34 @@
 			</Bounty_On_Faction_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Gha_Nachkt_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GHA_NACHKT</Text_ID>
+		<Icon_Name>I_BUTTON_GHA_NACHKT.TGA</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_UTILITY_SALVAGER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_GHA_NACHKT
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_GHA_NACHKT
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Gha_Nachkt_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GHA_NACHKT</Text_ID>
+		<Icon_Name>I_BUTTON_GHA_NACHKT.TGA</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Gha_Nachkt_Vultures_Claw</Required_Orbiting_Units>
+	</DummyStructure>
 
 </Independent_Heroes>

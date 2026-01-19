@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <Hutt_Heroes>
 
+	<!-- 8. HUTT Cartels -->
+
 	<!-- Infantry/Commando Heroes -->
 	<HeroUnit Name="Jabba_The_Hutt">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>

@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <Mercenary_Heroes>
-	<!-- CIS Mercenaries -->
+	<!-- 12. CIS Mercenaries -->
 
 	<DummyStructure Name="Random_Mercenary">
 		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_RANDOM_MERCENARY</Text_ID>
-		<Encyclopedia_Text> 
-		TEXT_TOOLTIP_RANDOM_MERCENARY
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		Recruits random mercenary from list.
 		TEXT_NONE
 		TEXT_TOOLTIP_RANDOM_MERCENARY_ARGYUS
 		TEXT_TOOLTIP_RANDOM_MERCENARY_VAZUS
@@ -15,13 +15,13 @@
 		</Encyclopedia_Text>
 
 		<Icon_Name>I_BUTTON_DUMMY_MERCENARY.TGA</Icon_Name>
-		<GUI_Row> 0 </GUI_Row>
+		<GUI_Row> 1 </GUI_Row>
 
-		<Affiliation>Rebel</Affiliation>
+		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 		<Tech_Level>0</Tech_Level>
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-		<Build_Cost_Credits>3000</Build_Cost_Credits>
-		<Build_Time_Seconds>30</Build_Time_Seconds>
+		<Build_Cost_Credits>1500</Build_Cost_Credits>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
 		<Lua_Script>DelayedSelfDelete</Lua_Script>
 
 		<Population_Value>1</Population_Value>
@@ -35,7 +35,7 @@
 		<SFXEvent_Build_Cancelled>UHD_Recruitment_Canceled</SFXEvent_Build_Cancelled>
 
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+		<Build_Limit_Lifetime_Per_Player>-1</Build_Limit_Lifetime_Per_Player> 
 	</DummyStructure>
 
 
@@ -696,13 +696,13 @@
 		</Encyclopedia_Text>
 
 		<Icon_Name>I_BUTTON_DUMMY_BOUNTY_HUNTER.TGA</Icon_Name>
-		<GUI_Row> 0 </GUI_Row>
+		<GUI_Row> 1 </GUI_Row>
 
 		<Affiliation>Rebel, Hutt_Cartels</Affiliation>
 		<Tech_Level>0</Tech_Level>
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
-		<Build_Cost_Credits>3000</Build_Cost_Credits>
-		<Build_Time_Seconds>30</Build_Time_Seconds>
+		<Build_Cost_Credits>1500</Build_Cost_Credits>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
 
 		<Population_Value>1</Population_Value>
 
@@ -716,7 +716,7 @@
 		<SFXEvent_Build_Cancelled>UHD_Recruitment_Canceled</SFXEvent_Build_Cancelled>
 
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
-		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+		<Build_Limit_Lifetime_Per_Player>-1</Build_Limit_Lifetime_Per_Player> 
 	</DummyStructure>
 	
 	<HeroUnit Name="Dengar">

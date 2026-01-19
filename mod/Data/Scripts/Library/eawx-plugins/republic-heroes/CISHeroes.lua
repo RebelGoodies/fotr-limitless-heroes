@@ -19,36 +19,32 @@ require("PGStoryMode")
 require("PGSpawnUnits")
 require("deepcore/std/class")
 require("eawx-util/StoryUtil")
+require("eawx-util/UnitUtil")
 require("HeroSystem")
 require("HeroSystem2")
 require("SetFighterResearch")
 
+---@class CISHeroes
 CISHeroes = class()
 
+---@param gc GalacticConquest
+---@param id string
 function CISHeroes:new(gc, id)
+	self.id = id
 	self.human_player = gc.HumanPlayer
 	--gc.Events.GalacticProductionFinished:attach_listener(self.on_production_finished, self)
 	--gc.Events.GalacticHeroKilled:attach_listener(self.on_galactic_hero_killed, self)
-	self.inited = false
+	self.CommandStaff_Initialized = false
+	self.sandbox_mode = false
 	
 	if self.human_player ~= Find_Player("Rebel") then
 		gc.Events.PlanetOwnerChanged:attach_listener(self.on_planet_owner_changed, self)
-	else
-		
 	end
 	
-	--crossplot:subscribe("CIS_ADMIRAL_DECREMENT", self.admiral_decrement, self)
-	crossplot:subscribe("CIS_ADMIRAL_LOCKIN", self.admiral_lockin, self)
-	crossplot:subscribe("ORDER_66_EXECUTED", self.Order_66_Handler, self)
-	crossplot:subscribe("BULWARK_RESEARCH_FINISHED", self.Bulwark_Heroes, self)
-	if id == "PROGRESSIVE" or id == "FTGU" then
-		--breaks story mode selection menu for some reason?
-		crossplot:subscribe("ERA_THREE_TRANSITION", self.Era_3, self)
-		crossplot:subscribe("ERA_FOUR_TRANSITION", self.Era_4, self)
-		crossplot:subscribe("ERA_FIVE_TRANSITION", self.Era_5, self)
-	end
-	crossplot:subscribe("CIS_ADMIRAL_EXIT", self.admiral_exit, self)
-	crossplot:subscribe("CIS_ADMIRAL_RETURN", self.admiral_return, self)
+	crossplot:subscribe("EXECUTE_ORDER_66", self.Order_66_Handler, self)
+	crossplot:subscribe("BULWARK1_RESEARCH_FINSIHED", self.Bulwark1_Heroes, self)
+	crossplot:subscribe("BULWARK2_RESEARCH", self.Bulwark2_Heroes, self)
+	crossplot:subscribe("ERA_TRANSITION", self.Era_Transitions, self)
 	
 	space_data = {
 		group_name = "Space Leader",
@@ -58,27 +54,35 @@ function CISHeroes:new(gc, id)
 		vacant_limit = 0,           --Number of times a lost slot can be reopened
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Harsol"] = {"HARSOL_ASSIGN",{"HARSOL_RETIRE"},{"HARSOL_MUNIFICENT"},"Rel Harsol"},
-			["TF1726"] = {"TF1726_ASSIGN",{"TF1726_RETIRE"},{"TF1726_MUNIFICENT"},"TF-1726"},
-			["Shonn"] = {"SHONN_ASSIGN",{"SHONN_RETIRE"},{"SHONN_RECUSANT"},"Shonn Volta"},
-			["AutO"] = {"AUTO_ASSIGN",{"AUTO_RETIRE"},{"AUTO_PROVIDENCE"},"Aut-O"},
-			["Ningo"] = {"NINGO_ASSIGN",{"NINGO_RETIRE"},{"DUA_NINGO_UNREPENTANT"},"Dua Ningo"},
-			["Calli"] = {"CALLI_ASSIGN",{"CALLI_RETIRE"},{"CALLI_TRILM_BULWARK"},"Calli Trilm"},
-			["Merai"] = {"MERAI_ASSIGN",{"MERAI_RETIRE"},{"MERAI_FREE_DAC"},"Merai"},
-			["Doctor"] = {"DOCTOR_ASSIGN",{"DOCTOR_RETIRE"},{"DOCTOR_INSTINCTION"},"Doctor"},
-			["Solenoid"] = {"SOLENOID_ASSIGN",{"SOLENOID_RETIRE"},{"SOLENOID_CR90"},"Solenoid"},
-			["K2B4"] = {"K2B4_ASSIGN",{"K2B4_RETIRE"},{"K2B4_PROVIDENCE"},"K2-B4"},
-			["Vetlya"] = {"VETLYA_ASSIGN",{"VETLYA_RETIRE"},{"VETLYA_CORE_DESTROYER"},"Karaksk Vetlya"},
-			["Yago"] = {"YAGO_ASSIGN",{"YAGO_RETIRE"},{"MELLOR_YAGO_RENDILI_REIGN"},"Mellor Yago"},
-			["Cavik"] = {"CAVIK_ASSIGN",{"CAVIK_RETIRE"},{"CAVIK_TOTH_REAVER"},"Cavik Toth"},
+			["Krett"] = {"KRETT_ASSIGN",{"KRETT_RETIRE"},{"KRETT_LUCREHULK_BATTLESHIP"},"Krett"}, --21BBY DurgesLance
+			["Merai"] = {"MERAI_ASSIGN",{"MERAI_RETIRE"},{"MERAI_FREE_DAC"},"Merai"}, --22BBY Rimward
+			["Doctor"] = {"DOCTOR_ASSIGN",{"DOCTOR_RETIRE"},{"DOCTOR_INSTINCTION"},"Doctor"}, --22BBY Malevolence, Rimward
+			["Trench"] = {"TRENCH_ASSIGN",{"TRENCH_RETIRE", "TRENCH_RETIRE2"},{"TRENCH_INVINCIBLE", "TRENCH_INVULNERABLE"},"Trench"}, --Progressive
+			["AutO"] = {"AUTO_ASSIGN",{"AUTO_RETIRE"},{"AUTO_PROVIDENCE"},"Aut-O"}, --Progressive
+			["K2B4"] = {"K2B4_ASSIGN",{"K2B4_RETIRE"},{"K2B4_PROVIDENCE"},"K2-B4"}, --21BBY Tennuutta
+			["Ningo"] = {"DUA_NINGO_ASSIGN",{"DUA_NINGO_RETIRE"},{"DUA_NINGO_UNREPENTANT"},"Dua Ningo"}, --20BBY Foerost, 19BBY OuterRimSieges
+			["Calli"] = {"CALLI_TRILM_ASSIGN",{"CALLI_TRILM_RETIRE"},{"CALLI_TRILM_BULWARK"},"Calli Trilm"}, --20BBY Foerost
+			["Vetlya"] = {"VETLYA_ASSIGN",{"VETLYA_RETIRE"},{"VETLYA_CORE_DESTROYER"},"Karaksk Vetlya"}, --21BBY KnightHammer
+			["TF1726"] = {"TF1726_ASSIGN",{"TF1726_RETIRE"},{"TF1726_MUNIFICENT"},"TF-1726"}, --Any
+			["Harsol"] = {"HARSOL_ASSIGN",{"HARSOL_RETIRE"},{"HARSOL_MUNIFICENT"},"Rel Harsol"}, --19BBY OuterRimSieges, Progressive
+			["Dalesham"] = {"DALESHAM_ASSIGN",{"DALESHAM_RETIRE"},{"DALESHAM_NOVA_DEFIANT"},"Dalesham"}, --21BBY KnightHammer, 19BBY OuterRimSieges
+			["Shonn"] = {"SHONN_ASSIGN",{"SHONN_RETIRE"},{"SHONN_RECUSANT"},"Shonn Volta"}, --21BBY DurgesLance
+			["Yago"] = {"MELLOR_YAGO_ASSIGN",{"MELLOR_YAGO_RETIRE"},{"MELLOR_YAGO_RENDILI_REIGN"},"Mellor Yago"}, --21BBY DurgesLance
+			["Solenoid"] = {"SOLENOID_ASSIGN",{"SOLENOID_RETIRE"},{"SOLENOID_CR90"},"Solenoid"}, --20BBY Foerost
+			["Cavik"] = {"CAVIK_ASSIGN",{"CAVIK_RETIRE"},{"CAVIK_TOTH_REAVER"},"Cavik Toth"}, --Skirmish
+			["Nachkt"] = {"GHA_NACHKT_ASSIGN",{"GHA_NACHKT_RETIRE"},{"GHA_NACHKT_VULTURES_CLAW"},"Gha Nachkt"}, --22BBY Rimward
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
-			"TF1726",
-			"Shonn",
+			"Krett",
 			"Doctor",
-			"Solenoid",
+			"Trench",
 			"K2B4",
 			"Vetlya",
+			"TF1726",
+			"Dalesham",
+			"Shonn",
+			"Solenoid",
+			"Nachkt",
 		},
 		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
 		active_player = Find_Player("Rebel"),
@@ -90,29 +94,43 @@ function CISHeroes:new(gc, id)
 	
 	ground_data = {
 		group_name = "Ground Leader",
-		total_slots = 7,            --Max slot number
-		free_hero_slots = 7,        --Slots open to assign
+		total_slots = 12,           --Max slot number
+		free_hero_slots = 12,       --Slots open to assign
 		vacant_hero_slots = 0,	    --Slots of dead heroes
 		vacant_limit = 0,           --Number of times a lost slot can be reopened
 		initialized = false,
 		full_list = { --All options for reference operations
-			["Argente"] = {"ARGENTE_ASSIGN",{"ARGENTE_RETIRE"},{"PASSEL_ARGENTE"},"Passel Argente", ["Companies"] = {"ARGENTE_TEAM"}},
-			["Gunray"] = {"GUNRAY_ASSIGN",{"GUNRAY_RETIRE"},{"NUTE_GUNRAY"},"Nute Gunray", ["Companies"] = {"GUNRAY_TEAM"}},
-			--["Durd"] = {"DURD_ASSIGN",{"DURD_RETIRE"},{"LOK_DURD", "DURD_HAG"},"Lok Durd", ["Companies"] = {"LOK_DURD_TEAM", "DURD_TEAM"}},
-			["Hoolidan"] = {"HOOLIDAN_ASSIGN",{"HOOLIDAN_RETIRE"},{"HOOLIDAN_KEGGLE"},"Hoolidan Keggle", ["Companies"] = {"HOOLIDAN_KEGGLE_TEAM"}},
-			["Whorm"] = {"WHORM_ASSIGN",{"WHORM_RETIRE"},{"WHORM_AAT"},"Whorm Loathsom", ["Companies"] = {"WHORM_TEAM"}},
-			["Findos"] = {"FINDOS_ASSIGN",{"FINDOS_RETIRE"},{"SENTEPTH_FINDOS_MTT"},"Sentepeth Findos", ["Companies"] = {"SENTEPTH_FINDOS_TEAM"}},
-			["Kalani"] = {"KALANI_ASSIGN",{"KALANI_RETIRE"},{"GENERAL_KALANI"},"Kalani", ["Companies"] = {"KALANI_TEAM"}},
-			["Sobeck"] = {"SOBECK_ASSIGN",{"SOBECK_RETIRE"},{"OSI_SOBECK_JX30"},"Osi Sobeck", ["Companies"] = {"OSI_SOBECK_TEAM"}},
-			["Zolghast"] = {"ZOLGHAST_ASSIGN",{"ZOLGHAST_RETIRE"},{"ZOLGHAST_PERSUADER"},"Zolghast", ["Companies"] = {"Zolghast_Team"}},
-			--["Lorz"] = {"LORZ_ASSIGN",{"LORZ_RETIRE"},{"LORZ_GEPTUN"},"Lorz Geptun", ["Companies"] = {"LORZ_GEPTUN_TEAM"}},
+			["Kalani"] = {"KALANI_ASSIGN",{"KALANI_RETIRE"},{"GENERAL_KALANI"},"Kalani", ["Companies"] = {"KALANI_TEAM"}}, --Progressive
+			--["Lorz"] = {"LORZ_ASSIGN",{"LORZ_RETIRE"},{"LORZ_GEPTUN"},"Lorz Geptun", ["Companies"] = {"LORZ_GEPTUN_TEAM"}}, --22BBY Malevolence
+			["Tendir"] = {"TENDIR_ASSIGN",{"TENDIR_RETIRE"},{"TENDIR_BLUE"},"Tendir Blue", ["Companies"] = {"TENDIR_BLUE_TEAM"}}, --20BBY Foerost
+			["TA175"] = {"TA_175_ASSIGN",{"TA_175_RETIRE"},{"TA_175"},"TA-175", ["Companies"] = {"TA_175_TEAM"}}, --22BBY Rimward
+			["Whorm"] = {"WHORM_ASSIGN",{"WHORM_RETIRE"},{"WHORM_AAT"},"Whorm Loathsom", ["Companies"] = {"WHORM_TEAM"}}, --Progressive
+			["OOM224"] = {"OOM_224_ASSIGN",{"OOM_224_RETIRE"},{"OOM_224_AAT"},"OOM-224", ["Companies"] = {"OOM_224_TEAM"}}, --22BBY Malevolence
+			["TX20"] = {"TX_20_ASSIGN",{"TX_20_RETIRE"},{"TX_20_AAT"},"TX-20", ["Companies"] = {"TX_20_TEAM"}}, --Ryloth Mission
+			["Findos"] = {"SENTEPTH_FINDOS_ASSIGN",{"SENTEPTH_FINDOS_RETIRE"},{"SENTEPTH_FINDOS_MTT"},"Sentepeth Findos", ["Companies"] = {"SENTEPTH_FINDOS_TEAM"}}, --19BBY OuterRimSieges
+			["TX21"] = {"TX_21_ASSIGN",{"TX_21_RETIRE"},{"TX_21_SUPERTANK"},"TX-21", ["Companies"] = {"TX_21_TEAM"}}, --22BBY Rimward
+			["Sobeck"] = {"OSI_SOBECK_ASSIGN",{"OSI_SOBECK_RETIRE"},{"OSI_SOBECK_JX30"},"Osi Sobeck", ["Companies"] = {"OSI_SOBECK_TEAM"}}, --21BBY Tennuutta
+			["Zolghast"] = {"ZOLGHAST_ASSIGN",{"ZOLGHAST_RETIRE"},{"ZOLGHAST_PERSUADER"},"Zolghast", ["Companies"] = {"Zolghast_Team"}}, --21BBY Tennuutta
+			["Durd"] = {"DURD_ASSIGN",{"DURD_RETIRE"},{"LOK_DURD_DEFOLIATOR"},"Lok Durd", ["Companies"] = {"LOK_DURD_DEFOLIATOR_TEAM"}}, --21BBY Tennuutta
+			["Drogen"] = {"DROGEN_HOSH_ASSIGN",{"DROGEN_HOSH_RETIRE"},{"DROGEN_HOSH_SUPERTANK"},"Drogen Hosh", ["Companies"] = {"DROGEN_HOSH_TEAM"}}, --21BBY KnightHammer
+			["Gunray"] = {"GUNRAY_ASSIGN",{"GUNRAY_RETIRE", "GUNRAY_RETIRE2"},{"NUTE_GUNRAY", "NUTE_GUNRAY_STEALTH"},"Nute Gunray", ["Companies"] = {"NUTE_GUNRAY_TEAM", "NUTE_GUNRAY_STEALTH_TEAM"}}, --Any
+			["Argente"] = {"ARGENTE_ASSIGN",{"ARGENTE_RETIRE"},{"PASSEL_ARGENTE"},"Passel Argente", ["Companies"] = {"ARGENTE_TEAM"}}, --22BBY Malevolence, Rimward
+			["Poggle"] = {"POGGLE_ASSIGN",{"POGGLE_RETIRE"},{"POGGLE_AAT"},"Poggle the Lesser", ["Companies"] = {"POGGLE_TEAM"}}, --22BBY Rimward
+			["Hoolidan"] = {"HOOLIDAN_ASSIGN",{"HOOLIDAN_RETIRE"},{"HOOLIDAN_KEGGLE"},"Hoolidan Keggle", ["Companies"] = {"HOOLIDAN_KEGGLE_TEAM"}}, --21BBY DurgesLance
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
-			"Argente",
-			"Gunray",
-			--"Durd",
+			"Tendir",
+			"TA175",
 			"Whorm",
+			"OOM224",
+			"TX20",
 			"Findos",
+			"TX21",
+			"Durd",
+			"Drogen",
+			"Gunray",
+			"Argente",
+			"Poggle",
 		},
 		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
 		active_player = Find_Player("Rebel"),
@@ -124,28 +142,29 @@ function CISHeroes:new(gc, id)
 	
 	sith_data = {
 		group_name = "Sith",
-		total_slots = 6,            --Max slot number
-		free_hero_slots = 6,        --Slots open to assign
+		total_slots = 7,            --Max slot number
+		free_hero_slots = 7,        --Slots open to assign
 		vacant_hero_slots = 0,	    --Slots of dead heroes
 		vacant_limit = 0,           --Number of times a lost slot can be reopened
 		initialized = false,
 		full_list = { --All options for reference operations
-			["SevRance"] = {"SEVRANCE_ASSIGN",{"SEVRANCE_RETIRE"},{"SEVRANCE"},"Sev'Rance Tann", ["Companies"] = {"SEVRANCE_TEAM"}},
-			["Ventress"] = {"VENTRESS_ASSIGN",{"VENTRESS_RETIRE"},{"VENTRESS"},"Asajj Ventress", ["Companies"] = {"VENTRESS_TEAM"}},
-			["Dooku"] = {"DOOKU_ASSIGN",{"DOOKU_RETIRE"},{"DOOKU"},"Count Dooku", ["Companies"] = {"DOOKU_TEAM"}},
-			["Sora"] = {"SORA_ASSIGN",{"SORA_RETIRE"},{"SORA_BULQ"},"Sora Bulq", ["Companies"] = {"SORA_BULQ_TEAM"}},
-			["Yansu"] = {"YANSU_ASSIGN",{"YANSU_RETIRE"},{"YANSU_GRJAK"},"Yansu Grjak", ["Companies"] = {"YANSU_GRJAK_TEAM"}},
-			["Shaala"] = {"SHAALA_ASSIGN",{"SHAALA_RETIRE"},{"SHAALA_DONEETA"},"Shaala Doneeta", ["Companies"] = {"SHAALA_DONEETA_TEAM"}},
+			["Dooku"] = {"DOOKU_ASSIGN",{"DOOKU_RETIRE", "DOOKU_RETIRE"},{"DOOKU", "DOOKU_STEALTH"},"Count Dooku", ["Companies"] = {"DOOKU_TEAM", "DOOKU_STEALTH_TEAM"}}, --Any
+			["Sora"] = {"SORA_ASSIGN",{"SORA_RETIRE"},{"SORA_BULQ"},"Sora Bulq", ["Companies"] = {"SORA_BULQ_TEAM"}}, --Any
+			["Yansu"] = {"YANSU_ASSIGN",{"YANSU_RETIRE"},{"YANSU_GRJAK"},"Yansu Grjak", ["Companies"] = {"YANSU_GRJAK_TEAM"}}, --22BBY Rimward
+			["SevRance"] = {"SEVRANCE_ASSIGN",{"SEVRANCE_RETIRE"},{"SEVRANCE"},"Sev'Rance Tann", ["Companies"] = {"SEVRANCE_TEAM"}}, --Progressive
+			["Ventress"] = {"VENTRESS_ASSIGN",{"VENTRESS_RETIRE"},{"VENTRESS"},"Asajj Ventress", ["Companies"] = {"VENTRESS_TEAM"}}, --Any
+			["Shaala"] = {"SHAALA_ASSIGN",{"SHAALA_RETIRE"},{"SHAALA_DONEETA"},"Shaala Doneeta", ["Companies"] = {"SHAALA_DONEETA_TEAM"}}, --21BBY KnightHammer, DurgesLance
+			["Sai"] = {"SAI_SIRCU_ASSIGN",{"SAI_SIRCU_RETIRE"},{"SAI_SIRCU_DEVASTATION"},"Sai Sircu"}, --22BBY Rimward
 			["Sidious"] = {"SIDIOUS_ASSIGN",{"SIDIOUS_RETIRE"},{"DARTH_SIDIOUS"},"Darth Sidious", ["Companies"] = {"DARTH_SIDIOUS_TEAM"}},
 		},
 		available_list = {--Heroes currently available for purchase. Seeded with those who have no special prereqs
-			"SevRance",
-			"Ventress",
 			"Dooku",
 			"Sora",
 			"Yansu",
+			"SevRance",
+			"Ventress",
 			"Shaala",
-			"Sidious",
+			"Sai",
 		},
 		story_locked_list = {},--Heroes not accessible, but able to return with the right conditions
 		active_player = Find_Player("Rebel"),
@@ -156,10 +175,14 @@ function CISHeroes:new(gc, id)
 	}
 	
 	self.fighter_assigns = {
-		"DFS1VR_Location_Set",
-		"Nas_Ghent_Location_Set",
-		"Raina_Quill_Location_Set",
-		"Vulpus_Location_Set",
+		"DFS1VR_LOCATION_SET",
+		"NAS_GHENT_LOCATION_SET",
+		"NWON_RAINES_LOCATION_SET",
+		"VULPUS_LOCATION_SET",
+		"RAINA_QUILL_LOCATION_SET",
+		"GORGOL_LOCATION_SET",
+		"88TH_FLIGHT_LOCATION_SET",
+		"REBUILD_GRIEVOUS_BODY"
 	}
 	self.fighter_assign_enabled = true
 	
@@ -170,27 +193,31 @@ function CISHeroes:new(gc, id)
 		["VIEW_CIS_FIGHTERS"] = 4,
 	}
 	
-	self.sandbox_mode = false
-	
 	self.old_view = 4
+	UnitUtil.SetLockList("REBEL", {"VIEW_CIS_FIGHTERS"}, false)
 end
 
+---@param set integer
+---@return table|nil
 function CISHeroes:get_hero_data(set)
 	--space_data filler for fighters
 	local systems = {space_data, ground_data, sith_data, space_data}
 	return systems[set]
 end
 
+---@param set integer
+---@return GameObjectType|nil
 function CISHeroes:get_viewer_tech(set)
 	--Logger:trace("entering CISHeroes:get_viewer_tech")
 	local view_text = {"VIEW_SPACE", "VIEW_GROUND", "VIEW_SITH", "VIEW_CIS_FIGHTERS"}
-	local tech_unit
+	local tech_unit = nil
 	if view_text[set] then
 		tech_unit = Find_Object_Type(view_text[set])
 	end
 	return tech_unit
 end
 
+---@param new_view integer
 function CISHeroes:switch_views(new_view)
 	--Logger:trace("entering CISHeroes:switch_views")
 	
@@ -198,12 +225,14 @@ function CISHeroes:switch_views(new_view)
 	local hero_data = self:get_hero_data(new_view)
 	local tech_unit = self:get_viewer_tech(new_view)
 	
-	if not hero_data or not tech_unit or new_view == self.old_view then
+	if not hero_data or not TestValid(tech_unit) or new_view == self.old_view then
 		StoryUtil.ShowScreenText(tostring(hero_data).." "..tostring(tech_unit).." "..tostring(new_view), 10, nil, {r = 244, g = 0, b = 122})
 		return
 	end
 	
-	hero_data.active_player.Lock_Tech(tech_unit)
+	if TestValid(tech_unit) then
+		hero_data.active_player.Lock_Tech(tech_unit)
+	end
 	if new_view == 4 then
 		Enable_Fighter_Sets(hero_data.active_player, self.fighter_assigns)
 		self.fighter_assign_enabled = true
@@ -216,19 +245,25 @@ function CISHeroes:switch_views(new_view)
 	--Old view
 	hero_data = self:get_hero_data(self.old_view)
 	tech_unit = self:get_viewer_tech(self.old_view)
-	if self.old_view == 4 then
-		hero_data.active_player.Unlock_Tech(tech_unit)
-		Disable_Fighter_Sets(hero_data.active_player, self.fighter_assigns)
-		self.fighter_assign_enabled = false
-	else
-		hero_data.active_player.Unlock_Tech(tech_unit)
-		Disable_Hero_Options(hero_data)
+	if hero_data then
+		if self.old_view == 4 then
+			if TestValid(tech_unit) then
+				hero_data.active_player.Unlock_Tech(tech_unit)
+			end
+			Disable_Fighter_Sets(hero_data.active_player, self.fighter_assigns)
+			self.fighter_assign_enabled = false
+		else
+			if TestValid(tech_unit) then
+				hero_data.active_player.Unlock_Tech(tech_unit)
+			end
+			Disable_Hero_Options(hero_data)
+		end
 	end
 	
 	self.old_view = new_view
 end
 
---Unlock every option no matter the era, including dead staff.
+---Unlock every option no matter the era, including dead staff.
 function CISHeroes:enable_sandbox_for_all()
 	local systems = {space_data, ground_data, sith_data}
 	for i, hero_data in ipairs(systems) do
@@ -237,7 +272,7 @@ function CISHeroes:enable_sandbox_for_all()
 		end
 		if hero_data.active_player == self.human_player and i ~= self.old_view then
 			local tech_unit = self:get_viewer_tech(i)
-			if tech_unit then
+			if TestValid(tech_unit) then
 				hero_data.active_player.Unlock_Tech(tech_unit)
 			end
 		end
@@ -246,9 +281,16 @@ function CISHeroes:enable_sandbox_for_all()
 		adjust_slot_amount(hero_data)
 		GlobalValue.Set(hero_data.extra_name.."_SANDBOX", true)
 	end
+	-- Unlock all the hero upgrades for sandbox
+	UnitUtil.SetLockList("REBEL", {
+		"SHU_MAI_SUBJUGATOR_UPGRADE",
+	}, true)
 end
 
---Give AI a hero for taking planet from player since AI won't recruit.
+---Give AI a hero for taking planet from player since AI won't recruit.
+---@param planet Planet
+---@param new_owner_name string
+---@param old_owner_name string
 function CISHeroes:on_planet_owner_changed(planet, new_owner_name, old_owner_name)
     --Logger:trace("entering CISHeroes:on_planet_owner_changed")
     if new_owner_name == "REBEL" and Find_Player(old_owner_name) == self.human_player then
@@ -260,16 +302,13 @@ function CISHeroes:on_planet_owner_changed(planet, new_owner_name, old_owner_nam
     end
 end
 
-function CISHeroes:on_production_finished(planet, object_type_name)--object_type_name, owner)
+---Listener function for when any object is constructed from the build bar.
+---@param planet Planet EaWX planet class from deepcore. The build location.
+---@param object_type_name string XML name in CAPS of the built object type.
+function CISHeroes:on_production_finished(planet, object_type_name)
 	--Logger:trace("entering CISHeroes:on_production_finished")
-	if not self.inited then
-		self:init_heroes()
-		self.inited = true
-		if not space_data.active_player.Is_Human() then --Disable options for AI
-			Disable_Hero_Options(space_data)
-			--Handle_Hero_Exit("Sidious", sith_data)
-		end
-		space_data.active_player.Unlock_Tech(Find_Object_Type("OPTION_REP_HEROES_SANDBOX"))
+	if not self.CommandStaff_Initialized then
+		self:CommandStaff_Initialize()
 	end
 	
 	if object_type_name == "OPTION_REP_HEROES_SANDBOX" then
@@ -285,8 +324,10 @@ function CISHeroes:on_production_finished(planet, object_type_name)--object_type
 	end
 end
 
-function CISHeroes:init_heroes()
-	--Logger:trace("entering CISHeroes:init_heroes")
+function CISHeroes:CommandStaff_Initialize()
+	--Logger:trace("entering CISHeroes:CommandStaff_Initialize")
+	self.CommandStaff_Initialized = true
+
 	init_hero_system(space_data)
 	init_hero_system(ground_data)
 	init_hero_system(sith_data)
@@ -298,129 +339,119 @@ function CISHeroes:init_heroes()
 		Handle_Hero_Add("Merai", space_data)
 	end
 	
+	---@type integer
 	local tech_level = GlobalValue.Get("CURRENT_ERA")
+
+	local not_custom = self.id ~= "CUSTOM"
+
 	--Handle special actions for starting tech level
 	if tech_level == 1 then
 		Handle_Hero_Add("Cavik", space_data)
-		Handle_Hero_Exit("Doctor", space_data)
-		Handle_Hero_Exit("Ventress", sith_data)
+
+		if not_custom then
+			Handle_Hero_Exit("Doctor", space_data)
+			Handle_Hero_Exit("Ventress", sith_data)
+		end
+	end
+
+	--22BBY
+	if tech_level == 2 then
+		if self.human_player == space_data.active_player then
+			--Technically died over Geonosis but lets assume he survived
+			Handle_Hero_Add("Cavik", space_data)
+		end
 	end
 	
-	if tech_level > 2 then
+	--21BBY+
+	if tech_level >= 3 then
 		Handle_Hero_Add("AutO", space_data)
 		Handle_Hero_Add("Kalani", ground_data)
 		Handle_Hero_Add("Sobeck", ground_data)
-		Handle_Hero_Exit("Whorm", ground_data)
-		--Handle_Hero_Exit("Durd", ground_data)
+		if self.id == "PROGRESSIVE" or self.id == "FTGU" or self.id == "CUSTOM" then
+			Handle_Hero_Add("Hoolidan", ground_data)
+		end
+
+		if not_custom then
+			Handle_Hero_Exit("Nachkt", space_data)
+			Handle_Hero_Exit("Whorm", ground_data)
+			Handle_Hero_Exit("OOM224", ground_data)
+			Handle_Hero_Exit("SevRance", sith_data)
+		end
 	end
 	
-	if tech_level > 3 then
+	--20BBY+
+	if tech_level >= 4 then
 		Handle_Hero_Add("Harsol", space_data)
-		Handle_Hero_Add("Hoolidan", ground_data)
+
+		if not_custom then
+			Handle_Hero_Exit("Doctor", space_data)
+			Handle_Hero_Exit("TX20", ground_data)
+			Handle_Hero_Exit("TX21", ground_data)
+			Handle_Hero_Exit("Yansu", sith_data)
+			Handle_Hero_Exit("Sai", sith_data)
+		end
 	end
 	
-	if tech_level > 4 then
-		Handle_Hero_Exit("Sobeck", ground_data)
+	--19BBY+
+	if tech_level >= 5 then
+		if not_custom then
+			Handle_Hero_Exit("Sobeck", ground_data)
+		end
 	end
-	
-	if tech_level > 1 then
-		space_data.active_player.Unlock_Tech(Find_Object_Type("MAD_CLONE_MUNIFICENT"))
-		space_data.active_player.Unlock_Tech(Find_Object_Type("VENATOR_RENOWN"))
+
+	if self.id == "PROGRESSIVE" or self.id == "FTGU" or self.id == "CUSTOM" then
+		Handle_Hero_Add("Sidious", sith_data)
 	end
+
+	if not space_data.active_player.Is_Human() then --Disable options for AI
+		Disable_Hero_Options(space_data)
+		--Handle_Hero_Exit("Sidious", sith_data)
+	end
+
+	UnitUtil.SetLockList("REBEL", {"OPTION_REP_HEROES_SANDBOX"}, true)
 	
 	adjust_slot_amount(space_data)
 	adjust_slot_amount(ground_data)
 	adjust_slot_amount(sith_data)
 end
 
---Era transitions
-function CISHeroes:Era_3()
-	--Logger:trace("entering CISHeroes:Era_3")
-	Handle_Hero_Add("AutO", space_data)
-	Handle_Hero_Add("Kalani", ground_data)
-	Handle_Hero_Add("Sobeck", ground_data)
+---Era transitions
+---@param new_era_number integer
+function CISHeroes:Era_Transitions(new_era_number)
+	--Logger:trace("entering CISHeroes:Era_Transitions")
+	if new_era_number == 3 then --21BBY
+		Handle_Hero_Add("AutO", space_data)
+		Handle_Hero_Add("Kalani", ground_data)
+		Handle_Hero_Add("Sobeck", ground_data)
+		Handle_Hero_Add("Hoolidan", ground_data)
+
+		UnitUtil.SetLockList("REBEL", {"MAD_CLONE_MUNIFICENT"}, true)
+
+	elseif new_era_number == 4 then --20BBY
+		Handle_Hero_Add("Harsol", space_data)
+
+		UnitUtil.SetLockList("REBEL", {"VENATOR_RENOWN"}, true)
+	end
 end
 
-function CISHeroes:Era_4()
-	--Logger:trace("entering CISHeroes:Era_4")
-	Handle_Hero_Add("Harsol", space_data)
-	Handle_Hero_Add("Hoolidan", ground_data)
-end
-
-function CISHeroes:Era_5()
-	--Logger:trace("entering CISHeroes:Era_5")
-end
-
-function CISHeroes:Bulwark_Heroes()
-	--Logger:trace("entering CISHeroes:Bulwark_Heroes")
+function CISHeroes:Bulwark1_Heroes()
+	--Logger:trace("entering CISHeroes:Bulwark1_Heroes")
 	Handle_Hero_Add("Ningo", space_data)
 	Handle_Hero_Add("Calli", space_data)
 end
 
-function CISHeroes:admiral_decrement(quantity, set, vacant)
-	--Logger:trace("entering CISHeroes:admiral_decrement")
-	local decrements = {}
-	local systems = {space_data, ground_data, sith_data}
-	
-	local start = set
-	local stop = set
-	if set == 0 then
-		start = 1
-		stop = table.getn(systems)
-		decrements = quantity
-	else
-		decrements[set] = quantity
-	end
-	
-	for id=start,stop do
-		if systems[id] and decrements[id] then
-			if vacant then
-				Set_Locked_Slots(systems[id], decrements[id])
-			else
-				Decrement_Hero_Amount(decrements[id], systems[id])
-			end
-		end
-		adjust_slot_amount(systems[id])
-	end
+function CISHeroes:Bulwark2_Heroes()
+	--Logger:trace("entering CISHeroes:Bulwark2_Heroes")
 end
 
-function CISHeroes:admiral_lockin(list, set)
-	--Logger:trace("entering CISHeroes:admiral_lockin")
-	local hero_data = self:get_hero_data(set)
-	if hero_data and not self.sandbox_mode then
-		lock_retires(list, hero_data)
-	end
-end
-
-function CISHeroes:admiral_exit(list, set, storylock)
-	--Logger:trace("entering CISHeroes:admiral_storylock")
-	local hero_data = self:get_hero_data(set)
-	if hero_data and not self.sandbox_mode then
-		for _, tag in pairs(list) do
-			Handle_Hero_Exit_2(tag, hero_data, storylock)
-		end
-		adjust_slot_amount(hero_data)
-	end
-end
-
-function CISHeroes:admiral_return(list, set)
-	--Logger:trace("entering CISHeroes:admiral_return")
-	local hero_data = self:get_hero_data(set)
-	if hero_data then
-		for _, tag in pairs(list) do
-			if check_hero_exists(tag, hero_data) then
-				Handle_Hero_Add_2(tag, hero_data)
-			end
-		end
-		adjust_slot_amount(hero_data)
-	end
-end
-
-function CISHeroes:on_galactic_hero_killed(hero_name, owner)
+---@param hero_name string
+---@param owner_name string
+---@param killer_name string
+function CISHeroes:on_galactic_hero_killed(hero_name, owner_name, killer_name)
 	--Logger:trace("entering CISHeroes:on_galactic_hero_killed")
-	Handle_Hero_Killed(hero_name, owner, space_data)
-	Handle_Hero_Killed(hero_name, owner, ground_data)
-	Handle_Hero_Killed(hero_name, owner, sith_data)
+	Handle_Hero_Killed(hero_name, owner_name, space_data)
+	Handle_Hero_Killed(hero_name, owner_name, ground_data)
+	Handle_Hero_Killed(hero_name, owner_name, sith_data)
 end
 
 function CISHeroes:Order_66_Handler()

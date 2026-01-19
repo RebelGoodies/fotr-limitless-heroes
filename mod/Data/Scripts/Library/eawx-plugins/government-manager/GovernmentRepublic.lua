@@ -4,15 +4,18 @@ require("eawx-util/UnitUtil")
 require("deepcore/crossplot/crossplot")
 require("PGStoryMode")
 require("eawx-util/Sort")
-require("deepcore/std/class")
 require("eawx-events/GenericResearch")
 require("eawx-events/GenericSwap")
+
+require("eawx-plugins/government-manager/CommandStaffDisplay")
 
 ---@class GovernmentRepublic
 GovernmentRepublic = class()
 
+---@param gc GalacticConquest
+---@param id string
+---@param gc_name string
 function GovernmentRepublic:new(gc,id,gc_name)
-	self.p_independent = Find_Player("Independent_Forces")
 	self.RepublicPlayer = Find_Player("Empire")
 	self.human_player = Find_Player("local")
 
@@ -122,6 +125,7 @@ function GovernmentRepublic:SenateSupportReached()
 	end
 end
 
+---@param option string
 function GovernmentRepublic:SenateChoiceMade(option)
 	--Logger:trace("entering GovernmentRepublic:SenateChoiceMade")
 
@@ -216,6 +220,7 @@ function GovernmentRepublic:SenateChoiceMade(option)
 	end
 end
 
+---@param stage string
 function GovernmentRepublic:ExecuteOrder66(stage)
 	if stage == "DespawnJedi" then
 		self.Order6XExecuted = true
@@ -232,21 +237,25 @@ function GovernmentRepublic:ExecuteOrder66(stage)
 			"KI_ADI_MUNDI", "KI_ADI_MUNDI2",
 			"LUMINARA_UNDULI", "LUMINARA_UNDULI2",
 			"BARRISS_OFFEE","BARRISS_OFFEE2",
-			"AHSOKA","AHSOKA2",
-			"AAYLA_SECURA","AAYLA_SECURA2",
-			"SHAAK_TI","SHAAK_TI2",
+			"AHSOKA", "AHSOKA2", "AHSOKA3",
+			"AAYLA_SECURA", "AAYLA_SECURA2",
+			"SHAAK_TI", "SHAAK_TI2",
 			"RAHM_KOTA",
 			"NEJAA_HALCYON",
 			"KNOL_VENNARI",
-			"OBI_WAN", "OBI_WAN2",
-			"ANAKIN", "ANAKIN2",
+			"OBI_WAN", "OBI_WAN2", "OBI_WAN3",
+			"ANAKIN", "ANAKIN2", "ANAKIN3",
 			"CIN_DRALLIG", "SERRA_KETO", "JOCASTA_NU", "LADDINARE_TORBIN", --Future proofing/support for Custom heroes
 			"JEDI_TEMPLE",
 			"JEDI_ENCLAVE",
 			"REPUBLIC_JEDI_KNIGHT_COMPANY_DUMMY",
 			"KOTAS_MILITIA_TROOPER_COMPANY_DUMMY",
-			"ANTARIAN_RANGER_COMPANY_DUMMY"
+			"ANTARIAN_RANGER_COMPANY_DUMMY",
+			"CHAM_SYNDULLA",
+			"ROOS_TARPALS",
 		})
+
+		-- StoryUtil.ChangeAIPlayer("Independent_Forces", "CISFederationAI")
 
 		crossplot:publish("SENATE_CHOICE_MADE", "ORDER_66_STAFF_CHANGES")
 
@@ -262,7 +271,8 @@ function GovernmentRepublic:ExecuteOrder66(stage)
 		self.SpaceStructureSnapshot = SaveSpaceStructures(FindPlanet("Coruscant"))
 		Story_Event("REP_KNIGHTFALL_TACTICAL")
 
-	elseif stage == "PostTacticalKnightfall" then
+	elseif stage == "PostTacticalKnightfall" and not self.knightfall_done then
+		self.knightfall_done = true
 		RestoreGroundStructures(FindPlanet("Coruscant"),self.GroundStructureSnapshot)
 		RestoreSpaceStructures(FindPlanet("Coruscant"),self.SpaceStructureSnapshot)
 
@@ -270,13 +280,15 @@ function GovernmentRepublic:ExecuteOrder66(stage)
 			self:jedi_rebellion()
 			StoryUtil.SpawnAtSafePlanet("CORUSCANT", Find_Player("Empire"), StoryUtil.GetSafePlanetTable(), {"Vader_Team"})
 		else
+			-- self:Jedi_Hideouts()
 			StoryUtil.SpawnAtSafePlanet("CORUSCANT", Find_Player("Empire"), StoryUtil.GetSafePlanetTable(), {"Anakin_Darkside_Team"})
 			StoryUtil.SpawnAtSafePlanet("CORUSCANT", Find_Player("Empire"), StoryUtil.GetSafePlanetTable(), {"Laddinare_Torbin_Empire_Team"})
 		end
 
 		self:ExecuteOrder66("SpawnEmpire")
 
-	elseif stage == "MISSION_KNIGHTFALL_SKIP" then
+	elseif stage == "MISSION_KNIGHTFALL_SKIP" and not self.knightfall_done then
+		self.knightfall_done = true
 		self:jedi_rebellion()
 		StoryUtil.SpawnAtSafePlanet("CORUSCANT", Find_Player("Empire"), StoryUtil.GetSafePlanetTable(), {"Vader_Team"})
 
@@ -292,9 +304,19 @@ function GovernmentRepublic:ExecuteOrder66(stage)
 end
 
 function GovernmentRepublic:jedi_rebellion()
-	if FindPlanet("Kashyyyk").Get_Owner() == self.RepublicPlayer then
-		ChangePlanetOwnerAndRetreat(FindPlanet("Kashyyyk"), self.p_independent, FindPlanet("Coruscant"))
-	
+	if self.jedi_rebellion_done then
+		return
+	end
+	self.jedi_rebellion_done = true
+
+	self:Jedi_Hideouts()
+
+	if FindPlanet("Kashyyyk").Get_Owner() ~= self.RepublicPlayer and
+		FindPlanet("Kashyyyk").Get_Owner() ~= Find_Player("Independent_Forces")	
+	then
+		SpawnJediHideout("", "Independent_Forces", {"Serra_Keto_Team", "Cin_Drallig_Team"})
+		return
+	else
 
 		local spawn_list = {
 			"Republic_Jedi_Knight_Company",
@@ -308,13 +330,21 @@ function GovernmentRepublic:jedi_rebellion()
 			"Jedi_Ground_Barracks",
 			"E_Ground_Heavy_Vehicle_Factory",
 			"Ground_Planetary_Shield",
+			"CR90",
+			"DP20",
+			"Consular",
+			"Pelta_Assault",
+			"Pelta_Support",
+			"Arquitens",
+			"Starbolt",
+			"Neutron_Star",
 		}
 
 		if GlobalValue.Get("TACTICAL_KNIGHTFALL_TORBIN_DEFEATED") ~= true then
 			table.insert(spawn_list,"Laddinare_Torbin_Team")
 		else
 			table.insert(spawn_list,"Republic_TX130S_Company")
-			StoryUtil.SpawnAtSafePlanet("CORUSCANT", Find_Player("Empire"), StoryUtil.GetSafePlanetTable(), {"Laddinare_Torbin_Empire_Team"})
+			StoryUtil.SpawnAtSafePlanet("CORUSCANT", Find_Player("Empire"), self.Active_Planets, {"Laddinare_Torbin_Empire_Team"})
 		end
 
 		if GlobalValue.Get("TACTICAL_KNIGHTFALL_JOCASTA_DEFEATED") ~= true then
@@ -326,10 +356,64 @@ function GovernmentRepublic:jedi_rebellion()
 		table.insert(spawn_list,"Serra_Keto_Team")
 		table.insert(spawn_list,"Cin_Drallig_Team")
 
-		SpawnList(spawn_list, FindPlanet("Kashyyyk"), self.p_independent, false, false)
+		SpawnJediHideout("Kashyyyk", "Independent_Forces", spawn_list)
 	end
 end
 
+---More Jedi for Vader and the Emperor to hunt down.
+function GovernmentRepublic:Jedi_Hideouts()
+	--Spawning Dalta variants so they spawn on the planet surface.
+	SpawnJediHideout("Tatooine", "Hutt_Cartels", {"Obi_Wan_Delta_Team", "Jedi_Padawan_Company"})
+	SpawnJediHideout("Nar_Shaddaa", "Hutt_Cartels", {"Rahm_Kota_Team",
+		"Kotas_Militia_Trooper_Company", "Kotas_Militia_Trooper_Company",
+		"Kotas_Militia_Trooper_Company", "Kotas_Militia_Trooper_Company",
+		"Kotas_Militia_Trooper_Company", "Antarian_Ranger_Company",
+		"CR90", "DP20", "Pelta_Assault", "Pelta_Support", "PDF_DHC", "DHC_Carrier", "CEC_Light_Cruiser"
+	})
+	
+	SpawnJediHideout("Mustafar", "Rebel", {"Barriss_Offee_Delta_Team", "Luminara_Unduli_Delta_Team",
+		"Dark_Jedi_Company", "Dark_Jedi_Company", "Dark_Jedi_Company", "Ground_Planetary_Shield"
+	})
+
+	SpawnJediHideout("Dagobah", "Independent_Forces", {"Yoda_Delta_Team", "Jedi_Enclave"})
+	SpawnJediHideout("Malachor", "Independent_Forces", {"Ahsoka_Delta_Team",
+		"Jedi_Padawan_Company", "Jedi_Padawan_Company", "Jedi_Enclave", "Jedi_Ground_Barracks"
+	})
+	SpawnJediHideout("Felucia", "Independent_Forces", {"Shaak_Ti_Delta_Team",
+		"Republic_Jedi_Knight_Company", "Dark_Jedi_Company", "Dark_Jedi_Company", "Dark_Jedi_Company",
+		"Republic_A5_Juggernaut_Company", "Republic_AT_AP_Walker_Company",
+		"AT_XT_Company", "Antarian_Ranger_Company", "Antarian_Ranger_Company",
+		"Jedi_Enclave", "Jedi_Ground_Barracks", "E_Ground_Heavy_Vehicle_Factory", "Ground_Planetary_Shield"
+	})
+end
+
+---@param planet_name string
+---@param owner_name string
+---@param spawn_list string[]
+---@param ai_use? boolean
+function SpawnJediHideout(planet_name, owner_name, spawn_list, ai_use)
+	if not (planet_name and owner_name and spawn_list) then
+		return
+	end
+	if not ai_use then
+		ai_use = false
+	end
+
+	local spawn_planet = FindPlanet(planet_name)
+	local spawn_owner = Find_Player(owner_name)
+	if spawn_planet and spawn_owner then
+		ChangePlanetOwnerAndRetreat(spawn_planet, spawn_owner, FindPlanet("Coruscant"))
+		SpawnList(spawn_list, spawn_planet, spawn_owner, ai_use, false)
+	else
+		local non_empire_planet = StoryUtil.FindFriendlyPlanet(spawn_owner, false)
+		if non_empire_planet then
+			StoryUtil.SpawnAtSafePlanet(non_empire_planet.Get_Type().Get_Name(), non_empire_planet.Get_Owner(), StoryUtil.GetSafePlanetTable(), spawn_list, ai_use, true)
+		end
+	end
+end
+
+---@param planet Planet
+---@param game_object_type_name string
 function GovernmentRepublic:on_construction_finished(planet, game_object_type_name)
 	--Logger:trace("entering GovernmentRepublic:on_construction_finished")
 	if game_object_type_name == "OPTION_CYCLE_CLONES" then
@@ -358,6 +442,8 @@ function GovernmentRepublic:on_construction_finished(planet, game_object_type_na
 			UnitUtil.SetLockList("EMPIRE", {"CLONETROOPER_PHASE_TWO_COMPANY", "REPUBLIC_BARC_COMPANY", "ARC_PHASE_TWO_COMPANY"})
 			crossplot:publish("CLONE_UPGRADES", "empty")
 			GlobalValue.Set("CURRENT_CLONE_PHASE", 2)
+		elseif self.gc_name == "PROGRESSIVE" then
+			GlobalValue.Set("CURRENT_CLONE_PHASE", 2)
 		end
 	end
 end
@@ -374,7 +460,7 @@ function GovernmentRepublic:Option_Cycle_Clone_Colour()
 	GlobalValue.Set("CLONE_DEFAULT", clone_skin)
 	--convert from zero-indexed skin list to one-indexed table numeric key
 	clone_skin = clone_skin + 1
-	StoryUtil.ShowScreenText(self.CloneSkins[clone_skin], 5)
+	StoryUtil.ShowScreenText(self.CloneSkins[clone_skin], 5, nil, {r = 244, g = 200, b = 0})
 end
 
 function GovernmentRepublic:Option_Cycle_Fleet_Skin()
@@ -390,6 +476,18 @@ function GovernmentRepublic:Option_Cycle_Fleet_Skin()
 	StoryUtil.ShowScreenText(self.FleetSkins[self.FleetID + 1], 5)
 end
 
+---@class MarketItem
+---@field locked boolean
+---@field gc_locked boolean
+---@field amount number
+---@field chance number
+---@field readable_name string
+---@field text_requirement string
+---@field order number
+
+---@param favour_table table
+---@param market_name string
+---@param market_list table<string, MarketItem>
 function GovernmentRepublic:UpdateDisplay(favour_table, market_name, market_list)
 	--Logger:trace("entering GovernmentRepublic:UpdateDisplay")
 	local plot = Get_Story_Plot("Conquests\\Player_Agnostic_Plot.xml")
@@ -437,74 +535,9 @@ function GovernmentRepublic:UpdateDisplay(favour_table, market_name, market_list
 			end
 		end
 
-		government_display_event.Add_Dialog_Text("TEXT_NONE")
-
-		local admiral_list = GlobalValue.Get("REP_MOFF_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_MOFF_LIST")
-
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_ADMIRAL_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_ADMIRAL_LIST")
-
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_COUNCIL_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_COUNCIL_LIST")
-
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_GENERAL_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_GENERAL_LIST")
-
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_COMMANDO_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_COMMANDO_LIST")
-
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
-		local admiral_list = GlobalValue.Get("REP_CLONE_LIST")
-		if admiral_list ~= nil then
-			if table.getn(admiral_list) > 0 then
-				government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
-				government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_CLONE_LIST")
-
-				for index, obj in pairs(admiral_list) do
-					government_display_event.Add_Dialog_Text(obj)
-				end
-			end
-		end
+		--Better slots display for the Limitless Heroes submod
+		local command_staff_types = {"MOFF_LIST", "ADMIRAL_LIST", "COUNCIL_LIST", "GENERAL_LIST", "COMMANDO_LIST", "CLONE_LIST", "SENATOR_LIST"}
+		DisplayCommandStaff(command_staff_types, government_display_event)
 
 		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
 		government_display_event.Add_Dialog_Text("TEXT_NONE")
@@ -721,6 +754,12 @@ function GovernmentRepublic:UpdateDisplay(favour_table, market_name, market_list
 		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
 		government_display_event.Add_Dialog_Text("TEXT_NONE")
 		government_display_event.Add_Dialog_Text("TEXT_NONE")
+
+		--See the active enemy CIS heroes for the Limitless Heroes submod
+		government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_CIS")
+		local command_staff_types = {"GROUND_LIST", "SPACE_LIST", "SITH_LIST"}
+		DisplayCommandStaff(command_staff_types, government_display_event)
+		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
 		government_display_event.Add_Dialog_Text("TEXT_NONE")
 
 		Story_Event("GOVERNMENT_DISPLAY")

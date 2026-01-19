@@ -2,6 +2,8 @@
 <Republic_Heroes>
 <!-- All upgraded heroes must have <Always_Spawn_In_Orbit>Yes ~Mord -->
 
+	<!-- 6. REP Clones -->
+
 	<!-- Clone Officers -->
 
 	<DummyStructure Name="Extra_Clone_Slot">
@@ -58,7 +60,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Random_Clone_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 		<GUI_Row> 0 </GUI_Row>
 
 		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
@@ -487,14 +489,14 @@
 	</Death_Clone>
 
 	<DummyStructure Name="Cody_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_CODY</Text_ID>
 		<Icon_Name>i_button_cody_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Guard_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_REPUBLIC_CLONE
@@ -523,14 +525,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Cody_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_CODY</Text_ID>
 		<Icon_Name>i_button_cody2_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Guard_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_REPUBLIC_CLONE
@@ -1038,14 +1040,14 @@
 	</Death_Clone>
 
 	<DummyStructure Name="Rex_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_REX</Text_ID>
 		<Icon_Name>i_button_rex_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -1075,14 +1077,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Rex_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_REX</Text_ID>
 		<Icon_Name>i_button_rex2_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -1484,7 +1486,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="71_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_71</Text_ID>
 		<Icon_Name>I_BUTTON_COMMANDER71_COMMAND.TGA</Icon_Name>
@@ -1521,7 +1523,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="71_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_71</Text_ID>
 		<Icon_Name>I_BUTTON_COMMANDER71_2_COMMAND.TGA</Icon_Name>
@@ -1790,14 +1792,14 @@
 	</Death_Clone>
 
 	<DummyStructure Name="Keller_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_KELLER</Text_ID>
 		<Icon_Name>i_button_keller_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -2176,14 +2178,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Bacara_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BACARA</Text_ID>
 		<Icon_Name>I_BUTTON_BACARA_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Select_Clone_Operator </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -2214,14 +2216,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Bacara_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BACARA</Text_ID>
 		<Icon_Name>I_BUTTON_BACARA2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Select_Clone_Operator </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -2645,14 +2647,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Jet_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_JET</Text_ID>
 		<Icon_Name>I_BUTTON_JET_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -2681,14 +2683,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Jet_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_JET</Text_ID>
 		<Icon_Name>I_BUTTON_JET2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -2994,18 +2996,19 @@
 		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete>Unit_Respawn_Veers</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Respawn_Veers</SFXEvent_Hero_Respawned>
 		<SFXEvent_Fleet_Move>EHD_Reinforcements_En_Route</SFXEvent_Fleet_Move>
 	</HeroCompany>
 
 	<DummyStructure Name="Faie_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_FAIE</Text_ID>
 		<Icon_Name>I_BUTTON_FAIE_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Guard_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -3522,14 +3525,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Gree_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GREE</Text_ID>
 		<Icon_Name>I_BUTTON_GREE_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Select_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -3559,14 +3562,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Gree_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GREE</Text_ID>
 		<Icon_Name>I_BUTTON_GREE2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Select_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -3970,14 +3973,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Deviss_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DEVISS</Text_ID>
 		<Icon_Name>I_BUTTON_DEVISS_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Move_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4002,14 +4005,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Deviss_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DEVISS</Text_ID>
 		<Icon_Name>I_BUTTON_DEVISS2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Move_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4448,14 +4451,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Bly_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BLY</Text_ID>
 		<Icon_Name>I_BUTTON_BLY_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Guard_Arc_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4484,14 +4487,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Bly_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BLY</Text_ID>
 		<Icon_Name>I_BUTTON_BLY2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Guard_Arc_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4944,14 +4947,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Wolffe_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_WOLFFE</Text_ID>
 		<Icon_Name>I_BUTTON_WOLFFE_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Assist_Move_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4976,14 +4979,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Wolffe_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_WOLFFE</Text_ID>
 		<Icon_Name>I_BUTTON_WOLFFE2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Assist_Move_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -5365,14 +5368,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Neyo_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_NEYO</Text_ID>
 		<Icon_Name>I_BUTTON_NEYO_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Clone_Operator </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -5400,14 +5403,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Neyo_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_NEYO</Text_ID>
 		<Icon_Name>I_BUTTON_NEYO2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Clone_Operator </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -5829,14 +5832,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Appo_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_APPO</Text_ID>
 		<Icon_Name>I_BUTTON_APPO_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Move_Alpha_17 </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -5865,14 +5868,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Appo_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_APPO</Text_ID>
 		<Icon_Name>I_BUTTON_APPO2_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Move_Alpha_17 </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -6127,14 +6130,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Bow_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BOW</Text_ID>
 		<Icon_Name>I_BUTTON_BOW_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Assist_Move_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -6379,14 +6382,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Vill_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_VILL</Text_ID>
 		<Icon_Name>I_BUTTON_VILL_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Move_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -6565,10 +6568,12 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Gaffa_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GAFFA</Text_ID>
 		<Icon_Name>i_button_gaffa_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete> Unit_Guard_Juggernaut </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -6657,7 +6662,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Random_Commando_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 		<GUI_Row> 0 </GUI_Row>
 
 		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
@@ -7033,7 +7038,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Alpha_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ALPHA17</Text_ID>
 		<Icon_Name>i_button_alpha17_command.tga</Icon_Name>
@@ -7067,7 +7072,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Alpha_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ALPHA17</Text_ID>
 		<Icon_Name>i_button_alpha17_2_command.tga</Icon_Name>
@@ -7556,14 +7561,14 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Fordo_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_FORDO</Text_ID>
 		<Icon_Name>i_button_fordo_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Select_Fordo </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -7593,14 +7598,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Fordo_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_FORDO</Text_ID>
 		<Icon_Name>i_button_fordo2_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Select_Fordo </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -8367,14 +8372,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Delta_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_DELTA_SQUAD</Text_ID>
 		<Icon_Name>i_button_boss_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Complete_Deltasquad </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -9067,14 +9072,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Omega_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_OMEGA_SQUAD</Text_ID>
 		<Icon_Name>i_button_niner_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Complete_Deltasquad </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -9341,7 +9346,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Voca_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_VOCA</Text_ID>
 		<Icon_Name>I_BUTTON_VOCA_COMMAND.TGA</Icon_Name>
@@ -9569,14 +9574,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Gregor_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GREGOR</Text_ID>
 		<Icon_Name>I_BUTTON_GREGOR_COMMAND.TGA</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Guard_Clone_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -10036,7 +10041,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Ordo_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ORDO</Text_ID>
 		<Icon_Name>i_button_ordo_command.tga</Icon_Name>
@@ -10068,7 +10073,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Ordo_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ORDO</Text_ID>
 		<Icon_Name>i_button_ordo_command.tga</Icon_Name>
@@ -10108,7 +10113,7 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Arc_Trooper </SFXEvent_Build_Complete>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_RETIRE_REPUBLIC_COMMANDO
@@ -10119,6 +10124,10 @@
 		<Affiliation>Empire</Affiliation>
 
 		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Ordo</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Ordo_Retire2">
+		<Variant_Of_Existing_Type>Ordo_Retire</Variant_Of_Existing_Type>
+		<Tech_Level>99</Tech_Level>
 	</DummyStructure>
 
 
@@ -10512,14 +10521,14 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Aden_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ADEN</Text_ID>
 		<Icon_Name>i_button_aden_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Arc_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -10546,14 +10555,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Aden_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ADEN</Text_ID>
 		<Icon_Name>i_button_aden2_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete> Unit_Attack_Arc_Trooper </SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -10619,6 +10628,620 @@
 		<Affiliation>Empire</Affiliation>
 
 		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Aden2</Required_Orbiting_Units>
+	</DummyStructure>
+
+	<!-- Extra Clones -->
+	
+	<!-- Generic clone subhero carbine stats for Cutup -->
+	<HeroUnit Name="Cutup_Rookie">
+		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Land_Model_Name>clone_phase1.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>TrainedInfantry.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>I_BUTTON_CLONE_JUMPTROOPER_P1.tga</Icon_Name>
+
+		<Text_ID>Cutup</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		A member of Domino Squad，Cutup was trained on the
+		planet Kamino before being stationed on a listening
+		post on the Rishi Moon. When Rishi Station was attacked
+		by Separatist commando droids，the troopers were forced
+		to evacuate. During the escape，Cutup was attacked and
+		eaten by a giant Rishi eel.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 115 (Hero)
+		TEXT_TOOLTIP_FIVES_P1_MOVE
+		TEXT_TOOLTIP_FIVES_WEAP1
+		TEXT_TOOLTIP_FIVES_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ROOKIE </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 255, 255, 255, 255 </No_Colorization_Color>
+
+		<Tactical_Health>115</Tactical_Health>
+		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<OverrideAcceleration> 1.0 </OverrideAcceleration>
+		<OverrideDeceleration> 1.0 </OverrideDeceleration>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Scale_Factor>1.1</Scale_Factor>
+		<Affiliation>Empire</Affiliation>
+
+		<Land_FOW_Reveal_Range>400.00</Land_FOW_Reveal_Range>
+
+		<HardPoints>HP_Hero_Clone_Carbine</HardPoints>
+
+		<!-- Grenade throw -->
+		<Projectile_Types>HeroProj_Thrown_Ion_Grenade</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>15.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 8 </Projectile_Appearance_Delay_Frames>
+
+		<SFXEvent_Select>Unit_Select_Clone_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Clone_Trooper</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Clone_Trooper</SFXEvent_Attack>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Clone_Trooper </SFXEvent_Assist_Move>
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Assist_Attack>
+		<SFXEvent_Guard>Unit_Guard_Clone_Trooper</SFXEvent_Guard>
+
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_ARC_Trooper </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<Death_SFXEvent_Start_Die>Unit_Death_Clone_Trooper</Death_SFXEvent_Start_Die>
+		<Death_Clone>Damage_Normal</Death_Clone>
+       	<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<AI_Combat_Power>34</AI_Combat_Power>
+
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+				<Expiration_Seconds> 8.0 </Expiration_Seconds>
+				<Recharge_Seconds> 45.0 </Recharge_Seconds>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 2.0f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.75f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated></SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</HeroUnit>
+
+	<!-- Generic clone subhero rifle stats for Droidbait -->
+	<HeroUnit Name="Droidbait_Rookie">
+		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Land_Model_Name>clone_phase1.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>TrainedInfantry.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>i_button_clone_p1.tga</Icon_Name>
+
+		<Text_ID>Droidbait</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		A member of Domino Squad，Droidbait was stationed at an
+		outpost on the Rishi moon. After the station's deck
+		officer turned up missing，Sergeant O'Niner sent
+		Droidbait and Nub to investigate. Opening the blast
+		door， commando droids attacked and killed them both and
+		O'Niner，forcing the rest of the clones to escape
+		through the ventilation systems.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 105 (Hero)
+		TEXT_TOOLTIP_ECHO_P1_MOVE
+		TEXT_TOOLTIP_ECHO_WEAP1
+		TEXT_TOOLTIP_ECHO_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ROOKIE </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 255, 255, 255, 255 </No_Colorization_Color>
+
+		<Tactical_Health>105</Tactical_Health>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<OverrideAcceleration> 1.0 </OverrideAcceleration>
+		<OverrideDeceleration> 1.0 </OverrideDeceleration>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Scale_Factor>1.1</Scale_Factor>
+		<Affiliation>Empire</Affiliation>
+
+		<Land_FOW_Reveal_Range>400.0</Land_FOW_Reveal_Range>
+		<Targeting_Max_Attack_Distance>300.0</Targeting_Max_Attack_Distance>
+
+		<HardPoints>HP_Hero_Clone_Rifle</HardPoints>
+
+		<!-- Grenade throw -->
+		<Projectile_Types>HeroProj_Thrown_Thermal_Grenade</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>15.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 8 </Projectile_Appearance_Delay_Frames>
+		<SFXEvent_Fire>Unit_Grenade_Throw</SFXEvent_Fire>
+
+		<SFXEvent_Select>Unit_Select_Clone_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Clone_Trooper</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Clone_Trooper</SFXEvent_Attack>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Clone_Trooper </SFXEvent_Assist_Move>
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Assist_Attack>
+		<SFXEvent_Guard>Unit_Guard_Clone_Trooper</SFXEvent_Guard>
+
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_ARC_Trooper </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<Death_SFXEvent_Start_Die>Unit_Death_Clone_Trooper</Death_SFXEvent_Start_Die>
+		<Death_Clone>Damage_Normal</Death_Clone>
+       	<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<AI_Combat_Power>35</AI_Combat_Power>
+
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+				<Expiration_Seconds> 8.0 </Expiration_Seconds>
+				<Recharge_Seconds> 45.0 </Recharge_Seconds>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 2.0f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.75f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated></SFXEvent_GUI_Unit_Ability_Activated>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</HeroUnit>
+	
+	<HeroCompany Name="Domino_Squad_Team">
+		<Text_ID>Domino Squad</Text_ID>
+		<Icon_Name>i_button_fives.tga</Icon_Name>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Domino Squad was a military unit of clone trooper
+		cadets stationed on the planet Kamino. After an early
+		graduation，they were tasked at guarding Rishi Station
+		on the Rishi Moon，a strategic point on a route to
+		Kamino. Although most of the squad perished defending
+		the base，the survivors "Echo" and "Fives" were later
+		absorbed into the 501st Legion.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_FIVES_P1_HEALTH
+		TEXT_TOOLTIP_FIVES_P1_MOVE
+		TEXT_TOOLTIP_FIVES_WEAP1
+		TEXT_TOOLTIP_FIVES_WEAP2
+		TEXT_TOOLTIP_ECHO_WEAP1
+		TEXT_TOOLTIP_ECHO_WEAP2
+		TEXT_TOOLTIP_HEVY_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_INFANTRY </Encyclopedia_Unit_Class>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>80</Damage>
+		<Is_Homogeneous>No</Is_Homogeneous>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Affiliation>Empire</Affiliation>
+
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Required_Planets>Kamino, Rishi</Required_Planets>
+		<Tech_Level>0</Tech_Level>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Domino</Company_Transport_Unit>
+		<Company_Units>Fives_Rookie, Echo_Rookie, Hevy_Rookie, Cutup_Rookie, Droidbait_Rookie</Company_Units>
+		<Max_Squad_Size> 1 </Max_Squad_Size>
+		<Formation_Priority>2</Formation_Priority>
+
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<Available_In_Skirmish>No</Available_In_Skirmish>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+
+		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>		
+		<SFXEvent_Build_Complete>Unit_Select_Clone_Trooper</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Select_Clone_Trooper</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<CategoryMask> LandHero </CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Population_Value>2</Population_Value>
+
+		<Unit_Abilities_Data SubObjectList="Yes"> </Unit_Abilities_Data>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>165</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Domino">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Domino_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Domino_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+
+	<HeroCompany Name="Ghost_Company_Team">
+		<Text_ID>Ghost Company</Text_ID>
+		<Icon_Name>i_button_waxer.tga</Icon_Name>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_UNINTERESTING
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Ghost Company was a famous company of clone troopers
+		who served in the 212th Attack Battalion under the
+		leadership of Jedi General Obi-Wan Kenobi and Clone
+		Commander Cody. Some members of Ghost Company，
+		notably the troopers Boil and Waxer，wore Phase I clone
+		trooper armor with custom light-orange markings.
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_WAXER_P1_HEALTH
+		TEXT_TOOLTIP_WAXER_P1_MOVE
+		TEXT_TOOLTIP_WAXER_WEAP1
+		TEXT_TOOLTIP_WAXER_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_INFANTRY </Encyclopedia_Unit_Class>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>80</Damage>
+		<Is_Homogeneous>No</Is_Homogeneous>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Affiliation>Empire</Affiliation>
+
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Tech_Level>0</Tech_Level>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Cody</Required_Orbiting_Units>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Units>Waxer, Boil</Company_Units>
+		<Max_Squad_Size> 1 </Max_Squad_Size>
+		<Formation_Priority>2</Formation_Priority>
+
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<Available_In_Skirmish>No</Available_In_Skirmish>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+
+		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>		
+		<SFXEvent_Build_Complete>Unit_Select_Clone_Trooper</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Select_Clone_Trooper</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>Unit_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<CategoryMask> LandHero </CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Population_Value>2</Population_Value>
+
+		<Unit_Abilities_Data SubObjectList="Yes"> </Unit_Abilities_Data>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>165</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>15</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>  
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+	</HeroCompany>
+	<HeroCompany Name="Ghost_Company2_Team">
+		<Variant_Of_Existing_Type>Ghost_Company_Team</Variant_Of_Existing_Type>
+		<Text_ID>Ghost Company</Text_ID>
+		<Icon_Name>i_button_boil.tga</Icon_Name>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_01_LAND
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Ghost Company was a famous company of clone troopers
+		who served in the 212th Attack Battalion under the
+		leadership of Jedi General Obi-Wan Kenobi and Clone
+		Commander Cody. The clones Boil and Waxer served in the
+		ranks of Ghost Company，earning fame during the Clone
+		Wars.
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_CODY_P2_1
+		TEXT_TOOLTIP_ESCORT_CODY_P2_2
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_WAXER_P2_HEALTH
+		TEXT_TOOLTIP_WAXER_P2_MOVE
+		TEXT_TOOLTIP_WAXER_WEAP1
+		TEXT_TOOLTIP_WAXER_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Cody2</Required_Orbiting_Units>
+		<Company_Units>Waxer2, Boil2</Company_Units>
+
+		<Always_Spawn_In_Orbit>Yes</Always_Spawn_In_Orbit>
+	</HeroCompany>
+
+
+	<HeroUnit Name="Keeli">
+		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Land_Model_Name>Clone_captain_Deviss_phase1.alo</Land_Model_Name>
+		<Land_Model_Anim_Override_Name>TrainedHero.alo</Land_Model_Anim_Override_Name>
+		<Icon_Name>i_button_voca.tga</Icon_Name>
+
+		<Text_ID>Captain Keeli</Text_ID>
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Keeli was a clone trooper captain who was assigned to
+		the Outer Rim garrison，under the command of Jedi
+		General Ima-Gun Di. During the Battle of Ryloth，he led
+		the Galactic Republic's Outer Rim garrison against the
+		Confederacy of Independent Systems. In a final last
+		stand，Keeli and his men fought valiantly，but the clones
+		were quickly overwhelmed. After surviving a thermal
+		detonator blast，Keeli managed to shoot down a number
+		of droids before two blaster bolts hit him in the chest.
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 125 (Hero)
+		TEXT_TOOLTIP_REX_P1_MOVE
+		TEXT_TOOLTIP_REX_WEAP1
+		TEXT_TOOLTIP_REX_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
+		<No_Colorization_Color> 120, 70, 46, 255 </No_Colorization_Color>
+
+		<Tactical_Health>125</Tactical_Health>
+		<Targeting_Max_Attack_Distance>275.0</Targeting_Max_Attack_Distance>
+
+		<Max_Speed>1.0</Max_Speed>
+		<Max_Rate_Of_Turn>20.0</Max_Rate_Of_Turn>
+		<OverrideAcceleration> 1.0 </OverrideAcceleration>
+		<OverrideDeceleration> 1.0 </OverrideDeceleration>
+		<Mouse_Collide_Override_Sphere_Radius> 10.0 </Mouse_Collide_Override_Sphere_Radius>
+
+		<Scale_Factor>1.1</Scale_Factor>
+		<Affiliation>Empire</Affiliation>
+
+		<Land_FOW_Reveal_Range>400.00</Land_FOW_Reveal_Range>
+
+		<HardPoints>HP_Hero_Clone_Carbine</HardPoints>
+
+		<!-- Grenade throw -->
+		<Projectile_Types>HeroProj_Thrown_Ion_Grenade</Projectile_Types>
+		<Projectile_Fire_Recharge_Seconds>15.0</Projectile_Fire_Recharge_Seconds>
+		<Projectile_Fire_Pulse_Count>1</Projectile_Fire_Pulse_Count>
+		<Projectile_Fire_Pulse_Delay_Seconds>0.2</Projectile_Fire_Pulse_Delay_Seconds>
+		<Projectile_Appearance_Delay_Frames> 8 </Projectile_Appearance_Delay_Frames>
+
+		<SFXEvent_Select>Unit_Select_Clone_Trooper</SFXEvent_Select>
+		<SFXEvent_Move>Unit_Move_Clone_Trooper</SFXEvent_Move>
+		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Clone_Trooper</SFXEvent_Fleet_Move>
+		<SFXEvent_Attack>Unit_Attack_Clone_Trooper</SFXEvent_Attack>
+		<SFXEvent_Assist_Move> Unit_Assist_Move_Clone_Trooper </SFXEvent_Assist_Move>
+		<SFXEvent_Assist_Attack> Unit_Assist_Attack_Clone_Trooper </SFXEvent_Assist_Attack>
+		<SFXEvent_Guard>Unit_Guard_Clone_Trooper</SFXEvent_Guard>
+
+		<SFXEvent_Tactical_Build_Started> EHD_Reinforcements_En_Route </SFXEvent_Tactical_Build_Started>
+		<SFXEvent_Tactical_Build_Complete> Unit_Complete_ARC_Trooper </SFXEvent_Tactical_Build_Complete>
+		<SFXEvent_Tactical_Build_Cancelled> EHD_Reinforcements_Cancelled  </SFXEvent_Tactical_Build_Cancelled>
+
+		<Death_SFXEvent_Start_Die>Unit_Death_Clone_Trooper</Death_SFXEvent_Start_Die>
+		<Death_Clone>Damage_Normal</Death_Clone>
+       	<Highlight_Blob_Material_Name>Highlight_Republic_Hero</Highlight_Blob_Material_Name>
+
+		<AI_Combat_Power>34</AI_Combat_Power>
+
+		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
+		
+		<Starting_Spawned_Units_Tech_0>Clonetrooper_Phase_One_Team_Deployed, 4</Starting_Spawned_Units_Tech_0>
+
+		<Lua_Script>GroundHero</Lua_Script>
+
+		<!-- Non-Hero unit abilities description -->
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<!-- Primary ability -->
+			<Unit_Ability>
+				<Type>SPREAD_OUT</Type>
+				<Mod_Multiplier>SPEED_MULTIPLIER,	 0.5f</Mod_Multiplier>
+				<Mod_Multiplier>TAKE_DAMAGE_MULTIPLIER, 0.80f</Mod_Multiplier>
+				<SFXEvent_GUI_Unit_Ability_Activated> Unit_Take_Cover_Alpha_17 </SFXEvent_GUI_Unit_Ability_Activated>				
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Abilities SubObjectList="Yes">
+			<Combat_Bonus_Ability Name="Keeli_Ground_Combat_Bonus">
+				<Activation_Style>Ground_Automatic</Activation_Style>
+				<Applicable_Unit_Categories>Vehicle | Infantry | Air</Applicable_Unit_Categories>
+				<Applicable_Unit_Types />
+				<Excluded_Unit_Types> </Excluded_Unit_Types>
+				<Health_Bonus_Percentage>0.0</Health_Bonus_Percentage>
+				<Damage_Bonus_Percentage>0.0</Damage_Bonus_Percentage>    
+				<Shield_Bonus_Percentage>0.0</Shield_Bonus_Percentage>
+				<Defense_Bonus_Percentage>0.05</Defense_Bonus_Percentage>
+				<Movement_Speed_Bonus_Percentage>0.0</Movement_Speed_Bonus_Percentage>
+				<Stacking_Category>0</Stacking_Category>
+			</Combat_Bonus_Ability>
+		</Abilities>
+	</HeroUnit>
+	<HeroCompany Name="Keeli_Team">
+		<Text_ID>Captain Keeli</Text_ID>
+		<Icon_Name>i_button_voca.tga</Icon_Name>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>850</Build_Cost_Credits>
+		<Build_Time_Seconds>0</Build_Time_Seconds>
+		<Tech_Level>99</Tech_Level>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>0</Required_Star_Base_Level>
+		<Required_Special_Structures></Required_Special_Structures>
+		<Required_Planets></Required_Planets>
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Keeli</Company_Transport_Unit>
+		<Company_Units>Keeli</Company_Units>
+		<Is_Homogeneous>No</Is_Homogeneous>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<CategoryMask>LandHero</CategoryMask>
+		<Ranking_In_Category> 3 </Ranking_In_Category>
+		<Score_Cost_Credits> 18000 </Score_Cost_Credits>
+		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>		
+		<SFXEvent_Build_Complete>Unit_Respawn_Veers</SFXEvent_Build_Complete>
+		<SFXEvent_Hero_Respawned>Unit_Respawn_Veers</SFXEvent_Hero_Respawned>
+		<SFXEvent_Fleet_Move>EHD_Reinforcements_En_Route</SFXEvent_Fleet_Move>
+		
+		
+		<Population_Value>1</Population_Value>
+
+		<!--<MULTIPLAYER SKIRMISH VALUES BEGIN>-->  
+		<Tactical_Build_Cost_Multiplayer>860</Tactical_Build_Cost_Multiplayer>
+		<Tactical_Build_Time_Seconds>9</Tactical_Build_Time_Seconds>
+		<Tactical_Build_Prerequisites></Tactical_Build_Prerequisites>
+		<Tactical_Production_Queue>Tactical_Upgrades</Tactical_Production_Queue>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>   
+		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
+
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Keeli was a clone trooper captain who was assigned to
+		the Outer Rim garrison，under the command of Jedi
+		General Ima-Gun Di. During the Battle of Ryloth，he led
+		the Galactic Republic's Outer Rim garrison against the
+		Confederacy of Independent Systems. In a final last
+		stand，Keeli and his men fought valiantly，but the clones
+		were quickly overwhelmed. After surviving a thermal
+		detonator blast，Keeli managed to shoot down a number
+		of droids before two blaster bolts hit him in the chest
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		Health: 105 (Hero)
+		TEXT_TOOLTIP_REX_P1_MOVE
+		TEXT_TOOLTIP_REX_WEAP1
+		TEXT_TOOLTIP_REX_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CAPTAIN </Encyclopedia_Unit_Class>
+		
+		<Play_SFXEvent_On_Sighting>True</Play_SFXEvent_On_Sighting>
+	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Keeli">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Keeli_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Keeli_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Keeli_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>Captain Keeli</Text_ID>
+		<Icon_Name>i_button_voca.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> <!-- non-breaking space (U+00A0) is used -->
+		TEXT_TOOLTIP_ASSIGN_REPUBLIC_CLONE
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_DEFENSIVE
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Keeli was a clone trooper captain who was assigned to
+		the Outer Rim garrison，under the command of Jedi
+		General Ima-Gun Di. During the Battle of Ryloth，he led
+		the Galactic Republic's Outer Rim garrison against the
+		Confederacy of Independent Systems. In a final last
+		stand，Keeli and his men fought valiantly，but the clones
+		were quickly overwhelmed. After surviving a thermal
+		detonator blast，Keeli managed to shoot down a number
+		of droids before two blaster bolts hit him in the chest
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_P1
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Keeli_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>Captain Keeli</Text_ID>
+		<Icon_Name>i_button_voca_retire.tga</Icon_Name>
+		
+		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_CLONE
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Keeli</Required_Orbiting_Units>
 	</DummyStructure>
 
 </Republic_Heroes>

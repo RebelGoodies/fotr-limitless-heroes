@@ -17,6 +17,21 @@ function State_Init(message)
 
 	if message == OnEnter then
 		local female = GameRandom.Free_Random(1, 2)
+		local mando_skin = GlobalValue.Get("MANDO_DEFAULT")
+		
+		if mando_skin == 2 then
+			mando_group_maul = false
+			mando_group_dw = false
+			mando_group_protectors = true
+		elseif mando_skin == 3 then
+			mando_group_maul = false
+			mando_group_dw = true
+			mando_group_protectors = false
+		elseif mando_skin == 4 then
+			mando_group_maul = true
+			mando_group_dw = false
+			mando_group_protectors = false
+		end
 
 		if Find_First_Object("Darth_Maul") then
 			if Find_First_Object("Darth_Maul").Get_Owner() == Object.Get_Owner() then

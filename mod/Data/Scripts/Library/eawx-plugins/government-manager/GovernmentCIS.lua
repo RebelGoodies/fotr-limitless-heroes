@@ -2,9 +2,14 @@ require("deepcore/std/class")
 require("eawx-util/StoryUtil")
 require("eawx-util/UnitUtil")
 
+require("eawx-plugins/government-manager/CommandStaffDisplay")
+
 ---@class GovernmentCIS
 GovernmentCIS = class()
 
+---@param gc GalacticConquest
+---@param id string
+---@param gc_name string
 function GovernmentCIS:new(gc,id,gc_name)
 	self.id = id
 	self.gc_name = gc_name
@@ -127,6 +132,7 @@ function GovernmentCIS:on_construction_finished(planet, game_object_type_name)
 	end
 end
 
+---@param favour_tables table<string, table>
 function GovernmentCIS:UpdateDisplay(favour_tables)
 	--Logger:trace("entering GovernmentCIS:UpdateDisplay")
 	local plot = Get_Story_Plot("Conquests\\Player_Agnostic_Plot.xml")
@@ -183,6 +189,10 @@ function GovernmentCIS:UpdateDisplay(favour_tables)
 			end
 		end
 
+		--Better slots display for the Limitless Heroes submod
+		local command_staff_types = {"GROUND_LIST", "SPACE_LIST", "SITH_LIST"}
+		DisplayCommandStaff(command_staff_types, government_display_event)
+
 		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
 
 		government_display_event.Add_Dialog_Text("TEXT_NONE")
@@ -223,6 +233,15 @@ function GovernmentCIS:UpdateDisplay(favour_tables)
 		government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_CIS_SUBFACTION_FUNCTION_HEADER")
 		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
 		government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_CIS_SUBFACTION_FUNCTION")
+		government_display_event.Add_Dialog_Text("TEXT_NONE")
+		government_display_event.Add_Dialog_Text("TEXT_NONE")
+
+		--See the active enemy Republic heroes for the Limitless Heroes submod
+		government_display_event.Add_Dialog_Text("TEXT_GOVERNMENT_REPUBLIC")
+		local command_staff_types = {"MOFF_LIST", "ADMIRAL_LIST", "COUNCIL_LIST", "GENERAL_LIST", "COMMANDO_LIST", "CLONE_LIST", "SENATOR_LIST"}
+		DisplayCommandStaff(command_staff_types, government_display_event)
+		government_display_event.Add_Dialog_Text("TEXT_DOCUMENTATION_BODY_SEPARATOR")
+		government_display_event.Add_Dialog_Text("TEXT_NONE")
 
 		Story_Event("GOVERNMENT_DISPLAY")
 	end

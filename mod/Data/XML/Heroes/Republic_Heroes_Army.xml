@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <Republic_Heroes>
 
+	<!-- 5. REP Army -->
+
 	<!-- General Staff -->
 
 	<DummyStructure Name="Extra_General_Slot">
@@ -57,7 +59,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Random_General_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 		<GUI_Row> 0 </GUI_Row>
 
 		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
@@ -250,7 +252,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Grunger_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GRUNGER</Text_ID>
 		<Icon_Name>i_button_grunger_command.tga</Icon_Name>
@@ -747,7 +749,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Kligson_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_KLIGSON</Text_ID>
 		<Icon_Name>i_button_kligson_command.tga</Icon_Name>
@@ -781,7 +783,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Kligson_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_KLIGSON</Text_ID>
 		<Icon_Name>i_button_kligson_command.tga</Icon_Name>
@@ -1228,7 +1230,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Rom_Mohc_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ROM_MOHC</Text_ID>
 		<Icon_Name>i_button_rom_mohc_command.tga</Icon_Name>
@@ -1257,7 +1259,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Rom_Mohc_Assign2">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ROM_MOHC</Text_ID>
 		<Icon_Name>i_button_rom_mohc_command.tga</Icon_Name>
@@ -1487,7 +1489,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Jayfon_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_JAYFON</Text_ID>
 		<Icon_Name>i_button_jayfon_command.tga</Icon_Name>
@@ -1720,7 +1722,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Jesra_Loture_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_JESRA_LOTURE</Text_ID>
 		<Icon_Name>i_button_Jesra_Loture_command.tga</Icon_Name>
@@ -1909,7 +1911,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Gentis_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GENTIS</Text_ID>
 		<Icon_Name>i_button_gentis_command.tga</Icon_Name>
@@ -2100,7 +2102,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Ozzel_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_OZZEL</Text_ID>
 		<Icon_Name>i_button_ozzel_command.tga</Icon_Name>
@@ -2282,7 +2284,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Geen_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GEEN</Text_ID>
 		<Icon_Name>i_button_geen_command.tga</Icon_Name>
@@ -2461,7 +2463,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Romodi_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_ROMODI</Text_ID>
 		<Icon_Name>i_button_romodi_command.tga</Icon_Name>
@@ -2619,7 +2621,7 @@
 	</HeroCompany>
 
 	<DummyStructure Name="Solomahal_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_SOLOMAHAL</Text_ID>
 		<Icon_Name>i_button_solomahal_command.tga</Icon_Name>
@@ -2654,9 +2656,9 @@
 	</DummyStructure>
 
 
-	<!-- Non-Staff Heroes -->
+	<!-- Originally Non-Staff Heroes -->
 
-	<!-- Non-Staff: Infantry/Commando Heroes -->
+	<!-- Infantry/Commando Heroes -->
 	<HeroUnit Name="Grudo">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2819,7 +2821,7 @@
 		<Build_Time_Seconds>15</Build_Time_Seconds>
 		<Tech_Level>99</Tech_Level>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Grudo</Company_Transport_Unit>
 		<Company_Units>Grudo</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Stealth_Company>No</Is_Stealth_Company>
@@ -2837,6 +2839,56 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Rodian</SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Grudo">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Grudo_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Grudo_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Grudo_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_GRUDO</Text_ID>
+		<Icon_Name>i_button_grudo.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_01_LAND
+			TEXT_TOOLTIP_TRAIT_UTILITY_BOUNTY_HUNTER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_GRUDO
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>STICKY_BOMB</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Grudo_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_GRUDO</Text_ID>
+		<Icon_Name>i_button_grudo.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Grudo</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Ottegru_Grey">
 		<Variant_Of_Existing_Type>Hero_Commando_Shielded_Template</Variant_Of_Existing_Type>
@@ -3034,7 +3086,7 @@
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Ottegru_Grey</Company_Transport_Unit>
 		<Company_Units>Ottegru_Grey</Company_Units>
 		<Is_Homogeneous>No</Is_Homogeneous>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -3045,6 +3097,56 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ottegru_Grey">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Ottegru_Grey_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ottegru_Grey_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Ottegru_Grey_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_OTTEGRU_GREY</Text_ID>
+		<Icon_Name>I_BUTTON_OTTEGRU_GREY.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_UTILITY_SPY
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_OTTEGRU_GREY
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>TARGETED_HACK</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>LUCKY_SHOT</Type>
+				<Alternate_Icon_Name>I_SA_ASSASSIN.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Ottegru_Grey_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_OTTEGRU_GREY</Text_ID>
+		<Icon_Name>I_BUTTON_OTTEGRU_GREY.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Ottegru_Grey</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Paige_Tarkin">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
@@ -3176,7 +3278,7 @@
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit> <!-- Funny TFU reference -->
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Paige_Tarkin</Company_Transport_Unit> <!-- Funny TFU reference -->
 		<Company_Units>Paige_Tarkin</Company_Units>
 
 		<Score_Cost_Credits> 25000 </Score_Cost_Credits>
@@ -3195,6 +3297,57 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete>Unit_Respawn_Mothma</SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Paige_Tarkin">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Paige_Tarkin_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Paige_Tarkin_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Paige_Tarkin_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PAIGE_TARKIN</Text_ID>
+		<Icon_Name>I_BUTTON_PAIGE_TARKIN_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_PAIGE_TARKIN
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+			</Unit_Ability>
+			
+			<Unit_Ability>
+				<Type>AREA_EFFECT_HEAL</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Paige_Tarkin_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PAIGE_TARKIN</Text_ID>
+		<Icon_Name>I_BUTTON_PAIGE_TARKIN_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Paige_Tarkin</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Armand_Isard">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
@@ -3311,7 +3464,7 @@
 		<Icon_Name>I_BUTTON_ARMAND_ISARD_SPYMASTER.tga</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Armand_Isard</Company_Transport_Unit>
 		<Company_Units>Armand_Isard</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -3327,6 +3480,55 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Armand_Isard">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Armand_Isard_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Armand_Isard_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Armand_Isard_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_ARMAND_ISARD</Text_ID>
+		<Icon_Name>I_BUTTON_ARMAND_ISARD_SPYMASTER.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_UTILITY_SPYMASTER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ARMAND_ISARD
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>AREA_EFFECT_STUN</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>FOW_REVEAL_PING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Armand_Isard_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_ARMAND_ISARD</Text_ID>
+		<Icon_Name>I_BUTTON_ARMAND_ISARD_SPYMASTER.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Armand_Isard</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Laddinare_Torbin_Empire">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
@@ -3529,7 +3731,7 @@
 		<Population_Value>1</Population_Value>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Laddinare_Torbin_Empire</Company_Transport_Unit>
 		<Company_Units>Laddinare_Torbin_Empire</Company_Units>
 		
 		<Is_Dummy>Yes</Is_Dummy>
@@ -3547,6 +3749,15 @@
 		<SFXEvent_Build_Complete/>
 		<SFXEvent_Fleet_Move>Unit_Dark_Jedi_Fleet_Move</SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Laddinare_Torbin_Empire">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Laddinare_Torbin_Empire_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Laddinare_Torbin_Empire_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
 
 	<HeroUnit Name="Inglemenn_Barezz">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -3581,7 +3792,6 @@
 			</Galactic_Stealth_Ability>
 		</Abilities>
 	</HeroUnit>
-	
 	<HeroCompany Name="Inglemenn_Barezz_Team">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template_Team</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_INGLEMENN_BAREZZ</Text_ID>
@@ -3593,14 +3803,53 @@
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_INTELLIGENCE </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_INGLEMENN_BAREZZ.tga</Icon_Name>
-		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft</Company_Transport_Unit>
+
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Inglemenn_Barezz</Company_Transport_Unit>
 		<Company_Units>Inglemenn_Barezz</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
 	</HeroCompany>
 
-	<!-- Non-Staff: Vehicle Heroes -->
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Inglemenn_Barezz">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Inglemenn_Barezz_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Inglemenn_Barezz_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Inglemenn_Barezz_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_INGLEMENN_BAREZZ</Text_ID>
+		<Icon_Name>I_BUTTON_INGLEMENN_BAREZZ.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_UTILITY_SPY
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK 
+			TEXT_TOOLTIP_INGLEMENN_BAREZZ
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Inglemenn_Barezz_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_INGLEMENN_BAREZZ</Text_ID>
+		<Icon_Name>I_BUTTON_INGLEMENN_BAREZZ.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Inglemenn_Barezz</Required_Orbiting_Units>
+	</DummyStructure>
+
+
+	<!-- Vehicle Heroes -->
 	<UniqueUnit Name="Khamar_A5RX">
 		<Variant_Of_Existing_Type>A5RX</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -3720,6 +3969,42 @@
 		<SFXEvent_Build_Complete>Unit_Respawn_Veers</SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<DummyStructure Name="Khamar_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_KHAMAR</Text_ID>
+		<Icon_Name>I_BUTTON_KHAMAR.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KHAMAR
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_A5RX
+			TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+			TEXT_TOOLTIP_ESCORT_KHAMAR
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Khamar_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_KHAMAR</Text_ID>
+		<Icon_Name>I_BUTTON_KHAMAR.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Gozanti_Heavy_Landing_Craft_Khamar</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Gideon_Tarkin_AT_OT">
 		<Variant_Of_Existing_Type>AT_OT_Walker</Variant_Of_Existing_Type>
@@ -3850,6 +4135,49 @@
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Imperial_Walker</SFXEvent_Fleet_Move>
 	</HeroCompany>
 
+	<DummyStructure Name="Gideon_Tarkin_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDEON_TARKIN</Text_ID>
+		<Icon_Name>I_BUTTON_GIDEON_TARKIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_07_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_DEFENSE_FOCUS
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_GIDEON_TARKIN
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_AT_OT_WALKER
+			TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+			TEXT_TOOLTIP_ESCORT_GIDEON_TARKIN
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>DEPLOY_TROOPERS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Gideon_Tarkin_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDEON_TARKIN</Text_ID>
+		<Icon_Name>I_BUTTON_GIDEON_TARKIN.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Gozanti_Heavy_Landing_Craft_Gideon_Tarkin</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Ahalas_Svindren_VAAT">
 		<Variant_Of_Existing_Type>Republic_VAAT</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -3934,7 +4262,7 @@
 		<Icon_Name>I_BUTTON_AHALAS_SVINDREN.TGA</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Rep_VAAT_Landing_Craft_Hero</Company_Transport_Unit>
+		<Company_Transport_Unit>Rep_VAAT_Landing_Craft_Ahalas_Svindren</Company_Transport_Unit>
 		<Company_Units>Ahalas_Svindren_VAAT</Company_Units>
 
 		<Is_Dummy>Yes</Is_Dummy>
@@ -3955,7 +4283,125 @@
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Empire_Field</SFXEvent_Fleet_Move>
 	</HeroCompany>
 
-	<!-- Non-Staff: Economic Heroes -->
+	<TransportUnit Name="Rep_VAAT_Landing_Craft_Ahalas_Svindren">
+		<Variant_Of_Existing_Type>Rep_VAAT_Landing_Craft_Hero</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Rep_LAAT_Landing_Craft_Ahalas_Svindren_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Rep_LAAT_Landing_Craft_Ahalas_Svindren_Landing">
+		<Variant_Of_Existing_Type>Rep_LAAT_Landing_Craft_Hero_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Ahalas_Svindren_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_AHALAS_SVINDREN</Text_ID>
+		<Icon_Name>I_BUTTON_AHALAS_SVINDREN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_LAND
+			TEXT_TOOLTIP_TRAIT_UTILITY_PARTISAN_RECRUITER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_AHALAS_SVINDREN
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_VAAT
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Ahalas_Svindren_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_AHALAS_SVINDREN</Text_ID>
+		<Icon_Name>I_BUTTON_AHALAS_SVINDREN.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Rep_VAAT_Landing_Craft_Ahalas_Svindren</Required_Orbiting_Units>
+	</DummyStructure>
+
+
+	<!-- Economic Heroes -->
+
+	<DummyStructure Name="Extra_Senator_Slot">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>50</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<Text_ID>TEXT_HERO_OPEN_NR_ADMIRAL</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_multiplay_republic.tga</Icon_Name>
+		
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_OPEN_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="View_Senators">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>View Senators</Text_ID>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Affiliation>Empire</Affiliation>
+		<Icon_Name>i_multiplay_republic.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Random_Senator_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		<GUI_Row> 0 </GUI_Row>
+		
+		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
+		<Icon_Name>I_BUTTON_UNKNOWN.tga</Icon_Name>
+		
+		<CategoryMask>Upgrade</CategoryMask>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL
+			TEXT_DOCUMENTATION_SEPARATOR_SMALL
+			TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL2
+		</Encyclopedia_Text>
+		
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+
+
 	<HeroUnit Name="Ask_Aak">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -4010,7 +4456,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SENATOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_ASK_AAK_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Ask_Aak</Company_Transport_Unit>
 		<Company_Units>Ask_Aak</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4019,6 +4465,46 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ask_Aak">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Ask_Aak_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Ask_Aak_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Ask_Aak_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ASK_AAK</Text_ID>
+		<Icon_Name>I_BUTTON_ASK_AAK_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ASK_AAK
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Ask_Aak_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ASK_AAK</Text_ID>
+		<Icon_Name>I_BUTTON_ASK_AAK_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Ask_Aak</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Bail_Organa">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4073,8 +4559,8 @@
 		</Encyclopedia_Text>
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SENATOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_BAIL_ORGANA_ADMIN.tga</Icon_Name>
-		
-		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Admin</Company_Transport_Unit> <!-- Funny TFU reference -->
+
+		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Bail</Company_Transport_Unit> <!-- Funny TFU reference -->
 		<Company_Units>Bail_Organa</Company_Units>
 
 		<Affiliation>Empire</Affiliation>
@@ -4083,6 +4569,51 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Bail">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Bail_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Bail_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Bail_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_BAIL_ORGANA</Text_ID>
+		<Icon_Name>I_BUTTON_BAIL_ORGANA_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_BAIL_ORGANA_CW
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Bail_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_BAIL_ORGANA</Text_ID>
+		<Icon_Name>I_BUTTON_BAIL_ORGANA_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>CIS_Sheathipede_Landing_Craft_Bail</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Bail_Retire2">
+		<Variant_Of_Existing_Type>Bail_Retire</Variant_Of_Existing_Type>
+
+		<Required_Orbiting_Units>Bail_Organa_Venator</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Garm_Bel_Iblis">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4140,9 +4671,9 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SENATOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_GARM_CW_ADMIN.TGA</Icon_Name>
 		
-		<Company_Transport_Unit>CR20_Landing_Craft_Admin</Company_Transport_Unit> <!-- Corellian senator using corellian lander -->
+		<Company_Transport_Unit>CR20_Landing_Craft_Garm</Company_Transport_Unit> <!-- Corellian senator using corellian lander -->
 		<Company_Units>Garm_Bel_Iblis</Company_Units>
-		
+
 		<Affiliation>Empire</Affiliation>
 
 		<SFXEvent_Build_Started>EHD_Request_Assistance</SFXEvent_Build_Started>
@@ -4150,6 +4681,51 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Gargantuan</SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="CR20_Landing_Craft_Garm">
+		<Variant_Of_Existing_Type>CR20_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CR20_Landing_Craft_Garm_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CR20_Landing_Craft_Garm_Landing">
+		<Variant_Of_Existing_Type>CR20_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Garm_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GARM_BEL_IBLIS</Text_ID>
+		<Icon_Name>I_BUTTON_GARM_CW_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_GARM_CW
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Garm_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GARM_BEL_IBLIS</Text_ID>
+		<Icon_Name>I_BUTTON_GARM_CW_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>CR20_Landing_Craft_Garm</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Garm_Retire2">
+		<Variant_Of_Existing_Type>Garm_Retire</Variant_Of_Existing_Type>
+
+		<Required_Orbiting_Units>Garm_Bel_Iblis_Starbolt</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Giddean_Danu">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4205,7 +4781,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SENATOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_GIDDEAN_DANU_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit> <!-- Funny TFU reference -->
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Giddean</Company_Transport_Unit> <!-- Funny TFU reference -->
 		<Company_Units>Giddean_Danu</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4214,6 +4790,46 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Giddean">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Giddean_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Giddean_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Giddean_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDDEAN_DANU</Text_ID>
+		<Icon_Name>I_BUTTON_GIDDEAN_DANU_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_GIDDEAN_DANU
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Giddean_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_GIDDEAN_DANU</Text_ID>
+		<Icon_Name>I_BUTTON_GIDDEAN_DANU_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Giddean</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Mon_Mothma">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4273,7 +4889,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SUPREME_CHANCELLOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_MON_MOTHMA_CW_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit> <!-- Funny TFU reference -->
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Mon_Mothma</Company_Transport_Unit> <!-- Funny TFU reference -->
 		<Company_Units>Mon_Mothma</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4282,6 +4898,75 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Mon_Mothma">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Mon_Mothma_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Mon_Mothma_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Mon_Mothma_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MON_MOTHMA</Text_ID>
+		<Icon_Name>I_BUTTON_MON_MOTHMA_CW_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_CHIEF_OF_STATE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_MON_MOTHMA_01
+			TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+			TEXT_TOOLTIP_ELITE_GUARD_V_WING_OVERRIDE
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Mon_Mothma_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MON_MOTHMA_TEAM</Text_ID>
+		<Icon_Name>I_BUTTON_MON_MOTHMA_CW_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Mon_Mothma</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Mothma_Pestage">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>Swap Mon Mothma for Sate Pestage</Text_ID>
+		<Icon_Name>I_BUTTON_PESTAGE_CW_ADMIN.tga</Icon_Name>
+		
+		<GUI_Row> 1 </GUI_Row>
+		
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_02
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_PESTAGE_CW
+			TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+			TEXT_TOOLTIP_ELITE_GUARD_V_WING_OVERRIDE
+		</Encyclopedia_Text>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+		
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		
+		<Build_Cost_Credits>1100</Build_Cost_Credits>
+		<Build_Time_Seconds>5</Build_Time_Seconds>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Mon_Mothma</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Nala_Se">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4337,7 +5022,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SCIENTIST </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_NALA_SE_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Alliance_Shuttle_Landing_Craft_Admin</Company_Transport_Unit> <!-- PDF ship but not Gallofree -->
+		<Company_Transport_Unit>Alliance_Shuttle_Landing_Craft_Nala_Se</Company_Transport_Unit> <!-- PDF ship but not Gallofree -->
 		<Company_Units>Nala_Se</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4346,6 +5031,46 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Alliance_Shuttle_Landing_Craft_Nala_Se">
+		<Variant_Of_Existing_Type>Alliance_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Alliance_Shuttle_Landing_Craft_Nala_Se_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Alliance_Shuttle_Landing_Craft_Nala_Se_Landing">
+		<Variant_Of_Existing_Type>Alliance_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Nala_Se_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_NALA_SE</Text_ID>
+		<Icon_Name>I_BUTTON_NALA_SE_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_01
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_NALA_SE
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Nala_Se_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_NALA_SE</Text_ID>
+		<Icon_Name>I_BUTTON_NALA_SE_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Alliance_Shuttle_Landing_Craft_Nala_Se</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Orn_Free_Taa">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4401,7 +5126,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_SENATOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_ORN_FREE_TAA_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Orn_Free_Taa</Company_Transport_Unit>
 		<Company_Units>Orn_Free_Taa</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4410,6 +5135,46 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Orn_Free_Taa">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Orn_Free_Taa_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Orn_Free_Taa_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+	
+	<DummyStructure Name="Orn_Free_Taa_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ORN_FREE_TAA</Text_ID>
+		<Icon_Name>I_BUTTON_ORN_FREE_TAA_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ORN_FREE_TAA
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Orn_Free_Taa_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ORN_FREE_TAA</Text_ID>
+		<Icon_Name>I_BUTTON_ORN_FREE_TAA_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Orn_Free_Taa</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Sate_Pestage">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -4471,7 +5236,7 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_ADVISOR </Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_PESTAGE_CW_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Pestage</Company_Transport_Unit>
 		<Company_Units>Sate_Pestage</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4480,6 +5245,74 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Pestage">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Pestage_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Pestage_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Pestage_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PESTAGE</Text_ID>
+		<Icon_Name>I_BUTTON_PESTAGE_CW_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_02
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_PESTAGE_CW
+			TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+			TEXT_TOOLTIP_ELITE_GUARD_V_WING_OVERRIDE
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Pestage_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PESTAGE</Text_ID>
+		<Icon_Name>I_BUTTON_PESTAGE_CW_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Pestage</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Pestage_Mothma">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>Swap Sate Pestage for Mon Mothma</Text_ID>
+		<Icon_Name>I_BUTTON_MON_MOTHMA_CW_ADMIN.tga</Icon_Name>
+		
+		<GUI_Row> 1 </GUI_Row>
+		
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_CHIEF_OF_STATE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_MON_MOTHMA_01
+			TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+			TEXT_TOOLTIP_ELITE_GUARD_V_WING_OVERRIDE
+		</Encyclopedia_Text>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+		
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+		
+		<Build_Cost_Credits>1100</Build_Cost_Credits>
+		<Build_Time_Seconds>5</Build_Time_Seconds>
+		
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Pestage</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<!-- Historical Heroes -->
@@ -4615,7 +5448,7 @@
 		<Icon_Name>I_BUTTON_PADME_ADMIN.tga</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Padme</Company_Transport_Unit>
 		<Company_Units>Padme_Amidala</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -4631,6 +5464,52 @@
 		<SFXEvent_Build_Complete>Unit_Complete_Padme</SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Padme</SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Padme">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Padme_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Padme_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Padme_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PADME</Text_ID>
+		<Icon_Name>I_BUTTON_PADME_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_SENATOR
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_PADME
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Padme_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_PADME</Text_ID>
+		<Icon_Name>I_BUTTON_PADME_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Padme</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Jar_Jar_Binks">
 		<Variant_Of_Existing_Type>Hero_Commando_Template</Variant_Of_Existing_Type>
@@ -4765,7 +5644,7 @@
 		<Icon_Name>i_button_jar_jar_binks.tga</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit> <!-- TCW reference -->
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Jar_Jar</Company_Transport_Unit> <!-- TCW reference -->
 		<Company_Units>Jar_Jar_Binks</Company_Units>
 		
 		<Is_Dummy>Yes</Is_Dummy>
@@ -4781,7 +5660,53 @@
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 		<SFXEvent_Fleet_Move>Unit_Move_Gungan</SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jar_Jar">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Jar_Jar_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jar_Jar_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Jar_Jar_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_JAR_JAR</Text_ID>
+		<Icon_Name>i_button_jar_jar_binks.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_AGENT_TIER_AGENT_02
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_JAR_JAR
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Jar_Jar_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_JAR_JAR</Text_ID>
+		<Icon_Name>i_button_jar_jar_binks.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Jar_Jar</Required_Orbiting_Units>
+	</DummyStructure>
 	
+
 	<HeroUnit Name="Onaconda_Farr">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -4836,7 +5761,7 @@
 		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_SENATOR</Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_ONACONDA_FARR_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Onaconda_Farr</Company_Transport_Unit>
 		<Company_Units>Onaconda_Farr</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4845,7 +5770,47 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Onaconda_Farr">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Onaconda_Farr_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Onaconda_Farr_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Onaconda_Farr_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ONACONDA_FARR</Text_ID>
+		<Icon_Name>I_BUTTON_ONACONDA_FARR_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_01
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ONACONDA_FARR
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Onaconda_Farr_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ONACONDA_FARR</Text_ID>
+		<Icon_Name>I_BUTTON_ONACONDA_FARR_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Onaconda_Farr</Required_Orbiting_Units>
+	</DummyStructure>
 	
+
 	<HeroUnit Name="Ardus_Kaine">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -4900,7 +5865,7 @@
 		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_ADVISOR</Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_KAINE_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Kaine</Company_Transport_Unit>
 		<Company_Units>Ardus_Kaine</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4909,7 +5874,47 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Kaine">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Kaine_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Kaine_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Kaine_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KAINE</Text_ID>
+		<Icon_Name>I_BUTTON_KAINE_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_01
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KAINE_FOTR
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Kaine_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KAINE</Text_ID>
+		<Icon_Name>I_BUTTON_KAINE_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Kaine</Required_Orbiting_Units>
+	</DummyStructure>
 	
+
 	<HeroUnit Name="Bengila_Urlan">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -4964,7 +5969,7 @@
 		<Encyclopedia_Unit_Class>TEXT_ENCYCLOPEDIA_CLASS_ARCHPROVOST</Encyclopedia_Unit_Class>
 		<Icon_Name>I_BUTTON_BENGILA_URLAN_ADMIN.tga</Icon_Name>
 		
-		<Company_Transport_Unit>CR20_Landing_Craft_Admin</Company_Transport_Unit>
+		<Company_Transport_Unit>CR20_Landing_Craft_Bengila_Urlan</Company_Transport_Unit>
 		<Company_Units>Bengila_Urlan</Company_Units>
 		
 		<Affiliation>Empire</Affiliation>
@@ -4973,6 +5978,46 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<TransportUnit Name="CR20_Landing_Craft_Bengila_Urlan">
+		<Variant_Of_Existing_Type>CR20_Landing_Craft_Admin</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CR20_Landing_Craft_Bengila_Urlan_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CR20_Landing_Craft_Bengila_Urlan_Landing">
+		<Variant_Of_Existing_Type>CR20_Landing_Craft_Admin_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Bengila_Urlan_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_BENGILA_URLAN</Text_ID>
+		<Icon_Name>I_BUTTON_BENGILA_URLAN_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_ADMIN_02
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_BENGILA_URLAN
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Bengila_Urlan_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_BENGILA_URLAN</Text_ID>
+		<Icon_Name>I_BUTTON_BENGILA_URLAN_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>CR20_Landing_Craft_Bengila_Urlan</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Onara_Kuat">
 		<Variant_Of_Existing_Type>Non_Combat_Hero_Template</Variant_Of_Existing_Type>
@@ -5042,4 +6087,75 @@
 		<SFXEvent_Build_Cancelled>EHD_Request_Canceled</SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
 	</HeroCompany>
+
+	<DummyStructure Name="Onara_Kuat_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ONARA_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_ONARA_KUAT_ADMIN.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_ADMIN_TIER_MEGACORP_HEAD_ADMIN
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ONARA_KUAT
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Onara_Kuat_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ONARA_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_ONARA_KUAT_ADMIN.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Onara</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Onara_Kuat_Retire2">
+		<Variant_Of_Existing_Type>Onara_Kuat_Retire</Variant_Of_Existing_Type>
+		
+		<Icon_Name>I_BUTTON_ONARA_KUAT_SSD.tga</Icon_Name>
+		<Tech_Level>99</Tech_Level>
+
+		<Required_Orbiting_Units>Onara_Kuat_Pride_of_the_Core</Required_Orbiting_Units>
+	</DummyStructure>
+
+	<DummyStructure Name="Kuat_of_Kuat_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KUAT_OF_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_KUAT_OF_KUAT.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_05_SPACE
+			TEXT_TOOLTIP_TRAIT_AGENT_TIER_MEGACORP_HEAD_AGENT
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KUAT_OF_KUAT
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_KUAT_OF_KUAT
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Kuat_of_Kuat_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KUAT_OF_KUAT</Text_ID>
+		<Icon_Name>I_BUTTON_KUAT_OF_KUAT.tga</Icon_Name>
+		<Encyclopedia_Text>Retire</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Kuat_of_Kuat_Procurator</Required_Orbiting_Units>
+	</DummyStructure>
+	
 </Republic_Heroes>

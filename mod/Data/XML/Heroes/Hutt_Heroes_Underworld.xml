@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <Hutt_Heroes>
 
+	<!-- 9. HUTT Underworld -->
+
 	<!-- Force User Heroes -->
 	<HeroUnit Name="Darth_Maul">
 		<LOD_Bias>5</LOD_Bias>

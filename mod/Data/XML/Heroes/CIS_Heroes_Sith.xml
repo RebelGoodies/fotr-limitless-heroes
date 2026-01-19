@@ -1,6 +1,81 @@
 <?xml version="1.0"?>
 <CIS_Heroes>
 
+	<!-- 3. CIS Sith -->
+
+	<DummyStructure Name="Extra_Sith_Slot">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>50</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<Text_ID>TEXT_HERO_OPEN_NR_ADMIRAL</Text_ID>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Affiliation>Rebel</Affiliation>
+		<Icon_Name>i_button_sith.tga</Icon_Name>
+		
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_OPEN_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="View_Sith">
+		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
+		<GUI_Row> 1 </GUI_Row>
+
+		<Population_Value>0</Population_Value>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Time_Seconds>1</Build_Time_Seconds>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<AI_Combat_Power>10000</AI_Combat_Power>
+		
+		<CategoryMask>Wall</CategoryMask>
+		
+		<Text_ID>View Sith</Text_ID>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Icon_Name>i_button_sith.tga</Icon_Name>
+		
+		<Lua_Script>DelayedSelfDelete</Lua_Script>
+		
+		<Affiliation>Rebel</Affiliation>
+
+		<Tech_Level>0</Tech_Level>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_VIEW_NR_ADMIRAL
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Random_Sith_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		<GUI_Row> 0 </GUI_Row>
+		
+		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
+		<Icon_Name>I_BUTTON_UNKNOWN.tga</Icon_Name>
+		
+		<CategoryMask>Upgrade</CategoryMask>
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL
+		TEXT_DOCUMENTATION_SEPARATOR_SMALL
+		TEXT_TOOLTIP_ASSIGN_RANDOM_ADMIRAL2
+		</Encyclopedia_Text>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+
+
 	<!--Hero Unit-->
 	<HeroUnit Name="General_Grievous">
 		<LOD_Bias>5</LOD_Bias>
@@ -35,6 +110,7 @@
 		<CategoryMask> InfantryHero | AntiInfantry </CategoryMask>
 		<Ranking_In_Category> 1 </Ranking_In_Category>
 
+		<Starting_Spawned_Units_Tech_0>R3_S6, 1</Starting_Spawned_Units_Tech_0>
 		<Starting_Spawned_Units_Tech_0>Magnaguard, 2</Starting_Spawned_Units_Tech_0>
 		<Spawned_Squadron_Delay_Seconds>0</Spawned_Squadron_Delay_Seconds>
 
@@ -1376,6 +1452,8 @@
 		TEXT_TOOLTIP_TRAIT_UTILITY_PARTISAN_RECRUITER
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_DOOKU 
+		TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+		TEXT_TOOLTIP_ESCORT_GRIEVOUS
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_DOOKU_HEALTH
 		TEXT_TOOLTIP_DOOKU_MOVE
@@ -1394,9 +1472,12 @@
 		<Scale_Factor>1.0</Scale_Factor>
 
 		<GalacticBehavior> SELECTABLE </GalacticBehavior>
-		<LandBehavior> SELECTABLE, SURFACE_FX, WALK_LOCOMOTOR, IDLE, REVEAL, HIDE_WHEN_FOGGED, TARGETING, WEAPON, DAMAGE_TRACKING, UNIT_AI, ABILITY_COUNTDOWN, HOLSTER_WEAPON, GARRISON_UNIT, STUNNABLE, IMPOSING_PRESENCE </LandBehavior>
+		<LandBehavior> SPAWN_SQUADRON, SELECTABLE, SURFACE_FX, WALK_LOCOMOTOR, IDLE, REVEAL, HIDE_WHEN_FOGGED, TARGETING, WEAPON, DAMAGE_TRACKING, UNIT_AI, ABILITY_COUNTDOWN, HOLSTER_WEAPON, GARRISON_UNIT, STUNNABLE, IMPOSING_PRESENCE </LandBehavior>
 		<CategoryMask> InfantryHero | AntiInfantry </CategoryMask>
 		<Ranking_In_Category> 1 </Ranking_In_Category>
+
+		<Starting_Spawned_Units_Tech_0>Magnaguard, 2</Starting_Spawned_Units_Tech_0>
+		<Spawned_Squadron_Delay_Seconds>0</Spawned_Squadron_Delay_Seconds>
 
 		<!-- Lightsaber holstering data -->
 		<SFXEvent_Draw_Weapon> Unit_Light_Saber_On </SFXEvent_Draw_Weapon>
@@ -1704,7 +1785,7 @@
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft_Dooku</Company_Transport_Unit>
 		<Company_Units>Dooku</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
@@ -1749,6 +1830,8 @@
 		TEXT_TOOLTIP_RESPAWN_DOOKU
 		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
 		</Encyclopedia_Text>
+
+		<LandBehavior> SELECTABLE, SURFACE_FX, WALK_LOCOMOTOR, IDLE, REVEAL, HIDE_WHEN_FOGGED, TARGETING, WEAPON, DAMAGE_TRACKING, UNIT_AI, ABILITY_COUNTDOWN, HOLSTER_WEAPON, GARRISON_UNIT, STUNNABLE, IMPOSING_PRESENCE </LandBehavior>
 
 		<Unit_Abilities_Data SubObjectList="Yes">
 			<Unit_Ability>
@@ -1944,6 +2027,56 @@
 		</Encyclopedia_Text>
 		<Company_Units>Dooku_Stealth</Company_Units>
 	</HeroCompany>
+
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Dooku">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>CIS_Sheathipede_Landing_Craft_Dooku_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="CIS_Sheathipede_Landing_Craft_Dooku_Landing">
+		<Variant_Of_Existing_Type>CIS_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Dooku_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DOOKU</Text_ID>
+		<Icon_Name>i_button_dooku.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete>Unit_Select_Dooku</SFXEvent_Build_Complete>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_09_LAND
+			TEXT_TOOLTIP_TRAIT_AGENT_TIER_AGENT_02
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_TRAIT_UTILITY_PARTISAN_RECRUITER
+			TEXT_TOOLTIP_TRAIT_UTILITY_STEALTH_OPERATIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_DOOKU 
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FORCE_LIGHTNING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Dooku_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_DOOKU</Text_ID>
+		<Icon_Name>i_button_dooku.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>CIS_Sheathipede_Landing_Craft_Dooku</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Sora_Bulq">
 		<LOD_Bias>5</LOD_Bias>
@@ -2265,7 +2398,7 @@
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Stock_Sheathipede_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Stock_Sheathipede_Landing_Craft_Sora</Company_Transport_Unit>
 		<Company_Units>Sora_Bulq</Company_Units>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Is_Force_Sensitive>Yes</Is_Force_Sensitive>
@@ -2296,6 +2429,54 @@
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</HeroCompany>
+
+	<TransportUnit Name="Stock_Sheathipede_Landing_Craft_Sora">
+		<Variant_Of_Existing_Type>Stock_Sheathipede_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Stock_Sheathipede_Landing_Craft_Sora_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Stock_Sheathipede_Landing_Craft_Sora_Landing">
+		<Variant_Of_Existing_Type>Stock_Sheathipede_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Sora_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SORA_BULQ</Text_ID>
+		<Icon_Name>i_button_sora_bulq.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete>Unit_Complete_Dark_Acolyte</SFXEvent_Build_Complete>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SORA_BULQ
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FORCE_CONFUSE</Type>
+				<Alternate_Icon_Name>I_SA_MIND_TRICK.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Sora_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SORA_BULQ</Text_ID>
+		<Icon_Name>i_button_sora_bulq.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Stock_Sheathipede_Landing_Craft_Sora</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Yansu_Grjak">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2662,6 +2843,48 @@
 		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
 		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
 	</HeroCompany>
+
+	<DummyStructure Name="Yansu_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_YANSU_GRJAK</Text_ID>
+		<Icon_Name>i_button_yansu_grjak.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete>Unit_Select_Night_Sister</SFXEvent_Build_Complete>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_TRAIT_UTILITY_STEALTH_OPERATIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_YANSU_GRJAK
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+			   <Type>DRAIN_LIFE</Type>
+		   </Unit_Ability>
+		   <Unit_Ability>
+			   <Type>TARGETED_INVULNERABILITY</Type>
+		   </Unit_Ability>
+	   </Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Yansu_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_YANSU_GRJAK</Text_ID>
+		<Icon_Name>i_button_yansu_grjak.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Star_Courier_Yansu</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="SevRance">
@@ -3145,6 +3368,46 @@
 		<UnitCollisionClass>Landing Transport</UnitCollisionClass>
 	</TransportUnit>
 
+	<DummyStructure Name="SevRance_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SEVRANCE</Text_ID>
+		<Icon_Name>i_button_sevrance.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete>Unit_Complete_SevRance_Tann</SFXEvent_Build_Complete>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_08_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SEVRANCE
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_GINIVEX
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FORCE_WHIRLWIND</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="SevRance_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SEVRANCE</Text_ID>
+		<Icon_Name>i_button_sevrance.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>SevRance_Ginivex</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Ventress">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -3481,6 +3744,7 @@
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
 		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+		TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
 		TEXT_TOOLTIP_TRAIT_UTILITY_SPY
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_VENTRESS 
@@ -3546,6 +3810,7 @@
 		<Encyclopedia_Text>
 		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
 		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+		TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
 		TEXT_TOOLTIP_TRAIT_UTILITY_SPY
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
 		TEXT_TOOLTIP_VENTRESS 
@@ -3667,7 +3932,53 @@
 		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
 		<UnitCollisionClass>Landing Transport</UnitCollisionClass>
 	</TransportUnit>
-	
+
+	<DummyStructure Name="Ventress_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_VENTRESS</Text_ID>
+		<Icon_Name>i_button_ventress.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete>Unit_Complete_Asajj_Ventress</SFXEvent_Build_Complete>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_TRAIT_UTILITY_SPY
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_VENTRESS 
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_BANSHEE
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FORCE_WHIRLWIND</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>LUCKY_SHOT</Type>
+				<Alternate_Icon_Name>I_SA_ASSASSIN.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Ventress_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_VENTRESS</Text_ID>
+		<Icon_Name>i_button_ventress.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Ventress_Ginivex</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<HeroUnit Name="Shaala_Doneeta">
 		<LOD_Bias>5</LOD_Bias>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -4138,4 +4449,161 @@
 		<Exclude_From_Distance_Fade>true</Exclude_From_Distance_Fade>
 		<UnitCollisionClass>Landing Transport</UnitCollisionClass>
 	</TransportUnit>
+
+	<DummyStructure Name="Shaala_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SHAALA_DONEETA</Text_ID>
+		<Icon_Name>i_button_Shaala_Doneeta.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_TRAIT_UTILITY_STEALTH_OPERATIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SHAALA_DONEETA
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_UNIT_GINIVEX
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes"> 
+			<Unit_Ability>
+				<Type>FORCE_LIGHTNING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Shaala_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SHAALA_DONEETA</Text_ID>
+		<Icon_Name>i_button_Shaala_Doneeta.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Shaala_Doneeta_Ginivex</Required_Orbiting_Units>
+	</DummyStructure>
+
+
+	<HeroUnit Name="Darth_Sidious">
+		<Variant_Of_Existing_Type>Emperor_Palpatine</Variant_Of_Existing_Type>
+		<Text_ID>Darth Sidious</Text_ID>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_10_LAND
+		TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+		TEXT_TOOLTIP_TRAIT_AGENT_TIER_AGENT_02
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Darth Sidious is a powerful sith lord，shrouded in
+		secrecy and mystery. As the master of lord Tyranus，his
+		true identity remains unknown to all but a select few.
+		Though his intentions remain unclear，Lord Sidious has
+		proven to be an invaluable ally to the CIS，thanks to
+		the leaking of classified Republic intel.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_PALPATINE_FOTR_HEALTH
+		TEXT_TOOLTIP_PALPATINE_MOVE
+		TEXT_TOOLTIP_PALPATINE_WEAP1
+		TEXT_TOOLTIP_PALPATINE_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+
+		<LandBehavior> SELECTABLE, SURFACE_FX, WALK_LOCOMOTOR, IDLE, REVEAL, HIDE_WHEN_FOGGED, TARGETING, WEAPON, DAMAGE_TRACKING, UNIT_AI, ABILITY_COUNTDOWN, IMPOSING_PRESENCE, HOLSTER_WEAPON, GARRISON_UNIT </LandBehavior>
+
+		<!-- <Starting_Spawned_Units_Tech_0>Magnaguard, 2</Starting_Spawned_Units_Tech_0> -->
+
+		<Affiliation>Rebel</Affiliation>
+		<!-- If you want heroes to contribute to political control, use Political_Control_Bonus_Ability -->
+		<Political_Faction>Rebel</Political_Faction>
+	</HeroUnit>
+
+	<HeroCompany Name="Darth_Sidious_Team">
+		<Variant_Of_Existing_Type>Emperor_Palpatine_Team</Variant_Of_Existing_Type>
+		<Text_ID>Darth Sidious</Text_ID>
+		
+		<Affiliation>Rebel</Affiliation>
+		<Company_Transport_Unit>Theta_Shuttle_Landing_Craft_Sidious</Company_Transport_Unit>
+		<Company_Units>Darth_Sidious</Company_Units>
+		
+		<Encyclopedia_Text>
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_10_LAND
+		TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+		TEXT_TOOLTIP_TRAIT_AGENT_TIER_AGENT_02
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		Darth Sidious is a powerful sith lord，shrouded in
+		secrecy and mystery. As the master of lord Tyranus，his
+		true identity remains unknown to all but a select few.
+		Though his intentions remain unclear，Lord Sidious has
+		proven to be an invaluable ally to the CIS，thanks to
+		the leaking of classified Republic intel.
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_PALPATINE_FOTR_HEALTH
+		TEXT_TOOLTIP_PALPATINE_MOVE
+		TEXT_TOOLTIP_PALPATINE_WEAP1
+		TEXT_TOOLTIP_PALPATINE_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_FORCE_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_FORCE_TRAINING_50_30
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+	</HeroCompany>
+
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Sidious">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Theta_Shuttle_Landing_Craft_Sidious_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Theta_Shuttle_Landing_Craft_Sidious_Landing">
+		<Variant_Of_Existing_Type>Theta_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Sidious_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>Darth Sidious</Text_ID>
+		<Icon_Name>i_button_emperor_palpatine.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete>Unit_Respawn_Emperor</SFXEvent_Build_Complete>
+
+		<Affiliation>Rebel</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_10_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_TRAIT_AGENT_TIER_AGENT_02
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FORCE_TELEKINESIS</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>AREA_EFFECT_CONVERT</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Rebel_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Sidious_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>Darth Sidious</Text_ID>
+		<Icon_Name>i_button_emperor_palpatine.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Rebel</Affiliation>
+
+		<Required_Orbiting_Units>Theta_Shuttle_Landing_Craft_Sidious</Required_Orbiting_Units>
+	</DummyStructure>
+
 </CIS_Heroes>

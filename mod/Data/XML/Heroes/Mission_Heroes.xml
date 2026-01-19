@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <HeroUnits>
 
+	<!-- 18. Mission -->
+
 	<!-- ********************************** -->
 	<!-- ************ Republic ************ -->
 	<!-- ********************************** -->
@@ -123,6 +125,58 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</HeroUnit>
+	<HeroCompany Name="Cham_Syndulla_Team">
+		<Text_ID>TEXT_HERO_CHAM_SYNDULLA</Text_ID>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+		TEXT_TOOLTIP_TRAIT_UTILITY_PARTISAN_RECRUITER
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_CHAM_SYNDULLA
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_CHAM_SYNDULLA_HEALTH
+		TEXT_TOOLTIP_CHAM_SYNDULLA_MOVE
+		TEXT_TOOLTIP_CHAM_SYNDULLA_WEAP1
+		TEXT_TOOLTIP_CHAM_SYNDULLA_WEAP2
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_FREEDOM_FIGHTER </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_cham_syndulla.tga</Icon_Name>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>80</Damage>
+		<Affiliation>Independent_Forces, Empire</Affiliation>
+		
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Population_Value>1</Population_Value>
+		
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Required_Planets>Ryloth</Required_Planets>
+		<Tech_Level>0</Tech_Level>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+
+		<Company_Units>Cham_Syndulla</Company_Units>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<Available_In_Skirmish>No</Available_In_Skirmish>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+
+		<SFXEvent_Build_Started>UHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Request_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
+		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+	</HeroCompany>
 
 	<HeroUnit Name="Mace_Windu_AT_RT">
 		<Variant_Of_Existing_Type>AT_RT_Walker</Variant_Of_Existing_Type>
@@ -435,6 +489,59 @@
 			</Redirect_Blaster_Ability>
 		</Abilities>
 	</HeroUnit>
+	<HeroCompany Name="Roos_Tarpals_Team">
+		<Text_ID>TEXT_HERO_ROOS_TARPALS</Text_ID>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_06_LAND
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_ROOS_TARPALS
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_ROOS_TARPALS_HEALTH
+		TEXT_TOOLTIP_ROOS_TARPALS_MOVE
+		TEXT_TOOLTIP_ROOS_TARPALS_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_BONUS_BLOCK
+		TEXT_TOOLTIP_BONUS_INFANTRY_SELF_HEAL
+		TEXT_TOOLTIP_BONUS_RIOT_SHIELD
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_GENERAL </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_roos_tarpals.tga</Icon_Name>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>80</Damage>
+		<Affiliation>Independent_Forces, Empire</Affiliation>
+		
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Population_Value>1</Population_Value>
+		
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Required_Planets>Naboo</Required_Planets>
+		<Tech_Level>0</Tech_Level>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+
+		<Company_Units>Roos_Tarpals</Company_Units>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<Available_In_Skirmish>No</Available_In_Skirmish>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+
+		<SFXEvent_Build_Started>UHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Request_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete>Unit_Select_Gungan</SFXEvent_Build_Complete>
+		<SFXEvent_Fleet_Move>Unit_Move_Gungan</SFXEvent_Fleet_Move>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+	</HeroCompany>
 
 	<UniqueUnit Name="Venator_Defender">
 		<Variant_Of_Existing_Type>Skirmish_Venator_Star_Destroyer</Variant_Of_Existing_Type>
@@ -1365,6 +1472,7 @@
 
 		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
 
+		<Starting_Spawned_Units_Tech_0>Clonetrooper_Phase_One_Squad, 2</Starting_Spawned_Units_Tech_0>
 
 		<Unit_Abilities_Data SubObjectList="Yes">
 			<Unit_Ability>
@@ -1494,6 +1602,8 @@
 
 		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
 
+		<Starting_Spawned_Units_Tech_0>Clone_Airborne_Trooper_Assault_Squad, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Clone_Airborne_Trooper_Weap_Squad, 1</Starting_Spawned_Units_Tech_0>
 
 		<Unit_Abilities_Data SubObjectList="Yes">
 			<Unit_Ability>
@@ -1643,6 +1753,7 @@
 
 		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
 
+		<Starting_Spawned_Units_Tech_0>Clonetrooper_Phase_One_Squad, 2</Starting_Spawned_Units_Tech_0>
 
 		<Unit_Abilities_Data SubObjectList="Yes">
 			<Unit_Ability>
@@ -1771,6 +1882,8 @@
 
 		<Targeting_Priority_Set>AntiInfantry</Targeting_Priority_Set>
 
+		<Starting_Spawned_Units_Tech_0>Clone_Airborne_Trooper_Assault_Squad, 1</Starting_Spawned_Units_Tech_0>
+		<Starting_Spawned_Units_Tech_0>Clone_Airborne_Trooper_Weap_Squad, 1</Starting_Spawned_Units_Tech_0>
 
 		<Unit_Abilities_Data SubObjectList="Yes">
 			<Unit_Ability>
@@ -2107,7 +2220,7 @@
 		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
 		<Required_Star_Base_Level>0</Required_Star_Base_Level>
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Jayfon_Senior</Company_Transport_Unit>
 		<Company_Units>Jayfon_Senior</Company_Units>
 		<Is_Homogeneous>No</Is_Homogeneous>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -2119,6 +2232,53 @@
 		<SFXEvent_Hero_Respawned>Unit_Complete_Imp_Guard</SFXEvent_Hero_Respawned>
 		<SFXEvent_Fleet_Move>Unit_Fleet_Move_Imp_Guard</SFXEvent_Fleet_Move>
 	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jayfon_Senior">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Jayfon_Senior_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jayfon_Senior_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Jayfon_Senior_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_JAYFON_SENIOR</Text_ID>
+		<Icon_Name>I_BUTTON_JAYFON_SENIOR.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_LAND
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_JAYFON_SENIOR
+		</Encyclopedia_Text>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPREAD_OUT</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>BERSERKER</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Jayfon_Senior_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_JAYFON_SENIOR</Text_ID>
+		<Icon_Name>I_BUTTON_JAYFON_SENIOR.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Jayfon_Senior</Required_Orbiting_Units>
+	</DummyStructure>
 
 
 	<HeroUnit Name="Zozridor_Slayke">
@@ -2752,7 +2912,7 @@
 		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_02_LAND
 		TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
 		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
-		TEXT_TOOLTIP_DARK_JEDI_HEADMASTER
+		TEXT_TOOLTIP_DARK_JEDI
 		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
 		TEXT_TOOLTIP_DARK_JEDI_APOSTLE_HEALTH
 		TEXT_TOOLTIP_DARK_JEDI_APOSTLE_MOVE
@@ -3092,6 +3252,57 @@
 			</Bounty_On_Faction_Ability>
 		</Abilities>
 	</HeroUnit>
+	<HeroCompany Name="Xomit_Grunseit_Team">
+		<Text_ID>TEXT_HERO_XOMIT_GRUNSEIT</Text_ID>
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+		TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_LAND
+		TEXT_TOOLTIP_TRAIT_AGENT_TIER_SYNDICATE_HEAD
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_XOMIT_GRUNSEIT
+		TEXT_TOOLTIP_SEPARATOR_STAT_BLOCK
+		TEXT_TOOLTIP_XOMIT_GRUNSEIT_HEALTH
+		TEXT_TOOLTIP_XOMIT_GRUNSEIT_MOVE
+		TEXT_TOOLTIP_XOMIT_GRUNSEIT_WEAP1
+		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
+		TEXT_TOOLTIP_CAPABILITY_INFANTRY_CAPTURE
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_CRIME_LORD </Encyclopedia_Unit_Class>
+		<Icon_Name>i_button_xomit_grunseit.tga</Icon_Name>
+		<Is_Dummy>Yes</Is_Dummy>
+		<Damage>80</Damage>
+		<Affiliation>Independent_Forces, Rebel, Hutt_Cartels</Affiliation>
+		
+		<Score_Cost_Credits> 10000 </Score_Cost_Credits>
+		<Population_Value>1</Population_Value>
+		
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Required_Planets>Mustafar</Required_Planets>
+		<Tech_Level>0</Tech_Level>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Required_Ground_Base_Level>0</Required_Ground_Base_Level>
+		<Required_Star_Base_Level>1</Required_Star_Base_Level>
+		<Build_Time_Seconds>10</Build_Time_Seconds>
+		<Build_Tab_Space_Units>Yes</Build_Tab_Space_Units>
+		<Required_Special_Structures>AI_Category_Dummy | Non_Capital_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+
+		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
+		<Company_Transport_Unit>CIS_Sheathipede_Landing_Craft</Company_Transport_Unit>
+
+		<Company_Units>Xomit_Grunseit</Company_Units>
+		<Is_Named_Hero>Yes</Is_Named_Hero>
+		<Is_Stealth_Company>No</Is_Stealth_Company>
+		<Available_In_Skirmish>No</Available_In_Skirmish>
+		<Can_Be_Only_One>true</Can_Be_Only_One>
+
+		<SFXEvent_Build_Started>UHD_Request_Assistance</SFXEvent_Build_Started>
+		<SFXEvent_Build_Cancelled>UHD_Request_Canceled</SFXEvent_Build_Cancelled>
+		<SFXEvent_Build_Complete></SFXEvent_Build_Complete>
+		<SFXEvent_Fleet_Move></SFXEvent_Fleet_Move>
+
+		<Build_Limit_Current_Per_Player>1</Build_Limit_Current_Per_Player>
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player> 
+	</HeroCompany>
 
 
 	<HeroUnit Name="Praxeum_Headmaster_Jedi">
@@ -4005,6 +4216,7 @@
 		</Abilities>
 	</HeroUnit>
 
+
 	<HeroUnit Name="Jocasta_Nu">
 		<LOD_Bias>5</LOD_Bias>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -4303,7 +4515,7 @@
 		<Icon_Name>I_BUTTON_JOCASTA_NU.tga</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Jocasta_Nu</Company_Transport_Unit>
 		<Company_Units>Jocasta_Nu</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -4320,6 +4532,57 @@
 		<SFXEvent_Build_Complete>Unit_Respawn_Mothma</SFXEvent_Build_Complete>
 		<SFXEvent_Hero_Respawned>Unit_Respawn_Mothma</SFXEvent_Hero_Respawned>
 	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jocasta_Nu">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Jocasta_Nu_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Jocasta_Nu_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Jocasta_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_JOCASTA</Text_ID>
+		<Icon_Name>I_BUTTON_JOCASTA_NU.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_JOCASTA
+		</Encyclopedia_Text>
+		
+		<Unit_Abilities_Data SubObjectList="Yes"> 
+			<Unit_Ability>
+				<Type>FORCE_CONFUSE</Type>
+				<Alternate_Icon_Name>I_SA_MIND_TRICK.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Jocasta_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_JOCASTA</Text_ID>
+		<Icon_Name>I_BUTTON_JOCASTA_NU.tga</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Jocasta_Nu</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Cin_Drallig">
 		<LOD_Bias>5</LOD_Bias>
@@ -4618,7 +4881,7 @@
 		<Icon_Name>I_BUTTON_CIN_DRALLIG.tga</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Cin_Drallig</Company_Transport_Unit>
 		<Company_Units>Cin_Drallig</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -4635,6 +4898,60 @@
 		<SFXEvent_Build_Complete>Unit_Respawn_Mothma</SFXEvent_Build_Complete>
 		<SFXEvent_Hero_Respawned>Unit_Respawn_Mothma</SFXEvent_Hero_Respawned>
 	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Cin_Drallig">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Cin_Drallig_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Cin_Drallig_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Drallig_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_DRALLIG</Text_ID>
+		<Icon_Name>I_BUTTON_CIN_DRALLIG.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_DRALLIG
+		</Encyclopedia_Text>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>TARGETED_INVULNERABILITY</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Drallig_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_DRALLIG</Text_ID>
+		<Icon_Name>I_BUTTON_CIN_DRALLIG.tga</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Cin_Drallig</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<HeroUnit Name="Laddinare_Torbin">
 		<Variant_Of_Existing_Type>Laddinare_Torbin_Empire</Variant_Of_Existing_Type>
@@ -4806,7 +5123,7 @@
 		<Icon_Name>I_BUTTON_TORBIN.TGA</Icon_Name>
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Laddinare_Torbin</Company_Transport_Unit>
 		<Company_Units>Laddinare_Torbin</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -4823,7 +5140,61 @@
 		<SFXEvent_Build_Complete>Unit_Respawn_Mothma</SFXEvent_Build_Complete>
 		<SFXEvent_Hero_Respawned>Unit_Respawn_Mothma</SFXEvent_Hero_Respawned>
 	</HeroCompany>
-	
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Laddinare_Torbin">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Laddinare_Torbin_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Laddinare_Torbin_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Torbin_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_TORBIN</Text_ID>
+		<Icon_Name>I_BUTTON_TORBIN.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_02_LAND
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_TORBIN
+		</Encyclopedia_Text>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+                <Type>STUN</Type>
+            </Unit_Ability>
+			<Unit_Ability>
+				<Type>FOW_REVEAL_PING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Torbin_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_TORBIN</Text_ID>
+		<Icon_Name>I_BUTTON_TORBIN.tga</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Laddinare_Torbin</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<HeroUnit Name="Mission_Appo">
 		<Variant_Of_Existing_Type>Appo2</Variant_Of_Existing_Type>
 		<Text_ID>TEXT_HERO_APPO</Text_ID>
@@ -4930,6 +5301,7 @@
 			</Lucky_Shot_Attack_Ability>
 		</Abilities>
 	</HeroUnit>
+
 
 	<HeroUnit Name="Serra_Keto">
 		<LOD_Bias>5</LOD_Bias>
@@ -5241,7 +5613,7 @@
 		
 		
 		<Behavior>DUMMY_GROUND_COMPANY</Behavior>
-		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft</Company_Transport_Unit>
+		<Company_Transport_Unit>Nu_Shuttle_Landing_Craft_Serra_Keto</Company_Transport_Unit>
 		<Company_Units>Serra_Keto</Company_Units>
 		
 		<Population_Value>1</Population_Value>
@@ -5258,5 +5630,58 @@
 		<SFXEvent_Build_Complete>Unit_Respawn_Mothma</SFXEvent_Build_Complete>
 		<SFXEvent_Hero_Respawned>Unit_Respawn_Mothma</SFXEvent_Hero_Respawned>
 	</HeroCompany>
+
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Serra_Keto">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft</Variant_Of_Existing_Type>
+		<Landing_Transport_Variant>Nu_Shuttle_Landing_Craft_Serra_Keto_Landing</Landing_Transport_Variant>
+	</TransportUnit>
+	<TransportUnit Name="Nu_Shuttle_Landing_Craft_Serra_Keto_Landing">
+		<Variant_Of_Existing_Type>Nu_Shuttle_Landing_Craft_Landing</Variant_Of_Existing_Type>
+	</TransportUnit>
+
+	<DummyStructure Name="Serra_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_SERRA</Text_ID>
+		<Icon_Name>I_BUTTON_SERRA_KETO.tga</Icon_Name>
+		
+		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_REPUBLIC_COUNCIL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_FORCE_SENSITIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SERRA
+		</Encyclopedia_Text>
+		
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SPRINT</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>FORCE_TELEKINESIS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+		
+		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Empire_Office</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="Serra_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+
+		<Text_ID>TEXT_HERO_SERRA</Text_ID>
+		<Icon_Name>I_BUTTON_SERRA_KETO.tga</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_COUNCIL
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Nu_Shuttle_Landing_Craft_Serra_Keto</Required_Orbiting_Units>
+	</DummyStructure>
 
 </HeroUnits>

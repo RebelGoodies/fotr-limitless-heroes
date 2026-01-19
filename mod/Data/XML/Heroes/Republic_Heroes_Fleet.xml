@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <Republic_Heroes>
 
+	<!-- 4. REP Fleet -->
+
 	<!-- Moff/Sector Commander Staff -->
 
 	<DummyStructure Name="Extra_Moff_Slot">
@@ -57,7 +59,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Random_Moff_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 		<GUI_Row> 0 </GUI_Row>
 
 		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
@@ -149,7 +151,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Seerdon_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_SEERDON</Text_ID>
 		<Icon_Name>I_BUTTON_SEERDON_CW_command.tga</Icon_Name>
@@ -165,10 +167,11 @@
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Invincible</SFXEvent_Build_Complete>
 
 	</DummyStructure>
 	<DummyStructure Name="Seerdon_Retire">
@@ -311,7 +314,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Wessel_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_MARCELLIN_WESSEL</Text_ID>
 		<Icon_Name>I_BUTTON_WESSEL_CW_command.tga</Icon_Name>
@@ -333,6 +336,11 @@
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Marcellin_Wessel </SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Wessel_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -448,7 +456,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Hauser_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_HAUSER</Text_ID>
 		<Icon_Name>I_BUTTON_HAUSER_CW_command.tga</Icon_Name>
@@ -467,8 +475,14 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_rep_DHC</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>i_sa_brace_onslaught.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Hauser_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -745,12 +759,14 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Republic_Shipyard_Level_Three | Republic_Shipyard_Level_Four</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Tarkin_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<GUI_Row> 0 </GUI_Row>
 
 		<Text_ID>TEXT_HERO_WILHUFF_TARKIN</Text_ID>
 		<Icon_Name>i_button_tarkin_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Tarkin </SFXEvent_Build_Complete>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
@@ -769,8 +785,13 @@
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
-		
-		<SFXEvent_Build_Complete> Unit_Complete_Admiral_Tarkin </SFXEvent_Build_Complete>
+		<Build_Cost_Credits>1500</Build_Cost_Credits>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Tarkin_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -903,7 +924,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Wessex_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DENN_WESSEX</Text_ID>
 		<Icon_Name>i_button_denn_wessex_command.tga</Icon_Name>
@@ -924,7 +945,13 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Wessex_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1047,7 +1074,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Grant_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_GRANT</Text_ID>
 		<Icon_Name>I_BUTTON_GRANT_CW_command.tga</Icon_Name>
@@ -1068,8 +1095,13 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Grant_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1201,7 +1233,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Trachta_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_TRACHTA</Text_ID>
 		<Icon_Name>I_BUTTON_TRACHTA_command.tga</Icon_Name>
@@ -1223,8 +1255,13 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Trachta_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1328,7 +1365,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Vorru_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_VORRU</Text_ID>
 		<Icon_Name>I_BUTTON_VORRU_CW_command.tga</Icon_Name>
@@ -1350,6 +1387,11 @@
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
 		<SFXEvent_Build_Complete> Unit_Complete_Jedi_Cruiser </SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Vorru_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1503,7 +1545,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Byluir_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BYLUIR</Text_ID>
 		<Icon_Name>I_BUTTON_BYLUIR_command.tga</Icon_Name>
@@ -1523,6 +1565,12 @@
 		
 		<SFXEvent_Build_Complete> Unit_Complete_Byluir </SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+				<Alternate_Icon_Name>I_SA_LAST_STAND.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Byluir_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1613,7 +1661,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Praji_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_COLLIN_PRAJI</Text_ID>
 		<Icon_Name>I_BUTTON_PRAJI_CW_command.tga</Icon_Name>
@@ -1632,8 +1680,13 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Rep_Victory_Star_Destroyer</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FULL_SALVO</Type>
+            </Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Praji_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1749,7 +1802,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Ravik_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_RAVIK</Text_ID>
 		<Icon_Name>I_BUTTON_RAVIK_CW_command.tga</Icon_Name>
@@ -1768,8 +1821,18 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Imperial_Destroyer</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>STIM_PACK</Type>
+				<Alternate_Icon_Name>i_sa_PUSH_THE_LIMIT.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>HARMONIC_BOMB</Type>
+				<Alternate_Icon_Name>I_SA_DRAIN_LIFE.TGA</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Ravik_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1860,7 +1923,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Therbon_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_THERBON</Text_ID>
 		<Icon_Name>I_BUTTON_THERBON_CW_command.tga</Icon_Name>
@@ -1879,8 +1942,13 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Victory_Destroyer</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+        </Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Therbon_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -1960,7 +2028,7 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Random_Admiral_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 		<GUI_Row> 0 </GUI_Row>
 
 		<Text_ID>TEXT_UNIT_RANDOM_ADMIRAL</Text_ID>
@@ -2071,7 +2139,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Grumby_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_JONA_GRUMBY</Text_ID>
 		<Icon_Name>i_button_grumby_cw_command.tga</Icon_Name>
@@ -2091,6 +2159,7 @@
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>2000</Build_Cost_Credits>
 
 	</DummyStructure>
 	<DummyStructure Name="Grumby_Retire">
@@ -2245,14 +2314,14 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Dallin_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DALLIN</Text_ID>
 		<Icon_Name>i_button_dallin_command.tga</Icon_Name>
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_rep_DHC</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -2265,6 +2334,17 @@
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_KEBIR
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>i_sa_RESPECT_FOR_JEDI.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>TURBO</Type>
+				<Alternate_Icon_Name>I_SA_VALOR_CHARGE.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Dallin_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -2535,10 +2615,12 @@
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy, Republic_Shipyard_Level_Four</Required_Special_Structures>
 	</DummyStructure>
 	<DummyStructure Name="Tallon_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_TALLON</Text_ID>
 		<Icon_Name>I_BUTTON_ADARTALLON_CW_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_rep_Acclamator_I</SFXEvent_Build_Complete>
 
 		<Encyclopedia_Text> 
 		TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
@@ -2554,6 +2636,13 @@
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>I_SA_SHIELD_FLARE.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Tallon_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -2865,7 +2954,7 @@
 		<SFXEvent_Build_Complete>Unit_Upgrade_Maarisa</SFXEvent_Build_Complete>
 	</DummyStructure>
 	<DummyStructure Name="Maarisa_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_MAARISA</Text_ID>
 		<Icon_Name>i_button_maarisa_command.tga</Icon_Name>
@@ -3056,7 +3145,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Pellaeon_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_PELLAEON</Text_ID>
 		<Icon_Name>i_button_pellaeon_command.tga</Icon_Name>
@@ -3074,6 +3163,15 @@
 		</Encyclopedia_Text>
 
 		<Affiliation>Empire</Affiliation>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>BARRAGE</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Pellaeon_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -3161,7 +3259,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Baraka_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_BARAKA</Text_ID>
 		<Icon_Name>i_button_baraka_command.tga</Icon_Name>
@@ -3179,6 +3277,12 @@
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_NEXU
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SENSOR_JAMMING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Baraka_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -3273,10 +3377,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Martz_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_MARTZ</Text_ID>
 		<Icon_Name>i_button_martz_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Acclamator</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -3289,6 +3395,12 @@
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_PROSECUTOR
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Martz_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -3385,10 +3497,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Wieler_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_WIELER</Text_ID>
 		<Icon_Name>i_button_wieler_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -3404,6 +3518,12 @@
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
 		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Wieler_Retire">
 		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
@@ -3553,10 +3673,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Coburn_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_COBURN</Text_ID>
 		<Icon_Name>i_button_coburn_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -3573,6 +3695,12 @@
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
 		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>WEAKEN_ENEMY</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Coburn_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -4106,7 +4234,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Yularen_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_YULAREN</Text_ID>
 		<Icon_Name>i_button_yularen_command.tga</Icon_Name>
@@ -4130,6 +4258,13 @@
 		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
 		TEXT_TOOLTIP_VENATOR_WEAP_INTEGRITY
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>i_sa_Cautiousness.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Yularen_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -4378,7 +4513,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Kilian_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_KILIAN</Text_ID>
 		<Icon_Name>i_button_kilian_command.tga</Icon_Name>
@@ -4400,6 +4535,13 @@
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
 		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>I_SA_FIRE_ENERGY_WEAPON.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Kilian_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -4554,10 +4696,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Dao_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DAO</Text_ID>
 		<Icon_Name>i_button_dao_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4571,6 +4715,13 @@
 		TEXT_TOOLTIP_COMMAND_DAO
 		TEXT_TOOLTIP_DAO_SPECIAL
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>STIM_PACK</Type>
+				<Alternate_Icon_Name>i_sa_PUSH_THE_LIMIT.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Dao_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -4687,10 +4838,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Tenant_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_NILS_TENANT</Text_ID>
 		<Icon_Name>i_button_tenant_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4705,6 +4858,12 @@
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
 		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SENSOR_JAMMING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Tenant_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -4819,10 +4978,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Denimoor_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DENIMOOR</Text_ID>
 		<Icon_Name>i_button_denimoor_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4835,6 +4996,12 @@
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_TENACIOUS
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Denimoor_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -4949,10 +5116,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Dron_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_DRON</Text_ID>
 		<Icon_Name>i_button_dron_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -4965,6 +5134,12 @@
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_DRON
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Dron_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -5060,10 +5235,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Autem_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_AUTEM</Text_ID>
 		<Icon_Name>i_button_autem_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -5079,6 +5256,12 @@
 		TEXT_TOOLTIP_SEPARATOR_CAPABILITIES_BLOCK
 		TEXT_TOOLTIP_FLEET_LEGIONS_OCA
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Autem_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -5204,10 +5387,12 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Forral_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_FORRAL</Text_ID>
 		<Icon_Name>I_BUTTON_BYTHEN_FORRAL_command.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Jedi_Cruiser</SFXEvent_Build_Complete>
 
 		<Affiliation>Empire</Affiliation>
 
@@ -5222,6 +5407,12 @@
 		TEXT_TOOLTIP_COMMAND_VENSENOR
 		TEXT_TOOLTIP_FORRAL_OVERRIDE
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>SENSOR_JAMMING</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Forral_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -5366,7 +5557,7 @@
 	</UniqueUnit>
 	
 	<DummyStructure Name="Screed_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_TERRINALD_SCREED</Text_ID>
 		<Icon_Name>i_button_screed_rep_command.tga</Icon_Name>
@@ -5386,7 +5577,19 @@
 		TEXT_TOOLTIP_SCREED_CW 
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_DEMOLISHER
+		TEXT_TOOLTIP_COMMAND_ARLIONNE
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>LURE</Type>
+				<Alternate_Icon_Name>i_sa_RAMPAGE.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>TURBO</Type>
+				<Alternate_Icon_Name>I_SA_VALOR_CHARGE.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Screed_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -5548,7 +5751,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Dodonna_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_JAN_DODONNA</Text_ID>
 		<Icon_Name>i_button_dodonna_rep_command.tga</Icon_Name>
@@ -5568,7 +5771,18 @@
 		TEXT_TOOLTIP_DODONNA_CW
 		TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
 		TEXT_TOOLTIP_COMMAND_ARDENT
+		TEXT_TOOLTIP_COMMAND_TRIUMPH
 		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>FULL_SALVO</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>HARMONIC_BOMB</Type>
+				<Alternate_Icon_Name>I_SA_INTERDICT.TGA</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Dodonna_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -5652,7 +5866,7 @@
 	</UniqueUnit>
 
 	<DummyStructure Name="Parck_Assign">
-		<Variant_Of_Existing_Type>Template_Assign</Variant_Of_Existing_Type>
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
 
 		<Text_ID>TEXT_HERO_VOSS_PARCK</Text_ID>
 		<Icon_Name>I_BUTTON_VOSS_PARCK_CW_command.tga</Icon_Name>
@@ -5671,8 +5885,13 @@
 
 		<SFXEvent_Build_Started> </SFXEvent_Build_Started>
 		<SFXEvent_Build_Cancelled> </SFXEvent_Build_Cancelled>
-		<SFXEvent_Build_Complete> </SFXEvent_Build_Complete>
+		<SFXEvent_Build_Complete>Unit_Complete_Victory_Destroyer</SFXEvent_Build_Complete>
 
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+        </Unit_Abilities_Data>
 	</DummyStructure>
 	<DummyStructure Name="Parck_Retire">
 		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
@@ -5772,6 +5991,7 @@
 		</Abilities>
 
 	</UniqueUnit>
+	<!-- Onara_Kuat Assign/Retire in Republic_Heroes_Army -->
 	<DummyStructure Name="Onara_Kuat_POTC_Upgrade">
 		<Variant_Of_Existing_Type>Template_Flagship_Swap_NoSelfDelete</Variant_Of_Existing_Type>
 		<Build_Cost_Credits>10000</Build_Cost_Credits>
@@ -5781,7 +6001,7 @@
 
 		<Text_ID>TEXT_TOOLTIP_COMMAND_ONARA_KUAT</Text_ID>
 		<Affiliation>Empire</Affiliation>
-		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
 		<Icon_Name>I_BUTTON_ONARA_KUAT_SSD.tga</Icon_Name>
 
 		<Encyclopedia_Text>
@@ -5871,7 +6091,42 @@
 			</Reduce_Production_Price_Ability>
 		</Abilities>
 	</UniqueUnit>
-	
+
+	<DummyStructure Name="Sanya_Tagge_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SANYA_TAGGE</Text_ID>
+		<Icon_Name>I_BUTTON_SANYA_TAGGE.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Imperial_Destroyer</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_05_SPACE
+			TEXT_TOOLTIP_TRAIT_AGENT_TIER_BARON
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_SANYA_TAGGE
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_SANYA_TAGGE
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Sanya_Tagge_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_SANYA_TAGGE</Text_ID>
+		<Icon_Name>I_BUTTON_SANYA_TAGGE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Sanya_Tagge_Battlecruiser</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Orman_Tagge_Battlecruiser">
 		<Variant_Of_Existing_Type>Template_Tagge_Battlecruiser</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -5938,7 +6193,42 @@
 			</Reduce_Production_Price_Ability>
 		</Abilities>
 	</UniqueUnit>
-	
+
+	<DummyStructure Name="Orman_Tagge_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ORMAN_TAGGE</Text_ID>
+		<Icon_Name>I_BUTTON_ORMAN_TAGGE_FOTR.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Pirate_Battleship</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>5000</Build_Cost_Credits>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_05_SPACE
+			TEXT_TOOLTIP_TRAIT_AGENT_TIER_BARON
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ORMAN_TAGGE
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_ORMAN_TAGGE
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Orman_Tagge_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ORMAN_TAGGE</Text_ID>
+		<Icon_Name>I_BUTTON_ORMAN_TAGGE_FOTR.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Orman_Tagge_Battlecruiser</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Kuat_of_Kuat_Procurator">
 		<Variant_Of_Existing_Type>Procurator_Battlecruiser</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -6012,8 +6302,10 @@
 			</Planet_Income_Bonus_Ability>
 		</Abilities>
 	</UniqueUnit>
+	<!-- Kuat_of_Kuat Assign/Retire in Republic_Heroes_Army -->
 
 	<!-- Non-Staff: Cruiser Heroes -->
+
 	<UniqueUnit Name="Coy_Imperator">
 		<Variant_Of_Existing_Type>Imperator_Star_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -6117,6 +6409,46 @@
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
 
+	<DummyStructure Name="Coy_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_COY</Text_ID>
+		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Rep_SD</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>2500</Build_Cost_Credits>
+
+		<Encyclopedia_Text> 
+			TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_08_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_COY
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_COY
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Coy_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_COY</Text_ID>
+		<Icon_Name>I_BUTTON_COY_CW.TGA</Icon_Name>
+
+		<Encyclopedia_Text> 
+		TEXT_TOOLTIP_RETIRE_REPUBLIC_MOFF
+		</Encyclopedia_Text>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<SFXEvent_Build_Complete> Unit_Unassigned_Admiral_Tarkin </SFXEvent_Build_Complete>
+
+		<Required_Orbiting_Units>Coy_Imperator</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Kreuge_Gibbon">
 		<Variant_Of_Existing_Type>Tector_Star_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -6203,6 +6535,49 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Kreuge_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KREUGE</Text_ID>
+		<Icon_Name>I_BUTTON_KREUGE.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Star_Destroyer</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>2500</Build_Cost_Credits>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_05_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_KREUGE
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_KREUGE
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>DEFEND</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>WEAKEN_ENEMY</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Kreuge_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_KREUGE</Text_ID>
+		<Icon_Name>I_BUTTON_KREUGE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Kreuge_Gibbon</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Mulleen_Imperator">
 		<Variant_Of_Existing_Type>Imperator_Star_Destroyer</Variant_Of_Existing_Type>
@@ -6293,7 +6668,39 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
-	
+
+	<DummyStructure Name="Mulleen_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MULLEEN</Text_ID>
+		<Icon_Name>I_BUTTON_MULLEEN.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Rep_SD</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+		<Build_Cost_Credits>2500</Build_Cost_Credits>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_05_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_MULLEEN
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_MULLEEN
+		</Encyclopedia_Text>
+	</DummyStructure>
+	<DummyStructure Name="Mulleen_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MULLEEN</Text_ID>
+		<Icon_Name>I_BUTTON_MULLEEN.tga</Icon_Name>
+
+		<Tech_Level>99</Tech_Level>
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Mulleen_Imperator</Required_Orbiting_Units>
+	</DummyStructure>
 	
 	<!-- Non-Staff: Frigate Heroes -->
 
@@ -6362,6 +6769,50 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="Renau_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_RENAU</Text_ID>
+		<Icon_Name>I_BUTTON_RENAU.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Imperial_Destroyer</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_REPUBLIC_MOFF
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_08_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_RENAU
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_BLAZING_STAR
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>power_to_weapons</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+				<Type>TURBO</Type>
+				<Alternate_Icon_Name>I_SA_FORCE_CONFUSE.TGA</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Renau_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_RENAU</Text_ID>
+		<Icon_Name>I_BUTTON_RENAU.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Renau_Acclamator</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Garm_Bel_Iblis_Starbolt">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
 		<Variant_Of_Existing_Type>Starbolt</Variant_Of_Existing_Type>
@@ -6421,6 +6872,7 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+	<!-- Garm Assign/Retire in Republic_Heroes_Army -->
 
 	<UniqueUnit Name="Bail_Organa_Venator">
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -6497,6 +6949,7 @@
 			</System_Spy_Ability>
 		</Abilities>
 	</UniqueUnit>
+	<!-- Bail_Organa Assign/Retire in Republic_Heroes_Army -->
 
 	<UniqueUnit Name="Dodonna_Acclamator"> <!-- ODL exclusive -->
 		<Variant_Of_Existing_Type>Acclamator_I_Carrier</Variant_Of_Existing_Type>
@@ -6627,7 +7080,14 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
-	
+
+	<DummyStructure Name="Dodonna_Retire2">
+		<Variant_Of_Existing_Type>Dodonna_Retire</Variant_Of_Existing_Type>
+
+		<Required_Orbiting_Units>Dodonna_Acclamator</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="Screed_Arlionne">
 		<Variant_Of_Existing_Type>Victory_I_Fleet_Star_Destroyer</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -6750,7 +7210,14 @@
 		<Build_Limit_Lifetime_For_All_Allies></Build_Limit_Lifetime_For_All_Allies>   
 		<!--<MULTIPLAYER SKIRMISH VALUES END>-->
 	</UniqueUnit>
-	
+
+	<DummyStructure Name="Screed_Retire2">
+		<Variant_Of_Existing_Type>Screed_Retire</Variant_Of_Existing_Type>
+
+		<Required_Orbiting_Units>Screed_Arlionne</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<!-- Non-Staff: Corvette Heroes -->
 	<UniqueUnit Name="Raymus_Tantive">
 		<Variant_Of_Existing_Type>CR90</Variant_Of_Existing_Type>
@@ -6877,6 +7344,46 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="Raymus_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ANTILLES_CW</Text_ID>
+		<Icon_Name>I_BUTTON_CAPTAIN_ANTILLIES_CW.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Select_Antilles</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_TRAIT_UTILITY_COOPERATIVE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ANTILLES_CW
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_TANTIVE_IV
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Raymus_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ANTILLES_CW</Text_ID>
+		<Icon_Name>I_BUTTON_CAPTAIN_ANTILLIES_CW.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Raymus_Tantive</Required_Orbiting_Units>
+	</DummyStructure>
+
+
 	<UniqueUnit Name="McQuarrie_Concept">
 		<Variant_Of_Existing_Type>Charger_C70</Variant_Of_Existing_Type>
 		<Is_Named_Hero>Yes</Is_Named_Hero>
@@ -6948,6 +7455,46 @@
 			</Laser_Defense_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="McQuarrie_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MCQUARRIE</Text_ID>
+		<Icon_Name>I_BUTTON_MCQUARRIE.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Corvette</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_MCQUARRIE
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_MCQUARRIE
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>POWER_TO_WEAPONS</Type>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="McQuarrie_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_MCQUARRIE</Text_ID>
+		<Icon_Name>I_BUTTON_MCQUARRIE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>McQuarrie_Concept</Required_Orbiting_Units>
+	</DummyStructure>
+
 
 	<UniqueUnit Name="Jarl_Pelta">
 		<Variant_Of_Existing_Type>Template_Pelta_Support</Variant_Of_Existing_Type>
@@ -7109,6 +7656,47 @@
 		</Abilities>
 	</UniqueUnit>
 
+	<DummyStructure Name="Jarl_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_JARL</Text_ID>
+		<Icon_Name>I_BUTTON_JARL.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_rep_Pelta_Support</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_JARL
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_JARL
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>HARMONIC_BOMB</Type>
+				<Alternate_Icon_Name>i_sa_repair_vehicle.tga</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Jarl_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_JARL</Text_ID>
+		<Icon_Name>I_BUTTON_JARL.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Jarl_Pelta</Required_Orbiting_Units>
+	</DummyStructure>
+
+	<!-- Spawns random ships around Zozridor Slayke -->
 	<DummyStructure Name="Rally_Master_Spawner_Freedoms_Sons">
 		<Variant_Of_Existing_Type>Torrent</Variant_Of_Existing_Type>
 		<Lua_Script>Tactical_Spawner_Freedoms_Sons</Lua_Script>
@@ -7345,6 +7933,64 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Zozridor_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ZOZRIDOR_SLAYKE</Text_ID>
+		<Icon_Name>I_BUTTON_ZOZRIDOR_SLAYKE.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Carrack</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_ASSIGN_NR_ADMIRAL
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_04_SPACE
+			TEXT_TOOLTIP_TRAIT_UTILITY_PARTISAN_RECRUITER
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_ZOZRIDOR_SLAYKE
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_ZOZRIDOR_SLAYKE_CR90
+			TEXT_TOOLTIP_COMMAND_ZOZRIDOR_SLAYKE_CARRACK
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>TURBO</Type>
+			</Unit_Ability>
+			<Unit_Ability>
+                <Type>DEPLOY_SQUAD</Type>
+                <Alternate_Icon_Name>I_SA_JEDI.tga</Alternate_Icon_Name>
+            </Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Zozridor_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ZOZRIDOR_SLAYKE</Text_ID>
+		<Icon_Name>I_BUTTON_ZOZRIDOR_SLAYKE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Zozridor_Slayke_CR90</Required_Orbiting_Units>
+	</DummyStructure>
+	<DummyStructure Name="Zozridor_Retire2">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_ZOZRIDOR_SLAYKE</Text_ID>
+		<Icon_Name>I_BUTTON_ZOZRIDOR_SLAYKE.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Zozridor_Slayke_Carrack</Required_Orbiting_Units>
+	</DummyStructure>
+
 	
 	<UniqueUnit Name="Needa_Integrity">
 		<Variant_Of_Existing_Type>Carrack_Cruiser_Lasers</Variant_Of_Existing_Type>
@@ -7442,4 +8088,48 @@
 			</Battlefield_Modifier_Ability>
 		</Abilities>
 	</UniqueUnit>
+
+	<DummyStructure Name="Needa_Assign">
+		<Variant_Of_Existing_Type>Template_Assign2</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_NEEDA</Text_ID>
+		<Icon_Name>I_BUTTON_NEEDA.tga</Icon_Name>
+
+		<SFXEvent_Build_Complete>Unit_Complete_Carrack</SFXEvent_Build_Complete>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Encyclopedia_Text>
+			TEXT_TOOLTIP_SEPARATOR_TRAITS_BLOCK
+			TEXT_TOOLTIP_TRAIT_COMMAND_TIER_03_SPACE
+			TEXT_TOOLTIP_TRAIT_SPECIALIZATION_SMALL_SHIP
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_NEEDA_FOTR
+			TEXT_TOOLTIP_SEPARATOR_COMMANDS_BLOCK
+			TEXT_TOOLTIP_COMMAND_NEEDA_CARRACK
+			TEXT_TOOLTIP_SEPARATOR_ESCORTS_BLOCK
+			TEXT_TOOLTIP_ESCORT_NEEDA1
+			TEXT_TOOLTIP_ESCORT_NEEDA2
+		</Encyclopedia_Text>
+
+		<Unit_Abilities_Data SubObjectList="Yes">
+			<Unit_Ability>
+				<Type>HARMONIC_BOMB</Type>
+				<Alternate_Icon_Name>I_SA_INTERDICT.TGA</Alternate_Icon_Name>
+			</Unit_Ability>
+		</Unit_Abilities_Data>
+	</DummyStructure>
+	<DummyStructure Name="Needa_Retire">
+		<Variant_Of_Existing_Type>Template_Retire</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_HERO_NEEDA</Text_ID>
+		<Icon_Name>I_BUTTON_NEEDA.tga</Icon_Name>
+
+		<Tech_Level>0</Tech_Level>
+
+		<Affiliation>Empire</Affiliation>
+
+		<Required_Orbiting_Units>Needa_Integrity</Required_Orbiting_Units>
+	</DummyStructure>
+
 </Republic_Heroes>

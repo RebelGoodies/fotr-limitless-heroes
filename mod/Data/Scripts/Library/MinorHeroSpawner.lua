@@ -41,7 +41,7 @@ function CadetLoop(args)
 		return
 	end
 	if initial_call then
-		timervalue = 840
+		timervalue = 400
 	else
 		local academy_planet = Academy.Get_Planet_Location()
 		local academy_owner = Academy.Get_Owner()
@@ -54,7 +54,7 @@ function CadetLoop(args)
 		local tier_chances --lowest tier if the percent roll is below first value, next tier up if between first and second... highest tier if above last
 
 		if influence_level == 10 then
-			timervalue = 500
+			timervalue = 560
 			tier_chances = {25,50,75}
 		elseif influence_level == 9 then
 			timervalue = 640
@@ -80,8 +80,10 @@ function CadetLoop(args)
 		end
 			
 		if influence_level > 0 then
+			timervalue = timervalue - (influence_level * 40) + 40
 			if academy_owner.Is_Human() then
-				StoryUtil.ShowScreenText("A commander has spawned at %s", 5, academy_planet)
+				StoryUtil.ShowScreenText("A commander has spawned at %s", 10, academy_planet, {r = 0, g = 200, b = 0})
+				StoryUtil.ShowScreenText("Another commander will arrive in about " .. tostring(timervalue/40) .. " cycles.", 10)
 			end
 			local commanders
 			local tier_chance
@@ -119,9 +121,9 @@ end
 
 function select_option(option_array, owner)
 	while true do
-		option_index = GameRandom(1, table.getn(option_array))
+		local option_index = GameRandom(1, table.getn(option_array))
 		if type(option_array[option_index]) == "table" then
-			condition_array = option_array[option_index]
+			local condition_array = option_array[option_index]
 			local match_condition = false
 			if type(condition_array[2]) == "number" then
 				local techLevel = GlobalValue.Get("GALACTIC_YEAR")

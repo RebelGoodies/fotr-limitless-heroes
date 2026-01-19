@@ -1,17 +1,17 @@
 return {
 	["EMPIRE"] = {
-	["CORUSCANT"] = {"Pestage_Team"},
-	["CARIDA"] = { "Obi_Wan_Eta_Team"},
-	["NABOO"] = {"Anakin_Eta_Team"},
-	["RENDILI"] = {"Plo_Koon_Delta_Team", "Coburn_Triumphant"}
+		["CORUSCANT"] = {"Pestage_Team"},
+		["CARIDA"] = { "Obi_Wan_Eta_Team"},
+		["NABOO"] = {"Anakin_Eta_Team"},
+		["RENDILI"] = {"Plo_Koon_Delta_Team", "Coburn_Triumphant"}
 	},
 	["REBEL"] = {
-	["GEONOSIS"] = {"Lucid_Voice", "Dooku_Team", "Trench_Invulnerable"},
-	["BOZ_PITY"] = {"Durge_Team", "Ventress_Team"},
-	["SERENNO"] = {"Grievous_Team_Recusant", "Colicoid_Swarm", "Sora_Bulq_Team"},
-	["UMBARA"] = {"Kalani_Team"},
-	["QUELL"] = {"TF1726_Munificent"},
-	["CATO_NEIMOIDIA"] = {"Gunray_Team", "Harsol_Munificent", "AutO_Providence"}
+		["GEONOSIS"] = {"Lucid_Voice", "Dooku_Team", "Trench_Invulnerable"},
+		["BOZ_PITY"] = {"Durge_Team", "Ventress_Team"},
+		["SERENNO"] = {"Grievous_Recusant", "Colicoid_Swarm", "Sora_Bulq_Team"},
+		["UMBARA"] = {"Kalani_Team"},
+		["QUELL"] = {"TF1726_Munificent"},
+		["CATO_NEIMOIDIA"] = {"Gunray_Team", "Harsol_Munificent", "AutO_Providence"}
 	},
 	["HUTT_CARTELS"] = {
 		["GAMORR"]  = {
@@ -37,6 +37,6 @@ return {
         }
 	},
 	["INDEPENDENT_FORCES"] = {
-	["FLORRUM"] = {"Hondo_Ohnaka_Team"}
+		["FLORRUM"] = {"Hondo_Ohnaka_Team"}
 	}
 }

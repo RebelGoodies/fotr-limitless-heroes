@@ -1,15 +1,15 @@
 return {
 	["EMPIRE"] = {
-	["CORUSCANT"] = {"Pestage_Team", "Yoda_Delta_Team"}
+		["CORUSCANT"] = {"Pestage_Team", "Yoda_Delta_Team"}
 	},
 	["REBEL"] = {
-	["RAXUS_SECOND"] = {"Lucid_Voice", "SevRance_Team"},
-	["YAGDHUL"] = {"Durge_Team"},
-	["YAVIN"] = {"Dooku_Team", "Cavik_Toth_Reaver"},
-	--["SERENNO"] = {"Grievous_Team_Recusant", "Colicoid_Swarm", "Sora_Bulq_Team"},
-	["QUELL"] = {"TF1726_Munificent"},
-	["CHRISTOPHSIS"] = {"Whorm_Team", "Trench_Invincible"},
-	["SULLUST"] = {"Gunray_Team"}
+		["RAXUS_SECOND"] = {"SevRance_Team"},
+		["YAGDHUL"] = {"Durge_Team"},
+		["YAVIN"] = {"Dooku_Team", "Cavik_Toth_Reaver"},
+		--["SERENNO"] = {"Grievous_Team_Recusant", "Colicoid_Swarm", "Sora_Bulq_Team"},
+		["QUELL"] = {"TF1726_Munificent"},
+		["CHRISTOPHSIS"] = {"Whorm_Team", "Trench_Invincible"},
+		["SULLUST"] = {"Gunray_Team"}
 	},
 	["HUTT_CARTELS"] = {
 		["GAMORR"]  = {
@@ -35,6 +35,6 @@ return {
         }
 	},
 	["INDEPENDENT_FORCES"] = {
-	["FLORRUM"] = {"Hondo_Ohnaka_Team"}
+		["FLORRUM"] = {"Hondo_Ohnaka_Team"}
 	}
 }

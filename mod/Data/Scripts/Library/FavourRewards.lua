@@ -78,6 +78,7 @@ return {
 			leader_holo = nil,
 			support_structures_perception = nil,
 			support_buildables = {
+				{name = "OPTION_COMPLETE_REPUBLIC", value = 100, locks = true},
 			},
 			reward_list = { 
 			},
@@ -109,6 +110,7 @@ return {
 			support_structures_perception = nil,
 			support_buildables = {
 				{name = "STIMULUS_TECHNO", value = 5, locks = true},
+				{name = "OPTION_COMPLETE_TECHNO", value = 100, locks = true},
 			},
 			reward_list = { 
 			},
@@ -150,6 +152,7 @@ return {
 			leader_holo = "San_Hill_Loop",
 			support_buildables = {
 				{name = "STIMULUS_COMMERCE", value = 5, locks = true},
+				{name = "OPTION_COMPLETE_COMMERCE", value = 100, locks = true},
 			},
 			reward_list = { 
 			},
@@ -191,6 +194,7 @@ return {
 			support_structures_perception = nil,
 			support_buildables = {
 				{name = "STIMULUS_IGBC", value = 5, locks = true},
+				{name = "OPTION_COMPLETE_IGBC", value = 100, locks = true},
 			},
 			reward_list = { 
 			},
@@ -232,6 +236,7 @@ return {
 			leader_holo = "San_Hill_Loop",
 			support_buildables = {
 				{name = "STIMULUS_TRADEFED", value = 5, locks = true},
+				{name = "OPTION_COMPLETE_TRADEFED", value = 100, locks = true},
 			},
 			reward_list = { 
 			},
@@ -276,6 +281,7 @@ return {
 			support_structures_perception = nil,
 			leader_holo = "",
 			support_buildables = {
+				{name = "OPTION_HUTT_SCUM_FAVOUR", value = 20, locks = true},
 				-- {name = "IPV1_GUNBOAT", tag = "IPV1 Gunboat", value = 1, locks = false},
 				-- {name = "CONSULAR_REFIT", tag = "Consular Refit", value = 2, locks = false},
 				-- {name = "DHC_GUNBOAT", tag = "PDF Dreadnaught Heavy Cruiser Gunboat", value = 8, locks = false},
@@ -384,6 +390,8 @@ return {
 			support_structures_perception = nil,
 			leader_holo = "",
 			support_buildables = {
+				{name = "OPTION_HUTT_MOBILIZATION_FAVOUR", value = 100, locks = true},
+				
 				{name = "BH_GALACTIC_JUVARD_FRIGATE", value = 4, locks = false},
 				{name = "BH_GALACTIC_BARABBULA_FRIGATE", value = 5, locks = false},
 				{name = "BH_GALACTIC_KOSSAK_FRIGATE", value = 6, locks = false},

@@ -7,6 +7,8 @@ The Warlord - Kariek
 Nuso Esva - Quethold (it's unclear if he should be in FotR or not to me, but I guess it doesn't hurt?)
 -->
 
+	<!-- 16. Independent Core -->
+
 	<UniqueUnit Name="Gevtes">
 		<Variant_Of_Existing_Type>Espo_Walker_91</Variant_Of_Existing_Type>
 		<LOD_Bias>0.5</LOD_Bias>

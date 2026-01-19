@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <Fighter_Heroes>
 
+	<!-- 14. Fighter -->
+
 	<!-- Republic -->
 	<DummyStructure Name="View_Fighters">
 		<Variant_Of_Existing_Type>Template_Research_Dummy</Variant_Of_Existing_Type>
@@ -29,6 +31,11 @@
 		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_STORYEVENT</Encyclopedia_Unit_Class>
 
 		<Required_Special_Structures>AI_Category_Dummy | Story_Category_Dummy</Required_Special_Structures>
+	</DummyStructure>
+	<DummyStructure Name="View_CIS_Fighters">
+		<Variant_Of_Existing_Type>View_Fighters</Variant_Of_Existing_Type>
+
+		<Affiliation>Rebel</Affiliation>
 	</DummyStructure>
 
 	<!-- Arhul Narra / Guardian Squadron / ARC-170 -->

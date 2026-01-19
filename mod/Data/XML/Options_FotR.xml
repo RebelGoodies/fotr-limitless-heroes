@@ -66,4 +66,326 @@
 
 		<Build_Initially_Locked>No</Build_Initially_Locked>
 	</DummyStructure>
+
+	<!-- Limitless Heores Options -->
+	
+	<DummyStructure Name="Option_Cycle_Mando">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+
+		<Text_ID>Cycle Default Mandalorian Skin</Text_ID>
+		<Encyclopedia_Text>
+		Cycles to the next clan skin as the default one used
+		for standard mandalorian soldiers，without needing a
+		Clan leader present. Heroes will override this
+		selection. The following order is used:
+		CLAN: Priority 1 | Protectors
+		CLAN: Priority 2 | Death Watch
+		CLAN: Priority 3 | Maul
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_mandomerc_soldier.tga</Icon_Name>
+
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+	</DummyStructure>
+
+	<DummyStructure Name="Option_Mandalore_Support_Event">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+
+		<Text_ID>Support Mandalorian Clan</Text_ID>
+		<Encyclopedia_Text>
+			Open a popup dialog to support a mandalorian clan and
+			recieve their heroes.
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+
+		<Icon_Name>i_button_mandalore_death_watch.tga</Icon_Name>
+
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Required_Planets>Mandalore</Required_Planets>
+
+		<Required_Special_Structures>Options_Category_Dummy | Story_Category_Dummy, Mandal_Motors_HQ</Required_Special_Structures>
+	</DummyStructure>
+
+	<DummyStructure Name="Cheat_Mandalore_Support_Event">
+		<Variant_Of_Existing_Type>Template_Cheat</Variant_Of_Existing_Type>
+
+		<Text_ID>Support Mandalorian Clan</Text_ID>
+		<Encyclopedia_Text>
+			Open a popup dialog to support a mandalorian clan and
+			recieve their heroes at the current planet. Mandalore
+			does not need to be owned.
+		</Encyclopedia_Text>
+
+		<Icon_Name>i_button_mandalore_protectors.tga</Icon_Name>
+
+		<GUI_Row>1</GUI_Row>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+	</DummyStructure>
+
+	<DummyStructure Name="Option_Rep_Heroes_Sandbox">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Hero Sandbox Mode</Text_ID>
+		<Encyclopedia_Text>
+		Sandbox mode: Unlock every single hero staff option no
+		matter the era，including dead staff and hero squadrons.
+		Cannot be undone. Applies to the Republic and CIS.
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_jedi_temple.tga</Icon_Name>
+
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Cost_Credits>1</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Clone_Officer_Deaths">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Remove Death Requirements</Text_ID>
+		<Encyclopedia_Text>
+		Remove the death requirement for clone officers. This
+		unlocks 4 clones without needing other clones to die.
+		TEXT_NONE
+		TEXT_GOVERNMENT_REPUBLIC_CLONE_LIST
+		TEXT_GOVERNMENT_REPUBLIC_CLONE_DEVISS
+		TEXT_GOVERNMENT_REPUBLIC_CLONE_JET
+		TEXT_GOVERNMENT_REPUBLIC_CLONE_VILL
+		TEXT_GOVERNMENT_REPUBLIC_CLONE_BOW
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_view_clones_extra.tga</Icon_Name>
+		
+		<Affiliation>Empire</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Unlock_Tenant">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Remove Death Requirement</Text_ID>
+		<Encyclopedia_Text>
+		Unlock Admiral Tenant without Dao needing to die.
+		TEXT_NONE
+		TEXT_GOVERNMENT_REPUBLIC_ADMIRAL_TENANT
+		TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+		TEXT_TOOLTIP_NILS_TENANT
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_tenant.tga</Icon_Name>
+		
+		<Affiliation>Empire</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+
+	<DummyStructure Name="Option_Unlock_Jayfon_Senior">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Remove Death Requirement</Text_ID>
+		<Encyclopedia_Text>
+			Unlock Jayfon Senior without needing Jayfon Junior to
+			die.
+			TEXT_NONE
+			TEXT_TOOLTIP_SEPARATOR_BIO_BLOCK
+			TEXT_TOOLTIP_JAYFON_SENIOR
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>I_BUTTON_JAYFON_SENIOR.tga</Icon_Name>
+		
+		<Affiliation>Empire</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Complete_Republic">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Republic Senate</Text_ID>
+		<Encyclopedia_Text>
+		Instantly set the senate approval rating to 100%，which
+		unlocks the story options early.
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_encyclopedia_empire_symbol.tga</Icon_Name>
+
+		<Affiliation>Empire</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>4000</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Complete_Holdouts">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Integrate CIS Holdouts</Text_ID>
+		<Encyclopedia_Text>
+		Integrate the Separatist Holdouts without needing two
+		of either Dooku，Trench，or Ningo to die.
+		TEXT_NONE
+		TEXT_GOVERNMENT_CIS_INTEGRATE_REWARD_HEADER
+		TEXT_HERO_DELLSO
+		TEXT_HERO_KENDU
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_encyclopedia_rebel_symbol.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>Yes</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Complete_IGBC">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_IGBC</Text_ID>
+		<Encyclopedia_Text>
+		Instantly integrate this subfaction to get their heroes
+		and planets with 100% approval.
+		TEXT_NONE
+		TEXT_GOVERNMENT_CIS_INTEGRATE_IGBC_HEADER
+		TEXT_GOVERNMENT_CIS_INTEGRATE_IGBC_1
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_banking_clan_HQ.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Complete_Commerce">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_COMMERCE</Text_ID>
+		<Encyclopedia_Text>
+		Instantly integrate this subfaction to get their heroes
+		and planets with 100% approval.
+		TEXT_NONE
+		TEXT_GOVERNMENT_CIS_INTEGRATE_COMMERCE_HEADER
+		TEXT_GOVERNMENT_CIS_INTEGRATE_COMMERCE_1
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_commerce_guild_HQ.tga</Icon_Name>
+
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Complete_TradeFed">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_TRADEFED</Text_ID>
+		<Encyclopedia_Text>
+		Instantly integrate this subfaction to get their heroes
+		and planets with 100% approval.
+		TEXT_NONE
+		TEXT_GOVERNMENT_CIS_INTEGRATE_TRADEFED_HEADER
+		TEXT_GOVERNMENT_CIS_INTEGRATE_TRADEFED_1
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_trade_federation_HQ.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+		
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Complete_Techno">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>TEXT_GOVERNMENT_STIMULUS_TECHNO</Text_ID>
+		<Encyclopedia_Text>
+		Instantly integrate this subfaction to get their heroes
+		and planets with 100% approval.
+		TEXT_NONE
+		TEXT_GOVERNMENT_CIS_INTEGRATE_TECHNO_HEADER
+		TEXT_GOVERNMENT_CIS_INTEGRATE_TECHNO_1
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_techno_union_HQ.tga</Icon_Name>
+		
+		<Affiliation>Rebel</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+		<Build_Time_Seconds>8</Build_Time_Seconds>
+		
+		<Build_Limit_Lifetime_Per_Player>1</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Hutt_Mobilization_Favour">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Increase Favor by 100</Text_ID>
+		<Encyclopedia_Text>
+		Gain 100 Hutt favor to unlock the next mobilization
+		reward(s). Can be used 5 times.
+		TEXT_NONE
+		TEXT_GOVERNMENT_HUTTS_EMPIRE_HEADER
+		TEXT_GOVERNMENT_HUTTS_EMPIRE_OVERVIEW
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>i_button_hutts_capital.tga</Icon_Name>
+
+		<Affiliation>Hutt_Cartels</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+
+		<Build_Limit_Lifetime_Per_Player>5</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
+	
+	<DummyStructure Name="Option_Hutt_Scum_Favour">
+		<Variant_Of_Existing_Type>Template_Option</Variant_Of_Existing_Type>
+		
+		<Text_ID>Increase Scum Favor by 20</Text_ID>
+		<Encyclopedia_Text>
+		Gain 20 scum favor to unlock the next underworld
+		reward(s). Can be used 5 times.
+		TEXT_NONE
+		TEXT_GOVERNMENT_HUTTS_SCUM_HEADER
+		TEXT_GOVERNMENT_HUTTS_SCUM_OVERVIEW
+		</Encyclopedia_Text>
+		<Encyclopedia_Unit_Class> TEXT_ENCYCLOPEDIA_CLASS_OPTIONS </Encyclopedia_Unit_Class>
+		
+		<Icon_Name>I_MULTIPLAY_HUTTS.tga</Icon_Name>
+
+		<Affiliation>Hutt_Cartels</Affiliation>
+		<Build_Initially_Locked>No</Build_Initially_Locked>
+		<Build_Cost_Credits>1000</Build_Cost_Credits>
+
+		<Build_Limit_Lifetime_Per_Player>5</Build_Limit_Lifetime_Per_Player>
+	</DummyStructure>
 </Options>
