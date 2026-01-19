@@ -1,6 +1,6 @@
 require("deepcore/std/class")
 require("PGSpawnUnits")
-StoryUtil = require("eawx-util/StoryUtil")
+require("eawx-util/StoryUtil")
 
 ---@class CISHoldoutsEvent
 CISHoldoutsEvent = class()

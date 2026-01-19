@@ -26,7 +26,7 @@ return {
     target = PluginTargets.never(),
     init = function(self, ctx)
         local galactic_conquest = ctx.galactic_conquest
-        return RepublicHeroes(galactic_conquest, galactic_conquest.Events.GalacticHeroKilled, galactic_conquest.HumanPlayer, ctx.hero_clones_p2_disabled)
+        return RepublicHeroes(galactic_conquest, galactic_conquest.Events.GalacticHeroKilled, galactic_conquest.HumanPlayer, ctx.hero_clones_p2_disabled, ctx.id)
     end
 }
  

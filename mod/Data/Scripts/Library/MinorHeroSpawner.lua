@@ -27,11 +27,14 @@ require("eawx-util/StoryUtil")
 function CadetLoop(args)
 	local Academy = args[1]
 	local initial_call = args[2]
-	local space_V_list = args[3]
-	local space_IV_list = args[4]
+	local space_I_list = args[3]
+	local space_II_list = args[4]
 	local space_III_list = args[5]
-	local land_IV_list = args[6]
-	local land_III_list = args[7]
+	local space_IV_list = args[6]
+	local land_I_list = args[7]
+	local land_II_list = args[8]
+	local land_III_list = args[9]
+	local land_IV_list = args[10]
 	
 	local timervalue
 	if not TestValid(Academy) then
@@ -48,45 +51,29 @@ function CadetLoop(args)
 			influence_level = 0
 		end
 		
-		local space_V_chance
-		local space_IV_chance
-		local land_IV_chance
+		local tier_chances --lowest tier if the percent roll is below first value, next tier up if between first and second... highest tier if above last
 
 		if influence_level == 10 then
 			timervalue = 500
-			space_V_chance = 40
-			space_IV_chance = 40
-			land_IV_chance = 50
+			tier_chances = {25,50,75}
 		elseif influence_level == 9 then
 			timervalue = 640
-			space_V_chance = 40
-			space_IV_chance = 40
-			land_IV_chance = 50
+			tier_chances = {25,50,75}
 		elseif influence_level == 8 then
 			timervalue = 680
-			space_V_chance = 50
-			space_IV_chance = 50
-			land_IV_chance = 67
+			tier_chances = {33,67,100}
 		elseif influence_level == 7 then
 			timervalue = 720
-			space_V_chance = 50
-			space_IV_chance = 50
-			land_IV_chance = 67
+			tier_chances = {33,67,100}
 		elseif influence_level == 6 then
 			timervalue = 760
-			space_V_chance = 50
-			space_IV_chance = 50
-			land_IV_chance = 67
+			tier_chances = {33,67,100}
 		elseif influence_level == 5 then
 			timervalue = 800
-			space_V_chance = 67
-			space_IV_chance = 33
-			land_IV_chance = 100
+			tier_chances = {50,100,100}
 		elseif influence_level == 4 then
 			timervalue = 840
-			space_V_chance = 67
-			space_IV_chance = 33
-			land_IV_chance = 100
+			tier_chances = {50,100,100}
 		else
 			influence_level = 0 --Don't bother producing any below this if the planet dislikes you that much
 			timervalue = 880
@@ -94,36 +81,40 @@ function CadetLoop(args)
 			
 		if influence_level > 0 then
 			if academy_owner.Is_Human() then
-				StoryUtil.ShowScreenText("TEXT_COMMANDER_SPAWN_PLANET", 5, academy_planet)
+				StoryUtil.ShowScreenText("A commander has spawned at %s", 5, academy_planet)
 			end
 			local commanders
 			local tier_chance
 			local commander
-			if table.getn(space_V_list) > 0 then
+			if table.getn(space_II_list) > 0 then
 				tier_chance = GameRandom(1, 100)
-				if tier_chance <= space_V_chance then
-					commander = select_option(space_V_list, academy_owner)
-				elseif tier_chance <= space_V_chance + space_IV_chance then
-					commander = select_option(space_IV_list, academy_owner)
-				else
-					commander = select_option(space_III_list, academy_owner)
+				local index = 3
+				for i=3,1,-1 do
+					if tier_chance > tier_chances[i] then
+						index = index + i
+						break
+					end
 				end
+				commander = select_option(args[index], academy_owner)
 				local cadet_list = SpawnList({ commander }, academy_planet, academy_owner,true,false)
 			end
 			
-			if table.getn(land_IV_list) > 0 then
+			if table.getn(land_II_list) > 0 then
 				tier_chance = GameRandom(1, 100)
-				if tier_chance <= land_IV_chance then
-					commander = select_option(land_IV_list, academy_owner)
-				else
-					commander = select_option(land_III_list, academy_owner)
-				end	
+				local index = 7
+				for i=3,1,-1 do
+					if tier_chance > tier_chances[i] then
+						index = index + i
+						break
+					end
+				end
+				commander = select_option(args[index], academy_owner)
 				local cadet_list2 = SpawnList({ commander }, academy_planet, academy_owner,true,false)
 			end
 		end
 	end
 	
-	Register_Timer(CadetLoop, timervalue, {Academy, false, space_V_list, space_IV_list, space_III_list, land_IV_list, land_III_list})
+	Register_Timer(CadetLoop, timervalue, {Academy, false, space_I_list, space_II_list, space_III_list, space_IV_list, land_I_list, land_II_list, land_III_list, land_IV_list})
 end
 
 function select_option(option_array, owner)
@@ -133,19 +124,13 @@ function select_option(option_array, owner)
 			condition_array = option_array[option_index]
 			local match_condition = false
 			if type(condition_array[2]) == "number" then
-				local techLevel = GlobalValue.Get("CURRENT_ERA")
+				local techLevel = GlobalValue.Get("GALACTIC_YEAR")
 				if techLevel >= condition_array[2] then
 					match_condition = true
 				end
 			else --string
-				local research_array = Find_All_Objects_Of_Type(condition_array[2])
-				if table.getn(research_array) > 0 then
-					for i, unit in pairs(research_array) do
-						if unit.Get_Owner() == owner then
-							match_condition = true
-							break
-						end
-					end
+				if not (Find_Object_Type(condition_array[2]).Is_Build_Locked(owner) or Find_Object_Type(condition_array[2]).Is_Obsolete(owner)) then
+					match_condition = true
 				end
 			end
 			if table.getn(condition_array) > 2 then

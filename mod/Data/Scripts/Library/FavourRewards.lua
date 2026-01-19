@@ -10,6 +10,7 @@ return {
 	--         max_crossplot = "PUBLISH_UPON_REACHING_MAX_VALUE",
 	--         cycle_increase = 0, // Amount gained by default per week
 	--         increase_on_capture = 0, //Amount gained when taking a planet
+	--         decrease_on_loss = 0, //Amount lost when losing a planet
 	--         reduction_speech = nil, //Speech event if reduced
 	--         support_structures_perception = nil, //Perception name which checks for structure presence when building
 	--         leader_holo = "",
@@ -28,18 +29,28 @@ return {
 	--             }   
 	--         },
 	--         spawned_rewards = {
-	--                 ["DARTH_MAUL_TEAM"] = {
+	--                 ["OBJECT_TO_SPAWN"] = {
 	--                     threshold = 100,
 	--                     tag = "Darth Maul",
 	--                     remove_cost = false,
 	--                     unique = true, spawned = false,
 	--                     text = true
 	--                 },
-	--                 ["SAVAGE_OPRESS_TEAM"] = {
+	--                 ["OBJECT_TO_SPAWN"] = {
 	--                     threshold = 100,
 	--                     tag = "Savage Opress",
 	--                     remove_cost = false,
 	--                     unique = true, spawned = false,
+	--                     text = true
+	--                 }
+	--         },
+	--         crossplot_rewards = {
+	--                 ["NAME"] = {
+	--                     crossplot = "CROSSPLOT_NAME",
+	--                     threshold = 70,
+	--                     tag = "Piracy",
+	--                     remove_cost = false,
+	--                     unique = true, triggered = false,
 	--                     text = true
 	--                 }
 	--         },
@@ -71,6 +82,8 @@ return {
 			reward_list = { 
 			},
 			spawned_rewards = {
+			},
+			crossplot_rewards = {
 			},
 			integrates = true,
 			integration_data = {
@@ -113,6 +126,8 @@ return {
 					text = "TEXT_GOVERNMENT_CIS_INTEGRATE_TECHNO_DOMB_TREETOR"
 				}
 			},
+			crossplot_rewards = {
+			},
 			integrates = true,
 			integration_data = {
 				integration_speech = "TEXT_CONQUEST_CIS_TECHNO_JOINS",
@@ -151,6 +166,8 @@ return {
 					unique = true, spawned = false,
 					text = "TEXT_GOVERNMENT_CIS_INTEGRATE_COMMERCE_IACO_STARK"
 				}
+			},
+			crossplot_rewards = {
 			},
 			integrates = true,
 			integration_data = {
@@ -191,6 +208,8 @@ return {
 					text = "TEXT_GOVERNMENT_CIS_INTEGRATE_IGBC_CANTEVAL"
 				}
 			},
+			crossplot_rewards = {
+			},
 			integrates = true,
 			integration_data = {
 				integration_speech = "TEXT_CONQUEST_CIS_IGBC_JOINS",
@@ -217,7 +236,7 @@ return {
 			reward_list = { 
 			},
 			spawned_rewards = {
-				["DURD_TEAM"] = {
+				["LOK_DURD_DEFOLIATOR_TEAM"] = {
 					threshold = 100,
 					remove_cost = false,
 					unique = true,spawned = false,
@@ -229,6 +248,8 @@ return {
 					unique = true,spawned = false,
 					text = "TEXT_GOVERNMENT_CIS_INTEGRATE_TRADEFED_MAR_TUUK"
 				}
+			},
+			crossplot_rewards = {
 			},
 			integrates = true,
 			integration_data = {
@@ -257,7 +278,7 @@ return {
 			support_buildables = {
 				-- {name = "IPV1_GUNBOAT", tag = "IPV1 Gunboat", value = 1, locks = false},
 				-- {name = "CONSULAR_REFIT", tag = "Consular Refit", value = 2, locks = false},
-				-- {name = "CIS_DREADNAUGHT_LASERS", tag = "PDF Dreadnaught Heavy Cruiser", value = 6, locks = false},
+				-- {name = "DHC_GUNBOAT", tag = "PDF Dreadnaught Heavy Cruiser Gunboat", value = 8, locks = false},
 				-- {name = "RAKA_FREIGHTER_TENDER", tag = "Raka Freighter Tender", value = 2, locks = false},
 				-- {name = "KALOTH_BATTLECRUISER", tag = "Kaloth Battlecruiser", value = 3, locks = false},
 				-- {name = "HUTT_BOARDING_SHUTTLE", tag = "Boarding Shuttle", value = 4, locks = false},
@@ -317,13 +338,36 @@ return {
 						unique = true, spawned = false,
 						text = nil
 					},
+					["LOM_PYKE_SUPER_TRANSPORT_XI_MODIFIED"] = {
+						threshold = 100,
+						tag = "Lom Pyke",
+						remove_cost = false,
+						unique = true, spawned = false,
+						text = nil
+					},
 					["ZITON_MOJ_TEAM"] = {
 						threshold = 100,
 						tag = "Ziton Moj",
 						remove_cost = false,
 						unique = true, spawned = false,
 						text = nil
+					},
+					["GAR_SAXON_TEAM"] = {
+						threshold = 100,
+						tag = "Gar Saxon",
+						remove_cost = false,
+						unique = true, spawned = false,
+						text = nil
+					},
+					["ROOK_KAST_TEAM"] = {
+						threshold = 100,
+						tag = "Rook Kast",
+						remove_cost = false,
+						unique = true, spawned = false,
+						text = nil
 					}
+			},
+			crossplot_rewards = {
 			},
 			integrates = false,
 		},
@@ -343,22 +387,32 @@ return {
 				{name = "BH_GALACTIC_JUVARD_FRIGATE", value = 4, locks = false},
 				{name = "BH_GALACTIC_BARABBULA_FRIGATE", value = 5, locks = false},
 				{name = "BH_GALACTIC_KOSSAK_FRIGATE", value = 6, locks = false},
-				{name = "BH_GALACTIC_UBRIKKIAN_CRUISER_CW", value = 7, locks = false},
-				{name = "BH_GALACTIC_TEMPEST_CRUISER", value = 10, locks = false},
-				{name = "BH_GALACTIC_SZAJIN_CRUISER", value = 14, locks = false},
+				{name = "BH_GALACTIC_UBRIKKIAN_CRUISER_CW", value = 6, locks = false},
+				{name = "BH_GALACTIC_TEMPEST_CRUISER", value = 12, locks = false},
+				{name = "BH_GALACTIC_SZAJIN_CRUISER", value = 12, locks = false},
 				{name = "BH_GALACTIC_KARAGGA_DESTROYER", value = 14, locks = false},
-				{name = "BH_GALACTIC_VONTOR_DESTROYER", value = 25, locks = false},
+				{name = "BH_GALACTIC_VONTOR_DESTROYER", value = 28, locks = false},
 				-- AI versions
 				{name = "BH_GALACTIC_JUVARD_FRIGATE_AI", value = 4, locks = false},
                 {name = "BH_GALACTIC_BARABBULA_FRIGATE_AI", value = 5, locks = false},
                 {name = "BH_GALACTIC_KOSSAK_FRIGATE_AI", value = 6, locks = false},
-                {name = "BH_GALACTIC_UBRIKKIAN_CRUISER_CW_AI", value = 7, locks = false},
-                {name = "BH_GALACTIC_TEMPEST_CRUISER_AI", value = 10, locks = false},
-                {name = "BH_GALACTIC_SZAJIN_CRUISER_AI", value = 14, locks = false},
+                {name = "BH_GALACTIC_UBRIKKIAN_CRUISER_CW_AI", value = 6, locks = false},
+                {name = "BH_GALACTIC_TEMPEST_CRUISER_AI", value = 12, locks = false},
+                {name = "BH_GALACTIC_SZAJIN_CRUISER_AI", value = 12, locks = false},
                 {name = "BH_GALACTIC_KARAGGA_DESTROYER_AI", value = 14, locks = false},
-                {name = "BH_GALACTIC_VONTOR_DESTROYER_AI", value = 25, locks = false},
+                {name = "BH_GALACTIC_VONTOR_DESTROYER_AI", value = 28, locks = false},
 			},
 			reward_list = {  
+				{unit = "DUMMY_RESEARCH_SCYK", 
+					threshold = 100, 
+					remove_cost = false,
+					locks = true,
+					tag = "Scyk Fighter & Heavy Fighter (Research)", 
+					limit = 0, built = 0, building = 0,
+					buildable = false, 
+					crossplot = "SCYK_AVAILABLE",
+					text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_SCYK_AVAILABLE",
+				},
 				{unit = "KOSSAK_FRIGATE", 
 					threshold = 200, 
 					remove_cost = false,
@@ -368,6 +422,16 @@ return {
 					buildable = false, 
 					crossplot = "KOSSAK_AVAILABLE",
 					text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_KOSSAK_AVAILABLE",
+				},
+				{unit = "DUMMY_RESEARCH_DUNELIZARD", 
+					threshold = 250, 
+					remove_cost = false,
+					locks = true,
+					tag = "Dunelizard Fighter & Interceptor (Research)", 
+					limit = 0, built = 0, building = 0,
+					buildable = false, 
+					crossplot = "DUNELIZARD_AVAILABLE",
+					text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_DUNELIZARD_AVAILABLE",
 				},
 				{unit = "UBRIKKIAN_CRUISER_CW", 
 					threshold = 350, 
@@ -379,6 +443,16 @@ return {
 					crossplot = "UBRIKKIAN_CRUISER_AVAILABLE",
 					text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_UBRIKKIAN_CRUISER_AVAILABLE",
 				}, 
+				{unit = "DUMMY_RESEARCH_KIMOGILA_KRAYT", 
+					threshold = 400, 
+					remove_cost = false,
+					locks = true,
+					tag = "Kimogila Heavy Fighter & Krayt Gunship (Research)", 
+					limit = 0, built = 0, building = 0,
+					buildable = false, 
+					crossplot = "KIMOKRAYT_AVAILABLE",
+					text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_KIMOGILA_KRAYT_AVAILABLE",
+				},
 				{unit = "DORBULLA_WARSHIP", 
 					threshold = 500, 
 					remove_cost = false,
@@ -392,19 +466,21 @@ return {
 			},
 			spawned_rewards = {
 					["TROONOL_AGRELCU_HAALTA"] = {
-						threshold = 100,
+						threshold = 150,
 						tag = "Troonol (Ubrikkian Cruiser)",
 						remove_cost = false,
 						unique = true, spawned = false,
 						text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_TROONOL_AVAILABLE",
 					},
 					["ULAL_POTALA_UM_VAR"] = {
-						threshold = 400,
-						tag = "Ulal (Vontor Destroyer)",
+						threshold = 450,
+						tag = "Ulal (Custom Battlecruiser)",
 						remove_cost = false,
 						unique = true, spawned = false,
 						text = "TEXT_CONQUEST_GOVERNMENT_HUTTS_ULAL_AVAILABLE",
 					},
+			},
+			crossplot_rewards = {
 			},
 			integrates = false,
 		},

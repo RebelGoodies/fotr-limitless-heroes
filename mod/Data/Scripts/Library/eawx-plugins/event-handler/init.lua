@@ -26,6 +26,6 @@ return {
     target = PluginTargets.always(),
     init = function(self, ctx)
         require("eawx-plugins/event-handler/"..tostring(ctx.id))
-        return EventManager(ctx.galactic_conquest, ctx.galactic_conquest.HumanPlayer, ctx.galactic_conquest.Planets)
+        return EventManager(ctx.galactic_conquest, ctx.galactic_conquest.HumanPlayer, ctx.galactic_conquest.Planets, ctx.id)
     end
 }
