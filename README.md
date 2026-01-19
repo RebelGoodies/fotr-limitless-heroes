@@ -10,17 +10,18 @@ This submod removes restrictions on the amount of heroes allowed for the player.
 ### Changes
 
 - As the republic player, you may assign as many or as few heroes as you deem necessary.
-  Note that just because you can recruit every hero doesn't mean you have to.
+  The choice is yours.
+  Note that just because you *can* recruit every hero doesn't mean you have to.
   Some hero options are still locked by prerequisites or for story purposes.
   Note: The Republic AI will not recruit any extra heroes by itself!
-  Rather, the AI only gains another hero if they take a planet from the player.
+  Rather, the AI only gains another hero if they take a planet from the the player.
 
-- 16 Historical GC exclusive heroes have been added to the Republic command staff, and more.
-  Most are in a new category for senators with up to 10 senators available.
+- 30+ historical locked heroes have been added to the Republic command staff, and more.
+  Most are in a new category for senators with up to 15 senators available.
 
 - New CIS hero categories have been added: Space Leaders, Ground Leaders, and Sith.
   These work the same as the Republic hero system, and can be used to assign and retire heroes.
-  Includes 14 historical GC exclusive heroes as CIS staff options.
+  Includes 20+ historical locked heroes as CIS staff options.
 
 - Unite Mandalore: Both of the Mandalorian clans can be supported by any faction.
   Get Mandalore to 8 influence and choose one or both clans.
@@ -37,10 +38,11 @@ This submod removes restrictions on the amount of heroes allowed for the player.
 
 - Miscellaneous (non exhaustive):
   - If Sate Pestage is in orbit, you may swap Pestage for Mon Mothma and vice versa.
-  - Join or split Anakin and Ahsoka to and from the Twilight ship if both are in orbit.
-  - Clone fighter squadrons Axe and Broadside made assignable.
-  - Ima-Gun Di, Anakin, and Obi-Wan have been added to the Council.
+  - Join or split Anakin and Obi-Wan/Ahsoka to and from the Twilight ship if both are in orbit.
   - Lorz Geptun available for the CIS at era 2, or for the Republic on era 3+ starts.
+  - Ghost Company (Waxer & Boil) can be built when Cody is in orbit.
+  - Domino Squad can be built at Kamino or Rishi Moon in era 2.
+  - Full List: `mod/Data/CommandStaff.txt`
 
 ### One Planet Start
 
@@ -78,6 +80,7 @@ Check the *Advanced options tab* (with the gear) for these buttons.
 #### All Factions
 
 - Change the default Mandalorian armour skin.
+- Trigger the Mandalore event from any planet.
 
 # License
 
