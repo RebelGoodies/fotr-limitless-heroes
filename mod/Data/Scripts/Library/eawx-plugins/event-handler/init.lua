@@ -25,13 +25,13 @@ return {
     type = "plugin",
     target = PluginTargets.always(),
     init = function(self, ctx)
-		if ctx.id == "FTGU" or ctx.id == "CUSTOM" then
-			-- Additional setup
-			require("eawx-plugins/event-handler/PreFTGU")
-			EventManagerExtra(ctx.galactic_conquest, ctx.galactic_conquest.HumanPlayer, ctx.galactic_conquest.Planets, ctx.id)
-		end
-		
-		require("eawx-plugins/event-handler/"..tostring(ctx.id))
+        if ctx.id == "FTGU" or ctx.id == "CUSTOM" then
+            -- Additional setup
+            require("eawx-plugins/event-handler/PreFTGU")
+            EventManagerExtra(ctx.galactic_conquest, ctx.galactic_conquest.HumanPlayer, ctx.galactic_conquest.Planets, ctx.id)
+        end
+
+        require("eawx-plugins/event-handler/"..tostring(ctx.id))
         return EventManager(ctx.galactic_conquest, ctx.galactic_conquest.HumanPlayer, ctx.galactic_conquest.Planets, ctx.id)
     end
 }
