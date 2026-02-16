@@ -1,6 +1,7 @@
+---@License: MIT
+
 require("deepcore/std/class")
 require("PGStoryMode")
-
 
 ---@param admiral_types string[] CAPS list of command staff types to display.
 ---@param government_display_event StoryEventWrapper To append dialog text.
@@ -37,7 +38,6 @@ function DisplayCommandStaff(admiral_types, government_display_event)
         end
     end
 end
-
 
 ---@param slot_text_list string[] List of slots for a type of command staff.
 ---@param government_display_event StoryEventWrapper To append dialog text. 

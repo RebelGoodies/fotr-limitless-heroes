@@ -1,3 +1,5 @@
+---@License MIT
+
 require("deepcore/std/class")
 require("deepcore/crossplot/crossplot")
 require("eawx-plugins/republic-heroes/RepublicHeroes")
