@@ -1,0 +1,39 @@
+---Full list entry structure:
+---```
+---["Tag"] = {"Assign_unit",{"Retire1","Retire2"},{"Unit1","Unit2"},"Hero text ID", ["no_random"] = true, ["Companies"] = {"Company1","Company2"}, ["required_unit"] = "Unit", ["required_team"] = "team", ["Units"] = {{"Team1Unit1","Team1Unit2"},{"Team2Unit1","Team2Unit2"}}, ["first_spawn_list"] = {"Unit1","Unit2"}}
+---```
+---`no_random` is optional and prevents the entry from being bought with the random entry.
+---`Companies` is optional and appears on ground units/squadrons within the system.
+---`required_unit` is optional and holds the object to despawn when the system hero is spawned (e.g. the Millenium Falcon for Mon Remonda).
+---`required_team` is optional and holds the object to spawn when the system hero is edspawned (e.g. Han Team for Mon Remonda).
+---`Units` is optional and holds multiple heroes within the team. Put the teams in the `Unit1,Unit2...` slots in this case.
+---`first_spawn_list` is optional and sets a list of units to spawn the first time a hero is picked. Starting with the hero will also prevent future spawns.
+---@class HeroDataEntry
+---@field [1] string   --Assign_unit
+---@field [2] string[] --{"Retire1","Retire2"}
+---@field [3] string[] --{"Unit1","Unit2"}
+---@field [4] string   --Readable name
+---@field no_random? boolean      --prevents the entry from being bought with the random entry
+---@field Companies? string[]     --appears on ground units/squadrons within the system
+---@field required_unit? string[] --holds the object to despawn when the system hero is spawned (e.g. the Millenium Falcon for Mon Remonda)
+---@field required_team? string   --holds the object to spawn when the system hero is despawned (e.g. Han Team for Mon Remonda)
+---@field Units? string[][]       --holds multiple heroes within the team. Put the teams in the Unit1,Unit2... slots in this case
+---@field first_spawn_list? string[] --sets a list of units to spawn the first time picked. Starting with the hero will also prevent future spawns
+---@field unit_id? integer        --index of the retire, unit, and company to use
+---@field Locked? boolean         --when the retires get locked
+
+---@class HeroData
+---@field group_name? string
+---@field total_slots integer
+---@field free_hero_slots integer
+---@field vacant_hero_slots integer
+---@field vacant_limit integer
+---@field initialized boolean
+---@field full_list table<string, HeroDataEntry>
+---@field available_list string[]
+---@field story_locked_list table<string, boolean>
+---@field active_player PlayerObject
+---@field extra_name string
+---@field random_name string
+---@field global_display_list string
+---@field disabled boolean
